@@ -4,6 +4,8 @@ PyConES 2017 Web
 
 Web page made for PyConES 2017, made with Django with :heart:.
 
+.. image:: https://travis-ci.org/python-spain/PyConES-2017.svg?branch=master
+    :target: https://travis-ci.org/python-spain/PyConES-2017
 
 Deploy with Docker
 ------------------
