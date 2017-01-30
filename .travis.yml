@@ -1,0 +1,32 @@
+# Config file for automatic testing at travis-ci.org
+dist: trusty
+
+services:
+  - postgresql
+
+addons:
+  postgresql: "9.5"
+
+env:
+  - DATABASE_URL=postgres://postgres@localhost:5432/pycones2017
+
+before_script:
+  - psql -c 'create database pycones2017;' -U postgres
+
+before_install:
+  - pip install --quiet coveralls
+  - pip install codecov
+
+language: python
+
+python:
+  - "3.5"
+
+install:
+  - pip install -r requirements/test.txt
+
+script:
+  - coverage run --source='.' manage.py test --settings config.settings.test
+
+after_success:
+  - coveralls
