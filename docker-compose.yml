@@ -1,0 +1,54 @@
+# Docker-compose file to launch the web app.
+version: '2'
+
+volumes:
+  db-data:
+    driver: local
+
+services:
+
+  db:
+    image: postgres:9.6
+    container_name: pycones-db
+    volumes:
+      - db-data:/var/lib/postgresql
+    env_file: .env
+    networks:
+      - back-tier
+
+  webapp:
+    build:
+      context: .
+      dockerfile: compose/webapp/Dockerfile
+    image: pycones/webapp
+    container_name: pycones-webapp
+    command: /gunicorn.sh
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    env_file: .env
+    networks:
+      - back-tier
+
+  nginx:
+    build:
+      context: .
+      dockerfile: compose/nginx/Dockerfile
+    image: pycones/nginx
+    container_name: pycones-nginx
+    volumes:
+      - ./public:/public
+    ports:
+      - "0.0.0.0:80:80"
+    depends_on:
+      - webapp
+    networks:
+      - front-tier
+      - back-tier
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge
