@@ -9,7 +9,7 @@ services:
 
   db:
     image: postgres:9.6
-    container_name: pycones-2017-db
+    container_name: pycones-db
     volumes:
       - db-data:/var/lib/postgresql
     ports:

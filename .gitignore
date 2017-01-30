@@ -61,3 +61,4 @@ node_modules/
 # Build files
 pycones/static/css/*.css
 pycones/static/js/bin/*.js
+public/
