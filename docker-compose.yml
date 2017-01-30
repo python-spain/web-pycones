@@ -39,6 +39,7 @@ services:
     container_name: pycones-nginx
     volumes:
       - ./public:/public
+      - ./pycones/media:/media
     ports:
       - "0.0.0.0:80:80"
     depends_on:
