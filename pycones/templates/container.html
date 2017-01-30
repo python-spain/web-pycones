@@ -1,0 +1,27 @@
+{% extends "headers.html" %}
+{% load static %}
+
+{% block container %}
+
+    {% block claim %}
+    <div class="claim acorn-background">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="mx-auto logo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock claim %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-3">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+
+{% endblock container %}

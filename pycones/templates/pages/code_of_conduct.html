@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
+                <h2>{% trans "Codigo de conducta"%}</h2>
+                <p>{% trans "PyConES es una conferencia hecha por la comunidad pensada para la divulgación y colaboración dentro de la comunidad de desarrolladores." %}</p>
+                <p>{% trans "Valoramos la participación de cada miembro de la comunidad Python y queremos que todos los asistentes tengan una experiencia entretenida y satisfactoria. Para ello, se espera que todos los asistentes muestren respeto y cortesía hacia el resto durante la conferencia y todos los eventos relacionados con ella, estén oficialmente auspiciados por PyConES o no." %}</p>
+                <p>{% trans "En concreto, todos los delegados, disertantes, expositores y voluntarios que tomen parte en actividades relacionadas con PyConES deberán acatar el presente código de conducta. Los organizadores cuidarán del cumplimiento de este código durante el evento." %}</p>
+                <p>{% trans "Se entiende por acoso todo comentario ofensivo alusivo al sexo, preferencias sexuales, discapacidades, aspecto físico, etnias y religiones; toda pornografía en espacios públicos; toda intimidación deliberada, acecho o persecución; todo acoso mediante fotografías o grabaciones; toda interrupción constante de charlas u otras actividades; todo contacto físico inapropiado y toda propuesta sexual no deseada." %}</p>
+                <p>{% trans "Los participantes que sean apercibidos deberán desistir inmediatamente de su actitud." %}</p>
+                <p>{% trans "Los expositores, las casetas o pabellones de patrocinadores o empresas y actividades similares también están sujetas a la política antiacoso. En particular, los expositores no deberían utilizar material o llevar a cabo actividades sexistas. El personal de las casetas (incluyendo voluntarios) no deberían utilizar uniformes o vestimentas sexistas, puesto que se crearía un ambiente sexualizado." %}</p>
+                <p>{% trans "Cuida tu lenguaje. Recuerda que las bromas sexistas, racistas y excluyentes en general podrían ofender a otras personas. El lenguaje excesivamente soez y las bromas ofensivas son inapropiadas en PyConES." %}</p>
+                <p>{% trans "Si algún participante infringiera este código de conducta, la organización podrá tomar las medidas que considere adecuadas, como la amonestación o la expulsión sin derecho a reembolso." %}</p>
+                <h3>{% trans "Información de contacto" %}</h3>
+                <p>{% trans 'Si estás siendo objeto de acoso, notas que alguien está siendo acosado, o tienes cualquier otra preocupación, por favor ponte en contacto con un miembro del personal de la conferencia. El personal de la conferencia vestirá camisetas con la inscripción "Personal PyConES". Además puedes hablar con el personal del lugar y pedir que se te ponga en contacto con el responsable de la conferencia - Juan Luis Cano.' %}</p>
+                <p>{% trans "Si se trata de una cuestión especialmente urgente, dirígete a cualquiera de estas personas:" %}</p>
+                <ul>
+                    <li>Juan Luis Cano (+34 646515050)</li>
+                </ul>
+                <p>{% trans "El personal de la conferencia ayudará gustosamente a los participantes a que se pongan en contacto con el personal de seguridad del lugar o la policía local, y proporcionará escolta o socorrerá de cualquier otra forma a las víctimas de acoso para que puedan sentirse seguras durante el desarrollo de la conferencia. Tu bienestar es una de nuestras prioridades." %}</p>
+                <p>{% trans "Gracias por hacer de este un evento abierto a la comunidad y amistoso." %}</p>
+                <h3>{% trans "Licencia" %}</h3>
+                <p>
+                    {% blocktrans %}
+                        Este Código de Conducta se basa en los códigos de conducta de PyCon US 2013
+                        (<a href="https://us.pycon.org/2013/about/code-of-conduct/">https://us.pycon.org/2013/about/code-of-conduct/</a>) y
+                        PyConAr 2012 (<a href="http://ar.pycon.org/2012/conference/diversity/">http://ar.pycon.org/2012/conference/diversity/</a>), y
+                        está disponible bajo una licencia Creative Commons Atribución 3.0 España.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock container %}

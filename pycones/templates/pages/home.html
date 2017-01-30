@@ -1,0 +1,82 @@
+{% extends "container.html" %}
+{% load i18n %}
+{% load static %}
+{% load sponsorship_tags %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h2>{% trans "¿Que es PyConES 2017?" %}</h2>
+            <p class="loud indented">
+                {% blocktrans %}
+                    <strong>PyConES</strong> es la conferencia nacional sobre Python más importante de España.
+                    La PyConES celebrará su quinta edición los días <strong>22 a 24 de septimebre de 2017</strong> en <strong>Cáceres</strong>, después de
+                    tres exitosas ediciones en Madrid, Zaragoza, Valencia y Almería respectivamente y siguiendo el formato del evento mundial
+                    <a href="http://pycon.org" target="_blank">PyCon</a>.
+                {% endblocktrans %}
+            </p>
+            <h3 class="indented">{% trans "Ediciones anteriores" %}:</h3>
+            <p class="text-center loud indented">
+                <a href="http://2013.es.pycon.org/" target="_blank">PyConES 2013</a> |
+                <a href="http://2014.es.pycon.org/" target="_blank">PyConES 2014</a> |
+                <a href="http://2015.es.pycon.org/" target="_blank">PyConES 2015</a> |
+                <a href="http://2016.es.pycon.org/" target="_blank">PyConES 2016</a>
+            </p>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-12">
+            <h2 id="sponsors"> {% trans "Patrocinadores" %}</h2>
+            {% sponsor_levels as levels %}
+            {% for level in levels %}
+                {% sponsors level.pk as sponsors %}
+                {% if sponsors %}
+                    <h3>{{ level.name }}</h3>
+                    <div class="row">
+                        {% for sponsor in sponsors %}
+                            <div class="
+                                {% if level.order == 0 %}
+                                    col-8 offset-2 text-center
+                                {% else %}
+                                    col-6 {% if level.order < 2 %}col-sm-6{% else %}col-sm-4{% endif %} col-vertical-middle-fixed
+                                {% endif %}
+                                ">
+                                <a href="{{ sponsor.external_url }}" target="_blank">
+                                    <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-responsive img-sponsor">
+                                </a>
+                            </div>
+                            {% if forloop.counter|divisibleby:"2" %}
+                                <div class="clearfix visible-xs"></div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:"3" %}
+                                <div class="clearfix visible-sm"></div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <h3>{{ level.name }}</h3>
+                    <p class="loud">
+                        {% blocktrans with level_name=level.name|lower %}
+                            ¿Quieres ser el primer patrocinador {{ level_name }}? <a href="mailto:{{ SPONSORS_EMAIL }}" target="_blank">¡Contacta con nosotros!</a>
+                        {% endblocktrans %}
+                    </p>
+                {% endif %}
+            {% endfor %}
+            <hr />
+            <p class="text-center loud">
+                <a href="{% static "files/es_brochure.pdf" %}" class="btn btn-primary" target="_blank">
+                    <i class="icon-download"></i> {% trans "Folleto (ES)" %}
+                </a>
+                <a href="{% static "files/en_brochure.pdf" %}" class="btn btn-primary" target="_blank">
+                    <i class="icon-download"></i> {% trans "Folleto (EN)" %}
+                </a>
+            </p>
+            <p class="text-center loud">
+                <a href="mailto:{{ SPONSORS_EMAIL }}" target="_blank">
+                    {{ SPONSORS_EMAIL }}
+                </a>
+            </p>
+        </div>
+    </div>
+{% endblock content %}

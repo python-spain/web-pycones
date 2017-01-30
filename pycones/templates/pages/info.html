@@ -1,0 +1,255 @@
+{% extends "container.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>{% trans "Localización" %}</h2>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Qm5_h5uTqriVSYBHS_SP3NVgjHc" width="100%" height="480" style="border: none;padding-bottom: 15px"></iframe>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <p class="loud">
+                    {% blocktrans %}
+                        La sede de PyConES 2016 está en el campus de la Universidad de Almería, concretamente en los edificios Paraninfo y de la Facultad de Ciencias Sociales.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        Dispondremos de tres salas para acomodar hasta tres sesiones paralelas:
+                    {% endblocktrans %}
+                </p>
+                <ol class="loud">
+                    <li>Paraninfo, sala plenaria.</li>
+                    <li>Sala de Conferencias de CC. de la Salud.</li>
+                    <li>Salón de Grados del Paraninfo.</li>
+                </ol>
+                <p class="loud">
+                    {% blocktrans %}
+                La universidad nos ha confirmado que los tres espacios principales son 100% accesibles para público y conferenciantes.
+                    {% endblocktrans %}
+                </p>
+
+                <p class="loud">
+                    {% blocktrans %}
+                        Os hemos preparado <a href="http://bit.ly/PyConES16">un mapa Google Maps</a> compilando toda la información que creemos podéis necesitar: <a href="http://bit.ly/PyConES16" target="_blank">http://bit.ly/PyConES16</a>
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                    El horario principal del congreso previsto es:
+                    {% endblocktrans %}
+                </p>
+                  <ul class="loud">
+                    <li>{% trans "viernes 07/10/16 de 15:00 a 20:30." %}</li>
+                    <li>{% trans "sábado 08/10/16 de 9:00 a 20:30." %}</li>
+                    <li>{% trans "domingo 09/10/16 de 9:00 a 18:30." %}</li>
+                </ul>
+                <p class="loud">
+                    {% blocktrans %}
+                        Obviamente llegado el momento os ofreceremos un calendario detallado.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>{% trans "Alojamiento" %}</h2>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="loud">
+                    {% blocktrans %}
+                    Hemos preparado una selección de hoteles con oferta especial para el congreso. <em>Es importante confirmar las reservas lo más pronto posible, porque los hoteles sólo pueden mantener las ofertas por tiempo limitado y octubre es un mes de temporada alta hotelera en Almería capital.</em>
+
+                    {% endblocktrans %}
+                </p>
+                <ul class="loud">
+                    <li>
+                        {% blocktrans %}
+                        <a href="http://www.nh-hotels.com/hotels/almeria">Hotel NH Ciudad de Almería</a>, 4 estrellas<br/>
+                        Régimen: alojamiento y desayuno
+                        <ul>
+                        <li>Precio habitación doble uso individual: 	61€ + 10% IVA</li>
+                        <li>Precio habitación doble uso doble:       	69€ + 10% IVA</li>
+                        </ul>
+                        Reservar a través de teléfono: 950182500 o correo-e: <a href="mailto:nhciudaddealmeria@nh-hotels.com">nhciudaddealmeria@nh-hotels.com</a> indicando la referencia <em>CONGRESO PYCONES</em>.
+                        {% endblocktrans %}
+                    </li>
+
+                    <li>
+                        {% blocktrans %}
+                        <a href="http://www.hotelembajador.es/es/">Hotel Embajador</a>, 2 estrellas<br/>
+                        <ul>
+                        <li>Precio por persona desde 35€</li>
+                        <li>Con opciones a habitaciones de clase superior y de desayuno en el hotel (buffet continental).</li>
+                        </ul>
+                        Reservar a través de teléfono: 950278825 o correo-e: <a href="mailto:reservas@hotelembajador.es">reservas@hotelembajador.es</a> indicando la referencia <em>CONGRESO PYCONES</em>.
+
+                        {% endblocktrans %}
+                    </li>
+                </ul>
+                <ul class="loud">
+                    <li>
+                        {% blocktrans %}
+                        <a href="https://www.google.com/maps/d/viewer?mid=1Qm5_h5uTqriVSYBHS_SP3NVgjHc">en el mapa que hemos preparado</a> tenéis apuntados los alojamientos más próximos a la línea 18 de autobús que es la que llega a la universidad todos los días de la semana.
+                        {% endblocktrans %}
+                    </li>
+
+                    <li>{% trans "en el mismo mapa opcionalmente tenéis indicada la situación de otros grupos de hoteles en la capital y otro en el complejo hotelero de <a href='https://es.wikipedia.org/wiki/Retamar_(Almer%C3%ADa)#El_Toyo'>El Toyo</a>, en la zona de Retamar fuera del casco urbano, que puede ser de vuestro interés si viajáis en familia y con vehículo propio" %}</li>
+                </ul>
+
+                <p class="loud">
+                    {% blocktrans %}
+                    Insistimos en la importancia de confirmar las reservas de hotel rápidamente. Considerad también la posibilidad de compartir y reservar las habitaciones dobles con vuestros conocidos, para aprovechar mejor las plazas disponibles. ¡No queremos que nadie se quede fuera!
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>{% trans "Sobre Almería" %}</h2>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="loud">
+                    {% blocktrans %}
+                        A algunos nos gusta decir que Almería es lo más parecido que tiene España a una isla sin salir de la Península. La relativa inaccesibilidad ha servido para proteger del turismo desaforado una diversidad de paisajes que suelen enamorar al viajero. <a href="http://www.rtve.es/alacarta/videos/el-documental/documental-spanish-western/3628601/">Almería es un gran plató a cielo abierto</a> donde se han rodado toda clase de filmes, anuncios o vídeos musicales. Nuestro clima es cálido pero templado todo el año. Nuestro cielo, tan claro, es el que enamoró al director David Lean. Si queréis explorar las posibilidades turísticas de Almería podéis consultar las siguientes fuentes:
+                    {% endblocktrans %}
+                </p>
+                <ul class="loud">
+                    <li><a href="http://www.turismoalmeria.com/" target="_blank">{% trans "Costa de Almería" %}</a></li>
+                    <li><a href="http://www.andalucia.org/es/contacta-con-nosotros/almeria/almeria-3/" target="_blank">{% trans "Patronato provincial de turismo de Almería" %}</a></li>
+                    <li><a href="http://www.turismodealmeria.org/" target="_blank">{% trans "Turismo de Almería (ciudad)" %}</a></li>
+                </ul>
+                <p class="loud">
+                    {% blocktrans %}
+                        Económicamente Almería es además una pequeña potencia en el sector agroalimentario. Nuestra industria y servicios exportan fruta y hortalizas a toda Europa y es una de las referencias mundiales del sector. Y si creías que la única construcción humana que podía verse desde el espacio era la Muralla China tenemos que confirmarte que no es cierto, pero que sí se ve el reflejo del <a href="http://earthobservatory.nasa.gov/IOTD/view.php?id=4508">inmenso mar de plástico del Campo de Dalías</a> bajo el que se cultivan alimentos que probablemente consumes con regularidad.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>{% trans "Como desplazarse hasta el campus" %}</h2>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="loud">
+                    {% blocktrans %}
+                        El campus tiene varios espacios de aparcamiento para los que optéis por el transporte privado. El desplazamiento puede hacerse tanto por la autovía, tomando la salida a La Cañada, como por la carretera de la costa.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        Quienes optéis por el transporte público tendréis disponible especialmente la línea 18 de la empresa local de transportes, Surbus. Dicha línea regular contará con refuerzos puntuales para los desplazamientos al congreso. La parada de la Universidad es la <a href="http://m.surbus.com/tiempo-espera/parada/144">número 144</a> Surbús dispone de una aplicación web para <a href="http://m.surbus.com/tiempo-espera/paradas">consultar los tiempos de espera de cada parada</a>. En <a href="http://bit.ly/PyConES16" target="_blank">el mapa del evento</a> tenéis anotadas todas las paradas de la línea 18.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        También disponemos de dos servicios de taxi:
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        <strong>Radio taxi</strong> <br/>
+                        950 22 22 22 - 950 22 61 61<br/>
+                        <a href="http://www.radiotaxialmeria.es/" target="_blank">http://www.radiotaxialmeria.es/</a>
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        <strong>Tele Taxi</strong> <br/>
+                        950 251 111<br/>
+                        <a href="http://teletaxialmeria.com/" target="_blank">http://teletaxialmeria.com/</a>
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>{% trans "Cómo llegar a Almería" %}</h2>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="loud">
+                    {% blocktrans %}
+                        <strong>Avión</strong>: El <a href="http://www.aena.es/es/aeropuerto-almeria/index.html" target="_blank">aeropuerto de Almería</a> tiene enlaces nacionales directos con al menos Sevilla, Melilla, Madrid y Barcelona y según la temporada también enlaces regulares con otras ciudades europeas, especialmente con aerolíneas de bajo coste. Puedes desplazarte desde el aeropuerto al centro de la ciudad en taxi o en autobús (<a href="http://www.aena.es/es/aeropuerto-almeria/transporte-publico.html" target="_blank">línea 22</a>)
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        <strong>Tren</strong>: La magnífica <a href="https://es.wikipedia.org/wiki/Estaci%C3%B3n_de_Almer%C3%ADa#/media/File:Estaciontrenesalmeria.jpg">estación de ferrocarril de Almería</a>, en proceso de restauración, está en el mismísimo centro de la ciudad. Forma parte de una moderna <a href="http://www.adif.es/es_ES/infraestructuras/estaciones/56312/informacion_000069.shtml"> estación intermodal</a>. Las conexiones por tren principales son con Madrid y Granada-Sevilla. Y no, no sólo no tenemos AVE sino que se están tapiando los túneles ya construidos «para que no les roben el cobre» 😃
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        <strong>Puerto</strong>: También en el mismísimo centro de la ciudad disponemos de un puerto modernizado y activo. Si viajas a Almería desde el norte de África disponemos de <a href="http://www.apalmeria.com/index.php?option=com_content&view=article&id=95&Itemid=92&lang=es"> conexiones regulares con Melilla, Nador, Ghazaouet y Orán</a>.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        <strong>Autobús</strong>: Llegando a la misma estación intermodal ya mencionada. Hay conexiones diarias a ciudades de Andalucía, a Madrid y por levante hasta Barcelona.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        <strong>Vehículo propio</strong>:
+                    {% endblocktrans %}
+                </p>
+                <ul class="loud">
+                    <li>{% trans "por la costa, a través de la <a href='https://es.wikipedia.org/wiki/Autov%C3%ADa_del_Mediterr%C3%A1neo'>Autovía del Mediterráneo A-7, E-15</a>" %}</li>
+                    <li>{% trans "desde el interior, a través de la <a href='https://es.wikipedia.org/wiki/Autov%C3%ADa_A-92'>A-92</a>" %}</li>
+                </ul>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="loud">
+                    <strong>{% trans "Compartiendo coche" %}</strong>
+                </p>
+                <p class="loud text-center">
+                    <iframe src="http://www.blablacar.es/widget/ES_PARTNER_EVENT- Python16_PSGR&?from=&to=Almería" style="border:0px; padding:0px;" width="100%" height="270px" frameborder="0" scrolling="no"></iframe><a href="http://www.blablacar.es/coche-compartido/a-Almería/#&utm_source=PARTNER&utm_medium=Link&utm_campaign=ES_PARTNER_EVENT- Python16_PSGR&comuto_cmkt=ES_PARTNER_EVENT- Python16_PSGR"></a>
+                    <a href="http://www.blablacar.es/coche-compartido/a-Almería/#&utm_source=PARTNER&utm_medium=Link&utm_campaign=ES_PARTNER_EVENT- Python16_PSGR&comuto_cmkt=ES_PARTNER_EVENT- Python16_PSGR" class="btn btn-primary">{% trans "Comparte coche a Almeria" %}</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>{% trans "Código de conducta" %}</h2>
+                <p class="loud">
+                    {% blocktrans %}
+                        PyConES aspira a crear un ambiente libre de acosos o discriminaciones por razón de género, orientación sexual, discapacidad, aspecto físico, etnia o religión. No se tolerará discriminación alguna bajo ninguna circunstancia.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        Todo el contenido de la conferencia deberá ajustarse a una audiencia profesional integrada por personas procedentes de sectores diferentes. Tanto el lenguaje como las imágenes sexualmente explícitos son inapropiados en la conferencia y en las charlas.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        Sé amable con los demás. No insultes o humilles a otros asistentes. Compórtate de manera profesional. Recuerda que las bromas sexistas, racistas o discriminatorias están prohibidas en la PyConES.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        Los asistentes que incumplan estas reglas podrán -a discreción de los organizadores- ser sancionados o expulsados de la conferencia sin derecho a reembolso.
+                    {% endblocktrans %}
+                </p>
+                <p class="loud">
+                    {% blocktrans %}
+                        Gracias por ayudarnos a hacer este evento amistoso y abierto para todos.
+                    {% endblocktrans %}
+                </p>
+                <a href="{% url "code-of-conduct" %}">{% trans "Código de Conducta Completo" %}</a>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

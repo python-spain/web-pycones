@@ -1,0 +1,19 @@
+# Docker-compose file to launch the database used during the development.
+version: '2'
+
+volumes:
+  db-data:
+    driver: local
+
+services:
+
+  db:
+    image: postgres:9.6
+    container_name: pycones-2017-db
+    volumes:
+      - db-data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: potato
+      POSTGRES_DB: pycones2017

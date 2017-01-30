@@ -1,0 +1,50 @@
+# Wheel 0.25+ needed to install certain packages on CPython 3.5+
+# like Pillow and psycopg2
+# See http://bitly.com/wheel-building-fails-CPython-35
+# Verified bug on Python 3.5.1
+wheel==0.29.0
+
+# Django
+django==1.10.5
+
+# Configuration
+django-environ==0.4.1
+
+# Models
+django-model-utils==2.6.1
+django-reversion==2.0.8
+
+# Views
+django-braces==1.10.0
+
+# Images
+Pillow==4.0.0
+
+# Database connector
+psycopg2==2.6.2
+
+# Requests
+requests==2.12.4
+
+# Markup
+django-markupfield==1.4.1
+markdown==2.6.7
+
+# Translations
+django-modeltranslation==0.12
+
+# Tags
+django-taggit==0.21.3
+django-taggit-autosuggest==0.3.0
+
+# Numpy
+numpy==1.11.1
+
+# Clean user input
+bleach==1.5.0
+
+# API
+restless==2.0.3
+
+# Calendar Export
+icalendar==3.11.2

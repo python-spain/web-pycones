@@ -1,0 +1,18 @@
+.landing {
+
+  @extend .acorn-background;
+
+  .container {
+    height:100%;
+    min-height: 100%;
+  }
+
+  &-claim {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}

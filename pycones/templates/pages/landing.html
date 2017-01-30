@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block syndication %}{% endblock syndication %}
+
+{% block body_attrs %}class="landing"{% endblock %}
+{% block body %}
+
+    <div class="container">
+
+        <div class="landing-claim">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="logo"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-sm-center">
+                    <p>{% trans "Estamos preparando la nueva edición de la PyConES, dentro de poco habrá más novedades." %}</p>
+                    <p><a href="https://twitter.com/pycones" target="_blank"><i class="fa fa-twitter"></i></a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock body %}

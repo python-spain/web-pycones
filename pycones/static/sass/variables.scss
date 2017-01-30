@@ -1,0 +1,14 @@
+// Options from Bootstrap
+@import "colors";
+
+$brand-primary: $green-primary !default;
+$brand-success: $green-dark !default;
+$brand-info: $green-light !default;
+$brand-warning: $red-light !default;
+$brand-danger: $red-dark !default;
+
+$enable-flex: true;
+
+$font-family-sans-serif: Arial, sans-serif !default;
+
+$font-size-root: 12.8px !default;

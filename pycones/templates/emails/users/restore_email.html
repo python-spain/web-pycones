@@ -1,0 +1,4 @@
+{% load i18n %}
+
+<p>{% trans "Entra en este enlace para establecer tu contraseña:" %}</p>
+<a href="http://{{ site.domain }}{{ user.restore_password_link }}">http://{{ site.domain }}{{ user.restore_password_link }}</a>

@@ -1,0 +1,42 @@
+// Import own SCSS files that override Bootstrap
+// -----------------------------------------------------------------------------
+@import "variables";
+
+// Import Bootstrap
+// -----------------------------------------------------------------------------
+@import "bootstrap/scss/bootstrap";
+
+// Import Font Awesome
+// -----------------------------------------------------------------------------
+@import "font-awesome/font-awesome";
+
+// Project specific
+// -----------------------------------------------------------------------------
+@import "common";
+@import "landing";
+
+html, body{
+  height:100%;
+  min-height: 100%;
+}
+
+.claim {
+  border-bottom: 5px solid $green-dark;
+  margin-bottom: 15px;
+}
+
+footer {
+  background-color: $green-primary;
+  color: $green-dark;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 5px solid $green-dark;
+  min-height: 100px;
+  padding-bottom: 50px;
+  a {
+    color: $green-dark;
+    &:hover {
+      color: $green-light
+    }
+  }
+}

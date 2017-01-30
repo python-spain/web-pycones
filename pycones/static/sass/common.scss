@@ -1,0 +1,19 @@
+.acorn-background {
+  background: url("../images/background.png");
+  background-size: 200px;
+}
+
+$logo-width: 495px;
+$logo-height: 400px;
+.logo {
+  background: #fff url("../images/logo.png") no-repeat 15px 15px;
+  background-size: $logo-width $logo-height !important;
+  width: $logo-width+30px;
+  height: $logo-height+30px;
+  @media
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    background: #fff url("../images/logo.png") no-repeat 15px 15px;
+    background-size: $logo-width $logo-height;
+  }
+}
