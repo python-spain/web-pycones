@@ -41,7 +41,7 @@ services:
       - ./public:/public
       - ./pycones/media:/media
     ports:
-      - "0.0.0.0:80:80"
+      - "5002:5002"
     depends_on:
       - webapp
     networks:
