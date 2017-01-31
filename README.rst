@@ -25,8 +25,13 @@ The available environment variables are:
 - ``DJANGO_SETTINGS_MODULE`` Django settings module (eg. ``config.settings.production``)
 - ``DATABASE_URL`` Url to connect to the database (eg. ``config.settings.production``)
 - ``DJANGO_ALLOWED_HOSTS`` Host names allowed, separated by commas (eg. ``localhost,2017.es.pycon.org``))
+- ``DJANGO_EMAIL_HOST`` Host for SMTP server
+- ``DJANGO_EMAIL_HOST_USER`` User for SMTP server
+- ``DJANGO_EMAIL_HOST_PASSWORD`` Password for SMTP server
+- ``DJANGO_EMAIL_PORT`` Port for SMTP server
 
-Then, we've have to use Docker Compose to bring it up.
+The default values are ready to run the containers in a development machine using **production
+configuration**. Then, we've have to use Docker Compose to bring it up.
 
 .. code-block:: bash
 

@@ -23,3 +23,13 @@ DATABASES = {
     'default': env.db('DATABASE_URL'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
+
+# EMAIL CONFIGURATION
+# ------------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+EMAIL_USE_TLS = True
+EMAIL_HOST = env('DJANGO_EMAIL_HOST', default="smtp.gmail.com")
+EMAIL_HOST_USER = env('DJANGO_EMAIL_HOST_USER', default='your_email@example.com')
+EMAIL_HOST_PASSWORD = env('DJANGO_EMAIL_HOST_PASSWORD', default='')
+EMAIL_PORT = env.int('DJANGO_EMAIL_PORT', default=587)
+EMAIL_SUBJECT_PREFIX = '[%s] ' % CONFERENCE_TITLE
