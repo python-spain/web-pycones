@@ -17,6 +17,15 @@ credentials of the database, secret key, etc.
 
     $ cp env.example .env
 
+The available environment variables are:
+
+- ``POSTGRES_PASSWORD`` Postgres database password
+- ``POSTGRES_DB`` Postgres database name
+- ``DJANGO_SECRET_KEY`` Django secret key
+- ``DJANGO_SETTINGS_MODULE`` Django settings module (eg. ``config.settings.production``)
+- ``DATABASE_URL`` Url to connect to the database (eg. ``config.settings.production``)
+- ``DJANGO_ALLOWED_HOSTS`` Host names allowed, separated by commas (eg. ``localhost,2017.es.pycon.org``))
+
 Then, we've have to use Docker Compose to bring it up.
 
 .. code-block:: bash
