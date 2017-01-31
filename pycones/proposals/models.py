@@ -43,20 +43,32 @@ class ProposalKind(models.Model):
 class Proposal(TimeStampedModel):
 
     audience_level = models.CharField(
-        verbose_name=_("Nivel de la audiencia"), choices=PROPOSAL_LEVELS, null=True, default=BASIC_LEVEL, max_length=32
+        verbose_name=_("Nivel de la audiencia"),
+        choices=PROPOSAL_LEVELS,
+        null=True,
+        default=BASIC_LEVEL,
+        max_length=32
     )
     language = models.CharField(
-        verbose_name=_("Idioma"), max_length=2, choices=PROPOSAL_LANGUAGES, default="es"
+        verbose_name=_("Idioma"),
+        max_length=2,
+        choices=PROPOSAL_LANGUAGES,
+        default="es"
     )
     duration = models.PositiveIntegerField(
-        verbose_name=_("Duración"), choices=PROPOSAL_DURATIONS, default=30, null=True, blank=True
+        verbose_name=_("Duración"),
+        choices=PROPOSAL_DURATIONS,
+        default=30,
+        null=True,
+        blank=True
+    )
+    tags = TaggableManager(
+        verbose_name=_("Etiquetas"),
+        help_text=_("Lista de etiquetas separadas por comas."),
+        blank=True
     )
 
-    tags = TaggableManager(verbose_name=_("Etiquetas"),
-                           help_text=_("Lista de etiquetas separadas por comas."),
-                           blank=True)
-
-    kind = models.ForeignKey(ProposalKind, verbose_name=_("Tipo de propuesta"))
+    kind = models.ForeignKey("proposals.ProposalKind", verbose_name=_("Tipo de propuesta"))
 
     title = models.CharField(max_length=100, verbose_name=_("Título"))
     description = models.TextField(
@@ -86,13 +98,8 @@ class Proposal(TimeStampedModel):
                     "target='_blank'>Markdown</a>.")
     )
 
-    submitted = models.DateTimeField(
-        default=now,
-        editable=False,
-    )
     speaker = models.ForeignKey("speakers.Speaker", related_name="proposals")
-    additional_speakers = models.ManyToManyField("speakers.Speaker", through="AdditionalSpeaker",
-                                                 blank=True)
+    additional_speakers = models.ManyToManyField("speakers.Speaker", through="AdditionalSpeaker", blank=True)
     cancelled = models.BooleanField(default=False)
     notified = models.BooleanField(default=False)
     accepted = models.NullBooleanField(verbose_name=_('Aceptada'), default=None)
