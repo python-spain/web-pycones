@@ -14,8 +14,6 @@ class ProposalAdmin(admin.ModelAdmin):
     list_display = [
         "id",
         "title",
-        "speaker",
-        "speaker_email",
         "kind",
         "audience_level",
         "language",
@@ -34,32 +32,30 @@ class ProposalAdmin(admin.ModelAdmin):
         export_as_csv_action("CSV Export", fields=[
             "id",
             "title",
-            "speaker",
-            "speaker_email",
             "kind",
             "audience_level",
             "language",
-            "avg_property",
-            "renormalization_o0_property",
-            "renormalization_o1_property",
-            "assigned_reviews_property",
-            "completed_reviews_property",
-            "tag_list_property"
+            "avg",
+            "renormalization_o0",
+            "renormalization_o1",
+            "assigned_reviews",
+            "completed_reviews",
+            "tag_list"
         ]),
         send_confirmation_action("Sends confirmation email"),
         send_acceptance_action("Sends acceptance email")
     ]
 
     def get_avg(self, instance):
-        return instance.avg()
+        return instance.avg
     get_avg.short_description = _("Media")
 
     def get_completed_reviews(self, instance):
-        return instance.completed_reviews_property
+        return instance.completed_reviews
     get_completed_reviews.short_description = _("Revisiones completadas")
 
     def get_assigned_reviews(self, instance):
-        return instance.assigned_reviews_property
+        return instance.assigned_reviews
     get_assigned_reviews.short_description = _("Revisiones asignadas")
 
     def get_tag_list(self, instance):
@@ -67,11 +63,11 @@ class ProposalAdmin(admin.ModelAdmin):
     get_tag_list.short_description = _("Lista de etiquetas")
 
     def get_o0(self, instance):
-        return instance.renormalization_o0()
+        return instance.renormalization_o0
     get_o0.short_description = _("O0")
 
     def get_o1(self, instance):
-        return instance.renormalization_o1()
+        return instance.renormalization_o1
     get_o1.short_description = _("O1")
 
 

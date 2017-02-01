@@ -1,15 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, absolute_import
 
-from django import forms
 from django.contrib import admin
-from django.contrib.auth import get_user_model
-from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
-from pycones.reviewers import review_group_name
-from pycones.reviewers.models import Review
-
+from pycones.reviewers.forms import ReviewAdminForm
+from pycones.reviewers.models import Review, Reviewer
 from .actions import export_as_csv_action
 
 

@@ -71,7 +71,7 @@ var imagesTask = function (options) {
   var run = function () {
     gulp.src(pathsConfig().images + '/**/*')
       .pipe(imagemin())
-      .pipe(gulp.dest(pathsConfig().base));
+      .pipe(gulp.dest(pathsConfig().images));
   };
   if (options.development) {
     run();

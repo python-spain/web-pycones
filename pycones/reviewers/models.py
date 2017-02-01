@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, print_function, absolute_import
 
+import numpy as np
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django_extensions.db.models import TimeStampedModel
+from model_utils.models import TimeStampedModel
 
 from pycones.configurations.models import Option
 from pycones.utils.emails import send_email
@@ -72,3 +73,31 @@ class Review(TimeStampedModel):
         super(Review, self).save(**kwargs)
         if is_insert or self.user != old_user:
             self.notify()
+
+
+class Reviewer(TimeStampedModel):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="reviewer")
+
+    def reviews_count(self):
+        return self.user.reviews.count()
+
+    def num_reviews(self):
+        return Review.objects.filter(user=self.user).count()
+
+    def mean(self):
+        values = []
+        for review in Review.objects.filter(user=self.user):
+            values.append(review.relevance or 0)
+            values.append(review.interest or 0)
+            values.append(review.newness or 0)
+
+        return np.mean(values)
+
+    def std(self):
+        values = []
+        for review in Review.objects.filter(user=self.user):
+            values.append(review.relevance or 0)
+            values.append(review.interest or 0)
+            values.append(review.newness or 0)
+
+        return np.std(values)
