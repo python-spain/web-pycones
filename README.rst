@@ -35,5 +35,5 @@ configuration**. Then, we've have to use Docker Compose to bring it up.
 
 .. code-block:: bash
 
-    $ docker-compose up
+    $ docker-compose up -d
 
