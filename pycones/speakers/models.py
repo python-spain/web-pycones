@@ -35,7 +35,7 @@ class Speaker(TimeStampedModel):
         blank=True,
         null=True
     )
-    annotation = models.TextField()
+    annotation = models.TextField(default="", blank=True)
     is_keynoter = models.BooleanField(default=False)
 
     class Meta:
@@ -76,3 +76,9 @@ class Speaker(TimeStampedModel):
 
     def get_api_id(self):
         return "S{:05d}".format(self.pk)
+
+    def save(self, **kwargs):
+        """Save user full name by default for speaker."""
+        if not self.name:
+            self.name = self.user.get_full_name()
+        return super(Speaker, self).save(**kwargs)

@@ -175,6 +175,9 @@ LOCAL_APPS = (
     'pycones.configurations',
     'pycones.blog',
     'pycones.sponsorships',
+    'pycones.proposals',
+    'pycones.reviewers',
+    'pycones.speakers',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

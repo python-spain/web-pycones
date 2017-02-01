@@ -3,13 +3,13 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 
-from pycones.reviewers import review_group_name
+from pycones.reviewers import REVIEW_GROUP_NAME
 from pycones.reviewers.forms import ReviewForm
 from pycones.reviewers.models import Review
 
 
 class BaseReviewerView(GroupRequiredMixin, View):
-    group_required = review_group_name
+    group_required = REVIEW_GROUP_NAME
     login_url = reverse_lazy("reviewers:sign-in")
 
 

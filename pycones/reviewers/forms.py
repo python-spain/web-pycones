@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
-from pycones.reviewers import review_group_name
+from pycones.reviewers import REVIEW_GROUP_NAME
 from pycones.reviewers.models import Review
 
 
@@ -55,7 +55,7 @@ class ReviewAdminForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ReviewAdminForm, self).__init__(*args, **kwargs)
         self.fields["user"].queryset = get_user_model().objects.filter(
-            Q(groups__name=review_group_name) | Q(is_superuser=True)
+            Q(groups__name=REVIEW_GROUP_NAME) | Q(is_superuser=True)
         )
 
     def clean(self):

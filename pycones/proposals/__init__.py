@@ -22,4 +22,6 @@ PROPOSAL_DURATIONS = (
     (30, _("30 minutos")),
 )
 
+ABSTRACT_MINIMUM_WORDS = 80
+
 default_app_config = 'pycones.proposals.apps.ProposalsConfig'

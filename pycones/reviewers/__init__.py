@@ -2,5 +2,6 @@
 from __future__ import unicode_literals, print_function, absolute_import
 
 
-review_group_name = "reviewers"
+REVIEW_GROUP_NAME = "reviewers"
 
+default_app_config = "pycones.reviewers.apps.ReviewersConfig"
