@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from modeltranslation.translator import TranslationOptions, translator
 
-from speakers.models import Speaker
+from pycones.speakers.models import Speaker
 
 
 class SpeakerTranslationOptions(TranslationOptions):

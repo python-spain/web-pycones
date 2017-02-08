@@ -1,5 +1,6 @@
 // Import own SCSS files that override Bootstrap
 // -----------------------------------------------------------------------------
+@import "fonts";
 @import "variables";
 
 // Import Bootstrap
@@ -20,9 +21,17 @@ html, body{
   min-height: 100%;
 }
 
+b, strong {
+  font-family: 'roble_alt_boldbold', Arial, sans-serif;
+}
+
 .claim {
   border-bottom: 5px solid $green-dark;
   margin-bottom: 15px;
+  .img-logo {
+    padding: 10px;
+    background-color: #fff;
+  }
 }
 
 footer {

@@ -11,6 +11,7 @@ class SignInForm(forms.Form):
     """Form for handle in a user can log in."""
 
     email = forms.fields.EmailField(
+        label=_("Email"),
         widget=forms.TextInput(attrs={
             "class": "form-control",
             "placeholder": _("Email"),
