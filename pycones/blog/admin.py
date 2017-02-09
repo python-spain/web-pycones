@@ -7,6 +7,6 @@ from pycones.blog.models import Post
 
 
 @admin.register(Post)
-class PostAdminForm(admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'created', 'status']
     list_filter = ('status',)
