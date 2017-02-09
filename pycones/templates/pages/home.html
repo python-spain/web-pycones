@@ -11,7 +11,7 @@
                 {% blocktrans %}
                     <strong>PyConES</strong> es la conferencia nacional sobre Python más importante de España.
                     La PyConES celebrará su quinta edición los días <strong>22 a 24 de septimebre de 2017</strong> en <strong>Cáceres</strong>, después de
-                    tres exitosas ediciones en Madrid, Zaragoza, Valencia y Almería respectivamente y siguiendo el formato del evento mundial
+                    cuatro exitosas ediciones en Madrid, Zaragoza, Valencia y Almería respectivamente y siguiendo el formato del evento mundial
                     <a href="http://pycon.org" target="_blank">PyCon</a>.
                 {% endblocktrans %}
             </p>
@@ -37,13 +37,14 @@
                         {% for sponsor in sponsors %}
                             <div class="
                                 {% if level.order == 0 %}
-                                    col-8 offset-2 text-center
+                                    col-8 offset-2
                                 {% else %}
-                                    col-6 {% if level.order < 2 %}col-sm-6{% else %}col-sm-4{% endif %} col-vertical-middle-fixed
+                                    col-6
+                                    {% if level.order < 2 %}col-md-6{% else %}col-md-4{% endif %}
                                 {% endif %}
-                                ">
+                                text-center">
                                 <a href="{{ sponsor.external_url }}" target="_blank">
-                                    <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-responsive img-sponsor">
+                                    <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-fluid sponsors-img">
                                 </a>
                             </div>
                             {% if forloop.counter|divisibleby:"2" %}
@@ -65,10 +66,10 @@
             {% endfor %}
             <hr />
             <p class="text-center loud">
-                <a href="{% static "files/es_brochure.pdf" %}" class="btn btn-primary" target="_blank">
+                <a href="{% static "files/es_brochure_v2.pdf" %}" class="btn btn-primary" target="_blank">
                     <i class="icon-download"></i> {% trans "Folleto (ES)" %}
                 </a>
-                <a href="{% static "files/en_brochure.pdf" %}" class="btn btn-primary" target="_blank">
+                <a href="{% static "files/en_brochure_v2.pdf" %}" class="btn btn-primary" target="_blank">
                     <i class="icon-download"></i> {% trans "Folleto (EN)" %}
                 </a>
             </p>

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 from django.contrib import admin
 
 from pycones.sponsorships.models import BenefitLevel, SponsorLevel, Sponsor, Benefit
@@ -28,7 +29,6 @@ class SponsorBenefitInline(admin.StackedInline):
 
 @admin.register(Sponsor)
 class SponsorAdmin(admin.ModelAdmin):
-
     save_on_top = True
     fieldsets = [
         (None, {
@@ -41,7 +41,7 @@ class SponsorAdmin(admin.ModelAdmin):
             ]
         }),
         ("Metadata", {
-            "fields": ["added"],
+            "fields": [],
             "classes": ["collapse"]
         })
     ]
@@ -52,21 +52,19 @@ class SponsorAdmin(admin.ModelAdmin):
         # @@@ kinda ugly but using choices= on NullBooleanField is broken
         form = super(SponsorAdmin, self).get_form(*args, **kwargs)
         form.base_fields["active"].widget.choices = [
-            (u"1", "unreviewed"),
-            (u"2", "approved"),
-            (u"3", "rejected")
+            ("1", "unreviewed"),
+            ("2", "approved"),
+            ("3", "rejected")
         ]
         return form
 
 
 @admin.register(Benefit)
 class BenefitAdmin(admin.ModelAdmin):
-
     list_display = ["name", "type", "description"]
     inlines = [BenefitLevelInline]
 
 
 @admin.register(SponsorLevel)
 class SponsorLevelAdmin(admin.ModelAdmin):
-
     inlines = [BenefitLevelInline]

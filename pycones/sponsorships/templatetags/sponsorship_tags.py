@@ -32,10 +32,10 @@ class SponsorsNode(template.Node):
             level = self.level.resolve(context)
             queryset = Sponsor.objects.filter(
                 level__pk=level, active=True)\
-                .order_by("added")
+                .order_by("created")
         else:
             queryset = Sponsor.objects.filter(active=True)\
-                .order_by("level__order", "added")
+                .order_by("level__order", "created")
         context[self.context_var] = queryset
         return ""
 

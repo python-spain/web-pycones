@@ -36,13 +36,13 @@ class SponsorLevel(models.Model):
 class Sponsor(TimeStampedModel):
 
     applicant = models.ForeignKey(
-        settings.AUTH_USER_MODEL, related_name="sponsorships", verbose_name=_("applicant"), null=True
+        settings.AUTH_USER_MODEL, related_name="sponsorships", verbose_name=_("applicant"), null=True, blank=True
     )
     name = models.CharField(_("Sponsor Name"), max_length=100)
     external_url = models.URLField(_("external URL"))
     annotation = models.TextField(_("annotation"), blank=True)
-    contact_name = models.CharField(_("Contact Name"), max_length=100)
-    contact_email = models.EmailField(_("Contact Email"))
+    contact_name = models.CharField(_("Contact Name"), max_length=100, null=True, blank=True)
+    contact_email = models.EmailField(_("Contact Email"), null=True, blank=True)
     level = models.ForeignKey(SponsorLevel, verbose_name=_("level"))
 
     active = models.BooleanField(_("active"), default=False)

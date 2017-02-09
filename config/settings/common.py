@@ -276,10 +276,20 @@ INSTALLED_APPS += (
 )
 TAGGIT_CASE_INSENSITIVE = True
 
+# DJANGO MODELTRANSLATION
+# ------------------------------------------------------------------------------
+# See: http://django-modeltranslation.readthedocs.io/en/latest/index.html
+INSTALLED_APPS += (
+    'modeltranslation',
+)
+
+
 # PROJECT CUSTOM SETTINGS
 # ------------------------------------------------------------------------------
 # This values may vary during the life of the conference.
-LANDING_GLOBAL_REDIRECT = env.bool('PYCONES_LANDING_GLOBAL_REDIRECT', default=True)
+LANDING_GLOBAL_REDIRECT = env.bool('PYCONES_LANDING_GLOBAL_REDIRECT', default=False)
 CONFERENCE_TITLE = "PyConES 2017"
-CONTACT_EMAIL = "contacto2017@es.pycon.org"
-SPONSORS_EMAIL = "patrocinadores2017@es.pycon.org"
+CONTACT_EMAIL = "contact2017@es.pycon.org"
+SPONSORS_EMAIL = "sponsors2017@es.pycon.org"
+CFP_EMAIL = "cfp2017@es.pycon.org"
+PRESS_EMAIL = "press2017@es.pycon.org"

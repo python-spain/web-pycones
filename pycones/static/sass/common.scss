@@ -17,3 +17,19 @@ $logo-height: 400px;
     background-size: $logo-width $logo-height;
   }
 }
+
+.col-vertical-middle-fixed {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  margin: auto -5px auto auto;
+}
+
+.claim {
+  border-bottom: 5px solid $green-dark;
+  margin-bottom: 15px;
+  .img-logo {
+    padding: 10px;
+    background-color: #fff;
+  }
+}

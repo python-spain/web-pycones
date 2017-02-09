@@ -1,8 +1,15 @@
 {% extends "blog/base.html" %}
+{% load i18n %}
 
 {% block content %}
     {% for post in posts %}
         {% include "blog/_article.html" %}
         <hr />
+        {% empty %}
+        <div class="row" style="min-height: 150px; padding-top: 50px">
+            <div class="col-12 text-center">
+                <h2>{% trans "¡Aún no hay ninguna entrada en el blog!" %}</h2>
+            </div>
+        </div>
     {% endfor %}
 {% endblock content %}

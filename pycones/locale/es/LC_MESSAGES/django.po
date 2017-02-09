@@ -1,0 +1,843 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-08 16:38+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings/common.py:68 pycones/proposals/__init__.py:16
+msgid "Español"
+msgstr ""
+
+#: config/settings/common.py:69
+msgid "Catalán"
+msgstr ""
+
+#: config/settings/common.py:70
+msgid "Gallego"
+msgstr ""
+
+#: config/settings/common.py:71
+msgid "Euskera"
+msgstr ""
+
+#: config/settings/common.py:72
+msgid "English"
+msgstr ""
+
+#: config/urls.py:36
+#, python-format
+msgid "%s Admin"
+msgstr ""
+
+#: pycones/blog/__init__.py:9
+msgid "Draft"
+msgstr ""
+
+#: pycones/blog/__init__.py:10
+msgid "Scheduled"
+msgstr ""
+
+#: pycones/blog/__init__.py:11
+msgid "Published"
+msgstr ""
+
+#: pycones/blog/models.py:44 pycones/proposals/models.py:54
+msgid "Etiquetas"
+msgstr ""
+
+#: pycones/blog/models.py:45 pycones/proposals/models.py:55
+msgid "Lista de etiquetas separadas por comas."
+msgstr ""
+
+#: pycones/blog/models.py:59
+msgid "Seguir leyendo..."
+msgstr ""
+
+#: pycones/blog/views.py:39
+msgid "Web de la PyConES 2016"
+msgstr ""
+
+#: pycones/configurations/__init__.py:9
+msgid "Float"
+msgstr ""
+
+#: pycones/configurations/__init__.py:10
+msgid "Integer"
+msgstr ""
+
+#: pycones/configurations/__init__.py:11
+msgid "String"
+msgstr ""
+
+#: pycones/configurations/models.py:18
+msgid "Parameter"
+msgstr ""
+
+#: pycones/configurations/models.py:24
+msgid "Public name of the parameter"
+msgstr ""
+
+#: pycones/configurations/models.py:38
+msgid "Value"
+msgstr ""
+
+#: pycones/proposals/__init__.py:10
+msgid "Básico"
+msgstr ""
+
+#: pycones/proposals/__init__.py:11
+msgid "Intermedio"
+msgstr ""
+
+#: pycones/proposals/__init__.py:12
+msgid "Avanzado"
+msgstr ""
+
+#: pycones/proposals/__init__.py:17
+msgid "Inglés"
+msgstr ""
+
+#: pycones/proposals/__init__.py:21
+msgid "15 minutos"
+msgstr ""
+
+#: pycones/proposals/__init__.py:22
+msgid "30 minutos"
+msgstr ""
+
+#: pycones/proposals/admin.py:51 pycones/reviewers/admin.py:37
+msgid "Media"
+msgstr ""
+
+#: pycones/proposals/admin.py:55
+msgid "Revisiones completadas"
+msgstr ""
+
+#: pycones/proposals/admin.py:59
+msgid "Revisiones asignadas"
+msgstr ""
+
+#: pycones/proposals/admin.py:63
+msgid "Lista de etiquetas"
+msgstr ""
+
+#: pycones/proposals/admin.py:67
+msgid "O0"
+msgstr ""
+
+#: pycones/proposals/admin.py:71
+msgid "O1"
+msgstr ""
+
+#: pycones/proposals/forms.py:43
+msgid "Este campo no puede estar vacío."
+msgstr ""
+
+#: pycones/proposals/forms.py:46
+msgid ""
+"¡El resumen es demasiado corto! Tiene que tener al menos 80 palabras. Ayuda "
+"al equipo organizador a seleccionar tu charla indicando un breve esquema, si "
+"habrá demos en directo o qué conocimientos previos debería tener la audiencia"
+msgstr ""
+
+#: pycones/proposals/models.py:23
+msgid "Name"
+msgstr ""
+
+#: pycones/proposals/models.py:34
+msgid "Nivel de la audiencia"
+msgstr ""
+
+#: pycones/proposals/models.py:41
+msgid "Idioma"
+msgstr ""
+
+#: pycones/proposals/models.py:47
+msgid "Duración"
+msgstr ""
+
+#: pycones/proposals/models.py:59
+msgid "Tipo de propuesta"
+msgstr ""
+
+#: pycones/proposals/models.py:61
+msgid "Título"
+msgstr ""
+
+#: pycones/proposals/models.py:63
+msgid "Breve descripción"
+msgstr ""
+
+#: pycones/proposals/models.py:65
+msgid ""
+"Si tu propuesta se acepta esto se hará público, y se incluirá en el "
+"programa. Debería ser un párrafo, con un máximo de 500 caracteres."
+msgstr ""
+
+#: pycones/proposals/models.py:69
+msgid "Resumen detallado"
+msgstr ""
+
+#: pycones/proposals/models.py:73
+#, fuzzy
+#| msgid ""
+#| "Detailed outline. Will be made public if your proposal is accepted. Edit "
+#| "using <a href='http://daringfireball.net/projects/markdown/basics' "
+#| "target='_blank'>Markdown</a>."
+msgid ""
+"Resumen detallado. Se hará pública si la propuesta se acepta. Edita usando "
+"<a href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr ""
+"Descripción detallada. Se hará publica si tu propuesta es aceptada. Edita "
+"usando <a href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+
+#: pycones/proposals/models.py:78
+msgid "Notas adicionales"
+msgstr ""
+
+#: pycones/proposals/models.py:82
+#, fuzzy
+#| msgid ""
+#| "Detailed outline. Will be made public if your proposal is accepted. Edit "
+#| "using <a href='http://daringfireball.net/projects/markdown/basics' "
+#| "target='_blank'>Markdown</a>."
+msgid ""
+"Cualquier cosa que te gustaría hacer saber a los revisores para que la "
+"tengan en cuenta al ahora de hacer la selección. Esto no se hará público. "
+"Edita usando <a href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr ""
+"Descripción detallada. Se hará publica si tu propuesta es aceptada. Edita "
+"usando <a href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+
+#: pycones/proposals/models.py:92
+msgid "Aceptada"
+msgstr ""
+
+#: pycones/proposals/models.py:93
+msgid "Notificación de aceptación enviada"
+msgstr ""
+
+#: pycones/proposals/models.py:164
+#, python-format
+msgid "[%s] Confirmación de propuesta de charla"
+msgstr ""
+
+#: pycones/proposals/models.py:183
+#, python-format
+msgid "[%s] Notificación de propuesta de charla"
+msgstr ""
+
+#: pycones/reviewers/admin.py:46
+msgid "Revisiones"
+msgstr ""
+
+#: pycones/reviewers/forms.py:33
+msgid "Debes puntuar entre 1 y 10"
+msgstr ""
+
+#: pycones/reviewers/models.py:23
+msgid "Relevancia"
+msgstr ""
+
+#: pycones/reviewers/models.py:23 pycones/reviewers/models.py:26
+#: pycones/reviewers/models.py:29
+msgid "Puntuación del 1 al 10"
+msgstr ""
+
+#: pycones/reviewers/models.py:26
+msgid "Interés General"
+msgstr ""
+
+#: pycones/reviewers/models.py:29
+msgid "Novedad"
+msgstr ""
+
+#: pycones/reviewers/models.py:32
+msgid "Notas del revisor"
+msgstr ""
+
+#: pycones/reviewers/models.py:34
+msgid "¿Existe un conflico de intereses?"
+msgstr ""
+
+#: pycones/reviewers/models.py:35
+msgid "¿Revisión finalizada?"
+msgstr ""
+
+#: pycones/reviewers/models.py:63
+#, python-format
+msgid "[%s] Tienes una nueva propuesta para revisar"
+msgstr ""
+
+#: pycones/schedules/models.py:104 pycones/schedules/models.py:233
+msgid "video URL"
+msgstr ""
+
+#: pycones/schedules/models.py:106
+msgid "keynote URL"
+msgstr ""
+
+#: pycones/schedules/models.py:107
+msgid "keynote file"
+msgstr ""
+
+#: pycones/schedules/models.py:235
+msgid "URL de la presentación o del código"
+msgstr ""
+
+#: pycones/schedules/models.py:236
+msgid "Fichero de presentación"
+msgstr ""
+
+#: pycones/schedules/views.py:90 pycones/speakers/views.py:47
+msgid "Datos actualizados correctamente"
+msgstr ""
+
+#: pycones/speakers/models.py:18
+msgid "Nombre"
+msgstr ""
+
+#: pycones/speakers/models.py:20
+msgid "Tal como quieres que apareza en el programa de la conferencia."
+msgstr ""
+
+#: pycones/speakers/models.py:23
+msgid "Biografía"
+msgstr ""
+
+#: pycones/speakers/models.py:27
+#, fuzzy
+#| msgid ""
+#| "Detailed outline. Will be made public if your proposal is accepted. Edit "
+#| "using <a href='http://daringfireball.net/projects/markdown/basics' "
+#| "target='_blank'>Markdown</a>."
+msgid ""
+"Unas palabras sobre ti. Edita usando <a href='http://warpedvisions.org/"
+"projects/markdown-cheat-sheet/target='_blank'>Markdown</a>."
+msgstr ""
+"Descripción detallada. Se hará publica si tu propuesta es aceptada. Edita "
+"usando <a href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+
+#: pycones/speakers/models.py:33
+msgid "Foto"
+msgstr ""
+
+#: pycones/sponsorships/__init__.py:10
+msgid "Text"
+msgstr ""
+
+#: pycones/sponsorships/__init__.py:11
+msgid "File"
+msgstr ""
+
+#: pycones/sponsorships/__init__.py:12
+msgid "Web Logo"
+msgstr ""
+
+#: pycones/sponsorships/__init__.py:13
+msgid "Simple"
+msgstr ""
+
+#: pycones/sponsorships/models.py:18 pycones/sponsorships/models.py:134
+msgid "name"
+msgstr ""
+
+#: pycones/sponsorships/models.py:19
+msgid "order"
+msgstr ""
+
+#: pycones/sponsorships/models.py:20
+msgid "cost"
+msgstr ""
+
+#: pycones/sponsorships/models.py:21 pycones/sponsorships/models.py:135
+msgid "description"
+msgstr ""
+
+#: pycones/sponsorships/models.py:21
+msgid "This is private."
+msgstr ""
+
+#: pycones/sponsorships/models.py:25
+msgid "sponsor level"
+msgstr ""
+
+#: pycones/sponsorships/models.py:26
+msgid "sponsor levels"
+msgstr ""
+
+#: pycones/sponsorships/models.py:39
+msgid "applicant"
+msgstr ""
+
+#: pycones/sponsorships/models.py:41
+msgid "Sponsor Name"
+msgstr ""
+
+#: pycones/sponsorships/models.py:42
+msgid "external URL"
+msgstr ""
+
+#: pycones/sponsorships/models.py:43
+msgid "annotation"
+msgstr ""
+
+#: pycones/sponsorships/models.py:44
+msgid "Contact Name"
+msgstr ""
+
+#: pycones/sponsorships/models.py:45
+msgid "Contact Email"
+msgstr ""
+
+#: pycones/sponsorships/models.py:46 pycones/sponsorships/models.py:146
+msgid "level"
+msgstr ""
+
+#: pycones/sponsorships/models.py:48 pycones/users/models.py:33
+msgid "active"
+msgstr ""
+
+#: pycones/sponsorships/models.py:60 pycones/sponsorships/models.py:162
+msgid "sponsor"
+msgstr ""
+
+#: pycones/sponsorships/models.py:61
+msgid "sponsors"
+msgstr ""
+
+#: pycones/sponsorships/models.py:136
+msgid "type"
+msgstr ""
+
+#: pycones/sponsorships/models.py:145 pycones/sponsorships/models.py:163
+msgid "benefit"
+msgstr ""
+
+#: pycones/sponsorships/models.py:149 pycones/sponsorships/models.py:167
+msgid "max words"
+msgstr ""
+
+#: pycones/sponsorships/models.py:150 pycones/sponsorships/models.py:168
+msgid "other limits"
+msgstr ""
+
+#: pycones/sponsorships/models.py:172
+msgid "text"
+msgstr ""
+
+#: pycones/sponsorships/models.py:173
+msgid "file"
+msgstr ""
+
+#: pycones/templates/emails/users/restore_email.html:3
+msgid "Entra en este enlace para establecer tu contraseña:"
+msgstr ""
+
+#: pycones/templates/headers.html:22
+msgid "Información del evento"
+msgstr ""
+
+#: pycones/templates/headers.html:26 pycones/templates/users/sign_in.html:31
+msgid "Entrar"
+msgstr ""
+
+#: pycones/templates/headers.html:28
+msgid "Salir"
+msgstr ""
+
+#: pycones/templates/headers.html:45 pycones/templates/pages/info.html:7
+msgid "Código de conducta"
+msgstr ""
+
+#: pycones/templates/headers.html:46
+msgid "Contacta con nosotros"
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:6
+msgid "Codigo de conducta"
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:7
+msgid ""
+"PyConES es una conferencia hecha por la comunidad pensada para la "
+"divulgación y colaboración dentro de la comunidad de desarrolladores."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:8
+msgid ""
+"Valoramos la participación de cada miembro de la comunidad Python y queremos "
+"que todos los asistentes tengan una experiencia entretenida y satisfactoria. "
+"Para ello, se espera que todos los asistentes muestren respeto y cortesía "
+"hacia el resto durante la conferencia y todos los eventos relacionados con "
+"ella, estén oficialmente auspiciados por PyConES o no."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:9
+msgid ""
+"En concreto, todos los delegados, disertantes, expositores y voluntarios que "
+"tomen parte en actividades relacionadas con PyConES deberán acatar el "
+"presente código de conducta. Los organizadores cuidarán del cumplimiento de "
+"este código durante el evento."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:10
+msgid ""
+"Se entiende por acoso todo comentario ofensivo alusivo al sexo, preferencias "
+"sexuales, discapacidades, aspecto físico, etnias y religiones; toda "
+"pornografía en espacios públicos; toda intimidación deliberada, acecho o "
+"persecución; todo acoso mediante fotografías o grabaciones; toda "
+"interrupción constante de charlas u otras actividades; todo contacto físico "
+"inapropiado y toda propuesta sexual no deseada."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:11
+msgid ""
+"Los participantes que sean apercibidos deberán desistir inmediatamente de su "
+"actitud."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:12
+msgid ""
+"Los expositores, las casetas o pabellones de patrocinadores o empresas y "
+"actividades similares también están sujetas a la política antiacoso. En "
+"particular, los expositores no deberían utilizar material o llevar a cabo "
+"actividades sexistas. El personal de las casetas (incluyendo voluntarios) no "
+"deberían utilizar uniformes o vestimentas sexistas, puesto que se crearía un "
+"ambiente sexualizado."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:13
+msgid ""
+"Cuida tu lenguaje. Recuerda que las bromas sexistas, racistas y excluyentes "
+"en general podrían ofender a otras personas. El lenguaje excesivamente soez "
+"y las bromas ofensivas son inapropiadas en PyConES."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:14
+msgid ""
+"Si algún participante infringiera este código de conducta, la organización "
+"podrá tomar las medidas que considere adecuadas, como la amonestación o la "
+"expulsión sin derecho a reembolso."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:15
+msgid "Información de contacto"
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:16
+msgid ""
+"Si estás siendo objeto de acoso, notas que alguien está siendo acosado, o "
+"tienes cualquier otra preocupación, por favor ponte en contacto con un "
+"miembro del personal de la conferencia. El personal de la conferencia "
+"vestirá camisetas con la inscripción \"Personal PyConES\". Además puedes "
+"hablar con el personal del lugar y pedir que se te ponga en contacto con el "
+"responsable de la conferencia - Juan Luis Cano."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:17
+msgid ""
+"Si se trata de una cuestión especialmente urgente, dirígete a cualquiera de "
+"estas personas:"
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:21
+msgid ""
+"El personal de la conferencia ayudará gustosamente a los participantes a que "
+"se pongan en contacto con el personal de seguridad del lugar o la policía "
+"local, y proporcionará escolta o socorrerá de cualquier otra forma a las "
+"víctimas de acoso para que puedan sentirse seguras durante el desarrollo de "
+"la conferencia. Tu bienestar es una de nuestras prioridades."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:22
+msgid "Gracias por hacer de este un evento abierto a la comunidad y amistoso."
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:23
+msgid "Licencia"
+msgstr ""
+
+#: pycones/templates/pages/code_of_conduct.html:25
+msgid ""
+"\n"
+"        Este Código de Conducta se basa en los códigos de conducta de PyCon "
+"US 2013\n"
+"        (<a href=\"https://us.pycon.org/2013/about/code-of-conduct/"
+"\">https://us.pycon.org/2013/about/code-of-conduct/</a>) y\n"
+"        PyConAr 2012 (<a href=\"http://ar.pycon.org/2012/conference/"
+"diversity/\">http://ar.pycon.org/2012/conference/diversity/</a>), y\n"
+"        está disponible bajo una licencia Creative Commons Atribución 3.0 "
+"España.\n"
+"    "
+msgstr ""
+
+#: pycones/templates/pages/home.html:9
+msgid "¿Que es PyConES 2017?"
+msgstr ""
+
+#: pycones/templates/pages/home.html:11
+msgid ""
+"\n"
+"                    <strong>PyConES</strong> es la conferencia nacional "
+"sobre Python más importante de España.\n"
+"                    La PyConES celebrará su quinta edición los días "
+"<strong>22 a 24 de septimebre de 2017</strong> en <strong>Cáceres</strong>, "
+"después de\n"
+"                    cuatro exitosas ediciones en Madrid, Zaragoza, Valencia "
+"y Almería respectivamente y siguiendo el formato del evento mundial\n"
+"                    <a href=\"http://pycon.org\" target=\"_blank\">PyCon</"
+"a>.\n"
+"                "
+msgstr ""
+
+#: pycones/templates/pages/home.html:18
+msgid "Ediciones anteriores"
+msgstr ""
+
+#: pycones/templates/pages/home.html:30
+msgid "Patrocinadores"
+msgstr ""
+
+#: pycones/templates/pages/home.html:60
+#, python-format
+msgid ""
+"\n"
+"                            ¿Quieres ser el primer patrocinador "
+"%(level_name)s? <a href=\"mailto:%(SPONSORS_EMAIL)s\" target=\"_blank"
+"\">¡Contacta con nosotros!</a>\n"
+"                        "
+msgstr ""
+
+#: pycones/templates/pages/home.html:69
+msgid "Folleto (ES)"
+msgstr ""
+
+#: pycones/templates/pages/home.html:72
+msgid "Folleto (EN)"
+msgstr ""
+
+#: pycones/templates/pages/info.html:9
+msgid ""
+"\n"
+"        PyConES aspira a crear un ambiente libre de acosos o "
+"discriminaciones por razón de género, orientación sexual, discapacidad, "
+"aspecto físico, etnia o religión. No se tolerará discriminación alguna bajo "
+"ninguna circunstancia.\n"
+"    "
+msgstr ""
+
+#: pycones/templates/pages/info.html:14
+msgid ""
+"\n"
+"        Todo el contenido de la conferencia deberá ajustarse a una audiencia "
+"profesional integrada por personas procedentes de sectores diferentes. Tanto "
+"el lenguaje como las imágenes sexualmente explícitos son inapropiados en la "
+"conferencia y en las charlas.\n"
+"    "
+msgstr ""
+
+#: pycones/templates/pages/info.html:19
+msgid ""
+"\n"
+"        Sé amable con los demás. No insultes o humilles a otros asistentes. "
+"Compórtate de manera profesional. Recuerda que las bromas sexistas, racistas "
+"o discriminatorias están prohibidas en la PyConES.\n"
+"    "
+msgstr ""
+
+#: pycones/templates/pages/info.html:24
+msgid ""
+"\n"
+"        Los asistentes que incumplan estas reglas podrán -a discreción de "
+"los organizadores- ser sancionados o expulsados de la conferencia sin "
+"derecho a reembolso.\n"
+"    "
+msgstr ""
+
+#: pycones/templates/pages/info.html:29
+msgid ""
+"\n"
+"        Gracias por ayudarnos a hacer este evento amistoso y abierto para "
+"todos.\n"
+"    "
+msgstr ""
+
+#: pycones/templates/pages/info.html:33
+msgid "Código de Conducta Completo"
+msgstr ""
+
+#: pycones/templates/pages/landing.html:20
+msgid ""
+"Estamos preparando la nueva edición de la PyConES, dentro de poco habrá más "
+"novedades."
+msgstr ""
+
+#: pycones/templates/users/request_code.html:5
+#: pycones/templates/users/restore.html:5
+msgid "Establece o restaura tu contraseña"
+msgstr ""
+
+#: pycones/templates/users/request_code.html:31
+msgid "Enviar"
+msgstr ""
+
+#: pycones/templates/users/restore.html:19
+msgid "Email de usuario"
+msgstr ""
+
+#: pycones/templates/users/restore.html:41
+msgid "Guardar"
+msgstr ""
+
+#: pycones/templates/users/sign_in.html:6
+msgid "Acceso de usuarios"
+msgstr ""
+
+#: pycones/templates/users/sign_in.html:34
+msgid "¿No tienes contraseña o la has olvidado?"
+msgstr ""
+
+#: pycones/users/admin.py:20
+msgid "Personal info"
+msgstr ""
+
+#: pycones/users/admin.py:21
+msgid "Permissions"
+msgstr ""
+
+#: pycones/users/admin.py:23
+msgid "Important dates"
+msgstr ""
+
+#: pycones/users/forms.py:14 pycones/users/forms.py:17
+#: pycones/users/forms.py:52 pycones/users/forms.py:93
+#: pycones/users/forms.py:95
+msgid "Email"
+msgstr ""
+
+#: pycones/users/forms.py:22
+msgid "El email es obligatorio"
+msgstr ""
+
+#: pycones/users/forms.py:27 pycones/users/forms.py:54
+#: pycones/users/forms.py:57
+msgid "Contraseña"
+msgstr ""
+
+#: pycones/users/forms.py:29
+msgid "La contraseña es obligatoria"
+msgstr ""
+
+#: pycones/users/forms.py:35 pycones/users/forms.py:70
+msgid "El email no existe"
+msgstr ""
+
+#: pycones/users/forms.py:44
+msgid "La contraseña no es correcta"
+msgstr ""
+
+#: pycones/users/forms.py:60 pycones/users/forms.py:63
+msgid "Repita la contraseña"
+msgstr ""
+
+#: pycones/users/forms.py:77
+msgid "Las contraseñas no son iguales"
+msgstr ""
+
+#: pycones/users/forms.py:84 pycones/users/forms.py:87
+msgid "Código de restauración no válido"
+msgstr ""
+
+#: pycones/users/models.py:22
+msgid "email address"
+msgstr ""
+
+#: pycones/users/models.py:24
+msgid "first name"
+msgstr ""
+
+#: pycones/users/models.py:25
+msgid "last name"
+msgstr ""
+
+#: pycones/users/models.py:28
+msgid "staff status"
+msgstr ""
+
+#: pycones/users/models.py:30
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: pycones/users/models.py:36
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: pycones/users/models.py:40
+msgid "date joined"
+msgstr ""
+
+#: pycones/users/models.py:49
+msgid "user"
+msgstr ""
+
+#: pycones/users/models.py:50
+msgid "users"
+msgstr ""
+
+#: pycones/users/models.py:75
+#, python-format
+msgid "[%s] Establece tu contraseña"
+msgstr ""
+
+#: pycones/users/views.py:90
+msgid "Se ha establecido la nueva contraseña"
+msgstr ""
+
+#: pycones/users/views.py:117
+msgid "No se ha encontrado el correo electrónico."
+msgstr ""
+
+#: pycones/users/views.py:120
+msgid ""
+"Se ha enviado un correo a tu dirección con un enlace para establecer tu "
+"contraseña."
+msgstr ""
+
+#~ msgid ""
+#~ "If your proposal is accepted this will be made public and printed in the "
+#~ "program. Should be one paragraph, maximum 500 characters."
+#~ msgstr ""
+#~ "Si tu propuesta es aceptada esto se hará público y se añadirá al "
+#~ "programa. Tiene que ser un párrafo, máximo 500 caracteres."
+
+#~ msgid ""
+#~ "Anything else you'd like the program committee to know when making their "
+#~ "selection: your past experience, etc. If it's a workshop, specify the "
+#~ "duration. This is not made public. Edit using <a href='http://"
+#~ "daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
+#~ msgstr ""
+#~ "Cualquier cosa más que quieras que los organizadores conozcan cuando "
+#~ "hagan su selección: tu experiencia, etc. Si se trata de un taller, indica "
+#~ "la duración. Esto no se hará público. Edita usando <a href='http://"
+#~ "daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."

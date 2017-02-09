@@ -1,50 +1,47 @@
 {% extends "container.html" %}
 {% load i18n %}
 {% block content %}
-    <div class="row">
-        <div class="col-sm-12 col-md-6 offset-md-3">
 
-            <h2>{% trans "Establece o restaura tu contraseña" %}</h2>
+<h2>{% trans "Establece o restaura tu contraseña" %}</h2>
 
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 
-            <form method="post" class="form-horizontal">
-                {% csrf_token %}
-                <div class="form-group {% if field.errors %}has-error{% endif %}">
-                    <label class="col-sm-4 control-label">{% trans "Email de usuario" %}</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" readonly type="text" value="{{ reviewer.user.email }}">
-                    </div>
-                </div>
-                {% for field in form %}
-                    {% if field.is_hidden %}
-                        {{ field }}
-                    {% else %}
-                        <div class="form-group {% if field.errors %}has-error{% endif %}">
-                            <label class="col-sm-4 control-label">{{ field.label }}</label>
-                            <div class="col-sm-8">
-                                {{ field }}
-                                {% if field.errors %}
-                                <span class="help-block">{{ field.errors }}</span>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-                <div class="form-group">
-                    <div class="offset-sm-4 col-sm-8">
-                        <button type="submit" class="btn btn-primary">{% trans "Guardar" %}</button>
-                    </div>
-                </div>
-            </form>
-
+<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    <div class="form-group {% if field.errors %}has-error{% endif %}">
+        <label class="col-sm-4 control-label">{% trans "Email de usuario" %}</label>
+        <div class="col-sm-8">
+            <input class="form-control" readonly type="text" value="{{ reviewer.user.email }}">
         </div>
     </div>
+    {% for field in form %}
+        {% if field.is_hidden %}
+            {{ field }}
+        {% else %}
+            <div class="form-group {% if field.errors %}has-error{% endif %}">
+                <label class="col-sm-4 control-label">{{ field.label }}</label>
+                <div class="col-sm-8">
+                    {{ field }}
+                    {% if field.errors %}
+                    <span class="help-block">{{ field.errors }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <div class="form-group">
+        <div class="offset-sm-4 col-sm-8">
+            <button type="submit" class="btn btn-primary">{% trans "Guardar" %}</button>
+        </div>
+    </div>
+</form>
+
+
 {% endblock %}
