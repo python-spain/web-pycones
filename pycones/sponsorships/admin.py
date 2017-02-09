@@ -41,7 +41,7 @@ class SponsorAdmin(admin.ModelAdmin):
             ]
         }),
         ("Metadata", {
-            "fields": ["added"],
+            "fields": [],
             "classes": ["collapse"]
         })
     ]

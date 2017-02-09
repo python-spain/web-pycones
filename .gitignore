@@ -62,3 +62,7 @@ node_modules/
 pycones/static/css/*.css
 pycones/static/js/bin/*.js
 public/
+
+
+# Media files
+pycones/media/

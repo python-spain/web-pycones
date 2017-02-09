@@ -15,6 +15,7 @@
 // -----------------------------------------------------------------------------
 @import "common";
 @import "landing";
+@import "sponsors";
 
 html, body{
   height:100%;
@@ -23,15 +24,6 @@ html, body{
 
 b, strong {
   font-family: 'roble_alt_boldbold', Arial, sans-serif;
-}
-
-.claim {
-  border-bottom: 5px solid $green-dark;
-  margin-bottom: 15px;
-  .img-logo {
-    padding: 10px;
-    background-color: #fff;
-  }
 }
 
 footer {

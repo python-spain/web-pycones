@@ -37,13 +37,14 @@
                         {% for sponsor in sponsors %}
                             <div class="
                                 {% if level.order == 0 %}
-                                    col-8 offset-2 text-center
+                                    col-8 offset-2
                                 {% else %}
-                                    col-6 {% if level.order < 2 %}col-sm-6{% else %}col-sm-4{% endif %} col-vertical-middle-fixed
+                                    col-6
+                                    {% if level.order < 2 %}col-md-6{% else %}col-md-4{% endif %}
                                 {% endif %}
-                                ">
+                                text-center">
                                 <a href="{{ sponsor.external_url }}" target="_blank">
-                                    <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-responsive img-sponsor">
+                                    <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-fluid sponsors-img">
                                 </a>
                             </div>
                             {% if forloop.counter|divisibleby:"2" %}
