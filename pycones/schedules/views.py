@@ -11,8 +11,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import View
+from options.models import Option
 
-from pycones.configurations.models import Option
 from pycones.schedules.forms import PresentationForm
 from pycones.schedules.helpers import export_to_pentabarf, export_to_xcal, export_to_icalendar
 from pycones.schedules.models import Schedule, Slot, Presentation

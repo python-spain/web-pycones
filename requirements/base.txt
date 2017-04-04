@@ -9,6 +9,7 @@ django==1.10.5
 
 # Configuration
 django-environ==0.4.1
+django-simple-options==1.0a2
 
 # Models
 django-model-utils==2.6.1

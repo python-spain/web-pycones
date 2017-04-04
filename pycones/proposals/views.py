@@ -4,9 +4,9 @@ from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
+from options.models import Option
 
 from pycones.blog.models import Post
-from pycones.configurations.models import Option
 from pycones.proposals.forms import ProposalFrom, EditProposalFrom
 from pycones.proposals.models import Proposal
 
