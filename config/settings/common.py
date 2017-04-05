@@ -136,7 +136,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
                 'pycones.utils.context_processors.project_settings',
-                'options.context_processors.options',
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
@@ -296,6 +295,7 @@ PRESS_EMAIL = "press2017@es.pycon.org"
 # ------------------------------------------------------------------------------
 # See: https://github.com/marcosgabarda/django-simple-options
 INSTALLED_APPS += ('options', )
+TEMPLATES[0]["OPTIONS"]["context_processors"] += ['options.context_processors.options']
 CONFIGURATION_DEFAULT_OPTIONS = {
     "submit_proposal_post_pk": {
         "value": 0,

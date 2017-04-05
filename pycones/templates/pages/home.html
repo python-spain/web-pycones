@@ -25,6 +25,26 @@
         </div>
     </div>
 
+    {% if activated_tickets_sale_page %}
+        <div class="row">
+            <div class="col-12">
+                <h2>{% trans "Compra de entradas" %}</h2>
+                <p class="text-center" style="margin: 35px 0 35px 0">
+                    {% if not sold_out %}
+                        <a href="https://www.ticketea.com/entradas-conferencia-pycones-2016/" title="Buy your tickets here">
+                            <img src="https://d18t9gwja9h9h.cloudfront.net/assets/images/buttons/es/buyhere.png" alt="Compra aquí tus tickets" />
+                        </a>
+                    {% else %}
+                        <a href="javascript:void(0)" class="btn btn-danger btn-lg">{% trans "¡Entradas agotadas!" %}</a>
+                    {% endif %}
+                </p>
+                <p>
+                    {% blocktrans %}Con tu entrada podrás acceder los tres días de la conferencia completos. En la entrada del edificio te cambiaremos tu entrada de ticketea (no olvides traerla) por tu acreditación y te entregaremos el WelcomePack.{% endblocktrans %}
+                </p>
+            </div>
+        </div>
+    {% endif %}
+
      <div class="row">
         <div class="col-12">
             <h2 id="sponsors"> {% trans "Patrocinadores" %}</h2>

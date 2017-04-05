@@ -9,7 +9,7 @@ class SpeakerForm(forms.ModelForm):
 
     class Meta:
         model = Speaker
-        fields = ["name", "biography", "photo"]
+        fields = ["name", "email", "biography", "photo"]
         widgets = {
             "biography": AdminMarkupTextareaWidget(attrs={"class": "form-control"}),
             "name": forms.TextInput(attrs={"class": "form-control"}),

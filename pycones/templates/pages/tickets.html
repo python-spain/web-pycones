@@ -1,0 +1,16 @@
+{% extends "container.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    {% if activated_tickets_sale_page %}
+        {% if not sold_out %}
+            <div id="tkt-content">{% trans "Compra aquí tus tickets" %}</div>
+            <script language="javascript" type="text/javascript" src="//www.ticketea.com/entradas-conferencia-pycones-2016/buy?width=600px&height=600px"></script><a href="//www.ticketea.com/entradas-conferencia-pycones-2016/" alt="PyConES 2016" title="ticketea"><img src="//www.ticketea.com/images/powered_by.png" alt="ticketea" /></a>
+        {% else %}
+            <div class="text-center">
+                <h2>{% trans "¡Entradas agotadas!" %}</h2>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "proposals/create.html" %}
+{% load i18n %}
+
+{% block form_title %}
+    <h1>{% trans "Edita tu propuesta" %}</h1>
+{% endblock form_title %}
+{% block description %}{% endblock description %}
+
+{% block buttons %}
+    <button class="btn btn-primary" type="submit">{% trans "Editar propuesta" %}</button>
+{% endblock buttons %}
