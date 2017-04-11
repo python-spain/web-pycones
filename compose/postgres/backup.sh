@@ -2,21 +2,22 @@
 # stop on errors
 set -e
 
-# we might run into trouble when using the default `postgres` user, e.g. when dropping the postgres
-# database in restore.sh. Check that something else is used here
-if [ "$POSTGRES_USER" == "postgres" ]
+# default user for postgres
+if [ "$POSTGRES_USER" == "" ]
 then
-    echo "creating a backup as the postgres user is not supported, make sure to set the POSTGRES_USER environment variable"
-    exit 1
+    POSTGRES_USER="postgres"
 fi
 
+# host is the service name
+POSTGRES_HOST="db"
+
 # export the postgres password so that subsequent commands don't ask for it
-export PGPASSWORD=$POSTGRES_PASSWORD
+export PGPASSWORD=${POSTGRES_PASSWORD}
 
 echo "creating backup"
 echo "---------------"
 
 FILENAME=backup_$(date +'%Y_%m_%dT%H_%M_%S').sql.gz
-pg_dump -h postgres -U $POSTGRES_USER | gzip > /backups/$FILENAME
+pg_dump -h ${POSTGRES_HOST} -U ${POSTGRES_USER} ${POSTGRES_DB} | gzip > /backups/${FILENAME}
 
 echo "successfully created backup $FILENAME"
