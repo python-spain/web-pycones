@@ -18,7 +18,7 @@ known_first_party=closeness-project
 multi_line_output=3
 default_section=THIRDPARTY
 
-[*.{html,css,scss,json,yml}]
+[*.{html,css,scss,json,yml,js}]
 indent_style = space
 indent_size = 2
 

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from smtplib import SMTPAuthenticationError
+
+import bleach
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core.mail import EmailMultiAlternatives

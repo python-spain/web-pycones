@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import json
+
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
+from options.models import Option
 
 from pycones.blog.models import Post
-from pycones.configurations.models import Option
 from pycones.proposals.forms import ProposalFrom, EditProposalFrom
 from pycones.proposals.models import Proposal
 
@@ -55,14 +57,18 @@ class EditProposalView(View):
     """View to edit proposals."""
     form = EditProposalFrom
 
+    @staticmethod
+    def serialize_speakers(speakers):
+        return json.dumps([{"name": speaker.name, "email": speaker.email} for speaker in speakers])
+
     def get(self, request, code):
         proposal = get_object_or_404(Proposal, code=code)
         edit_proposals_allowed = bool(Option.objects.get_value("edit_proposals_allowed", 1))
         if edit_proposals_allowed:
-            form = self.form(instance=proposal, initial={
-                "speaker_name": proposal.speaker.name,
-                "speaker_email": proposal.speaker.email,
-            })
+            form = self.form(
+                instance=proposal,
+                initial={"speakers": self.serialize_speakers(proposal.speakers.all())}
+            )
             data = {
                 "form": form,
                 "more_info_link": get_more_info_link()

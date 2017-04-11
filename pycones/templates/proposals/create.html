@@ -1,0 +1,111 @@
+{% extends "container.html" %}
+{% load i18n %}
+
+{% block body_attrs %}ng-app="pycones"{% endblock body_attrs %}
+{% block content %}
+    {% block form_title %}
+    <h1>{% trans "Envia tu propuesta para dar una charla o taller en la PyConES 2017" %}</h1>
+    {% endblock form_title %}
+    {% block description %}
+    <p>
+        {% blocktrans %}
+            ¡Está abierta la llamada a propuestas para la PyConES 2017! El plazo termina el <ins>27</ins> de julio a
+            las 00:00.
+        {% endblocktrans %}
+    </p>
+    {% endblock description %}
+    {% if more_info_link %}
+    <p><a href="{{ more_info_link }}">{% trans "Más información en el blog" %}</a></p>
+    {% endif %}
+    <form method="post" action="" style="margin-top: 25px">
+        {% csrf_token %}
+
+        <div class="form-group row{% if form.speakers.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.speakers.label }}</label>
+            <div class="col-sm-9">
+                <speakers field-id="{{ form.speakers.auto_id }}"
+                          field-name="{{ form.speakers.name }}"
+                          add-more-label="{% trans "Añadir un ponente más" %}"
+                          name-label="{% trans "Nombre" %}"
+                          email-label="{% trans "Email" %}"
+                          value="{{ form.speakers.value }}"
+                ></speakers>
+            </div>
+        </div>
+
+        <div class="form-group row{% if form.kind.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.kind.label }}</label>
+            <div class="col-sm-9">
+                {{ form.kind }}
+                <span class="help-text text-danger">{{ form.kind.errors }}</span>
+            </div>
+        </div>
+
+        <div class="form-group row{% if form.audience_level.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.audience_level.label }}</label>
+            <div class="col-sm-9">
+                {{ form.audience_level }}
+                <span class="help-text text-danger">{{ form.audience_level.errors }}</span>
+            </div>
+        </div>
+
+        <div class="form-group row{% if form.language.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.language.label }}</label>
+            <div class="col-sm-9">
+                {{ form.language }}
+                <span class="help-text text-danger">{{ form.language.errors }}</span>
+            </div>
+        </div>
+
+        <div class="form-group row{% if form.title.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.title.label }}</label>
+            <div class="col-sm-9">
+                {{ form.title }}
+                <p class="help-block">{{ form.title.help_text }}</p>
+                <span class="help-block text-danger">{{ form.title.errors }}</span>
+            </div>
+        </div>
+
+        <div class="form-group row{% if form.description.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.description.label }}</label>
+            <div class="col-sm-9">
+                {{ form.description }}
+                {% autoescape off %}
+                <p class="help-block">{{ form.description.help_text }}</p>
+                {% endautoescape %}
+                <span class="help-block text-danger">{{ form.description.errors }}</span>
+            </div>
+        </div>
+
+        <div class="form-group row{% if form.abstract.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.abstract.label }}</label>
+            <div class="col-sm-9">
+                {{ form.abstract }}
+                {% autoescape off %}
+                <p class="help-block">{{ form.abstract.help_text }}</p>
+                {% endautoescape %}
+                <span class="help-text text-danger">{{ form.abstract.errors }}</span>
+            </div>
+        </div>
+
+        <div class="form-group row{% if form.additional_notes.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.additional_notes.label }}</label>
+            <div class="col-sm-9">
+                {{ form.additional_notes }}
+                {% autoescape off %}
+                <p class="help-block">{{ form.additional_notes.help_text }}</p>
+                {% endautoescape %}
+                <span class="help-text text-danger">{{ form.additional_notes.errors }}</span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+                {% block buttons %}
+                <button class="btn btn-primary" type="submit">{% trans "Enviar propuesta" %}</button>
+                {% endblock buttons %}
+            </div>
+        </div>
+
+    </form>
+{% endblock content %}

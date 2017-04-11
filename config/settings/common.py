@@ -136,7 +136,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
                 'pycones.utils.context_processors.project_settings',
-                'pycones.configurations.context_processors.options',
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
@@ -172,7 +171,6 @@ THIRD_PARTY_APPS = tuple(
 LOCAL_APPS = (
     'pycones.utils',
     'pycones.users',
-    'pycones.configurations',
     'pycones.blog',
     'pycones.sponsorships',
     'pycones.proposals',
@@ -283,7 +281,6 @@ INSTALLED_APPS += (
     'modeltranslation',
 )
 
-
 # PROJECT CUSTOM SETTINGS
 # ------------------------------------------------------------------------------
 # This values may vary during the life of the conference.
@@ -293,3 +290,66 @@ CONTACT_EMAIL = "contact2017@es.pycon.org"
 SPONSORS_EMAIL = "sponsors2017@es.pycon.org"
 CFP_EMAIL = "cfp2017@es.pycon.org"
 PRESS_EMAIL = "press2017@es.pycon.org"
+
+# DJANGO SIMPLE OPTIONS
+# ------------------------------------------------------------------------------
+# See: https://github.com/marcosgabarda/django-simple-options
+INSTALLED_APPS += ('options', )
+TEMPLATES[0]["OPTIONS"]["context_processors"] += ['options.context_processors.options']
+CONFIGURATION_DEFAULT_OPTIONS = {
+    "submit_proposal_post_pk": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Value for the post ID with proposal instructions",
+    },
+    "submit_proposal_opened": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Set the submit of proposals opened",
+    },
+    "edit_proposals_allowed": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Set the edition of proposals",
+    },
+    "relevance_weights": {
+        "value": 1.0,
+        "type": 2,
+        "public_name": "Relevance weights",
+    },
+    "interest_weights": {
+        "value": 1.0,
+        "type": 2,
+        "public_name": "Interest weights",
+    },
+    "newness_weights": {
+        "value": 1.0,
+        "type": 2,
+        "public_name": "Newness weights",
+    },
+    "schedule_opened": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Makes the schedule visible",
+    },
+    "attendees_zone_activated": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Activates the attendees zone",
+    },
+    "sold_out": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Sets tickets as sold out",
+    },
+    "activated_tickets_sale_button": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Activates button for selling tickets",
+    },
+    "activated_tickets_sale_page": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Activates page for selling tickets",
+    },
+}

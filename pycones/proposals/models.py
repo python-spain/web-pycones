@@ -162,7 +162,7 @@ class Proposal(TimeStampedModel):
                 context=context,
                 template="emails/proposals/confirmation.html",
                 subject=_("[%s] Confirmación de propuesta de charla") % settings.CONFERENCE_TITLE,
-                to=self.speaker.email,
+                to=speaker.email,
                 from_email=settings.CONTACT_EMAIL
             )
         self.notified = True

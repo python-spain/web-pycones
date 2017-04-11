@@ -7,8 +7,8 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from model_utils.models import TimeStampedModel
+from options.models import Option
 
-from pycones.configurations.models import Option
 from pycones.utils.emails import send_email
 
 
@@ -45,7 +45,7 @@ class Review(TimeStampedModel):
         data = [self.relevance, self.interest, self.newness]
         weights = [
             Option.objects.get_value("{}_weights".format(name), 1.0) for name in ("relevance", "interest", "newness")
-            ]
+        ]
         if None not in data:
             data = zip(data, weights)
             return sum([attr * weight for attr, weight in data]) / sum(weights)

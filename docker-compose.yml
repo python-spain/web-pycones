@@ -4,14 +4,17 @@ version: '2'
 volumes:
   db-data:
     driver: local
+  db-backups:
+    driver: local
 
 services:
 
   db:
-    image: postgres:9.6
+    build: ./compose/postgres
     container_name: pycones-db
     volumes:
       - db-data:/var/lib/postgresql
+      - db-backups:/backups
     env_file: .env
     networks:
       - back-tier

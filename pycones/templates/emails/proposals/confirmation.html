@@ -1,0 +1,14 @@
+{% extends "emails/base.html" %}
+{% load i18n %}
+
+{% block body %}
+    {% blocktrans %}
+    <p>¡Hola {{ speaker }}!</p>
+    <p>Muchas gracias por enviar tu propuesta "{{ title }}", en breve nos pondremos en contacto contigo
+    para decirte si has sido seleccionado o no.</p>
+    <p>Además, te mandamos un enlace desde el que puedes editar la propuesta que has enviado. ¡El enlace
+    es privado y no deberías de compartirlo con nadie!</p>
+    {% endblocktrans %}
+    <a href="http://{{ site.domain }}{% url "proposals:edit" code %}">{% trans "Editar propuesta" %}</a>
+    <p>{% trans "¡Un saludo!" %}</p>
+{% endblock body %}

@@ -1,20 +1,23 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import json
+
 from django import forms
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from markupfield.widgets import MarkupTextarea
-
 from modeltranslation.forms import TranslationModelForm
 
 from pycones.proposals import ABSTRACT_MINIMUM_WORDS
 from pycones.proposals.models import Proposal
 from pycones.speakers.models import Speaker
+from pycones.users.models import User
 from pycones.utils.generators import random_string
 
 
 class ProposalFrom(TranslationModelForm):
+
+    speakers = forms.CharField(label=_("Ponente/s"))
 
     class Meta:
         model = Proposal
@@ -26,6 +29,7 @@ class ProposalFrom(TranslationModelForm):
             "abstract",
             "additional_notes",
             "language",
+            "speakers"
         ]
         widgets = {
             "kind": forms.Select(attrs={"class": "form-control"}),
@@ -36,6 +40,40 @@ class ProposalFrom(TranslationModelForm):
             "additional_notes": MarkupTextarea(attrs={"class": "form-control"}),
             "language": forms.Select(attrs={"class": "form-control"}),
         }
+
+    def clean_speakers(self):
+        """Parse JSON data with speakers and creates/gets them."""
+        speakers = json.loads(self.cleaned_data["speakers"])
+        if not speakers:
+            raise forms.ValidationError(_("Es obligatorio indicar un ponente al menos."))
+        speakers_models = []
+        for speaker in speakers:
+            email = speaker.get("email")
+            if not email:
+                raise forms.ValidationError(_("Es falta un correo electrónico."))
+            try:
+                speaker_model = Speaker.objects.get(user__email=email)
+                speaker_model.name = speaker.get("name", "")
+                speaker_model.save()
+            except Speaker.DoesNotExist:
+                users = User.objects.filter(email=email)
+                first_name = speaker.get("name", "").split(" ")[0]
+                last_name = " ".join(speaker.get("name", "").split(" ")[1:])
+                if not users.exists():
+                    user = User.objects.create_user(
+                        email=email,
+                        password=random_string(),
+                        first_name=first_name,
+                        last_name=last_name,
+                    )
+                else:
+                    user = users.first()
+                    user.first_name = first_name
+                    user.last_name = last_name
+                    user.save()
+                speaker_model = Speaker.objects.create(user=user, name=speaker.get("name", ""))
+            speakers_models.append(speaker_model)
+        return speakers_models
 
     def clean_abstract(self):
         abstract = self.cleaned_data["abstract"]
@@ -52,6 +90,9 @@ class ProposalFrom(TranslationModelForm):
     def save(self, commit=True):
         proposal = super(ProposalFrom, self).save(commit=False)
         proposal.save()
+        speakers = self.cleaned_data["speakers"]
+        proposal.speakers.clear()
+        proposal.speakers.add(*speakers)
         if not proposal.notified:
             proposal.notify()
         return proposal
