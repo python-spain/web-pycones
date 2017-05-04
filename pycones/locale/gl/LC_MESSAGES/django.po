@@ -1038,7 +1038,7 @@ msgstr ""
 #~ msgid "PyConES 2016"
 #~ msgstr "PyConES 2015"
 
-#~ msgid "Compra tu entradas"
+#~ msgid "Compra tus entradas"
 #~ msgstr "Merca as túas entradas"
 
 #~ msgid "Blog"
