@@ -1164,7 +1164,7 @@ msgstr "Pasahitza aldatzeko esteka bat bidali da sarrera erosi zenuen kontura"
 #~ msgid "Oradores Plenarios"
 #~ msgstr "Hizlari nagusiak"
 
-#~ msgid "Compra tu entradas"
+#~ msgid "Compra tus entradas"
 #~ msgstr "Erosi zure sarrerak"
 
 #~ msgid "Envía tu propuesta"

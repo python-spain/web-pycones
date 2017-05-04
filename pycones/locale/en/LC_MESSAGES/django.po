@@ -998,7 +998,7 @@ msgstr ""
 #~ msgid "Oradores Plenarios"
 #~ msgstr "Keynoters Speakers"
 
-#~ msgid "Compra tu entradas"
+#~ msgid "Compra tus entradas"
 #~ msgstr "Buy your tickets"
 
 #~ msgid "Envía tu propuesta"
