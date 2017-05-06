@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-08 16:38+0000\n"
+"POT-Creation-Date: 2017-05-06 03:51+0200\n"
 "PO-Revision-Date: 2016-07-23 17:43+0200\n"
 "Last-Translator: b'  <organizacion2015@lists.es.python.org>'\n"
 "Language-Team: \n"
@@ -18,31 +18,6 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.7.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
-
-#: config/settings/common.py:68 pycones/proposals/__init__.py:16
-msgid "Español"
-msgstr "Spanish"
-
-#: config/settings/common.py:69
-msgid "Catalán"
-msgstr ""
-
-#: config/settings/common.py:70
-msgid "Gallego"
-msgstr ""
-
-#: config/settings/common.py:71
-msgid "Euskera"
-msgstr ""
-
-#: config/settings/common.py:72
-msgid "English"
-msgstr ""
-
-#: config/urls.py:36
-#, python-format
-msgid "%s Admin"
-msgstr ""
 
 #: pycones/blog/__init__.py:9
 msgid "Draft"
@@ -72,30 +47,6 @@ msgstr "Go on reading..."
 msgid "Web de la PyConES 2016"
 msgstr "PyConES 2015 web"
 
-#: pycones/configurations/__init__.py:9
-msgid "Float"
-msgstr ""
-
-#: pycones/configurations/__init__.py:10
-msgid "Integer"
-msgstr ""
-
-#: pycones/configurations/__init__.py:11
-msgid "String"
-msgstr ""
-
-#: pycones/configurations/models.py:18
-msgid "Parameter"
-msgstr ""
-
-#: pycones/configurations/models.py:24
-msgid "Public name of the parameter"
-msgstr ""
-
-#: pycones/configurations/models.py:38
-msgid "Value"
-msgstr ""
-
 #: pycones/proposals/__init__.py:10
 msgid "Básico"
 msgstr "Basic"
@@ -107,6 +58,10 @@ msgstr "Intermediate"
 #: pycones/proposals/__init__.py:12
 msgid "Avanzado"
 msgstr "Advanced"
+
+#: pycones/proposals/__init__.py:16
+msgid "Español"
+msgstr "Spanish"
 
 #: pycones/proposals/__init__.py:17
 msgid "Inglés"
@@ -144,11 +99,23 @@ msgstr ""
 msgid "O1"
 msgstr ""
 
-#: pycones/proposals/forms.py:43
+#: pycones/proposals/forms.py:20
+msgid "Ponente/s"
+msgstr ""
+
+#: pycones/proposals/forms.py:48
+msgid "Es obligatorio indicar un ponente al menos."
+msgstr ""
+
+#: pycones/proposals/forms.py:53
+msgid "Es falta un correo electrónico."
+msgstr ""
+
+#: pycones/proposals/forms.py:81
 msgid "Este campo no puede estar vacío."
 msgstr ""
 
-#: pycones/proposals/forms.py:46
+#: pycones/proposals/forms.py:84
 msgid ""
 "¡El resumen es demasiado corto! Tiene que tener al menos 80 palabras. Ayuda "
 "al equipo organizador a seleccionar tu charla indicando un breve esquema, si "
@@ -303,7 +270,7 @@ msgstr "Download keynote"
 msgid "Datos actualizados correctamente"
 msgstr "Data saved correctly"
 
-#: pycones/speakers/models.py:18
+#: pycones/speakers/models.py:18 pycones/templates/proposals/create.html:29
 msgid "Nombre"
 msgstr "Name"
 
@@ -435,6 +402,74 @@ msgstr ""
 msgid "file"
 msgstr ""
 
+#: pycones/templates/blog/list.html:11
+msgid "¡Aún no hay ninguna entrada en el blog!"
+msgstr ""
+
+#: pycones/templates/emails/proposals/accepted.html:5
+#, python-format
+msgid ""
+"\n"
+"    <p>¡Hola %(speaker)s!</p>\n"
+"    <p>Tengo el placer de comunicarte que tu propuesta presentada a la "
+"%(CONFERENCE_TITLE)s que lleva por título \"%(title)s ha sido ACEPTADA.</p>\n"
+"    <p>¡Enhorabuena! Pronto publicaremos el horario de la "
+"%(CONFERENCE_TITLE)s para que podáis planificaros correctamente.</p>\n"
+"    <p>Recuerda que los ponentes también deben comprar su entrada a la "
+"conferencia, así que no te despistes si aún no tienes tu entrada y comprala "
+"ya!</p>\n"
+"    <p>Si por cualquier razón no vas a poder asistir a la conferencia, te "
+"rogamos nos lo notifiques cuanto antes al correo de contacto "
+"(contacto2016@es.pycon.org) para que podamos ajustar la agenda y avisar al "
+"siguiente en lista de espera.</p>\n"
+"    "
+msgstr ""
+
+#: pycones/templates/emails/proposals/accepted.html:12
+msgid "¡Enhorabuena y un saludo!"
+msgstr ""
+
+#: pycones/templates/emails/proposals/confirmation.html:5
+#, python-format
+msgid ""
+"\n"
+"    <p>¡Hola %(speaker)s!</p>\n"
+"    <p>Muchas gracias por enviar tu propuesta \"%(title)s\", en breve nos "
+"pondremos en contacto contigo\n"
+"    para decirte si has sido seleccionado o no.</p>\n"
+"    <p>Además, te mandamos un enlace desde el que puedes editar la propuesta "
+"que has enviado. ¡El enlace\n"
+"    es privado y no deberías de compartirlo con nadie!</p>\n"
+"    "
+msgstr ""
+
+#: pycones/templates/emails/proposals/confirmation.html:12
+#: pycones/templates/proposals/edit.html:10
+msgid "Editar propuesta"
+msgstr "Edit proposal"
+
+#: pycones/templates/emails/proposals/confirmation.html:13
+#: pycones/templates/emails/proposals/rejected.html:12
+msgid "¡Un saludo!"
+msgstr ""
+
+#: pycones/templates/emails/proposals/rejected.html:5
+#, python-format
+msgid ""
+"\n"
+"    <p>¡Hola %(speaker)s!</p>\n"
+"    <p>Lamento comunicarte que tu propuesta presentada a la "
+"%(CONFERENCE_TITLE)s que lleva por título \"%(title)s\", no ha pasado el "
+"corte y no ha sido seleccionada.</p>\n"
+"    <p>Tu propuesta ha quedado en lista de espera por si finalmente se "
+"produce alguna baja, así que ¡no te desanimes!</p>\n"
+"    <P>De todos modos nos gustaría verte este año por la "
+"%(CONFERENCE_TITLE)s, pronto publicaremos el horario y creemos que te va a "
+"resultar muy interesante.</p>\n"
+"    <p>¡Nos vemos en Almería!</p>\n"
+"    "
+msgstr ""
+
 #: pycones/templates/emails/users/restore_email.html:3
 msgid "Entra en este enlace para establecer tu contraseña:"
 msgstr "Enter this link to reset your password:"
@@ -443,19 +478,27 @@ msgstr "Enter this link to reset your password:"
 msgid "Información del evento"
 msgstr "About the event"
 
-#: pycones/templates/headers.html:26 pycones/templates/users/sign_in.html:31
-msgid "Entrar"
-msgstr "Enter"
+#: pycones/templates/headers.html:26
+msgid "Compra tus entradas"
+msgstr "Buy your tickets"
 
-#: pycones/templates/headers.html:28
+#: pycones/templates/headers.html:31
+msgid "Envía tu propuesta"
+msgstr "Submit your proposal"
+
+#: pycones/templates/headers.html:35
+msgid "Blog"
+msgstr ""
+
+#: pycones/templates/headers.html:39
 msgid "Salir"
 msgstr "Logout"
 
-#: pycones/templates/headers.html:45 pycones/templates/pages/info.html:7
+#: pycones/templates/headers.html:56 pycones/templates/pages/info.html:7
 msgid "Código de conducta"
 msgstr "Code of Conduct"
 
-#: pycones/templates/headers.html:46
+#: pycones/templates/headers.html:57
 msgid "Contacta con nosotros"
 msgstr "Contact"
 
@@ -635,7 +678,7 @@ msgid ""
 "                    <strong>PyConES</strong> es la conferencia nacional "
 "sobre Python más importante de España.\n"
 "                    La PyConES celebrará su quinta edición los días "
-"<strong>22 a 24 de septimebre de 2017</strong> en <strong>Cáceres</strong>, "
+"<strong>22 a 24 de septiembre de 2017</strong> en <strong>Cáceres</strong>, "
 "después de\n"
 "                    cuatro exitosas ediciones en Madrid, Zaragoza, Valencia "
 "y Almería respectivamente y siguiendo el formato del evento mundial\n"
@@ -648,18 +691,41 @@ msgstr ""
 "in Spain.\n"
 "PyConES will celebrate its fifth edition from <strong>September 22nd to 24th "
 "2017</strong> in <strong>Cáceres</strong>, after four successful ones in "
-"Madrid, Zaragoza, Valencia and Almeria and following the path of the <a href=\"http://"
-"pycon.org\" target=\"_blank\">PyCon international event</a>."
+"Madrid, Zaragoza, Valencia and Almeria and following the path of the <a href="
+"\"http://pycon.org\" target=\"_blank\">PyCon international event</a>."
 
 #: pycones/templates/pages/home.html:18
 msgid "Ediciones anteriores"
 msgstr "Previous editions"
 
-#: pycones/templates/pages/home.html:30
+#: pycones/templates/pages/home.html:31
+msgid "Compra de entradas"
+msgstr "Registration"
+
+#: pycones/templates/pages/home.html:34 pycones/templates/pages/home.html:35
+#: pycones/templates/pages/tickets.html:8
+msgid "Compra aquí tus tickets"
+msgstr "Buy here your tickets"
+
+#: pycones/templates/pages/home.html:38 pycones/templates/pages/tickets.html:12
+msgid "¡Entradas agotadas!"
+msgstr "Sold out!"
+
+#: pycones/templates/pages/home.html:42
+msgid ""
+"Con tu entrada podrás acceder los tres días de la conferencia completos. En "
+"la entrada del edificio te cambiaremos tu entrada de ticketea (no olvides "
+"traerla) por tu acreditación y te entregaremos el WelcomePack."
+msgstr ""
+"With your ticket you will have access for the whole conference. At the "
+"entrance we will give you your acreditation (don't forget your ticketea "
+"ticket) and your Welcome Pack."
+
+#: pycones/templates/pages/home.html:50
 msgid "Patrocinadores"
 msgstr "Sponsors"
 
-#: pycones/templates/pages/home.html:60
+#: pycones/templates/pages/home.html:81
 #, python-format
 msgid ""
 "\n"
@@ -672,11 +738,11 @@ msgstr ""
 "Do you want to be the first %(level_name)s sponsor? <a href=\"mailto:"
 "%(SPONSORS_EMAIL)s\" target=\"_blank\">Contact with us!</a>"
 
-#: pycones/templates/pages/home.html:69
+#: pycones/templates/pages/home.html:90
 msgid "Folleto (ES)"
 msgstr "Leaflet (ES)"
 
-#: pycones/templates/pages/home.html:72
+#: pycones/templates/pages/home.html:93
 msgid "Folleto (EN)"
 msgstr "Leaflet (EN)"
 
@@ -754,6 +820,53 @@ msgid ""
 "novedades."
 msgstr "We are preparing the new edition of PyConES, coming soon!"
 
+#: pycones/templates/proposals/close.html:7
+msgid "¡La llamada a propuestas ha terminado!"
+msgstr "The call for proposals is over!"
+
+#: pycones/templates/proposals/create.html:7
+msgid "Envia tu propuesta para dar una charla o taller en la PyConES 2017"
+msgstr "Submit your talk or tutorial proposal for PyConES 2017."
+
+#: pycones/templates/proposals/create.html:11
+msgid ""
+"\n"
+"            ¡Está abierta la llamada a propuestas para la PyConES 2017! El "
+"plazo termina el <ins>8</ins> de junio a\n"
+"            las doce de la noche hora española.\n"
+"        "
+msgstr ""
+"\n"
+"                    The call for proposals for PyConES 2017 is open! The "
+"deadline is June <ins>8th</ins> 00:00.\n"
+"                                   "
+
+#: pycones/templates/proposals/create.html:18
+msgid "Más información en el blog"
+msgstr "More info on the blog"
+
+#: pycones/templates/proposals/create.html:28
+msgid "Añadir un ponente más"
+msgstr ""
+
+#: pycones/templates/proposals/create.html:30 pycones/users/forms.py:14
+#: pycones/users/forms.py:17 pycones/users/forms.py:52
+#: pycones/users/forms.py:93 pycones/users/forms.py:95
+msgid "Email"
+msgstr "Email"
+
+#: pycones/templates/proposals/create.html:105
+msgid "Enviar propuesta"
+msgstr "Submit proposal"
+
+#: pycones/templates/proposals/edit.html:5
+msgid "Edita tu propuesta"
+msgstr "Edit your proposal"
+
+#: pycones/templates/proposals/success.html:6
+msgid "¡Gracias por tu propuesta!"
+msgstr "Thanks for your proposal!"
+
 #: pycones/templates/users/request_code.html:5
 #: pycones/templates/users/restore.html:5
 msgid "Establece o restaura tu contraseña"
@@ -775,6 +888,10 @@ msgstr "Save"
 msgid "Acceso de usuarios"
 msgstr "User access"
 
+#: pycones/templates/users/sign_in.html:31
+msgid "Entrar"
+msgstr "Enter"
+
 #: pycones/templates/users/sign_in.html:34
 msgid "¿No tienes contraseña o la has olvidado?"
 msgstr "You do not have a password or have you forgotten it?"
@@ -790,12 +907,6 @@ msgstr ""
 #: pycones/users/admin.py:23
 msgid "Important dates"
 msgstr ""
-
-#: pycones/users/forms.py:14 pycones/users/forms.py:17
-#: pycones/users/forms.py:52 pycones/users/forms.py:93
-#: pycones/users/forms.py:95
-msgid "Email"
-msgstr "Email"
 
 #: pycones/users/forms.py:22
 msgid "El email es obligatorio"
@@ -998,15 +1109,6 @@ msgstr ""
 #~ msgid "Oradores Plenarios"
 #~ msgstr "Keynoters Speakers"
 
-#~ msgid "Compra tus entradas"
-#~ msgstr "Buy your tickets"
-
-#~ msgid "Envía tu propuesta"
-#~ msgstr "Submit your proposal"
-
-#~ msgid "Editar propuesta"
-#~ msgstr "Edit proposal"
-
 #~ msgid "Llamada a propuestas"
 #~ msgstr "Call for proposals"
 
@@ -1027,21 +1129,6 @@ msgstr ""
 
 #~ msgid "¡Conoce más de nuestros keynoters!"
 #~ msgstr "Learn more about our keynoters!"
-
-#~ msgid "Compra de entradas"
-#~ msgstr "Registration"
-
-#~ msgid "¡Entradas agotadas!"
-#~ msgstr "Sold out!"
-
-#~ msgid ""
-#~ "Con tu entrada podrás acceder los tres días de la conferencia completos. "
-#~ "En la entrada del edificio te cambiaremos tu entrada de ticketea (no "
-#~ "olvides traerla) por tu acreditación y te entregaremos el WelcomePack."
-#~ msgstr ""
-#~ "With your ticket you will have access for the whole conference. At the "
-#~ "entrance we will give you your acreditation (don't forget your ticketea "
-#~ "ticket) and your Welcome Pack."
 
 #~ msgid "Localización"
 #~ msgstr "Location"
@@ -1138,39 +1225,6 @@ msgstr ""
 #~ "worked on projects like One Laptop Per Child and in February 2016 was "
 #~ "named \"Python Ambassador\" by the Python Software Foundation for his "
 #~ "work with Argentina in Python. "
-
-#~ msgid "Compra aquí tus tickets"
-#~ msgstr "Buy here your tickets"
-
-#~ msgid "Enviar propuesta"
-#~ msgstr "Submit proposal"
-
-#~ msgid "¡La llamada a propuestas ha terminado!"
-#~ msgstr "The call for proposals is over!"
-
-#~ msgid "Envia tu propuesta para dar una charla o taller en la PyConES 2016"
-#~ msgstr "Submit your talk or tutorial proposal for PyConES 2016."
-
-#~ msgid ""
-#~ "\n"
-#~ "            ¡Está abierta la llamada a propuestas para la PyConES 2016! "
-#~ "El plazo termina el <del>15</del> <ins>27</ins> de julio a\n"
-#~ "            las 00:00.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "                    The call for proposals for PyConES 2016 is open! The "
-#~ "deadline is July <del>15th</del> <ins>27th</ins> 00:00.\n"
-#~ "                                   "
-
-#~ msgid "Más información en el blog"
-#~ msgstr "More info on the blog"
-
-#~ msgid "Edita tu propuesta"
-#~ msgstr "Edit your proposal"
-
-#~ msgid "¡Gracias por tu propuesta!"
-#~ msgstr "Thanks for your proposal!"
 
 #~ msgid "Ver vídeo"
 #~ msgstr "See video"
