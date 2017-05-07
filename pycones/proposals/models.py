@@ -56,6 +56,11 @@ class Proposal(TimeStampedModel):
         blank=True
     )
 
+    is_beginners_friendly = models.BooleanField(
+        verbose_name=_("¿Es apta para principiantes?"),
+        default=False
+    )
+
     kind = models.ForeignKey("proposals.ProposalKind", verbose_name=_("Tipo de propuesta"))
 
     title = models.CharField(max_length=100, verbose_name=_("Título"))

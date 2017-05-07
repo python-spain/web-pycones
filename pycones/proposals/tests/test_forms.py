@@ -25,7 +25,8 @@ class ProposalFromTest(TestCase):
             "description": "bar",
             "abstract": "bla " * ABSTRACT_MINIMUM_WORDS,
             "additional_notes": "",
-            "language": "es"
+            "language": "es",
+            "is_beginners_friendly": False,
         }
         form = ProposalFrom(data)
         self.assertTrue(form.is_valid())
@@ -39,7 +40,8 @@ class ProposalFromTest(TestCase):
             "description": "bar",
             "abstract": "bla",
             "additional_notes": "",
-            "language": "es"
+            "language": "es",
+            "is_beginners_friendly": False,
         }
         form = ProposalFrom(data)
         self.assertFalse(form.is_valid())
@@ -51,7 +53,8 @@ class ProposalFromTest(TestCase):
             "description": "bar",
             "abstract": "",
             "additional_notes": "",
-            "language": "es"
+            "language": "es",
+            "is_beginners_friendly": False,
         }
         form = ProposalFrom(data)
         self.assertFalse(form.is_valid())
@@ -65,7 +68,8 @@ class ProposalFromTest(TestCase):
             "description": "bar",
             "abstract": "bla " * ABSTRACT_MINIMUM_WORDS,
             "additional_notes": "",
-            "language": "es"
+            "language": "es",
+            "is_beginners_friendly": True,
         }
         form = ProposalFrom(data)
         self.assertTrue(form.is_valid())
@@ -73,6 +77,7 @@ class ProposalFromTest(TestCase):
         self.assertEquals(1, proposal.speakers.count())
         self.assertIsInstance(proposal, Proposal)
         self.assertTrue(proposal.notified)
+        self.assertTrue(proposal.is_beginners_friendly)
 
     def test_post_proposal_more_speakers(self):
         data = {
@@ -86,7 +91,8 @@ class ProposalFromTest(TestCase):
             "description": "bar",
             "abstract": "bla " * ABSTRACT_MINIMUM_WORDS,
             "additional_notes": "",
-            "language": "es"
+            "language": "es",
+            "is_beginners_friendly": False,
         }
         form = ProposalFrom(data)
         self.assertTrue(form.is_valid())

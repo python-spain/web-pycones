@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2017\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-04 09:17+0000\n"
+"POT-Creation-Date: 2017-05-07 12:21+0000\n"
 "PO-Revision-Date: 2015-07-13 11:47+0000\n"
 "Last-Translator: Mai Giménez <mai@immutable.es>\n"
 "Language-Team: Catalan (http://www.transifex.com/python-espana/web-"
@@ -71,7 +71,9 @@ msgid "Seguir leyendo..."
 msgstr "Continua llegint"
 
 #: pycones/blog/views.py:39
-msgid "Web de la PyConES 2017"
+#, fuzzy
+#| msgid "Web de la PyConES 2017"
+msgid "Web de la PyConES 2016"
 msgstr "Web de la PyConES 2017"
 
 #: pycones/proposals/__init__.py:10
@@ -98,27 +100,27 @@ msgstr ""
 msgid "30 minutos"
 msgstr ""
 
-#: pycones/proposals/admin.py:51 pycones/reviewers/admin.py:37
+#: pycones/proposals/admin.py:52 pycones/reviewers/admin.py:37
 msgid "Media"
 msgstr ""
 
-#: pycones/proposals/admin.py:55
+#: pycones/proposals/admin.py:56
 msgid "Revisiones completadas"
 msgstr ""
 
-#: pycones/proposals/admin.py:59
+#: pycones/proposals/admin.py:60
 msgid "Revisiones asignadas"
 msgstr ""
 
-#: pycones/proposals/admin.py:63
+#: pycones/proposals/admin.py:64
 msgid "Lista de etiquetas"
 msgstr ""
 
-#: pycones/proposals/admin.py:67
+#: pycones/proposals/admin.py:68
 msgid "O0"
 msgstr ""
 
-#: pycones/proposals/admin.py:71
+#: pycones/proposals/admin.py:72
 msgid "O1"
 msgstr ""
 
@@ -126,19 +128,19 @@ msgstr ""
 msgid "Ponente/s"
 msgstr ""
 
-#: pycones/proposals/forms.py:48
+#: pycones/proposals/forms.py:50
 msgid "Es obligatorio indicar un ponente al menos."
 msgstr ""
 
-#: pycones/proposals/forms.py:53
+#: pycones/proposals/forms.py:55
 msgid "Es falta un correo electrónico."
 msgstr ""
 
-#: pycones/proposals/forms.py:81
+#: pycones/proposals/forms.py:83
 msgid "Este campo no puede estar vacío."
 msgstr ""
 
-#: pycones/proposals/forms.py:84
+#: pycones/proposals/forms.py:86
 msgid ""
 "¡El resumen es demasiado corto! Tiene que tener al menos 80 palabras. Ayuda "
 "al equipo organizador a seleccionar tu charla indicando un breve esquema, si "
@@ -161,29 +163,33 @@ msgstr ""
 msgid "Duración"
 msgstr ""
 
-#: pycones/proposals/models.py:59
+#: pycones/proposals/models.py:60
+msgid "¿Es apta para principiantes?"
+msgstr ""
+
+#: pycones/proposals/models.py:64
 msgid "Tipo de propuesta"
 msgstr ""
 
-#: pycones/proposals/models.py:61
+#: pycones/proposals/models.py:66
 msgid "Título"
 msgstr ""
 
-#: pycones/proposals/models.py:63
+#: pycones/proposals/models.py:68
 msgid "Breve descripción"
 msgstr "Descripció breu"
 
-#: pycones/proposals/models.py:65
+#: pycones/proposals/models.py:70
 msgid ""
 "Si tu propuesta se acepta esto se hará público, y se incluirá en el "
 "programa. Debería ser un párrafo, con un máximo de 500 caracteres."
 msgstr ""
 
-#: pycones/proposals/models.py:69
+#: pycones/proposals/models.py:74
 msgid "Resumen detallado"
 msgstr ""
 
-#: pycones/proposals/models.py:73
+#: pycones/proposals/models.py:78
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -198,11 +204,11 @@ msgstr ""
 "Editar amb <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 
-#: pycones/proposals/models.py:78
+#: pycones/proposals/models.py:83
 msgid "Notas adicionales"
 msgstr ""
 
-#: pycones/proposals/models.py:82
+#: pycones/proposals/models.py:87
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -218,22 +224,22 @@ msgstr ""
 "Editar amb <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 
-#: pycones/proposals/models.py:92
+#: pycones/proposals/models.py:97
 #, fuzzy
 #| msgid "Accepted"
 msgid "Aceptada"
 msgstr "Acceptat"
 
-#: pycones/proposals/models.py:93
+#: pycones/proposals/models.py:98
 msgid "Notificación de aceptación enviada"
 msgstr ""
 
-#: pycones/proposals/models.py:164
+#: pycones/proposals/models.py:169
 #, python-format
 msgid "[%s] Confirmación de propuesta de charla"
 msgstr ""
 
-#: pycones/proposals/models.py:183
+#: pycones/proposals/models.py:188
 #, python-format
 msgid "[%s] Notificación de propuesta de charla"
 msgstr ""
@@ -901,7 +907,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: pycones/templates/proposals/create.html:105
+#: pycones/templates/proposals/create.html:117
 msgid "Enviar propuesta"
 msgstr ""
 
