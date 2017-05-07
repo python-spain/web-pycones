@@ -16,6 +16,7 @@ class ProposalAdmin(admin.ModelAdmin):
         "title",
         "kind",
         "audience_level",
+        "is_beginners_friendly",
         "language",
         "get_tag_list",
         "get_avg",

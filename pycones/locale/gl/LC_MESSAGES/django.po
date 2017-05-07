@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-08 16:38+0000\n"
+"POT-Creation-Date: 2017-05-07 12:21+0000\n"
 "PO-Revision-Date: 2015-07-12 17:01+0000\n"
 "Last-Translator: Miguel González <migonzalvar@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/python-espana/web-"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "English"
 msgstr "Inglés"
 
-#: config/urls.py:36
+#: config/urls.py:38
 #, python-format
 msgid "%s Admin"
 msgstr ""
@@ -73,30 +73,6 @@ msgstr "Seguir lendo..."
 msgid "Web de la PyConES 2016"
 msgstr "Web da PyConES 2015"
 
-#: pycones/configurations/__init__.py:9
-msgid "Float"
-msgstr ""
-
-#: pycones/configurations/__init__.py:10
-msgid "Integer"
-msgstr ""
-
-#: pycones/configurations/__init__.py:11
-msgid "String"
-msgstr ""
-
-#: pycones/configurations/models.py:18
-msgid "Parameter"
-msgstr ""
-
-#: pycones/configurations/models.py:24
-msgid "Public name of the parameter"
-msgstr ""
-
-#: pycones/configurations/models.py:38
-msgid "Value"
-msgstr ""
-
 #: pycones/proposals/__init__.py:10
 msgid "Básico"
 msgstr ""
@@ -121,35 +97,47 @@ msgstr ""
 msgid "30 minutos"
 msgstr ""
 
-#: pycones/proposals/admin.py:51 pycones/reviewers/admin.py:37
+#: pycones/proposals/admin.py:52 pycones/reviewers/admin.py:37
 msgid "Media"
 msgstr ""
 
-#: pycones/proposals/admin.py:55
+#: pycones/proposals/admin.py:56
 msgid "Revisiones completadas"
 msgstr ""
 
-#: pycones/proposals/admin.py:59
+#: pycones/proposals/admin.py:60
 msgid "Revisiones asignadas"
 msgstr ""
 
-#: pycones/proposals/admin.py:63
+#: pycones/proposals/admin.py:64
 msgid "Lista de etiquetas"
 msgstr ""
 
-#: pycones/proposals/admin.py:67
+#: pycones/proposals/admin.py:68
 msgid "O0"
 msgstr ""
 
-#: pycones/proposals/admin.py:71
+#: pycones/proposals/admin.py:72
 msgid "O1"
 msgstr ""
 
-#: pycones/proposals/forms.py:43
+#: pycones/proposals/forms.py:20
+msgid "Ponente/s"
+msgstr ""
+
+#: pycones/proposals/forms.py:50
+msgid "Es obligatorio indicar un ponente al menos."
+msgstr ""
+
+#: pycones/proposals/forms.py:55
+msgid "Es falta un correo electrónico."
+msgstr ""
+
+#: pycones/proposals/forms.py:83
 msgid "Este campo no puede estar vacío."
 msgstr ""
 
-#: pycones/proposals/forms.py:46
+#: pycones/proposals/forms.py:86
 msgid ""
 "¡El resumen es demasiado corto! Tiene que tener al menos 80 palabras. Ayuda "
 "al equipo organizador a seleccionar tu charla indicando un breve esquema, si "
@@ -172,29 +160,33 @@ msgstr ""
 msgid "Duración"
 msgstr ""
 
-#: pycones/proposals/models.py:59
+#: pycones/proposals/models.py:60
+msgid "¿Es apta para principiantes?"
+msgstr ""
+
+#: pycones/proposals/models.py:64
 msgid "Tipo de propuesta"
 msgstr ""
 
-#: pycones/proposals/models.py:61
+#: pycones/proposals/models.py:66
 msgid "Título"
 msgstr ""
 
-#: pycones/proposals/models.py:63
+#: pycones/proposals/models.py:68
 msgid "Breve descripción"
 msgstr "Descrición breve"
 
-#: pycones/proposals/models.py:65
+#: pycones/proposals/models.py:70
 msgid ""
 "Si tu propuesta se acepta esto se hará público, y se incluirá en el "
 "programa. Debería ser un párrafo, con un máximo de 500 caracteres."
 msgstr ""
 
-#: pycones/proposals/models.py:69
+#: pycones/proposals/models.py:74
 msgid "Resumen detallado"
 msgstr ""
 
-#: pycones/proposals/models.py:73
+#: pycones/proposals/models.py:78
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -209,11 +201,11 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 
-#: pycones/proposals/models.py:78
+#: pycones/proposals/models.py:83
 msgid "Notas adicionales"
 msgstr ""
 
-#: pycones/proposals/models.py:82
+#: pycones/proposals/models.py:87
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -229,22 +221,22 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 
-#: pycones/proposals/models.py:92
+#: pycones/proposals/models.py:97
 #, fuzzy
 #| msgid "Accepted"
 msgid "Aceptada"
 msgstr "Aceptado"
 
-#: pycones/proposals/models.py:93
+#: pycones/proposals/models.py:98
 msgid "Notificación de aceptación enviada"
 msgstr ""
 
-#: pycones/proposals/models.py:164
+#: pycones/proposals/models.py:169
 #, python-format
 msgid "[%s] Confirmación de propuesta de charla"
 msgstr ""
 
-#: pycones/proposals/models.py:183
+#: pycones/proposals/models.py:188
 #, python-format
 msgid "[%s] Notificación de propuesta de charla"
 msgstr ""
@@ -315,7 +307,7 @@ msgstr ""
 msgid "Datos actualizados correctamente"
 msgstr ""
 
-#: pycones/speakers/models.py:18
+#: pycones/speakers/models.py:18 pycones/templates/proposals/create.html:29
 msgid "Nombre"
 msgstr ""
 
@@ -453,6 +445,74 @@ msgstr "texto"
 msgid "file"
 msgstr "arquivo"
 
+#: pycones/templates/blog/list.html:11
+msgid "¡Aún no hay ninguna entrada en el blog!"
+msgstr ""
+
+#: pycones/templates/emails/proposals/accepted.html:5
+#, python-format
+msgid ""
+"\n"
+"    <p>¡Hola %(speaker)s!</p>\n"
+"    <p>Tengo el placer de comunicarte que tu propuesta presentada a la "
+"%(CONFERENCE_TITLE)s que lleva por título \"%(title)s ha sido ACEPTADA.</p>\n"
+"    <p>¡Enhorabuena! Pronto publicaremos el horario de la "
+"%(CONFERENCE_TITLE)s para que podáis planificaros correctamente.</p>\n"
+"    <p>Recuerda que los ponentes también deben comprar su entrada a la "
+"conferencia, así que no te despistes si aún no tienes tu entrada y comprala "
+"ya!</p>\n"
+"    <p>Si por cualquier razón no vas a poder asistir a la conferencia, te "
+"rogamos nos lo notifiques cuanto antes al correo de contacto "
+"(contacto2016@es.pycon.org) para que podamos ajustar la agenda y avisar al "
+"siguiente en lista de espera.</p>\n"
+"    "
+msgstr ""
+
+#: pycones/templates/emails/proposals/accepted.html:12
+msgid "¡Enhorabuena y un saludo!"
+msgstr ""
+
+#: pycones/templates/emails/proposals/confirmation.html:5
+#, python-format
+msgid ""
+"\n"
+"    <p>¡Hola %(speaker)s!</p>\n"
+"    <p>Muchas gracias por enviar tu propuesta \"%(title)s\", en breve nos "
+"pondremos en contacto contigo\n"
+"    para decirte si has sido seleccionado o no.</p>\n"
+"    <p>Además, te mandamos un enlace desde el que puedes editar la propuesta "
+"que has enviado. ¡El enlace\n"
+"    es privado y no deberías de compartirlo con nadie!</p>\n"
+"    "
+msgstr ""
+
+#: pycones/templates/emails/proposals/confirmation.html:12
+#: pycones/templates/proposals/edit.html:10
+msgid "Editar propuesta"
+msgstr ""
+
+#: pycones/templates/emails/proposals/confirmation.html:13
+#: pycones/templates/emails/proposals/rejected.html:12
+msgid "¡Un saludo!"
+msgstr ""
+
+#: pycones/templates/emails/proposals/rejected.html:5
+#, python-format
+msgid ""
+"\n"
+"    <p>¡Hola %(speaker)s!</p>\n"
+"    <p>Lamento comunicarte que tu propuesta presentada a la "
+"%(CONFERENCE_TITLE)s que lleva por título \"%(title)s\", no ha pasado el "
+"corte y no ha sido seleccionada.</p>\n"
+"    <p>Tu propuesta ha quedado en lista de espera por si finalmente se "
+"produce alguna baja, así que ¡no te desanimes!</p>\n"
+"    <P>De todos modos nos gustaría verte este año por la "
+"%(CONFERENCE_TITLE)s, pronto publicaremos el horario y creemos que te va a "
+"resultar muy interesante.</p>\n"
+"    <p>¡Nos vemos en Almería!</p>\n"
+"    "
+msgstr ""
+
 #: pycones/templates/emails/users/restore_email.html:3
 msgid "Entra en este enlace para establecer tu contraseña:"
 msgstr ""
@@ -461,19 +521,27 @@ msgstr ""
 msgid "Información del evento"
 msgstr "Información do evento"
 
-#: pycones/templates/headers.html:26 pycones/templates/users/sign_in.html:31
-msgid "Entrar"
+#: pycones/templates/headers.html:26
+msgid "Compra tus entradas"
+msgstr "Merca as túas entradas"
+
+#: pycones/templates/headers.html:31
+msgid "Envía tu propuesta"
 msgstr ""
 
-#: pycones/templates/headers.html:28
+#: pycones/templates/headers.html:35
+msgid "Blog"
+msgstr "Blog"
+
+#: pycones/templates/headers.html:39
 msgid "Salir"
 msgstr ""
 
-#: pycones/templates/headers.html:45 pycones/templates/pages/info.html:7
+#: pycones/templates/headers.html:56 pycones/templates/pages/info.html:7
 msgid "Código de conducta"
 msgstr "Código de comportamento"
 
-#: pycones/templates/headers.html:46
+#: pycones/templates/headers.html:57
 msgid "Contacta con nosotros"
 msgstr "Contacta con nós"
 
@@ -684,7 +752,7 @@ msgid ""
 "                    <strong>PyConES</strong> es la conferencia nacional "
 "sobre Python más importante de España.\n"
 "                    La PyConES celebrará su quinta edición los días "
-"<strong>22 a 24 de septimebre de 2017</strong> en <strong>Cáceres</strong>, "
+"<strong>22 a 24 de septiembre de 2017</strong> en <strong>Cáceres</strong>, "
 "después de\n"
 "                    cuatro exitosas ediciones en Madrid, Zaragoza, Valencia "
 "y Almería respectivamente y siguiendo el formato del evento mundial\n"
@@ -704,11 +772,37 @@ msgstr ""
 msgid "Ediciones anteriores"
 msgstr "Edicións anteriores"
 
-#: pycones/templates/pages/home.html:30
+#: pycones/templates/pages/home.html:31
+msgid "Compra de entradas"
+msgstr "Merca de entradas"
+
+#: pycones/templates/pages/home.html:34 pycones/templates/pages/home.html:35
+#: pycones/templates/pages/tickets.html:8
+msgid "Compra aquí tus tickets"
+msgstr "Merca as túas entradas"
+
+#: pycones/templates/pages/home.html:38 pycones/templates/pages/tickets.html:12
+msgid "¡Entradas agotadas!"
+msgstr ""
+
+#: pycones/templates/pages/home.html:42
+msgid ""
+"Con tu entrada podrás acceder los tres días de la conferencia completos. En "
+"la entrada del edificio te cambiaremos tu entrada de ticketea (no olvides "
+"traerla) por tu acreditación y te entregaremos el WelcomePack."
+msgstr ""
+"                    Coa túa entrada poderás acceder os dous días da "
+"conferencia completos. Na entrada do edificio\n"
+"                    cambiarémoste a túa entrada de ticketea (non esquezas "
+"traela) pola túa acreditación e \n"
+"                    entregarémoste o WelcomePack.\n"
+"                "
+
+#: pycones/templates/pages/home.html:50
 msgid "Patrocinadores"
 msgstr "Patrocinadores"
 
-#: pycones/templates/pages/home.html:60
+#: pycones/templates/pages/home.html:81
 #, fuzzy, python-format
 #| msgid ""
 #| "\n"
@@ -729,11 +823,11 @@ msgstr ""
 "\">¡Contacta connosco!</a>\n"
 "                        "
 
-#: pycones/templates/pages/home.html:69
+#: pycones/templates/pages/home.html:90
 msgid "Folleto (ES)"
 msgstr "Folleto (EN)"
 
-#: pycones/templates/pages/home.html:72
+#: pycones/templates/pages/home.html:93
 msgid "Folleto (EN)"
 msgstr "Folleto (EN)"
 
@@ -853,6 +947,49 @@ msgstr ""
 "Estamos a preparar a nova edición da PyConEs, dentro de pouco haberá mais "
 "novedades."
 
+#: pycones/templates/proposals/close.html:7
+msgid "¡La llamada a propuestas ha terminado!"
+msgstr ""
+
+#: pycones/templates/proposals/create.html:7
+msgid "Envia tu propuesta para dar una charla o taller en la PyConES 2017"
+msgstr ""
+
+#: pycones/templates/proposals/create.html:11
+msgid ""
+"\n"
+"            ¡Está abierta la llamada a propuestas para la PyConES 2017! El "
+"plazo termina el <ins>8</ins> de junio a\n"
+"            las doce de la noche hora española.\n"
+"        "
+msgstr ""
+
+#: pycones/templates/proposals/create.html:18
+msgid "Más información en el blog"
+msgstr "Información do evento"
+
+#: pycones/templates/proposals/create.html:28
+msgid "Añadir un ponente más"
+msgstr ""
+
+#: pycones/templates/proposals/create.html:30 pycones/users/forms.py:14
+#: pycones/users/forms.py:17 pycones/users/forms.py:52
+#: pycones/users/forms.py:93 pycones/users/forms.py:95
+msgid "Email"
+msgstr ""
+
+#: pycones/templates/proposals/create.html:117
+msgid "Enviar propuesta"
+msgstr ""
+
+#: pycones/templates/proposals/edit.html:5
+msgid "Edita tu propuesta"
+msgstr ""
+
+#: pycones/templates/proposals/success.html:6
+msgid "¡Gracias por tu propuesta!"
+msgstr ""
+
 #: pycones/templates/users/request_code.html:5
 #: pycones/templates/users/restore.html:5
 msgid "Establece o restaura tu contraseña"
@@ -874,6 +1011,10 @@ msgstr ""
 msgid "Acceso de usuarios"
 msgstr ""
 
+#: pycones/templates/users/sign_in.html:31
+msgid "Entrar"
+msgstr ""
+
 #: pycones/templates/users/sign_in.html:34
 msgid "¿No tienes contraseña o la has olvidado?"
 msgstr ""
@@ -891,12 +1032,6 @@ msgstr ""
 #| msgid "start date"
 msgid "Important dates"
 msgstr "data de comezo"
-
-#: pycones/users/forms.py:14 pycones/users/forms.py:17
-#: pycones/users/forms.py:52 pycones/users/forms.py:93
-#: pycones/users/forms.py:95
-msgid "Email"
-msgstr ""
 
 #: pycones/users/forms.py:22
 msgid "El email es obligatorio"
@@ -1038,29 +1173,8 @@ msgstr ""
 #~ msgid "PyConES 2016"
 #~ msgstr "PyConES 2015"
 
-#~ msgid "Compra tus entradas"
-#~ msgstr "Merca as túas entradas"
-
-#~ msgid "Blog"
-#~ msgstr "Blog"
-
 #~ msgid "PyConES"
 #~ msgstr "PyConES"
-
-#~ msgid "Compra de entradas"
-#~ msgstr "Merca de entradas"
-
-#~ msgid ""
-#~ "Con tu entrada podrás acceder los tres días de la conferencia completos. "
-#~ "En la entrada del edificio te cambiaremos tu entrada de ticketea (no "
-#~ "olvides traerla) por tu acreditación y te entregaremos el WelcomePack."
-#~ msgstr ""
-#~ "                    Coa túa entrada poderás acceder os dous días da "
-#~ "conferencia completos. Na entrada do edificio\n"
-#~ "                    cambiarémoste a túa entrada de ticketea (non esquezas "
-#~ "traela) pola túa acreditación e \n"
-#~ "                    entregarémoste o WelcomePack.\n"
-#~ "                "
 
 #~ msgid ""
 #~ "\n"
@@ -1104,9 +1218,3 @@ msgstr ""
 #~ msgstr ""
 #~ "\n"
 #~ "Gracias por axudarnos a facer este evento amigable e aberto para todos."
-
-#~ msgid "Compra aquí tus tickets"
-#~ msgstr "Merca as túas entradas"
-
-#~ msgid "Más información en el blog"
-#~ msgstr "Información do evento"

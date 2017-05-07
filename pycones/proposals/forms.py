@@ -24,6 +24,7 @@ class ProposalFrom(TranslationModelForm):
         fields = [
             "kind",
             "audience_level",
+            "is_beginners_friendly",
             "title",
             "description",
             "abstract",
@@ -39,6 +40,7 @@ class ProposalFrom(TranslationModelForm):
             "abstract": MarkupTextarea(attrs={"class": "form-control"}),
             "additional_notes": MarkupTextarea(attrs={"class": "form-control"}),
             "language": forms.Select(attrs={"class": "form-control"}),
+            "is_beginners_friendly": forms.CheckboxInput(attrs={"class": "form-check-input"}),
         }
 
     def clean_speakers(self):
