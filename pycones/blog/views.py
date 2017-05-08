@@ -34,9 +34,9 @@ class PostDetailsView(View):
 class PostsFeed(Feed):
     """Feed RSS."""
 
-    title = "PyConES 2016"
+    title = "PyConES 2017"
     link = "/blog/"
-    description = _("Web de la PyConES 2016")
+    description = _("Web de la PyConES 2017")
 
     def items(self):
         return Post.objects.filter(status=PUBLISHED).order_by('-created')

@@ -18,18 +18,18 @@ def export_to_pentabarf(schedule):
     # Conference
     conference_element = ElementTree.SubElement(schedule_root, 'conference')
     title = ElementTree.SubElement(conference_element, 'title')
-    title.text = "PyConES 2016"
+    title.text = "PyConES 2017"
     ElementTree.SubElement(conference_element, 'subtitle')
     venue = ElementTree.SubElement(conference_element, 'venue')
-    venue.text = "Universidad de Almería"
+    venue.text = "Complejo Cultural San Francisco, Cáceres"
     start = ElementTree.SubElement(conference_element, 'start')
-    start.text = "2016-10-07"
+    start.text = "2017-09-22"
     end = ElementTree.SubElement(conference_element, 'end')
-    end.text = "2016-10-09"
+    end.text = "2017-09-24"
     days = ElementTree.SubElement(conference_element, 'days')
     days.text = str(schedule.day_set.count())
     timeslot_duration = ElementTree.SubElement(conference_element, 'timeslot_duration')
-    timeslot_duration.text = "00:40"
+    timeslot_duration.text = "00:30"
 
     # Days
     for index, day in enumerate(schedule.day_set.all()):
