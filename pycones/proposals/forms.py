@@ -50,9 +50,14 @@ class ProposalFrom(TranslationModelForm):
             raise forms.ValidationError(_("Es obligatorio indicar un ponente al menos."))
         speakers_models = []
         for speaker in speakers:
+            name = speaker.get("name")
             email = speaker.get("email")
-            if not email:
+            if not email and name:
                 raise forms.ValidationError(_("Es falta un correo electrónico."))
+            if email and not name:
+                raise forms.ValidationError(_("Es falta un nombre."))
+            if not email and not name:
+                continue
             try:
                 speaker_model = Speaker.objects.get(user__email=email)
                 speaker_model.name = speaker.get("name", "")

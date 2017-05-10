@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.contrib.syndication.views import Feed
 from django.core.urlresolvers import reverse
 from django.utils.feedgenerator import Atom1Feed
@@ -34,9 +35,9 @@ class PostDetailsView(View):
 class PostsFeed(Feed):
     """Feed RSS."""
 
-    title = "PyConES 2016"
+    title = settings.CONFERENCE_TITLE
     link = "/blog/"
-    description = _("Web de la PyConES 2016")
+    description = _("Web de la %s") % settings.CONFERENCE_TITLE
 
     def items(self):
         return Post.objects.filter(status=PUBLISHED).order_by('-created')

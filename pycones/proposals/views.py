@@ -28,7 +28,7 @@ class SubmitProposalView(View):
     @staticmethod
     def get(request):
         is_submit_proposal_opened = bool(Option.objects.get_value("submit_proposal_opened", 1))
-        if is_submit_proposal_opened:
+        if is_submit_proposal_opened or request.user.is_authenticated and request.user.is_staff:
             form = ProposalFrom()
             data = {
                 "form": form,
@@ -40,7 +40,7 @@ class SubmitProposalView(View):
     @staticmethod
     def post(request):
         is_submit_proposal_opened = bool(Option.objects.get_value("submit_proposal_opened", 1))
-        if not is_submit_proposal_opened:
+        if not (is_submit_proposal_opened or request.user.is_authenticated and request.user.is_staff):
             return render(request, "proposals/close.html")
         form = ProposalFrom(request.POST)
         data = {
@@ -67,7 +67,7 @@ class EditProposalView(View):
         if edit_proposals_allowed:
             form = self.form(
                 instance=proposal,
-                initial={"speakers": self.serialize_speakers(proposal.speakers.all())}
+                initial={"speakers": self.serialize_speakers(proposal.speakers.order_by("created"))}
             )
             data = {
                 "form": form,
