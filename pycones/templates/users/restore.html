@@ -15,22 +15,22 @@
 
 <form method="post" class="form-horizontal">
     {% csrf_token %}
-    <div class="form-group {% if field.errors %}has-error{% endif %}">
-        <label class="col-sm-4 control-label">{% trans "Email de usuario" %}</label>
+    <div class="form-group row{% if field.errors %} has-danger{% endif %}">
+        <label class="col-sm-4 col-form-label">{% trans "Email de usuario" %}</label>
         <div class="col-sm-8">
-            <input class="form-control" readonly type="text" value="{{ reviewer.user.email }}">
+            <input class="form-control" readonly type="text" value="{{ user.email }}">
         </div>
     </div>
     {% for field in form %}
         {% if field.is_hidden %}
             {{ field }}
         {% else %}
-            <div class="form-group {% if field.errors %}has-error{% endif %}">
-                <label class="col-sm-4 control-label">{{ field.label }}</label>
+            <div class="form-group row{% if field.errors %} has-danger{% endif %}">
+                <label class="col-sm-4 col-form-label">{{ field.label }}</label>
                 <div class="col-sm-8">
                     {{ field }}
                     {% if field.errors %}
-                    <span class="help-block">{{ field.errors }}</span>
+                    <span class="form-control-feedback">{{ field.errors }}</span>
                     {% endif %}
                 </div>
             </div>

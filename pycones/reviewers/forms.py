@@ -3,11 +3,15 @@ from __future__ import unicode_literals
 
 from django import forms
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import Group
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
 from pycones.reviewers import REVIEW_GROUP_NAME
-from pycones.reviewers.models import Review
+from pycones.reviewers.models import Review, Reviewer
+from pycones.speakers.models import Speaker
+from pycones.users.models import User
+from pycones.utils.generators import random_string
 
 
 class ReviewForm(forms.ModelForm):
@@ -62,5 +66,35 @@ class ReviewAdminForm(forms.ModelForm):
         cleaned_data = super(ReviewAdminForm, self).clean()
         user = cleaned_data.get("user")
         proposal = cleaned_data.get("proposal")
-        if user == proposal.speaker.user:
+        if user in [speaker.user for speaker in proposal.speakers.all()]:
             raise forms.ValidationError("You can not assign a review to its author!")
+
+
+class ReviewerSignUpForm(forms.Form):
+    """Form to allow a user to be registered as a reviewer. It should
+    work in the same than the case the user wants to restore his
+    password.
+    """
+
+    email = forms.EmailField(widget=forms.EmailInput(attrs={"class": "form-control"}))
+
+    def clean_email(self):
+        email = self.cleaned_data["email"]
+        if Speaker.objects.filter(user__email=email).exists():
+            raise forms.ValidationError(_("Un posible ponente no puede registrarse como revisor."))
+        if Reviewer.objects.filter(user__email=email):
+            raise forms.ValidationError(_("Ya estás registrado como revisor."))
+        return email
+
+    def save(self):
+        email = self.cleaned_data["email"]
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            user = User.objects.create_user(email=email, password=random_string())
+        # Create reviewer profile
+        group = Group.objects.get(name=REVIEW_GROUP_NAME)
+        user.groups.add(group)
+        # Sends restore password
+        user.send_restore_password_link()
+        return user
