@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from modeltranslation.translator import TranslationOptions, translator
 
-from pycones.proposals.models import ProposalKind,  Proposal
+from pycones.proposals.models import ProposalKind, Proposal
 
 
 class ProposalKindTranslationOptions(TranslationOptions):

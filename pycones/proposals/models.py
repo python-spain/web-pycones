@@ -15,6 +15,7 @@ from pycones.proposals import PROPOSAL_LEVELS, BASIC_LEVEL, PROPOSAL_LANGUAGES, 
 from pycones.reviewers.models import Reviewer
 from pycones.utils.emails import send_email
 from pycones.utils.generators import random_string
+from pycones.utils.translations import get_translated_markdown_field
 
 
 @python_2_unicode_compatible
@@ -99,6 +100,14 @@ class Proposal(TimeStampedModel):
     code = models.CharField(max_length=64, null=True, blank=True)
 
     @property
+    def translated_abstract(self):
+        return get_translated_markdown_field(self, "abstract")
+
+    @property
+    def translated_additional_notes(self):
+        return get_translated_markdown_field(self, "additional_notes")
+
+    @property
     def avg(self):
         data = [review.avg() for review in self.reviews.filter(finished=True) if review.avg() is not None]
         if data:
@@ -115,7 +124,11 @@ class Proposal(TimeStampedModel):
 
     @property
     def tag_list(self):
-        return u", ".join(tag.name for tag in self.tags.all())
+        return ", ".join(tag.name for tag in self.tags.all())
+
+    @property
+    def speakers_list(self):
+        return ", ".join(["%s <%s>" % (speaker.name, speaker.email) for speaker in self.speakers.all()])
 
     @property
     def renormalization_o0(self):

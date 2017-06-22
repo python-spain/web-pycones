@@ -32,16 +32,16 @@ class ProposalAdmin(admin.ModelAdmin):
     actions = [
         export_as_csv_action("CSV Export", fields=[
             "id",
-            "title",
-            "kind",
             "audience_level",
             "language",
-            "avg",
-            "renormalization_o0",
-            "renormalization_o1",
-            "assigned_reviews",
-            "completed_reviews",
-            "tag_list"
+            "duration",
+            "is_beginners_friendly",
+            "kind",
+            "title",
+            "description",
+            "translated_abstract",
+            "translated_additional_notes",
+            "speakers_list"
         ]),
         send_confirmation_action("Sends confirmation email"),
         send_acceptance_action("Sends acceptance email")
