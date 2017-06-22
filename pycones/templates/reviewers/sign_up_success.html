@@ -1,0 +1,14 @@
+{% extends "container.html" %}
+{% load i18n %}
+
+{% block content %}
+    <div style="min-height: 350px; padding-top: 150px;">
+        <h2 class="text-center">{% trans "¡Gracias registrarte!" %}</h2>
+        <p class="text-center">
+            {% blocktrans %}
+                Te hemos enviado un correo electrónico para que establezcas tu contraseña
+                y puedas acceder al listado de revisiones que se te asignarán.
+            {% endblocktrans %}
+        </p>
+    </div>
+{% endblock content %}

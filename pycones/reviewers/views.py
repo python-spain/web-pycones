@@ -75,7 +75,7 @@ class ReviewerSignUpView(View):
         form = ReviewerSignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(reverse("home"))
+            return redirect(reverse("reviewers:sign-up-success"))
         data = {
             "form": form
         }
