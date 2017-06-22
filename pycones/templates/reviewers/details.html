@@ -1,0 +1,48 @@
+{% extends "reviewers/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h2>{% trans "Puntuar propuesta" %} - {{ proposal.title }}</h2>
+    <hr />
+    <form method="post" action="">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group row{% if field.errors %} has-danger{% endif %}">
+                {% if field.name == "conflict" or field.name == "finished" %}
+                    <div class="checkbox">
+                        <label>
+                            {{ field }} {{ field.label }}
+                        </label>
+                    </div>
+                {% else %}
+                    <label for="{{ field.auto_id }}">{{ field.label }}</label>
+                    {{ field }}
+                {% endif %}
+                <span class="form-control-feedback">{{ field.help_text }}</span>
+                <span class="form-control-feedback">{{ field.errors }}</span>
+            </div>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">{% trans "Guardar" %}</button>
+            <a href="{% url "reviewers:list" %}" class="btn btn-danger">{% trans "Volver" %}</a>
+        </div>
+    </form>
+
+
+    <p><strong>{% trans "Tipo de propuesta" %}:</strong> {{ proposal.kind }}</p>
+    <p><strong>{% trans "Nivel de la audiencia" %}:</strong> {{ proposal.get_audience_level_display }}</p>
+    <p><strong>{% trans "Idioma" %}:</strong> {{ proposal.get_language_display }}</p>
+    <p>
+        <strong>{% trans "Breve descripción" %}</strong><br />
+        {{ proposal.description }}
+    </p>
+    <p>
+        <strong>{% trans "Resumen detallado" %}</strong><br />
+        {{ proposal.abstract }}
+    </p>
+    <p>
+        <strong>{% trans "Notas adicionales" %}</strong><br />
+        {{ proposal.additional_notes }}
+    </p>
+
+{% endblock content %}

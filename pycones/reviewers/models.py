@@ -19,37 +19,15 @@ class Review(TimeStampedModel):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="reviews")
     proposal = models.ForeignKey("proposals.Proposal", related_name="reviews")
 
-    relevance = models.PositiveIntegerField(
-        verbose_name=_("Relevancia"), null=True, blank=True, help_text=_("Puntuación del 1 al 10")
-    )
-    interest = models.PositiveIntegerField(
-        verbose_name=_("Interés General"), null=True, blank=True, help_text=_("Puntuación del 1 al 10")
-    )
-    newness = models.PositiveIntegerField(
-        verbose_name=_("Novedad"), null=True, blank=True, help_text=_("Puntuación del 1 al 10")
-    )
+    score = models.FloatField(null=True, blank=True, help_text=_("Puntuación del 1.0 al 4.0"))
 
     notes = models.TextField(verbose_name=_("Notas del revisor"), blank=True, null=True)
 
-    conflict = models.BooleanField(verbose_name=_("¿Existe un conflico de intereses?"), default=False)
+    conflict = models.BooleanField(verbose_name=_("¿Existe un conflicto de intereses?"), default=False)
     finished = models.BooleanField(verbose_name=_("¿Revisión finalizada?"), default=False)
 
     class Meta:
         unique_together = ["user", "proposal"]
-
-    @property
-    def avg_property(self):
-        return self.avg()
-
-    def avg(self):
-        data = [self.relevance, self.interest, self.newness]
-        weights = [
-            Option.objects.get_value("{}_weights".format(name), 1.0) for name in ("relevance", "interest", "newness")
-        ]
-        if None not in data:
-            data = zip(data, weights)
-            return sum([attr * weight for attr, weight in data]) / sum(weights)
-        return None
 
     def notify(self):
         context = {

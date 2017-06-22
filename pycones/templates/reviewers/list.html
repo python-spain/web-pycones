@@ -1,0 +1,41 @@
+{% extends "container.html" %}
+{% load i18n %}
+{% load humanize %}
+{% load reviewers_extra %}
+
+{% block content %}
+<h2>{% trans "Listado de revisiones asignadas" %}</h2>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>{% trans "Título" %}</th>
+            {% if request.user.is_superuser %}
+            <th>{% trans "Revisor" %}</th>
+            {% endif %}
+            <th>{% trans "Puntuación" %}</th>
+            <th>{% trans "¿Conflicto de intereses?" %}</th>
+            <th>{% trans "¿Finalizada?" %}</th>
+            <th>{% trans "Acciones" %}</th>
+        </tr>
+    </thead>
+    {% for review in reviews %}
+        <tr>
+            <th>{{ review.proposal.title }}</th>
+            {% if request.user.is_superuser %}
+            <td>{{ review.user.get_full_name }}</td>
+            {% endif %}
+            <td>{{ review.score|default:"-"|floatformat:2|intcomma }}</td>
+            <td>{{ review.conflict|iconic }}</td>
+            <td>{{ review.finished|iconic }}</td>
+            <td>
+                <a href="{% url "reviewers:details" review.pk %}" class="btn btn-success">{% trans "Acceder" %}</a>
+            </td>
+        </tr>
+    {% empty %}
+        <tr>
+            <td colspan="{% if request.user.is_superuser %}6{% else %}5{% endif %}">{% trans "No tienes ninguna revisión asignada aún" %}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

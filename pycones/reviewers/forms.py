@@ -18,14 +18,9 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = Review
-        fields = ["relevance", "interest", "newness", "notes", "conflict", "finished"]
+        fields = ["score", "notes", "conflict", "finished"]
         widgets = {
-            "relevance": forms.NumberInput(attrs={"class": "form-control",
-                                                  "min": "1", "max": "10", "step": "1"}),
-            "interest": forms.NumberInput(attrs={"class": "form-control",
-                                                 "min": "1", "max": "10", "step": "1"}),
-            "newness": forms.NumberInput(attrs={"class": "form-control",
-                                                "min": "1", "max": "10", "step": "1"}),
+            "score": forms.NumberInput(attrs={"class": "form-control", "min": "1", "max": "4", "step": "0.1"}),
             "notes": forms.Textarea(attrs={"class": "form-control"}),
         }
 
@@ -33,21 +28,13 @@ class ReviewForm(forms.ModelForm):
     def _clean_metric(metric):
         if metric is None:
             return metric
-        if 0 >= metric or metric > 10:
-            raise forms.ValidationError(_("Debes puntuar entre 1 y 10"))
+        if 0.0 >= metric or metric > 4.0:
+            raise forms.ValidationError(_("Debes puntuar entre 1.0 y 4"))
         return metric
 
-    def clean_interest(self):
-        interest = self.cleaned_data.get("interest")
-        return self._clean_metric(interest)
-
-    def clean_relevance(self):
-        relevance = self.cleaned_data.get("relevance")
-        return self._clean_metric(relevance)
-
-    def clean_newness(self):
-        newness = self.cleaned_data.get("newness")
-        return self._clean_metric(newness)
+    def clean_score(self):
+        score = self.cleaned_data.get("score")
+        return self._clean_metric(score)
 
 
 class ReviewAdminForm(forms.ModelForm):
