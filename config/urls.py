@@ -19,7 +19,7 @@ urlpatterns = i18n_patterns(
     url(r'^blog/', include('pycones.blog.urls', namespace="blog")),
     url(r'^users/', include('pycones.users.urls', namespace="users")),
     url(r'^proposals/', include('pycones.proposals.urls', namespace="proposals")),
-
+    url(r'^reviewers/', include('pycones.reviewers.urls', namespace="reviewers")),
 )
 
 # URLs without i18n

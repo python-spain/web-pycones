@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 
 from pycones.reviewers import REVIEW_GROUP_NAME
-from pycones.reviewers.forms import ReviewForm
+from pycones.reviewers.forms import ReviewForm, ReviewerSignUpForm
 from pycones.reviewers.models import Review
 
 
@@ -59,3 +59,24 @@ class ReviewView(BaseReviewerView):
         }
         return render(request, self.template_name, data)
 
+
+class ReviewerSignUpView(View):
+    """View to register a reviewer."""
+    template_name = "reviewers/sign_up.html"
+
+    def get(self, request):
+        form = ReviewerSignUpForm()
+        data = {
+            "form": form
+        }
+        return render(request, self.template_name, data)
+
+    def post(self, request):
+        form = ReviewerSignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse("home"))
+        data = {
+            "form": form
+        }
+        return render(request, self.template_name, data)

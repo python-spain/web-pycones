@@ -11,7 +11,7 @@ from .actions import export_as_csv_action
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ["id", "proposal", "user", "relevance", "interest", "newness", "get_avg", "conflict", "finished",
+    list_display = ["id", "proposal", "user", "score", "conflict", "finished",
                     "created"]
     list_filter = ["proposal", "user", "conflict", "finished"]
 
@@ -20,10 +20,7 @@ class ReviewAdmin(admin.ModelAdmin):
             "id",
             "proposal",
             "user",
-            "relevance",
-            "interest",
-            "newness",
-            "avg_property",
+            "score",
             "conflict",
             "finished",
             "created",
@@ -31,10 +28,6 @@ class ReviewAdmin(admin.ModelAdmin):
     ]
 
     form = ReviewAdminForm
-
-    def get_avg(self, instance):
-        return instance.avg()
-    get_avg.short_description = _("Media")
 
 
 @admin.register(Reviewer)
