@@ -1,6 +1,8 @@
 from braces.views import GroupRequiredMixin
+from django.contrib import messages
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic import View
 
 from pycones.reviewers import REVIEW_GROUP_NAME
@@ -51,7 +53,9 @@ class ReviewView(BaseReviewerView):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
+            messages.success(request, _("Se ha guardado la revisión"))
             return redirect(reverse("reviewers:details", kwargs={"pk": review.pk}))
+        messages.error(request, _("Ha habido algún problema guardando tu revisión"))
         data = {
             "review": review,
             "proposal": review.proposal,
