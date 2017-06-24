@@ -1,12 +1,11 @@
 from braces.views import GroupRequiredMixin
-from django.contrib import messages
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
-from django.utils.translation import ugettext_lazy as _
 from django.views.generic import View
 
 from pycones.reviewers import REVIEW_GROUP_NAME
 from pycones.reviewers.forms import ReviewForm, ReviewerSignUpForm
+from pycones.reviewers.helpers import create_reviews
 from pycones.reviewers.models import Review
 
 
@@ -19,10 +18,8 @@ class ReviewListView(BaseReviewerView):
     template_name = "reviewers/list.html"
 
     def get(self, request):
-        if request.user.is_superuser:
-            reviews = Review.objects.all()
-        else:
-            reviews = Review.objects.filter(user=request.user)
+        create_reviews(request.user)
+        reviews = Review.objects.filter(user=request.user)
         data = {
             "reviews": reviews
         }
@@ -53,9 +50,7 @@ class ReviewView(BaseReviewerView):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
-            messages.success(request, _("Se ha guardado la revisión"))
             return redirect(reverse("reviewers:details", kwargs={"pk": review.pk}))
-        messages.error(request, _("Ha habido algún problema guardando tu revisión"))
         data = {
             "review": review,
             "proposal": review.proposal,
