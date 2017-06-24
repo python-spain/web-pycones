@@ -1,0 +1,16 @@
+{% extends "emails/base.html" %}
+{% load i18n %}
+
+{% block body %}
+    {% blocktrans %}
+    <p>¡Hola {{ first_name }}!</p>
+    <p>Se te ha asignado una propuesta para revisar, titulada: "{{ title }}"</p>
+    <p>Para realizar tu revisión a esta y a otras que tengas asignadas puedes acceder directamente pinchando en el
+    siguiente enlace:</p>
+    {% endblocktrans %}
+
+    <a href="http://{{ site.domain }}{% url "reviewers:list" %}">{% trans "Revisar propuestas" %}</a>
+
+    <p>{% trans "¡Un saludo!" %}</p>
+
+{% endblock body %}

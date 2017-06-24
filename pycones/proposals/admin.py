@@ -4,9 +4,10 @@ from __future__ import unicode_literals
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from pycones.proposals.actions import export_as_csv_action, send_confirmation_action, send_acceptance_action
+from pycones.proposals.actions import send_confirmation_action, send_acceptance_action
 from pycones.proposals.models import Proposal
 from pycones.proposals.models import ProposalKind
+from pycones.utils.actions import export_as_csv_action
 
 
 @admin.register(Proposal)
@@ -18,10 +19,9 @@ class ProposalAdmin(admin.ModelAdmin):
         "audience_level",
         "is_beginners_friendly",
         "language",
-        "get_tag_list",
         "get_avg",
-        'get_o0',
-        'get_o1',
+        "get_o0",
+        "get_o1",
         "get_assigned_reviews",
         "get_completed_reviews",
         "notified",

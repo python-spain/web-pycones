@@ -22,19 +22,17 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             "score": forms.NumberInput(attrs={"class": "form-control", "min": "1", "max": "4", "step": "0.1"}),
             "notes": forms.Textarea(attrs={"class": "form-control"}),
+            "conflict": forms.CheckboxInput(attrs={"class": "form-check-input"}),
+            "finished": forms.CheckboxInput(attrs={"class": "form-check-input"}),
         }
-
-    @staticmethod
-    def _clean_metric(metric):
-        if metric is None:
-            return metric
-        if 0.0 >= metric or metric > 4.0:
-            raise forms.ValidationError(_("Debes puntuar entre 1.0 y 4"))
-        return metric
 
     def clean_score(self):
         score = self.cleaned_data.get("score")
-        return self._clean_metric(score)
+        if score is None:
+            return score
+        if 0.0 >= score or score > 4.0:
+            raise forms.ValidationError(_("Debes puntuar entre 1.0 y 4.0"))
+        return round(score, 1)
 
 
 class ReviewAdminForm(forms.ModelForm):

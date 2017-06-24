@@ -19,7 +19,7 @@ class Review(TimeStampedModel):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="reviews")
     proposal = models.ForeignKey("proposals.Proposal", related_name="reviews")
 
-    score = models.FloatField(null=True, blank=True, help_text=_("Puntuación del 1.0 al 4.0"))
+    score = models.FloatField(verbose_name=_("Puntuación"), null=True, blank=True, help_text=_("Puntuación del 1.0 al 4.0"))
 
     notes = models.TextField(verbose_name=_("Notas del revisor"), blank=True, null=True)
 
@@ -63,19 +63,9 @@ class Reviewer(TimeStampedModel):
         return Review.objects.filter(user=self.user).count()
 
     def mean(self):
-        values = []
-        for review in Review.objects.filter(user=self.user):
-            values.append(review.relevance or 0)
-            values.append(review.interest or 0)
-            values.append(review.newness or 0)
-
+        values = [review.score or 0 for review in Review.objects.filter(user=self.user)]
         return np.mean(values)
 
     def std(self):
-        values = []
-        for review in Review.objects.filter(user=self.user):
-            values.append(review.relevance or 0)
-            values.append(review.interest or 0)
-            values.append(review.newness or 0)
-
+        values = [review.score or 0 for review in Review.objects.filter(user=self.user)]
         return np.std(values)
