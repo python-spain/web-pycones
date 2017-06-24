@@ -366,4 +366,9 @@ CONFIGURATION_DEFAULT_OPTIONS = {
         "type": 1,
         "public_name": "Activates page for selling tickets",
     },
+    "reviews_per_reviewers": {
+        "value": 3,
+        "type": 1,
+        "public_name": "Number of reviews per reviewers"
+    }
 }
