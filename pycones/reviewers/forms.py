@@ -8,6 +8,7 @@ from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
 from pycones.reviewers import REVIEW_GROUP_NAME
+from pycones.reviewers.helpers import create_reviews
 from pycones.reviewers.models import Review, Reviewer
 from pycones.speakers.models import Speaker
 from pycones.users.models import User
@@ -82,4 +83,5 @@ class ReviewerSignUpForm(forms.Form):
         user.groups.add(group)
         # Sends restore password
         user.send_restore_password_link()
+        create_reviews(user)
         return user
