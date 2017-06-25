@@ -27,7 +27,7 @@
         </tr>
     {% empty %}
         <tr>
-            <td colspan="{% if request.user.is_superuser %}6{% else %}5{% endif %}">{% trans "No tienes ninguna revisión asignada aún" %}</td>
+            <td colspan="{% if request.user.is_superuser %}6{% else %}5{% endif %}">{% trans "No hay ninguna revisión disponible aún" %}</td>
         </tr>
     {% endfor %}
 </table>
