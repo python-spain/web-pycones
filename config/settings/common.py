@@ -366,4 +366,9 @@ CONFIGURATION_DEFAULT_OPTIONS = {
         "type": 1,
         "public_name": "Activates page for selling tickets",
     },
+    "activate_reviews": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Activate reviews"
+    }
 }

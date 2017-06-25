@@ -8,6 +8,7 @@ from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
 from pycones.reviewers import REVIEW_GROUP_NAME
+from pycones.reviewers.helpers import create_reviews
 from pycones.reviewers.models import Review, Reviewer
 from pycones.speakers.models import Speaker
 from pycones.users.models import User
@@ -22,19 +23,17 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             "score": forms.NumberInput(attrs={"class": "form-control", "min": "1", "max": "4", "step": "0.1"}),
             "notes": forms.Textarea(attrs={"class": "form-control"}),
+            "conflict": forms.CheckboxInput(attrs={"class": "form-check-input"}),
+            "finished": forms.CheckboxInput(attrs={"class": "form-check-input"}),
         }
-
-    @staticmethod
-    def _clean_metric(metric):
-        if metric is None:
-            return metric
-        if 0.0 >= metric or metric > 4.0:
-            raise forms.ValidationError(_("Debes puntuar entre 1.0 y 4"))
-        return metric
 
     def clean_score(self):
         score = self.cleaned_data.get("score")
-        return self._clean_metric(score)
+        if score is None:
+            return score
+        if 0.0 >= score or score > 4.0:
+            raise forms.ValidationError(_("Debes puntuar entre 1.0 y 4.0"))
+        return round(score, 1)
 
 
 class ReviewAdminForm(forms.ModelForm):
@@ -84,4 +83,5 @@ class ReviewerSignUpForm(forms.Form):
         user.groups.add(group)
         # Sends restore password
         user.send_restore_password_link()
+        create_reviews(user)
         return user

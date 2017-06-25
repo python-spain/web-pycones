@@ -2,9 +2,11 @@ from braces.views import GroupRequiredMixin
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
+from options.models import Option
 
 from pycones.reviewers import REVIEW_GROUP_NAME
 from pycones.reviewers.forms import ReviewForm, ReviewerSignUpForm
+from pycones.reviewers.helpers import create_reviews
 from pycones.reviewers.models import Review
 
 
@@ -17,10 +19,11 @@ class ReviewListView(BaseReviewerView):
     template_name = "reviewers/list.html"
 
     def get(self, request):
-        if request.user.is_superuser:
-            reviews = Review.objects.all()
-        else:
-            reviews = Review.objects.filter(user=request.user)
+        create_reviews(request.user)
+        reviews = Review.objects.filter(user=request.user)
+        activate_reviews = Option.objects.get_value("activate_reviews", 0)
+        if not request.user.is_superuser and not activate_reviews:
+            reviews = Review.objects.none()
         data = {
             "reviews": reviews
         }

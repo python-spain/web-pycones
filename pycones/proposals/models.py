@@ -99,6 +99,9 @@ class Proposal(TimeStampedModel):
     accepted_notified = models.BooleanField(verbose_name=_('Notificación de aceptación enviada'), default=False)
     code = models.CharField(max_length=64, null=True, blank=True)
 
+    def __str__(self):
+        return self.title
+
     @property
     def translated_abstract(self):
         return get_translated_markdown_field(self, "abstract")
@@ -109,7 +112,7 @@ class Proposal(TimeStampedModel):
 
     @property
     def avg(self):
-        data = [review.avg() for review in self.reviews.filter(finished=True) if review.avg() is not None]
+        data = [review.score for review in self.reviews.filter(finished=True) if review.score is not None]
         if data:
             return sum(data) / len(data)
         return None
@@ -133,30 +136,30 @@ class Proposal(TimeStampedModel):
     @property
     def renormalization_o0(self):
         """Renormalization with order 0. Average value of 0"""
-        relevance, interest, newness = [], [], []
+        score = []
         for review in self.reviews.all():
             reviewer = Reviewer.objects.get(user=review.user)
             mean = reviewer.mean()
             if reviewer.num_reviews() <= 1:
                 continue
-            relevance.append((review.relevance or 0) - mean)
-            interest.append((review.interest or 0) - mean)
-            newness.append((review.newness or 0) - mean)
-        return np.mean(interest + relevance + newness)
+            score.append((review.score or 0) - mean)
+        if score:
+            return np.mean(score)
+        return None
 
     @property
     def renormalization_o1(self):
         """Renormalization with order 1. Expand the value to get the same standard deviation for everyone"""
-        relevance, interest, newness = [], [], []
+        score = []
         for review in self.reviews.all():
             reviewer = Reviewer.objects.get(user=review.user)
             std = reviewer.std()
             if reviewer.num_reviews() <= 1 or std < 0.75:
                 continue
-            relevance.append((review.relevance or 0) - std)
-            interest.append((review.interest or 0) - std)
-            newness.append((review.newness or 0) - std)
-        return np.mean(interest + relevance + newness)
+            score.append((review.score or 0) - std)
+        if score:
+            return np.mean(score)
+        return None
 
     def notification_email_context(self, speaker):
         site = Site.objects.get_current()

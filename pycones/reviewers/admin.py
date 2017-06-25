@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from pycones.reviewers.forms import ReviewAdminForm
 from pycones.reviewers.models import Review, Reviewer
-from .actions import export_as_csv_action
+from pycones.utils.actions import export_as_csv_action
 
 
 @admin.register(Review)
