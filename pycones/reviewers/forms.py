@@ -85,3 +85,12 @@ class ReviewerSignUpForm(forms.Form):
         user.send_restore_password_link()
         create_reviews(user)
         return user
+
+
+class ReviewsFilterForm(forms.Form):
+
+    only_unfinished = forms.BooleanField(
+        label=_("Mostrar sólo revisiones no terminadas"),
+        required=False,
+        widget=forms.CheckboxInput(attrs={"class": "form-check-input"})
+    )
