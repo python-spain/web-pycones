@@ -5,14 +5,14 @@ from django.views.generic import View
 from options.models import Option
 
 from pycones.reviewers import REVIEW_GROUP_NAME
-from pycones.reviewers.forms import ReviewForm, ReviewerSignUpForm
+from pycones.reviewers.forms import ReviewForm, ReviewerSignUpForm, ReviewsFilterForm
 from pycones.reviewers.helpers import create_reviews
 from pycones.reviewers.models import Review
 
 
 class BaseReviewerView(GroupRequiredMixin, View):
     group_required = REVIEW_GROUP_NAME
-    login_url = reverse_lazy("reviewers:sign-in")
+    login_url = reverse_lazy("users:sign-in")
 
 
 class ReviewListView(BaseReviewerView):
@@ -24,8 +24,12 @@ class ReviewListView(BaseReviewerView):
         activate_reviews = Option.objects.get_value("activate_reviews", 0)
         if not request.user.is_superuser and not activate_reviews:
             reviews = Review.objects.none()
+        filter_form = ReviewsFilterForm(request.GET)
+        if filter_form.is_valid() and filter_form.cleaned_data["only_unfinished"]:
+            reviews = reviews.filter(finished=False)
         data = {
-            "reviews": reviews
+            "reviews": reviews,
+            "filter_form": filter_form
         }
         return render(request, self.template_name, data)
 

@@ -5,6 +5,16 @@
 
 {% block content %}
 <h2>{% trans "Listado de revisiones" %}</h2>
+
+<form class="form-inline" method="get" style="margin-bottom: 15px">
+    <div class="form-check">
+        <label class="form-check-label">
+              {{ filter_form.only_unfinished }} {{ filter_form.only_unfinished.label }}
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary ml-auto">{% trans "Filtrar" %}</button>
+</form>
+
 <table class="table table-striped">
     <thead>
         <tr>
