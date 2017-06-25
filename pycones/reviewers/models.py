@@ -43,15 +43,6 @@ class Review(TimeStampedModel):
             from_email="%s <%s>" % (settings.CONFERENCE_TITLE, settings.CONTACT_EMAIL)
         )
 
-    def save(self, **kwargs):
-        is_insert = self.pk is None
-        old_user = None
-        if not is_insert:
-            old_user = Review.objects.get(pk=self.pk).user
-        super(Review, self).save(**kwargs)
-        if is_insert or self.user != old_user:
-            self.notify()
-
 
 class Reviewer(TimeStampedModel):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="reviewer")
