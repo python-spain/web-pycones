@@ -10,9 +10,6 @@
     <thead>
         <tr>
             <th>{% trans "Título" %}</th>
-            {% if request.user.is_superuser %}
-            <th>{% trans "Revisor" %}</th>
-            {% endif %}
             <th>{% trans "Puntuación" %}</th>
             <th>{% trans "¿Conflicto de intereses?" %}</th>
             <th>{% trans "¿Finalizada?" %}</th>
@@ -22,9 +19,6 @@
     {% for review in reviews %}
         <tr>
             <th>{{ review.proposal.title }}</th>
-            {% if request.user.is_superuser %}
-            <td>{{ review.user.get_full_name }}</td>
-            {% endif %}
             <td>{{ review.score|default:"-"|floatformat:2|intcomma }}</td>
             <td>{{ review.conflict|iconic }}</td>
             <td>{{ review.finished|iconic }}</td>
