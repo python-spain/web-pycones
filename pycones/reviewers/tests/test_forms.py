@@ -6,7 +6,7 @@ from test_plus import TestCase
 
 from pycones.proposals.tests.factories import ProposalFactory, ProposalKindFactory
 from pycones.reviewers import REVIEW_GROUP_NAME
-from pycones.reviewers.forms import ReviewForm
+from pycones.reviewers.forms import ReviewForm, ReviewerSignUpForm
 from pycones.reviewers.tests.factories import ReviewFactory
 from pycones.users.tests.factories import UserFactory
 
@@ -51,3 +51,22 @@ class ReviewersFormsTest(TestCase):
         }
         form = ReviewForm(instance=review, data=data)
         self.assertFalse(form.is_valid())
+
+    def test_reviewer_signup(self):
+        data = {
+            "email": "new@example.com"
+        }
+        form = ReviewerSignUpForm(data)
+        self.assertTrue(form.is_valid())
+        user = form.save()
+        self.assertIn(REVIEW_GROUP_NAME, user.groups.all().values_list("name", flat=True))
+
+    def test_reviewer_signup_existing(self):
+        user = UserFactory()
+        data = {
+            "email": user.email
+        }
+        form = ReviewerSignUpForm(data)
+        self.assertTrue(form.is_valid())
+        user = form.save()
+        self.assertIn(REVIEW_GROUP_NAME, user.groups.all().values_list("name", flat=True))
