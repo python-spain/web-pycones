@@ -293,7 +293,7 @@ TAGGIT_CASE_INSENSITIVE = True
 INSTALLED_APPS += (
     'modeltranslation',
 )
-MODELTRANSLATION_FALLBACK_LANGUAGES = ('en', 'ca', 'gl', 'eu')
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('es', 'en', 'ca', 'gl', 'eu')
 
 # PROJECT CUSTOM SETTINGS
 # ------------------------------------------------------------------------------
