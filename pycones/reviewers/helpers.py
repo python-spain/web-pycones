@@ -11,7 +11,8 @@ def create_reviews(user):
     """Create the reviews for the given user."""
     if user.reviews.count() != Proposal.objects.count():
         for proposal in Proposal.objects.iterator():
-            try:
-                Review.objects.create(user=user, proposal=proposal)
-            except IntegrityError:
-                pass
+            if not Review.objects.filter(user=user, proposal=proposal).exists():
+                try:
+                    Review.objects.create(user=user, proposal=proposal)
+                except IntegrityError:
+                    pass
