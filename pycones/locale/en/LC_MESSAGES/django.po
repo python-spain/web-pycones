@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-08 21:20+0000\n"
+"POT-Creation-Date: 2017-06-29 12:30+0000\n"
 "PO-Revision-Date: 2016-07-23 17:43+0200\n"
 "Last-Translator: b'  <organizacion2015@lists.es.python.org>'\n"
 "Language-Team: \n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: config/urls.py:38
+#: config/urls.py:39
 #, python-format
 msgid "%s Admin"
 msgstr ""
@@ -56,11 +56,11 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
-#: pycones/blog/models.py:44 pycones/proposals/models.py:54
+#: pycones/blog/models.py:44 pycones/proposals/models.py:55
 msgid "Etiquetas"
 msgstr ""
 
-#: pycones/blog/models.py:45 pycones/proposals/models.py:55
+#: pycones/blog/models.py:45 pycones/proposals/models.py:56
 msgid "Lista de etiquetas separadas por comas."
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 msgid "30 minutos"
 msgstr ""
 
-#: pycones/proposals/admin.py:52 pycones/reviewers/admin.py:37
+#: pycones/proposals/admin.py:52
 msgid "Media"
 msgstr ""
 
@@ -151,60 +151,60 @@ msgstr ""
 "organizer team to select your proposal describing a brief summary, whether "
 "there will be live demos or which previous knowledge should the audience have"
 
-#: pycones/proposals/models.py:23
+#: pycones/proposals/models.py:24
 msgid "Name"
 msgstr ""
 
-#: pycones/proposals/models.py:34
+#: pycones/proposals/models.py:35 pycones/templates/reviewers/details.html:14
 msgid "Nivel de la audiencia"
 msgstr "Audience level"
 
-#: pycones/proposals/models.py:41
+#: pycones/proposals/models.py:42 pycones/templates/reviewers/details.html:18
 msgid "Idioma"
 msgstr ""
 
-#: pycones/proposals/models.py:47
+#: pycones/proposals/models.py:48
 msgid "Duración"
 msgstr "Duration"
 
-#: pycones/proposals/models.py:60
+#: pycones/proposals/models.py:61 pycones/templates/reviewers/details.html:22
 msgid "¿Es apta para principiantes?"
 msgstr "Is beginners friendly?"
 
-#: pycones/proposals/models.py:64
+#: pycones/proposals/models.py:65 pycones/templates/reviewers/details.html:10
 msgid "Tipo de propuesta"
 msgstr "Kind of proposal"
 
-#: pycones/proposals/models.py:66
+#: pycones/proposals/models.py:67 pycones/templates/reviewers/list.html:21
 msgid "Título"
 msgstr "Title"
 
-#: pycones/proposals/models.py:68
+#: pycones/proposals/models.py:69 pycones/templates/reviewers/details.html:27
 msgid "Breve descripción"
 msgstr "Brief description"
 
-#: pycones/proposals/models.py:70
+#: pycones/proposals/models.py:71
 msgid ""
 "Si tu propuesta se acepta esto se hará público, y se incluirá en el "
 "programa. Debería ser un párrafo, con un máximo de 500 caracteres."
 msgstr ""
 
-#: pycones/proposals/models.py:74
+#: pycones/proposals/models.py:75 pycones/templates/reviewers/details.html:29
 msgid "Resumen detallado"
 msgstr "Detailed abstract"
 
-#: pycones/proposals/models.py:78
+#: pycones/proposals/models.py:79
 msgid ""
 "Resumen detallado. Se hará pública si la propuesta se acepta. Edita usando "
 "<a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 msgstr ""
 
-#: pycones/proposals/models.py:83
+#: pycones/proposals/models.py:84 pycones/templates/reviewers/details.html:31
 msgid "Notas adicionales"
 msgstr "Additional notes"
 
-#: pycones/proposals/models.py:87
+#: pycones/proposals/models.py:88
 msgid ""
 "Cualquier cosa que te gustaría hacer saber a los revisores para que la "
 "tengan en cuenta al ahora de hacer la selección. Esto no se hará público. "
@@ -212,62 +212,67 @@ msgid ""
 "target='_blank'>Markdown</a>."
 msgstr ""
 
-#: pycones/proposals/models.py:97
+#: pycones/proposals/models.py:98
 msgid "Aceptada"
 msgstr ""
 
-#: pycones/proposals/models.py:98
+#: pycones/proposals/models.py:99
 msgid "Notificación de aceptación enviada"
 msgstr ""
 
-#: pycones/proposals/models.py:169
+#: pycones/proposals/models.py:185
 #, python-format
 msgid "[%s] Confirmación de propuesta de charla"
 msgstr ""
 
-#: pycones/proposals/models.py:188
+#: pycones/proposals/models.py:204
 #, python-format
 msgid "[%s] Notificación de propuesta de charla"
 msgstr ""
 
-#: pycones/reviewers/admin.py:46
+#: pycones/reviewers/admin.py:39 pycones/templates/headers.html:43
 msgid "Revisiones"
 msgstr ""
 
-#: pycones/reviewers/forms.py:33
-msgid "Debes puntuar entre 1 y 10"
+#: pycones/reviewers/forms.py:37
+msgid "Debes puntuar entre 1.0 y 4.0"
 msgstr ""
 
-#: pycones/reviewers/models.py:23
-msgid "Relevancia"
+#: pycones/reviewers/forms.py:72
+msgid "Un posible ponente no puede registrarse como revisor."
 msgstr ""
 
-#: pycones/reviewers/models.py:23 pycones/reviewers/models.py:26
-#: pycones/reviewers/models.py:29
-msgid "Puntuación del 1 al 10"
+#: pycones/reviewers/forms.py:74
+msgid "Ya estás registrado como revisor."
 msgstr ""
 
-#: pycones/reviewers/models.py:26
-msgid "Interés General"
+#: pycones/reviewers/forms.py:100
+msgid "Mostrar sólo revisiones no terminadas"
 msgstr ""
 
-#: pycones/reviewers/models.py:29
-msgid "Novedad"
+#: pycones/reviewers/models.py:22 pycones/templates/reviewers/list.html:22
+#, fuzzy
+#| msgid "Duración"
+msgid "Puntuación"
+msgstr "Duration"
+
+#: pycones/reviewers/models.py:22
+msgid "Puntuación del 1.0 al 4.0"
 msgstr ""
 
-#: pycones/reviewers/models.py:32
+#: pycones/reviewers/models.py:24
 msgid "Notas del revisor"
 msgstr ""
 
-#: pycones/reviewers/models.py:34
-msgid "¿Existe un conflico de intereses?"
+#: pycones/reviewers/models.py:26
+msgid "¿Existe un conflicto de intereses?"
 msgstr ""
 
-#: pycones/reviewers/models.py:35
+#: pycones/reviewers/models.py:27
 msgid "¿Revisión finalizada?"
 msgstr ""
 
-#: pycones/reviewers/models.py:63
+#: pycones/reviewers/models.py:41
 #, python-format
 msgid "[%s] Tienes una nueva propuesta para revisar"
 msgstr ""
@@ -474,6 +479,7 @@ msgstr "Edit proposal"
 
 #: pycones/templates/emails/proposals/confirmation.html:13
 #: pycones/templates/emails/proposals/rejected.html:12
+#: pycones/templates/emails/reviewers/new.html:14
 msgid "¡Un saludo!"
 msgstr ""
 
@@ -494,35 +500,62 @@ msgid ""
 "    "
 msgstr ""
 
+#: pycones/templates/emails/reviewers/new.html:5
+#, python-format
+msgid ""
+"\n"
+"    <p>¡Hola %(first_name)s!</p>\n"
+"    <p>Se te ha asignado una propuesta para revisar, titulada: \"%(title)s"
+"\"</p>\n"
+"    <p>Para realizar tu revisión a esta y a otras que tengas asignadas "
+"puedes acceder directamente pinchando en el\n"
+"    siguiente enlace:</p>\n"
+"    "
+msgstr ""
+
+#: pycones/templates/emails/reviewers/new.html:12
+#, fuzzy
+#| msgid "Enviar propuesta"
+msgid "Revisar propuestas"
+msgstr "Submit proposal"
+
 #: pycones/templates/emails/users/restore_email.html:3
 msgid "Entra en este enlace para establecer tu contraseña:"
 msgstr "Enter this link to reset your password:"
 
-#: pycones/templates/headers.html:22
+#: pycones/templates/headers.html:23
 msgid "Información del evento"
 msgstr "About the event"
 
-#: pycones/templates/headers.html:26
+#: pycones/templates/headers.html:26 pycones/templates/pages/home.html:29
+msgid "Oradores Plenarios"
+msgstr "Keynoters Speakers"
+
+#: pycones/templates/headers.html:30
 msgid "Compra tus entradas"
 msgstr "Buy your tickets"
 
-#: pycones/templates/headers.html:31
+#: pycones/templates/headers.html:35
 msgid "Envía tu propuesta"
 msgstr "Submit your proposal"
 
-#: pycones/templates/headers.html:35
+#: pycones/templates/headers.html:39
 msgid "Blog"
 msgstr ""
 
-#: pycones/templates/headers.html:39
+#: pycones/templates/headers.html:48
 msgid "Salir"
 msgstr "Logout"
 
-#: pycones/templates/headers.html:56 pycones/templates/pages/info.html:126
+#: pycones/templates/headers.html:50 pycones/templates/reviewers/list.html:35
+msgid "Acceder"
+msgstr ""
+
+#: pycones/templates/headers.html:67 pycones/templates/pages/info.html:149
 msgid "Código de conducta"
 msgstr "Code of Conduct"
 
-#: pycones/templates/headers.html:57
+#: pycones/templates/headers.html:68
 msgid "Contacta con nosotros"
 msgstr "Contact"
 
@@ -722,20 +755,33 @@ msgstr ""
 msgid "Ediciones anteriores"
 msgstr "Previous editions"
 
-#: pycones/templates/pages/home.html:31
+#: pycones/templates/pages/home.html:33
+#: pycones/templates/pages/keynoters.html:12
+msgid "Naomi Ceder"
+msgstr ""
+
+#: pycones/templates/pages/home.html:37
+msgid "¡Próximamente!"
+msgstr "Coming soon!"
+
+#: pycones/templates/pages/home.html:41
+msgid "¡Conoce más de nuestros keynoters!"
+msgstr "Learn more about our keynoters!"
+
+#: pycones/templates/pages/home.html:49
 msgid "Compra de entradas"
 msgstr "Registration"
 
-#: pycones/templates/pages/home.html:34 pycones/templates/pages/home.html:35
+#: pycones/templates/pages/home.html:52 pycones/templates/pages/home.html:53
 #: pycones/templates/pages/tickets.html:8
 msgid "Compra aquí tus tickets"
 msgstr "Buy here your tickets"
 
-#: pycones/templates/pages/home.html:38 pycones/templates/pages/tickets.html:12
+#: pycones/templates/pages/home.html:56 pycones/templates/pages/tickets.html:12
 msgid "¡Entradas agotadas!"
 msgstr "Sold out!"
 
-#: pycones/templates/pages/home.html:42
+#: pycones/templates/pages/home.html:60
 msgid ""
 "Con tu entrada podrás acceder los tres días de la conferencia completos. En "
 "la entrada del edificio te cambiaremos tu entrada de ticketea (no olvides "
@@ -745,11 +791,11 @@ msgstr ""
 "entrance we will give you your acreditation (don't forget your ticketea "
 "ticket) and your Welcome Pack."
 
-#: pycones/templates/pages/home.html:50
+#: pycones/templates/pages/home.html:68
 msgid "Patrocinadores"
 msgstr "Sponsors"
 
-#: pycones/templates/pages/home.html:81
+#: pycones/templates/pages/home.html:99
 #, python-format
 msgid ""
 "\n"
@@ -762,11 +808,11 @@ msgstr ""
 "Do you want to be the first %(level_name)s sponsor? <a href=\"mailto:"
 "%(SPONSORS_EMAIL)s\" target=\"_blank\">Contact with us!</a>"
 
-#: pycones/templates/pages/home.html:90
+#: pycones/templates/pages/home.html:108
 msgid "Folleto (ES)"
 msgstr "Leaflet (ES)"
 
-#: pycones/templates/pages/home.html:93
+#: pycones/templates/pages/home.html:111
 msgid "Folleto (EN)"
 msgstr "Leaflet (EN)"
 
@@ -934,7 +980,46 @@ msgid ""
 "        "
 msgstr ""
 
-#: pycones/templates/pages/info.html:128
+#: pycones/templates/pages/info.html:125
+msgid "Turismo"
+msgstr ""
+
+#: pycones/templates/pages/info.html:127
+msgid ""
+"\n"
+"        Tierra de contrastes, Extremadura constituye un destino idóneo para "
+"quienes quieren entrar en contacto con una realidad nueva, sorprendente y "
+"estimulante. Tu viaje se convierte en un verdadero paseo por la historia. <a "
+"href=\"http://www.turismoextremadura.com/viajar/turismo/es/ven-a-extremadura/"
+"\">VIVE EXTREMADURA!</a>\n"
+"    "
+msgstr ""
+
+#: pycones/templates/pages/info.html:134
+msgid "Explora Extremadura"
+msgstr ""
+
+#: pycones/templates/pages/info.html:137
+msgid ""
+"\n"
+"<li><a href=\"http://www.turismoextremadura.com/viajar/turismo/es/explora/"
+"extremadura-imprescindible/\">Qué ver en Extremadura?</a></li>\n"
+"<li><a href=\"http://www.ayto-caceres.es/turismo/conoce-caceres/\">Conoce "
+"Cáceres</a></li>\n"
+"<li><a href=\"http://www.ayto-caceres.es/turismo/plano-turistico-de-caceres/"
+"\">Plano de Cáceres</a></li>\n"
+"<li><a href=\"http://extremadurabtt.gobex.es/es/servicios/publicaciones-"
+"turisticas/\">Guías para explorar Extremadura</a></li>\n"
+"<li><a href=\"http://www.ayto-caceres.es/turismo/rutas/\">Rutas por Cáceres</"
+"a></li>\n"
+"<li><a href=\"http://www.ayto-caceres.es/turismo/\">Información turistica de "
+"Cáceres</a></li>\n"
+"<li><a href=\"http://www.turismoextremadura.com/\">Información turistica de "
+"Extremadura</a></li>\n"
+"        "
+msgstr ""
+
+#: pycones/templates/pages/info.html:151
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -959,7 +1044,7 @@ msgstr ""
 "appearance, body size, race, or religion. We do not tolerate harassment of "
 "conference participants in any form."
 
-#: pycones/templates/pages/info.html:136
+#: pycones/templates/pages/info.html:159
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -983,7 +1068,7 @@ msgstr ""
 "including people of many different backgrounds. Sexual language and imagery "
 "is not appropriate for any conference venue, including talks."
 
-#: pycones/templates/pages/info.html:144
+#: pycones/templates/pages/info.html:167
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1005,7 +1090,7 @@ msgstr ""
 "professionally. Remember that harassment and sexist, racist, or exclusionary "
 "jokes are not appropriate for PyCon."
 
-#: pycones/templates/pages/info.html:151
+#: pycones/templates/pages/info.html:174
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1024,7 +1109,7 @@ msgstr ""
 "Attendees violating these rules may be asked to leave the conference without "
 "a refund at the sole discretion of the conference organizers."
 
-#: pycones/templates/pages/info.html:157
+#: pycones/templates/pages/info.html:180
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1040,9 +1125,28 @@ msgstr ""
 "\n"
 "Thank you for helping make this a welcoming, friendly event for all."
 
-#: pycones/templates/pages/info.html:161
+#: pycones/templates/pages/info.html:184
 msgid "Código de Conducta Completo"
 msgstr "Complete Code of Conduct"
+
+#: pycones/templates/pages/keynoters.html:14
+msgid ""
+"Naomi Ceder es parte de la Junta de Directores de la Python Software "
+"Foundation y cofundadora de Trans*Code, un hackday centrado en la comunidad "
+"transgénero. Actualmente dirige un equipo de inteligencia competitiva para "
+"Dick Blick Art Supplies, uno de los principales proveedores de suministros "
+"para artistas en los Estados Unidos."
+msgstr ""
+"Naomi Ceder is the chair of the Python Software Foundation Board of Directors and the co-founder of Trans*Code, a hackday focussed on the transgender community. She currently leads a competitive intelligence team for Dick Blick Art Supplies, one of the leading suppliers of artist supplies in the US."
+
+#: pycones/templates/pages/keynoters.html:17
+msgid ""
+"Naomi también es autora de Quick Python Book, 3rd Ed, y ha enseñado Python a "
+"diversas audiencias durante muchos años. Ella ha ayudado a organizar PyCon "
+"US y PyCon UK, dando origen a las sesiones de carteles, cumbre de Educación, "
+"y el Taller de Intro to Sprinting. "
+msgstr ""
+"Naomi is also author of the Quick Python Book, 3rd Ed, and has taught Python to diverse audiences for many years. She has helped organize PyCon North America and PyCon UK, originating the poster sessions, Education summit, and Intro to Sprinting Workshop."
 
 #: pycones/templates/pages/landing.html:20
 msgid ""
@@ -1097,32 +1201,96 @@ msgstr "Edit your proposal"
 msgid "¡Gracias por tu propuesta!"
 msgstr "Thanks for your proposal!"
 
+#: pycones/templates/reviewers/details.html:6
+#, fuzzy
+#| msgid "Editar propuesta"
+msgid "Propuesta"
+msgstr "Edit proposal"
+
+#: pycones/templates/reviewers/details.html:36
+msgid "Revisión"
+msgstr ""
+
+#: pycones/templates/reviewers/details.html:64
+#: pycones/templates/users/restore.html:32
+msgid "Guardar"
+msgstr "Save"
+
+#: pycones/templates/reviewers/details.html:65
+msgid "Volver"
+msgstr ""
+
+#: pycones/templates/reviewers/list.html:7
+msgid "Listado de revisiones"
+msgstr ""
+
+#: pycones/templates/reviewers/list.html:15
+#, fuzzy
+#| msgid "Entrar"
+msgid "Filtrar"
+msgstr "Enter"
+
+#: pycones/templates/reviewers/list.html:23
+msgid "¿Conflicto de intereses?"
+msgstr ""
+
+#: pycones/templates/reviewers/list.html:24
+msgid "¿Finalizada?"
+msgstr ""
+
+#: pycones/templates/reviewers/list.html:25
+msgid "Acciones"
+msgstr ""
+
+#: pycones/templates/reviewers/list.html:40
+msgid "No hay ninguna revisión disponible aún"
+msgstr ""
+
+#: pycones/templates/reviewers/sign_up.html:6
+msgid "Registro de revisores"
+msgstr ""
+
+#: pycones/templates/reviewers/sign_up.html:22
+msgid "Registrarse"
+msgstr ""
+
+#: pycones/templates/reviewers/sign_up_success.html:6
+#, fuzzy
+#| msgid "¡Gracias por tu propuesta!"
+msgid "¡Gracias por registrarte!"
+msgstr "Thanks for your proposal!"
+
+#: pycones/templates/reviewers/sign_up_success.html:8
+msgid ""
+"\n"
+"                Te hemos enviado un correo electrónico para que establezcas "
+"tu contraseña\n"
+"                y puedas acceder al listado de propuestas para revisarlas.\n"
+"            "
+msgstr ""
+
 #: pycones/templates/users/request_code.html:5
 #: pycones/templates/users/restore.html:5
 msgid "Establece o restaura tu contraseña"
 msgstr "Sets or resets your password"
 
-#: pycones/templates/users/request_code.html:31
+#: pycones/templates/users/request_code.html:22
 msgid "Enviar"
 msgstr "Send"
 
-#: pycones/templates/users/restore.html:19
+#: pycones/templates/users/restore.html:10
 msgid "Email de usuario"
 msgstr "User email"
-
-#: pycones/templates/users/restore.html:41
-msgid "Guardar"
-msgstr "Save"
 
 #: pycones/templates/users/sign_in.html:6
 msgid "Acceso de usuarios"
 msgstr "User access"
 
-#: pycones/templates/users/sign_in.html:31
+#: pycones/templates/users/sign_in.html:22
 msgid "Entrar"
 msgstr "Enter"
 
-#: pycones/templates/users/sign_in.html:34
+#: pycones/templates/users/sign_in.html:25
 msgid "¿No tienes contraseña o la has olvidado?"
 msgstr "You do not have a password or have you forgotten it?"
 
@@ -1339,9 +1507,6 @@ msgstr ""
 #~ msgid "PyConES 2016"
 #~ msgstr "PyConES 2016"
 
-#~ msgid "Oradores Plenarios"
-#~ msgstr "Keynoters Speakers"
-
 #~ msgid "Llamada a propuestas"
 #~ msgstr "Call for proposals"
 
@@ -1359,9 +1524,6 @@ msgstr ""
 #~ "                    The call for proposals for PyConES 2016 is open! The "
 #~ "deadline is July <del>15th</del> <ins>27th</ins> 00:00.\n"
 #~ "                                   "
-
-#~ msgid "¡Conoce más de nuestros keynoters!"
-#~ msgstr "Learn more about our keynoters!"
 
 #~ msgid ""
 #~ "\n"

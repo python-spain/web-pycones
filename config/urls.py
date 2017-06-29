@@ -16,6 +16,7 @@ urlpatterns = i18n_patterns(
     url(r'^code-of-conduct/$', TemplateView.as_view(template_name='pages/code_of_conduct.html'), name="code-of-conduct"),
     url(r'^tickets/$', TemplateView.as_view(template_name='pages/tickets.html'), name="tickets"),
     url(r'^info/$', TemplateView.as_view(template_name='pages/info.html'), name="info"),
+    url(r'^keynoters-speakers/$', TemplateView.as_view(template_name='pages/keynoters.html'), name="keynoters"),
     url(r'^blog/', include('pycones.blog.urls', namespace="blog")),
     url(r'^users/', include('pycones.users.urls', namespace="users")),
     url(r'^proposals/', include('pycones.proposals.urls', namespace="proposals")),
