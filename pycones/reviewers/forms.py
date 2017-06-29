@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
+from django.db import transaction
 from django.db.models import Q
 from django.db.utils import IntegrityError
 from django.utils.translation import ugettext_lazy as _
@@ -79,7 +80,8 @@ class ReviewerSignUpForm(forms.Form):
             user = User.objects.get(email=email)
         else:
             try:
-                user = User.objects.create_user(email=email, password=random_string())
+                with transaction.atomic():
+                    user = User.objects.create_user(email=email, password=random_string())
             except IntegrityError:
                 user = User.objects.get(email=email)
         # Create reviewer profile

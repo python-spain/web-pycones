@@ -1,0 +1,21 @@
+{% extends "container.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-5">
+        <img src="{% static "images/naomi.jpg" %}" class="img-fluid rounded img-thumbnail">
+    </div>
+    <div class="col-7">
+        <h2>{% trans "Naomi Ceder" %}</h2>
+        <p>
+            {% blocktrans %}Naomi Ceder es parte de la Junta de Directores de la Python Software Foundation y cofundadora de Trans*Code, un hackday centrado en la comunidad transgénero. Actualmente dirige un equipo de inteligencia competitiva para Dick Blick Art Supplies, uno de los principales proveedores de suministros para artistas en los Estados Unidos.{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}Naomi también es autora de Quick Python Book, 3rd Ed, y ha enseñado Python a diversas audiencias durante muchos años. Ella ha ayudado a organizar PyCon US y PyCon UK, dando origen a las sesiones de carteles, cumbre de Educación, y el Taller de Intro to Sprinting. {% endblocktrans %}
+        </p>
+    </div>
+</div>
+{% endblock content %}

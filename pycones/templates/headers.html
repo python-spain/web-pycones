@@ -22,6 +22,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url "info" %}">{% trans "Información del evento" %}</a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="{% url "keynoters" %}">{% trans "Oradores Plenarios" %}</a>
+                    </li>
                     {% if activated_tickets_sale_page %}
                     <li>
                         <a class="nav-link" href="{% url "tickets" %}">{% trans "Compra tus entradas" %}</a>

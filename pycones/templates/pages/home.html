@@ -24,6 +24,24 @@
             </p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>{% trans "Oradores Plenarios" %}</h2>
+        </div>
+        <div class="offset-2 col-4 text-center">
+            <img src="{% static "images/naomi.jpg" %}" class="img-flex rounded-circle img-thumbnail">
+            <h3>{% trans "Naomi Ceder" %}</h3>
+        </div>
+        <div class="offset-2 col-4 text-center">
+            <img src="{% static "images/avatar.svg" %}" class="img-flex rounded-circle img-thumbnail">
+            <h3>{% trans "¡Próximamente!" %}</h3>
+        </div>
+        <div class="col-12">
+            <p class="text-center" style="margin: 35px 0 35px 0">
+                <a href="{% url "keynoters" %}" class="btn btn-primary btn-lg" >{% trans "¡Conoce más de nuestros keynoters!" %}</a>
+            </p>
+        </div>
+    </div>
 
     {% if activated_tickets_sale_page %}
         <div class="row">
