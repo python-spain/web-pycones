@@ -15,6 +15,8 @@ from django.utils.timezone import make_aware
 from django.utils.translation import ugettext_lazy as _
 from markupfield.fields import MarkupField
 
+from pycones.proposals import BASIC_LEVEL
+
 
 @python_2_unicode_compatible
 class Day(models.Model):
@@ -190,7 +192,7 @@ class Presentation(models.Model):
     abstract = MarkupField(default="", blank=True, default_markup_type='markdown')
 
     speakers = models.ManyToManyField("speakers.Speaker", related_name="presentations", blank=True)
-    proposal = models.OneToOneField("proposals.Proposal", related_name="presentation")
+    proposal = models.OneToOneField("proposals.Proposal", related_name="presentation", blank=True)
 
     cancelled = models.BooleanField(default=False)
 
@@ -207,22 +209,30 @@ class Presentation(models.Model):
     def get_title(self):
         if self.title:
             return self.title
-        return self.proposal.title
+        if self.proposal:
+            return self.proposal.title
+        return None
 
     def get_description(self):
         if self.description.raw:
             return self.description
-        return self.proposal.description
+        if self.proposal:
+            return self.proposal.description
+        return None
 
     def get_abstract(self):
         if self.abstract.raw:
             return self.abstract
-        return self.proposal.abstract
+        if self.proposal:
+            return self.proposal.abstract
+        return None
 
     def get_additional_notes(self):
         if self.additional_notes.raw:
             return self.additional_notes
-        return self.proposal.additional_notes
+        if self.proposal:
+            return self.proposal.additional_notes
+        return None
 
     def get_language(self):
         return self.proposal.language
@@ -230,10 +240,14 @@ class Presentation(models.Model):
     def get_speakers(self):
         if self.speakers.exists():
             return self.speakers.all()
-        return self.proposal.speakers.all()
+        if self.proposal:
+            return self.proposal.speakers.all()
+        return self.speakers.all()
 
     def get_audience_level(self):
-        return self.proposal.audience_level
+        if self.proposal:
+            return self.proposal.audience_level
+        return BASIC_LEVEL
 
     def get_video_url(self):
         if not self.video_url:
