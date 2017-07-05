@@ -39,33 +39,45 @@ $slot-border-size: 5px;
 
     .slot {
       border-left: $slot-border-size solid $green-primary;
+      background-color: rgba(44, 187, 145, 0.1);
       margin-bottom: 15px;
+      h3 {
+        font-size: 18px;
+      }
       &-inner {
         padding: 5px 7px;
+        small {
+          color: #444;
+        }
       }
 
       &-plenary {
         text-align: center;
         border-left: $slot-border-size solid $green-dark;
+        background-color: $green-primary;
+        height: auto;
+        color: #fff;
+        font-size: 18px;
         > .slot-inner {
 
         }
       }
 
       &-basic {
-
+        background-color: rgba(44, 187, 145, 0.2);
       }
-
       &-intermediate {
-
+        background-color: rgba(255, 196, 34, 0.2) !important;
       }
 
       &-advanced {
-
+        background-color: rgba(187, 75, 44, 0.2) !important;
       }
 
       &-kind {
-
+        text-align: right;
+        float: right;
+        font-weight: 700;
       }
 
       .default-room {

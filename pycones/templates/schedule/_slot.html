@@ -40,9 +40,9 @@
                 </ul>
             {% endif %}
             {% if not slot.kind.plenary and slot.content.get_description %}
-            <p class="text-center no-margin js-slot-expand" data-slot="{{ slot.id }}">
+            <div class="text-center no-margin js-slot-expand" data-slot="{{ slot.id }}">
                 <i class="fa fa-angle-down"></i>
-            </p>
+            </div>
             {% endif %}
         </div>
     </div>

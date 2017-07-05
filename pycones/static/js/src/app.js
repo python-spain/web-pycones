@@ -29,10 +29,14 @@ import $ from 'jquery';
 
 $(document).ready( () => {
   $(".js-slot-expand").on("click", (event) => {
-    let description = $("#slot-description-" + $(event.target).data("slot"));
+    let _this = event.target;
+    if ($(event.target).hasClass("fa")) {
+      _this = $(event.target).parent();
+    }
+    let description = $("#slot-description-" + $(_this).data("slot"));
     description.fadeToggle();
-    let ad = $(event.target).find(".fa-angle-down");
-    let au = $(event.target).find(".fa-angle-up");
+    let ad = $(_this).find(".fa-angle-down");
+    let au = $(_this).find(".fa-angle-up");
     if (ad.length > 0) {
         ad.removeClass("fa-angle-down");
         ad.addClass("fa-angle-up");
