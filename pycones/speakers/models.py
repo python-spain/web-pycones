@@ -46,7 +46,7 @@ class Speaker(TimeStampedModel):
         try:
             return self.photo.url
         except ValueError:
-            return static("img/default-avatar.png")
+            return static("images/default-avatar.png")
 
     @property
     def email(self):

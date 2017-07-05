@@ -15,21 +15,30 @@
     </div>
     {% endblock claim %}
 
+    {% if messages %}
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8 offset-lg-2">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% block container-content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
                 {% block content %}
                 {% endblock content %}
             </div>
         </div>
     </div>
+    {% endblock container-content %}
 
 {% endblock container %}

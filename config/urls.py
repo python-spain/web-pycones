@@ -11,6 +11,8 @@ from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
 # URLs with with i18n
+from pycones.schedules.views import pentabarf_view, xcal_view, icalendar_view
+
 urlpatterns = i18n_patterns(
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
     url(r'^code-of-conduct/$', TemplateView.as_view(template_name='pages/code_of_conduct.html'), name="code-of-conduct"),
@@ -21,10 +23,14 @@ urlpatterns = i18n_patterns(
     url(r'^users/', include('pycones.users.urls', namespace="users")),
     url(r'^proposals/', include('pycones.proposals.urls', namespace="proposals")),
     url(r'^reviewers/', include('pycones.reviewers.urls', namespace="reviewers")),
+    url(r'^schedule/', include('pycones.schedules.urls', namespace="schedule")),
 )
 
 # URLs without i18n
 urlpatterns += [
+    url(r'schedule/pentabarf\.xml', pentabarf_view, name="schedule_pentabarf"),
+    url(r'schedule/xcal\.xml', xcal_view, name="schedule_xcal"),
+    url(r'schedule\.ics', icalendar_view, name="schedule_icalendar"),
     url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
