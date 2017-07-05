@@ -192,7 +192,7 @@ class Presentation(models.Model):
     abstract = MarkupField(default="", blank=True, default_markup_type='markdown')
 
     speakers = models.ManyToManyField("speakers.Speaker", related_name="presentations", blank=True)
-    proposal = models.OneToOneField("proposals.Proposal", related_name="presentation", blank=True)
+    proposal = models.OneToOneField("proposals.Proposal", related_name="presentation", null=True, blank=True)
 
     cancelled = models.BooleanField(default=False)
 
