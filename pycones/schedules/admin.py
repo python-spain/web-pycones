@@ -3,29 +3,30 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
+from django.utils.translation import ugettext_lazy as _
 
-from pycones.schedules.models import Schedule, Day, Room, SlotKind, Slot, SlotRoom, Presentation, Track
+from pycones.schedules.models import Day, Room, SlotKind, Slot, Presentation, Track
 
 
+@admin.register(Slot)
 class SlotAdmin(ModelAdmin):
-    list_display = ("id", "day", "start", "end", "kind", "default_room", "current_room")
+    list_display = ("id", "day", "start", "end", "kind", "room", "order", "get_content_title")
 
-    def current_room(self, instance):
-        try:
-            return instance.rooms[0]
-        except IndexError:
-            return None
+    def get_content_title(self, instance):
+        if instance.content:
+            return instance.content.get_title()
+        return None
+    get_content_title.short_description = _("Title")
 
 
-admin.site.register(Schedule)
+@admin.register(Track)
+class TrackAdmin(ModelAdmin):
+    list_display = ("id", "day", "name")
+
+
 admin.site.register(Day)
 admin.site.register(Room)
 admin.site.register(SlotKind)
-admin.site.register(Slot, SlotAdmin)
-admin.site.register(
-    SlotRoom,
-    list_display=("id", "slot", "room")
-)
 admin.site.register(Presentation)
-admin.site.register(Track)
+
 

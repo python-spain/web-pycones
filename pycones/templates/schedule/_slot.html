@@ -1,0 +1,56 @@
+{% load i18n %}
+{% load schedule_tags %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="slot-inner" data-slot="{{ slot.id }}">
+            {% if slot.content %}
+                <strong>{{ slot.start }}</strong>
+                {% if not slot.kind.plenary %}
+                <span class="slot-kind">{{ slot.kind.label }}</span>
+                {% endif %}
+                <h3>
+                    <a href="{{ slot.get_absolute_url }}">
+                    {{ slot.content.get_title }} <small style="text-transform: uppercase">{{ slot.content.get_language }}</small>
+                    </a>
+                </h3>
+                <p><strong>{{ slot.content.get_speakers|comma_list }}</strong></p>
+                {% if slot.kind.plenary and slot.room %}
+                <p class="default-room">{{ slot.room.name }}</p>
+                {% elif slot.room %}
+                <p class="default-room visible-xs">{{ slot.room.name }}</p>
+                {% endif %}
+            {% else %}
+                <strong>{{ slot.start }}</strong>
+                {{ slot.content_override }}
+                {% if slot.kind.plenary and slot.room %}
+                <p class="default-room">{{ slot.room.name }}</p>
+                {% elif slot.room %}
+                <p class="default-room visible-xs">{{ slot.room.name }}</p>
+                {% endif %}
+            {% endif %}
+            {% if slot.get_video_url or slot.get_keynote_url %}
+                <ul class="list-unstyled">
+                    {% if slot.get_keynote_url %}
+                        <li><a href="{{ slot.get_keynote_url }}" target="_blank">{% trans "Descargar presentación" %}</a></li>
+                    {% endif %}
+                    {% if slot.get_video_url %}
+                        <li><a href="{{ slot.get_video_url }}" target="_blank">{% trans "Ver vídeo" %}</a></li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+            {% if not slot.kind.plenary and slot.content.get_description %}
+            <p class="text-center no-margin js-slot-expand" data-slot="{{ slot.id }}">
+                <i class="fa fa-angle-down"></i>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% if slot.content.get_description %}
+<div id="slot-description-{{ slot.id }}" class="row" style="display: none">
+    <div class="col-12">
+        <p>{{ slot.content.get_description|linebreaksbr }}</p>
+    </div>
+</div>
+{% endif %}

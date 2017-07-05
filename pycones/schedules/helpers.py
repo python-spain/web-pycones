@@ -6,12 +6,21 @@ from xml.etree import ElementTree
 
 import math
 
+from django.http import Http404
 from icalendar import Calendar, Event
+from options.models import Option
 
 
-def export_to_pentabarf(schedule):
+def check_schedule_view(request):
+    is_schedule_opened = bool(Option.objects.get_value("schedule_opened", 0))
+    if not is_schedule_opened and not (request.user.is_authenticated() and request.user.is_superuser):
+        raise Http404()
+
+
+def export_to_pentabarf(days_queryset, rooms_queryset):
     """Export schedule model to Pentabarf XML format.
-    :param schedule:
+    :param days_queryset:
+    :param rooms_queryset:
     """
     schedule_root = ElementTree.Element('schedule')
 
@@ -27,19 +36,19 @@ def export_to_pentabarf(schedule):
     end = ElementTree.SubElement(conference_element, 'end')
     end.text = "2017-09-24"
     days = ElementTree.SubElement(conference_element, 'days')
-    days.text = str(schedule.day_set.count())
+    days.text = str(days_queryset.count())
     timeslot_duration = ElementTree.SubElement(conference_element, 'timeslot_duration')
     timeslot_duration.text = "00:30"
 
     # Days
-    for index, day in enumerate(schedule.day_set.all()):
+    for index, day in enumerate(days_queryset.all()):
         day_element = ElementTree.SubElement(
             schedule_root, 'day', attrib={"date": day.date.strftime("%Y-%m-%d"), "index": str(index + 1)}
         )
 
         # Rooms
         rooms = dict()
-        for room in schedule.room_set.all():
+        for room in rooms_queryset.all():
             room_element = ElementTree.SubElement(
                 day_element, 'room', attrib={"name": room.name}
             )
@@ -48,7 +57,7 @@ def export_to_pentabarf(schedule):
         # Slots
         for slot in day.slot_set.order_by("start"):
             if slot.kind.plenary:
-                room_element = rooms[slot.default_room.pk]
+                room_element = rooms[slot.room.pk]
                 event_element = ElementTree.SubElement(room_element, 'event', attrib={"id": str(slot.pk)})
                 date_element = ElementTree.SubElement(event_element, "date")
                 date_element.text = datetime.datetime(
@@ -68,11 +77,11 @@ def export_to_pentabarf(schedule):
                     math.floor((duration.seconds/60) % 60)
                 )
                 room_name_element = ElementTree.SubElement(event_element, "room")
-                room_name_element.text = slot.default_room.name
+                room_name_element.text = slot.room.name
                 title_element = ElementTree.SubElement(event_element, "title")
                 title_element.text = slot.content_override.raw
-            if slot.content is not None and slot.default_room is not None:
-                room_element = rooms[slot.default_room.pk]
+            if slot.content is not None and slot.room is not None:
+                room_element = rooms[slot.room.pk]
                 event_element = ElementTree.SubElement(room_element, 'event', attrib={"id": str(slot.pk)})
                 date_element = ElementTree.SubElement(event_element, "date")
                 date_element.text = datetime.datetime(
@@ -92,7 +101,7 @@ def export_to_pentabarf(schedule):
                     math.floor((duration.seconds/60) % 60)
                 )
                 room_name_element = ElementTree.SubElement(event_element, "room")
-                room_name_element.text = slot.default_room.name
+                room_name_element.text = slot.room.name
                 title_element = ElementTree.SubElement(event_element, "title")
                 title_element.text = slot.content.get_title()
                 description_element = ElementTree.SubElement(event_element, "description")
@@ -115,13 +124,13 @@ def export_to_pentabarf(schedule):
     return ElementTree.tostring(schedule_root, encoding="unicode")
 
 
-def export_to_xcal(schedule):
+def export_to_xcal(days_queryset):
     """Export schedule model to xCal format.
-    :param schedule:
+    :param days_queryset:
     """
     icalendar_root = ElementTree.Element('icalendar', attrib={"xmlns": "urn:ietf:params:xml:ns:icalendar-2.0"})
     vcalendar_element = ElementTree.SubElement(icalendar_root, "vcalendar")
-    for index, day in enumerate(schedule.day_set.all()):
+    for index, day in enumerate(days_queryset.all()):
         for slot in day.slot_set.all().select_related():
             if slot.kind.plenary:
                 vevent_element = ElementTree.SubElement(vcalendar_element, "vevent")
@@ -130,7 +139,7 @@ def export_to_xcal(schedule):
                 text_element = ElementTree.SubElement(summary_element, "text")
                 text_element.text = slot.content_override.raw
                 location_element = ElementTree.SubElement(properties_element, "location")
-                location_element.text = slot.default_room.name
+                location_element.text = slot.room.name
                 dtstart_element = ElementTree.SubElement(properties_element, "dtstart")
                 date_time_element = ElementTree.SubElement(dtstart_element, "date-time")
                 date_time_element.text = "{}T{}".format(
@@ -154,7 +163,7 @@ def export_to_xcal(schedule):
                 text_element = ElementTree.SubElement(description_element, "text")
                 text_element.text = (description.raw if hasattr(description, "raw") else description).replace("\r\n", "")
                 location_element = ElementTree.SubElement(properties_element, "location")
-                location_element.text = slot.default_room.name
+                location_element.text = slot.room.name
                 dtstart_element = ElementTree.SubElement(properties_element, "dtstart")
                 date_time_element = ElementTree.SubElement(dtstart_element, "date-time")
                 date_time_element.text = "{}T{}".format(
@@ -171,12 +180,12 @@ def export_to_xcal(schedule):
     return ElementTree.tostring(icalendar_root, encoding="unicode")
 
 
-def export_to_icalendar(schedule):
+def export_to_icalendar(days_queryset):
     """Export schedule model to iCalendar format.
-    :param schedule:
+    :param days_queryset:
     """
     cal = Calendar()
-    for index, day in enumerate(schedule.day_set.all()):
+    for index, day in enumerate(days_queryset.all()):
         for slot in day.slot_set.all().select_related():
             if slot.kind.plenary:
                 event = Event()
@@ -189,8 +198,8 @@ def export_to_icalendar(schedule):
                     day.date.strftime("%Y%m%d"),
                     slot.end.strftime("%H%M%S"),
                 )
-                if slot.default_room:
-                    event.add('location', slot.default_room.name)
+                if slot.room:
+                    event.add('location', slot.room.name)
                 event.add('summary', slot.content_override.raw)
                 cal.add_component(event)
             if slot.content is not None:
@@ -204,11 +213,13 @@ def export_to_icalendar(schedule):
                     day.date.strftime("%Y%m%d"),
                     slot.end.strftime("%H%M%S"),
                 )
-                if slot.default_room:
-                    event.add('location', slot.default_room.name)
+                if slot.room:
+                    event.add('location', slot.room.name)
                 event.add('summary', slot.content.get_title())
                 description = slot.content.get_description()
-                event.add('description', (description.raw if hasattr(description, "raw") else description).replace("\r\n", ""))
+                event.add('description', (description.raw
+                                          if hasattr(description, "raw")
+                                          else description).replace("\r\n", ""))
                 cal.add_component(event)
     return cal.to_ical()
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
-from os.path import basename
+from os.path import basename, join
 from sys import path
 
 import environ
@@ -39,6 +39,7 @@ PROJECT_DOMAIN = '%s.com' % PROJECT_NAME.lower()
 path.append(CONFIG_ROOT)
 
 env = environ.Env()
+env.read_env(join(DJANGO_ROOT, '.env'))
 
 # DEBUG CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -189,6 +190,7 @@ LOCAL_APPS = (
     'pycones.proposals',
     'pycones.reviewers',
     'pycones.speakers',
+    'pycones.schedules',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
