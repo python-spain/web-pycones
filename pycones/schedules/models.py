@@ -185,7 +185,7 @@ class Presentation(models.Model):
     slot = models.OneToOneField(Slot, null=True, blank=True, related_name="presentation", on_delete=SET_NULL)
 
     title = models.CharField(max_length=100, default="", blank=True)
-    slug = models.SlugField(null=True, blank=True, allow_unicode=True)
+    slug = models.SlugField(max_length=100, null=True, blank=True, allow_unicode=True)
     description = MarkupField(default="", blank=True, default_markup_type='markdown')
     abstract = MarkupField(default="", blank=True, default_markup_type='markdown')
 
