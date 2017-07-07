@@ -224,14 +224,14 @@ class Presentation(models.Model):
         if self.abstract.raw:
             return self.abstract
         if self.proposal:
-            return self.proposal.abstract
+            return self.proposal.translated_abstract
         return None
 
     def get_additional_notes(self):
         if self.additional_notes.raw:
             return self.additional_notes
         if self.proposal:
-            return self.proposal.additional_notes
+            return self.proposal.translated_additional_notes
         return None
 
     def get_language(self):
