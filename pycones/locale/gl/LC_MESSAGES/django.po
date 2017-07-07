@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 12:30+0000\n"
+"POT-Creation-Date: 2017-07-07 08:24+0000\n"
 "PO-Revision-Date: 2015-07-12 17:01+0000\n"
 "Last-Translator: Miguel González <migonzalvar@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/python-espana/web-"
@@ -20,27 +20,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings/common.py:68 pycones/proposals/__init__.py:16
+#: config/settings/common.py:69 pycones/proposals/__init__.py:16
 msgid "Español"
 msgstr "Español"
 
-#: config/settings/common.py:69
+#: config/settings/common.py:70
 msgid "Catalán"
 msgstr ""
 
-#: config/settings/common.py:70
+#: config/settings/common.py:71
 msgid "Gallego"
 msgstr ""
 
-#: config/settings/common.py:71
+#: config/settings/common.py:72
 msgid "Euskera"
 msgstr ""
 
-#: config/settings/common.py:72
+#: config/settings/common.py:73
 msgid "English"
 msgstr "Inglés"
 
-#: config/urls.py:39
+#: config/urls.py:45
 #, python-format
 msgid "%s Admin"
 msgstr ""
@@ -158,6 +158,7 @@ msgid "Nivel de la audiencia"
 msgstr ""
 
 #: pycones/proposals/models.py:42 pycones/templates/reviewers/details.html:18
+#: pycones/templates/schedule/details.html:27
 msgid "Idioma"
 msgstr ""
 
@@ -291,27 +292,31 @@ msgstr ""
 msgid "[%s] Tienes una nueva propuesta para revisar"
 msgstr ""
 
-#: pycones/schedules/models.py:104 pycones/schedules/models.py:233
+#: pycones/schedules/admin.py:19
+msgid "Title"
+msgstr ""
+
+#: pycones/schedules/models.py:101 pycones/schedules/models.py:199
 msgid "video URL"
 msgstr ""
 
-#: pycones/schedules/models.py:106
+#: pycones/schedules/models.py:102
 msgid "keynote URL"
 msgstr "URL externa"
 
-#: pycones/schedules/models.py:107
+#: pycones/schedules/models.py:103
 msgid "keynote file"
 msgstr ""
 
-#: pycones/schedules/models.py:235
+#: pycones/schedules/models.py:200
 msgid "URL de la presentación o del código"
 msgstr ""
 
-#: pycones/schedules/models.py:236
+#: pycones/schedules/models.py:201
 msgid "Fichero de presentación"
 msgstr ""
 
-#: pycones/schedules/views.py:90 pycones/speakers/views.py:47
+#: pycones/schedules/views.py:81 pycones/speakers/views.py:47
 msgid "Datos actualizados correctamente"
 msgstr ""
 
@@ -1270,11 +1275,14 @@ msgid "Revisión"
 msgstr ""
 
 #: pycones/templates/reviewers/details.html:64
+#: pycones/templates/schedule/presentations/edit.html:21
 #: pycones/templates/users/restore.html:32
 msgid "Guardar"
 msgstr ""
 
 #: pycones/templates/reviewers/details.html:65
+#: pycones/templates/schedule/details.html:51
+#: pycones/templates/schedule/presentations/edit.html:22
 msgid "Volver"
 msgstr ""
 
@@ -1321,6 +1329,52 @@ msgid ""
 "tu contraseña\n"
 "                y puedas acceder al listado de propuestas para revisarlas.\n"
 "            "
+msgstr ""
+
+#: pycones/templates/schedule/_slot.html:35
+#: pycones/templates/schedule/details.html:33
+msgid "Descargar presentación"
+msgstr ""
+
+#: pycones/templates/schedule/_slot.html:38
+#: pycones/templates/schedule/details.html:36
+msgid "Ver vídeo"
+msgstr ""
+
+#: pycones/templates/schedule/details.html:42
+msgid "Acerca de"
+msgstr ""
+
+#: pycones/templates/schedule/presentations/edit.html:7
+msgid "Editar datos"
+msgstr ""
+
+#: pycones/templates/schedule/presentations/edit.html:8
+msgid "Sube desde este formulario el fichero de la charla o taller."
+msgstr ""
+
+#: pycones/templates/schedule/show.html:47
+msgid "Nivel básico"
+msgstr ""
+
+#: pycones/templates/schedule/show.html:52
+msgid "Nivel intermedio"
+msgstr ""
+
+#: pycones/templates/schedule/show.html:57
+msgid "Nivel avanzado"
+msgstr ""
+
+#: pycones/templates/schedule/show.html:66
+msgid "Descargar en iCalendar"
+msgstr ""
+
+#: pycones/templates/schedule/show.html:69
+msgid "Descargar en xCal"
+msgstr ""
+
+#: pycones/templates/schedule/show.html:72
+msgid "Descargar en Pentabarf XML"
 msgstr ""
 
 #: pycones/templates/users/request_code.html:5

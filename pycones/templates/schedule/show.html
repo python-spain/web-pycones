@@ -41,6 +41,26 @@
     </div>
 
     <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="legend legend-basic">
+                    <strong>{% trans "Nivel básico" %}</strong>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="legend legend-intermediate">
+                    <strong>{% trans "Nivel intermedio" %}</strong>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="legend legend-advanced">
+                    <strong>{% trans "Nivel avanzado" %}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         <div class="row text-center" style="margin: 15px 0">
             <div class="col-sm-4">
                 <a href="{% url "schedule_icalendar" %}" target="_blank" class="btn btn-success">{% trans "Descargar en iCalendar" %}</a>
