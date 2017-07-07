@@ -64,7 +64,7 @@ $slot-border-size: 5px;
       }
 
       &-basic {
-        background-color: rgba(44, 187, 145, 0.2);
+        background-color: rgba(44, 187, 145, 0.2) !important;
       }
       &-intermediate {
         background-color: rgba(255, 196, 34, 0.2) !important;
@@ -87,6 +87,20 @@ $slot-border-size: 5px;
 
   }
 
+}
+
+.legend {
+  padding: 5px;
+  border-left: $slot-border-size solid $green-dark;
+  &-basic {
+    background-color: rgba(44, 187, 145, 0.2);
+  }
+  &-intermediate {
+    background-color: rgba(255, 196, 34, 0.2) !important;
+  }
+  &-advanced {
+    background-color: rgba(187, 75, 44, 0.2) !important;
+  }
 }
 
 .js-slot-expand {
