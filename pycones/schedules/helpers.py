@@ -57,7 +57,10 @@ def export_to_pentabarf(days_queryset, rooms_queryset):
         # Slots
         for slot in day.slot_set.order_by("start"):
             if slot.kind.plenary:
-                room_element = rooms[slot.room.pk]
+                if slot.room is not None:
+                    room_element = rooms[slot.room.pk]
+                else:
+                    continue
                 event_element = ElementTree.SubElement(room_element, 'event', attrib={"id": str(slot.pk)})
                 date_element = ElementTree.SubElement(event_element, "date")
                 date_element.text = datetime.datetime(
@@ -110,17 +113,18 @@ def export_to_pentabarf(days_queryset, rooms_queryset):
                 abstract_element = ElementTree.SubElement(event_element, "abstract")
                 abstract = slot.content.get_abstract()
                 abstract_element.text = (abstract.raw if hasattr(abstract, "raw") else abstract).replace("\r\n", "")
-                persons_element = ElementTree.SubElement(event_element, "persons")
-                person = slot.content.speaker
-                if len(person.name.split(" y ")) > 0:
-                    persons = person.name.split(" y ")
-                elif len(person.name.split(", ")) > 0:
-                    persons = person.name.split(", ")
-                else:
-                    persons = [person]
-                for person in persons:
-                    person_element = ElementTree.SubElement(persons_element, "person")
-                    person_element.text = person
+                person = slot.content.speakers.first()
+                if person:
+                    persons_element = ElementTree.SubElement(event_element, "persons")
+                    if len(person.name.split(" y ")) > 0:
+                        persons = person.name.split(" y ")
+                    elif len(person.name.split(", ")) > 0:
+                        persons = person.name.split(", ")
+                    else:
+                        persons = [person]
+                    for person in persons:
+                        person_element = ElementTree.SubElement(persons_element, "person")
+                        person_element.text = person
     return ElementTree.tostring(schedule_root, encoding="unicode")
 
 
@@ -139,7 +143,7 @@ def export_to_xcal(days_queryset):
                 text_element = ElementTree.SubElement(summary_element, "text")
                 text_element.text = slot.content_override.raw
                 location_element = ElementTree.SubElement(properties_element, "location")
-                location_element.text = slot.room.name
+                location_element.text = slot.room.name if slot.room is not None else ""
                 dtstart_element = ElementTree.SubElement(properties_element, "dtstart")
                 date_time_element = ElementTree.SubElement(dtstart_element, "date-time")
                 date_time_element.text = "{}T{}".format(
