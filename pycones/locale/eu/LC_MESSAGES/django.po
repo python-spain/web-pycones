@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 08:24+0000\n"
+"POT-Creation-Date: 2017-07-07 08:36+0000\n"
 "PO-Revision-Date: 2016-07-21 16:45+0200\n"
 "Last-Translator: Aitzol Naberan <anaberan@codesyntax.com>\n"
 "Language-Team: Basque (http://www.transifex.com/python-espana/web-"
@@ -249,7 +249,7 @@ msgstr "[%s] Hitzaldi proposamena berretsi"
 msgid "[%s] Notificación de propuesta de charla"
 msgstr "[%s] Hitzaldi proposamena berretsi"
 
-#: pycones/reviewers/admin.py:39 pycones/templates/headers.html:43
+#: pycones/reviewers/admin.py:39 pycones/templates/headers.html:48
 msgid "Revisiones"
 msgstr ""
 
@@ -573,30 +573,34 @@ msgid "Oradores Plenarios"
 msgstr "Hizlari nagusiak"
 
 #: pycones/templates/headers.html:30
+msgid "Agenda"
+msgstr ""
+
+#: pycones/templates/headers.html:35
 msgid "Compra tus entradas"
 msgstr "Erosi zure sarrerak"
 
-#: pycones/templates/headers.html:35
+#: pycones/templates/headers.html:40
 msgid "Envía tu propuesta"
 msgstr "Zure proposamena bidali"
 
-#: pycones/templates/headers.html:39
+#: pycones/templates/headers.html:44
 msgid "Blog"
 msgstr "Bloga"
 
-#: pycones/templates/headers.html:48
+#: pycones/templates/headers.html:53
 msgid "Salir"
 msgstr ""
 
-#: pycones/templates/headers.html:50 pycones/templates/reviewers/list.html:35
+#: pycones/templates/headers.html:55 pycones/templates/reviewers/list.html:35
 msgid "Acceder"
 msgstr ""
 
-#: pycones/templates/headers.html:67 pycones/templates/pages/info.html:149
+#: pycones/templates/headers.html:72 pycones/templates/pages/info.html:149
 msgid "Código de conducta"
 msgstr "Jarrera kodea"
 
-#: pycones/templates/headers.html:68
+#: pycones/templates/headers.html:73
 msgid "Contacta con nosotros"
 msgstr "Jarri harremanetan gurekin"
 
