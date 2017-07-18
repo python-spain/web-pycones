@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 08:36+0000\n"
+"POT-Creation-Date: 2017-07-18 16:43+0000\n"
 "PO-Revision-Date: 2016-07-23 17:43+0200\n"
 "Last-Translator: b'  <organizacion2015@lists.es.python.org>'\n"
 "Language-Team: \n"
@@ -766,8 +766,9 @@ msgid "Naomi Ceder"
 msgstr ""
 
 #: pycones/templates/pages/home.html:37
-msgid "¡Próximamente!"
-msgstr "Coming soon!"
+#: pycones/templates/pages/keynoters.html:23
+msgid "Juan Luis Cano"
+msgstr ""
 
 #: pycones/templates/pages/home.html:41
 msgid "¡Conoce más de nuestros keynoters!"
@@ -1122,6 +1123,15 @@ msgstr ""
 "America and PyCon UK, originating the poster sessions, Education summit, and "
 "Intro to Sprinting Workshop."
 
+#: pycones/templates/pages/keynoters.html:25
+msgid ""
+"Presidente de la asociación Python España, ingeniero aeroespacial, defensor "
+"del software de código abierto, ciudadano europeo, ciclista urbano, amante "
+"del rock de los '70, músico frustrado, ser humano. Obsesionado en perseguir "
+"sueños imposibles y democratizar el acceso al conocimiento."
+msgstr ""
+"Chair of the Spanish branch of the PSF, Aerospace engineer, open source software advocate, European citizen, urban cyclist, '70s hard rock lover, frustrated musician, human being. Obsessed with pursuing impossible dreams and democratizing the access to knowledge."
+
 #: pycones/templates/pages/landing.html:20
 msgid ""
 "Estamos preparando la nueva edición de la PyConES, dentro de poco habrá más "
@@ -1414,6 +1424,9 @@ msgid ""
 msgstr ""
 "We've sent an email to the account that bought the entrance with a link to "
 "set your password."
+
+#~ msgid "¡Próximamente!"
+#~ msgstr "Coming soon!"
 
 #~ msgid "Web de la PyConES 2017"
 #~ msgstr "PyConES 2017 web"
