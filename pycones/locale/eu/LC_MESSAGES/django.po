@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 08:36+0000\n"
+"POT-Creation-Date: 2017-07-18 16:43+0000\n"
 "PO-Revision-Date: 2016-07-21 16:45+0200\n"
 "Last-Translator: Aitzol Naberan <anaberan@codesyntax.com>\n"
 "Language-Team: Basque (http://www.transifex.com/python-espana/web-"
@@ -837,7 +837,8 @@ msgid "Naomi Ceder"
 msgstr ""
 
 #: pycones/templates/pages/home.html:37
-msgid "¡Próximamente!"
+#: pycones/templates/pages/keynoters.html:23
+msgid "Juan Luis Cano"
 msgstr ""
 
 #: pycones/templates/pages/home.html:41
@@ -1238,6 +1239,14 @@ msgid ""
 "diversas audiencias durante muchos años. Ella ha ayudado a organizar PyCon "
 "US y PyCon UK, dando origen a las sesiones de carteles, cumbre de Educación, "
 "y el Taller de Intro to Sprinting. "
+msgstr ""
+
+#: pycones/templates/pages/keynoters.html:25
+msgid ""
+"Presidente de la asociación Python España, ingeniero aeroespacial, defensor "
+"del software de código abierto, ciudadano europeo, ciclista urbano, amante "
+"del rock de los '70, músico frustrado, ser humano. Obsesionado en perseguir "
+"sueños imposibles y democratizar el acceso al conocimiento."
 msgstr ""
 
 #: pycones/templates/pages/landing.html:20
