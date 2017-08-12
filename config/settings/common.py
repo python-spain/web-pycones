@@ -191,6 +191,7 @@ LOCAL_APPS = (
     'pycones.reviewers',
     'pycones.speakers',
     'pycones.schedules',
+    'pycones.jobboard',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

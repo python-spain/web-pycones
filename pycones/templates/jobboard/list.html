@@ -1,0 +1,24 @@
+{% extends "container.html" %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "Job board" %}</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>{% trans "Oferta" %}</th>
+            <th>{% trans "Empresa" %}</th>
+        </tr>
+    </thead>
+    {% for job_offer in job_offers %}
+        <tr>
+            <th><a href="{% url "jobboard:details" job_offer.pk %}">{{ job_offer.title }}</a></th>
+            <td>{{ job_offer.employer }}</td>
+        </tr>
+    {% empty %}
+        <tr>
+            <td colspan="2">{% trans "No hay ninguna posición disponible" %}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
