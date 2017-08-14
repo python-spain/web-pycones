@@ -24,6 +24,7 @@ urlpatterns = i18n_patterns(
     url(r'^proposals/', include('pycones.proposals.urls', namespace="proposals")),
     url(r'^reviewers/', include('pycones.reviewers.urls', namespace="reviewers")),
     url(r'^schedule/', include('pycones.schedules.urls', namespace="schedule")),
+    url(r'^jobboard/', include('pycones.jobboard.urls', namespace="jobboard")),
 )
 
 # URLs without i18n
