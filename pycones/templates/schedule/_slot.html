@@ -7,18 +7,21 @@
             {% if slot.content %}
                 <strong>{{ slot.start }}</strong>
                 {% if not slot.kind.plenary %}
-                <span class="slot-kind">{{ slot.kind.label }}</span>
+                    <span class="slot-kind">{{ slot.kind.label }}</span>
                 {% endif %}
                 <h3>
                     <a href="{{ slot.get_absolute_url }}">
-                    {{ slot.content.get_title }} <small style="text-transform: uppercase">{{ slot.content.get_language }}</small>
+                    {{ slot.content.get_title }}
+                    {% if slot.content.get_language %}
+                        <small style="text-transform: uppercase">{{ slot.content.get_language }}</small>
+                    {% endif %}
                     </a>
                 </h3>
                 <p><strong>{{ slot.content.get_speakers|comma_list }}</strong></p>
                 {% if slot.kind.plenary and slot.room %}
-                <p class="default-room">{{ slot.room.name }}</p>
+                    <p class="default-room">{{ slot.room.name }}</p>
                 {% elif slot.room %}
-                <p class="default-room visible-xs">{{ slot.room.name }}</p>
+                    <p class="default-room visible-xs">{{ slot.room.name }}</p>
                 {% endif %}
             {% else %}
                 <strong>{{ slot.start }}</strong>

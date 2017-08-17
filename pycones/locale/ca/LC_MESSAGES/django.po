@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2017\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-18 16:43+0000\n"
+"POT-Creation-Date: 2017-08-17 20:47+0000\n"
 "PO-Revision-Date: 2015-07-13 11:47+0000\n"
 "Last-Translator: Mai Giménez <mai@immutable.es>\n"
 "Language-Team: Catalan (http://www.transifex.com/python-espana/web-"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "English"
 msgstr "Anglés"
 
-#: config/urls.py:45
+#: config/urls.py:46
 #, python-format
 msgid "%s Admin"
 msgstr ""
@@ -73,6 +73,25 @@ msgstr "Continua llegint"
 #: pycones/blog/views.py:40
 #, python-format
 msgid "Web de la %s"
+msgstr ""
+
+#: pycones/jobboard/models.py:14 pycones/proposals/models.py:67
+#: pycones/templates/reviewers/list.html:21
+msgid "Título"
+msgstr ""
+
+#: pycones/jobboard/models.py:16
+#, fuzzy
+#| msgid "Breve descripción"
+msgid "Descripción"
+msgstr "Descripció breu"
+
+#: pycones/jobboard/models.py:20
+msgid "Describe de job offer"
+msgstr ""
+
+#: pycones/jobboard/models.py:22
+msgid "Application URL"
 msgstr ""
 
 #: pycones/proposals/__init__.py:10
@@ -158,7 +177,8 @@ msgstr "Nom"
 msgid "Nivel de la audiencia"
 msgstr ""
 
-#: pycones/proposals/models.py:42 pycones/templates/reviewers/details.html:18
+#: pycones/proposals/models.py:42 pycones/schedules/models.py:194
+#: pycones/templates/reviewers/details.html:18
 #: pycones/templates/schedule/details.html:27
 msgid "Idioma"
 msgstr ""
@@ -173,10 +193,6 @@ msgstr ""
 
 #: pycones/proposals/models.py:65 pycones/templates/reviewers/details.html:10
 msgid "Tipo de propuesta"
-msgstr ""
-
-#: pycones/proposals/models.py:67 pycones/templates/reviewers/list.html:21
-msgid "Título"
 msgstr ""
 
 #: pycones/proposals/models.py:69 pycones/templates/reviewers/details.html:27
@@ -297,7 +313,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: pycones/schedules/models.py:101 pycones/schedules/models.py:199
+#: pycones/schedules/models.py:101 pycones/schedules/models.py:206
 msgid "video URL"
 msgstr ""
 
@@ -309,11 +325,11 @@ msgstr "URL externa"
 msgid "keynote file"
 msgstr ""
 
-#: pycones/schedules/models.py:200
+#: pycones/schedules/models.py:207
 msgid "URL de la presentación o del código"
 msgstr ""
 
-#: pycones/schedules/models.py:201
+#: pycones/schedules/models.py:208
 msgid "Fichero de presentación"
 msgstr ""
 
@@ -573,21 +589,45 @@ msgstr ""
 msgid "Blog"
 msgstr "Blog"
 
-#: pycones/templates/headers.html:53
+#: pycones/templates/headers.html:52
+msgid "Job Board"
+msgstr ""
+
+#: pycones/templates/headers.html:56
 msgid "Salir"
 msgstr ""
 
-#: pycones/templates/headers.html:55 pycones/templates/reviewers/list.html:35
+#: pycones/templates/headers.html:58 pycones/templates/reviewers/list.html:35
 msgid "Acceder"
 msgstr ""
 
-#: pycones/templates/headers.html:72 pycones/templates/pages/info.html:149
+#: pycones/templates/headers.html:75 pycones/templates/pages/info.html:149
 msgid "Código de conducta"
 msgstr "Codi de conducta"
 
-#: pycones/templates/headers.html:73
+#: pycones/templates/headers.html:76
 msgid "Contacta con nosotros"
 msgstr "Contacta amb nosaltres"
+
+#: pycones/templates/jobboard/details.html:11
+msgid "Enviar solicitud"
+msgstr ""
+
+#: pycones/templates/jobboard/list.html:5
+msgid "Job board"
+msgstr ""
+
+#: pycones/templates/jobboard/list.html:9
+msgid "Oferta"
+msgstr ""
+
+#: pycones/templates/jobboard/list.html:10
+msgid "Empresa"
+msgstr ""
+
+#: pycones/templates/jobboard/list.html:20
+msgid "No hay ninguna posición disponible"
+msgstr ""
 
 #: pycones/templates/pages/code_of_conduct.html:6
 msgid "Codigo de conducta"
