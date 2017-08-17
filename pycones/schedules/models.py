@@ -15,7 +15,7 @@ from django.utils.timezone import make_aware
 from django.utils.translation import ugettext_lazy as _
 from markupfield.fields import MarkupField
 
-from pycones.proposals import BASIC_LEVEL
+from pycones.proposals import BASIC_LEVEL, PROPOSAL_LANGUAGES
 
 
 @python_2_unicode_compatible
@@ -190,6 +190,13 @@ class Presentation(models.Model):
     slug = models.SlugField(max_length=100, null=True, blank=True, allow_unicode=True)
     description = MarkupField(default="", blank=True, default_markup_type='markdown')
     abstract = MarkupField(default="", blank=True, default_markup_type='markdown')
+    language = models.CharField(
+        verbose_name=_("Idioma"),
+        max_length=2,
+        choices=PROPOSAL_LANGUAGES,
+        null=True,
+        blank=True
+    )
 
     speakers = models.ManyToManyField("speakers.Speaker", related_name="presentations", blank=True)
     proposal = models.OneToOneField("proposals.Proposal", related_name="presentation", null=True, blank=True)
@@ -235,7 +242,11 @@ class Presentation(models.Model):
         return None
 
     def get_language(self):
-        return self.proposal.language
+        if self.language:
+            return self.language
+        if self.proposal:
+            return self.proposal.language
+        return None
 
     def get_speakers(self):
         if self.speakers.exists():
@@ -243,6 +254,9 @@ class Presentation(models.Model):
         if self.proposal:
             return self.proposal.speakers.all()
         return self.speakers.all()
+
+    def has_speakers(self):
+        return self.get_speakers().exists()
 
     def get_audience_level(self):
         if self.proposal:
