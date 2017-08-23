@@ -40,7 +40,7 @@
                 {% for speaker in slot.content.get_speakers %}
                     {% if speaker.has_biography %}
                     <h2>{% trans "Acerca de" %}</h2>
-                    <p>{{ biography }}</p>
+                    <p>{{ speaker.biography }}</p>
                     {% endif %}
                 {% endfor %}
             </div>
