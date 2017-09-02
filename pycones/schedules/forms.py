@@ -9,4 +9,6 @@ class PresentationForm(forms.ModelForm):
     class Meta:
         model = Presentation
         fields = ["keynote", "keynote_url"]
-
+        widgets = {
+            "keynote_url": forms.TextInput(attrs={"class": "form-control"})
+        }
