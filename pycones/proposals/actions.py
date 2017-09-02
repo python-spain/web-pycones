@@ -1,9 +1,3 @@
-import csv
-
-from django.http import HttpResponse
-from django.utils.encoding import smart_text
-
-
 def send_confirmation_action(description="Send confirmation email"):
     def send_confirmation(modeladmin, request, queryset):
         for item in queryset:

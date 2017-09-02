@@ -55,16 +55,6 @@ class Speaker(TimeStampedModel):
         else:
             return self.invite_email
 
-    @property
-    def all_presentations(self):
-        presentations = []
-        if self.presentations:
-            for p in self.presentations.all():
-                presentations.append(p)
-            for p in self.copresentations.all():
-                presentations.append(p)
-        return presentations
-
     def __str__(self):
         if self.user:
             return self.name
@@ -76,6 +66,10 @@ class Speaker(TimeStampedModel):
 
     def get_api_id(self):
         return "S{:05d}".format(self.pk)
+
+    def is_approved(self):
+        """Checks if the speaker has a presentation."""
+        return self.proposals.filter(presentation__isnull=False).exists() or self.presentations.exists()
 
     def save(self, **kwargs):
         """Save user full name by default for speaker."""

@@ -1,0 +1,62 @@
+{% extends "container.html" %}
+{% load i18n %}
+
+
+{% block container-content %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1>{% trans "Perfil de ponente" %}</h1>
+            </div>
+        </div>
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-7">
+                <h2>{% trans "Datos personales" %}</h2>
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    {% csrf_token %}
+                    {% for field in form %}
+
+                    <div class="form-group row{% if field.errors %} has-error{% endif %}">
+                        <label class="col-sm-3 col-from-label">{{ field.label }}</label>
+                        <div class="col-sm-9">
+                            {% if field.name == "photo" %}
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img src="{{ form.instance.photo_url }}" class="img-circle img-thumbnail" style="width: 64px; height: 64px">
+                                    </div>
+                                    <div class="col-sm-9">
+                                        {{ field }}
+                                    </div>
+                                </div>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                            <span class="help-text text-danger">{{ field.errors }}</span>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                    <div class="form-group row">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-success">{% trans "Guardar" %}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-5">
+                <h2>{% trans "Charlas/Talleres" %}</h2>
+                <p>{% trans "Lista de las propuestas que tienes acepatadas. Puedes pinchar en ellas para acceder a un formario que te permitirá <strong>subir el fichero de la presentación</strong>." %}</p>
+                <ul>
+                    {% for presentation in presentations %}
+                        <li><a href="{% url "schedule:edit-presentation" presentation.pk %}">{{ presentation.get_title }} ({{ presentation.slot.day.date|date:"l j F" }}, {{ presentation.slot.start }})</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+{% endblock container-content %}

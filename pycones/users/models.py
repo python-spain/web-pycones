@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.sites.models import Site
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
@@ -78,3 +79,10 @@ class User(AbstractBaseUser, PermissionsMixin):
             template_name="emails/users/restore_email.html",
             context=context
         )
+
+    def is_approved_speaker(self):
+        """Check if the user is a speaker with an approved presentation."""
+        try:
+            return self.speaker.is_approved()
+        except ObjectDoesNotExist:
+            return False

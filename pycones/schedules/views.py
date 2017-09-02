@@ -6,6 +6,7 @@ from braces.views import LoginRequiredMixin
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
+from django.http.response import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
@@ -61,7 +62,9 @@ class EditPresentation(LoginRequiredMixin, View):
         return reverse("speakers:sign-in")
 
     def get(self, request, presentation_id):
-        presentation = get_object_or_404(Presentation, pk=presentation_id, speaker=request.user.speaker_profile)
+        presentation = get_object_or_404(Presentation, pk=presentation_id)
+        if request.user.speaker not in presentation.get_speakers():
+            raise Http404()
         form = PresentationForm(instance=presentation)
         data = {
             "presentation": presentation,
@@ -70,7 +73,9 @@ class EditPresentation(LoginRequiredMixin, View):
         return render(request, self.template_name, data)
 
     def post(self, request, presentation_id):
-        presentation = get_object_or_404(Presentation, pk=presentation_id, speaker=request.user.speaker_profile)
+        presentation = get_object_or_404(Presentation, pk=presentation_id)
+        if request.user.speaker not in presentation.get_speakers():
+            raise Http404()
         form = PresentationForm(request.POST, request.FILES, instance=presentation)
         data = {
             "presentation": presentation,
@@ -79,7 +84,7 @@ class EditPresentation(LoginRequiredMixin, View):
         if form.is_valid():
             form.save()
             messages.success(request, _("Datos actualizados correctamente"))
-            return redirect(reverse("speakers:edit"))
+            return redirect(reverse("schedule:edit-presentation", kwargs={"presentation_id": presentation_id}))
         return render(request, self.template_name, data)
 
 
