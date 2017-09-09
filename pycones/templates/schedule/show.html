@@ -9,7 +9,7 @@
         {% for day in days %}
             <div class="row">
                 <div class="col-12 day">
-                    <h2>{{ day.date }}</h2>
+                    <h2>{{ day.date|date:"d F Y" }}</h2>
                 </div>
             </div>
             <div class="row track-title-row hidden-xs">

@@ -170,7 +170,7 @@ class Slot(models.Model):
         elif self.keynote_url:
             return self.keynote_url
         try:
-            return self.presentatione.get_keynote_url()
+            return self.presentation.get_keynote_url()
         except ObjectDoesNotExist:
             pass
         return ""

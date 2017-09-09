@@ -20,7 +20,7 @@
                 </h2>
                 {% endfor %}
                 <ul class="list-unstyled">
-                    <li>{{ slot.day.date }}, {{ slot.start }} - {{ slot.end }}</li>
+                    <li>{{ slot.day.date|date:"d F Y" }}, {{ slot.start }} - {{ slot.end }}</li>
                     {% if slot.room %}
                     <li>{{ slot.room }}</li>
                     {% endif %}
