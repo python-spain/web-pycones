@@ -9,7 +9,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models import SET_NULL
-
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.text import slugify
 from django.utils.timezone import make_aware
@@ -171,7 +170,7 @@ class Slot(models.Model):
         elif self.keynote_url:
             return self.keynote_url
         try:
-            return self.presentatione.get_keynote_url()
+            return self.presentation.get_keynote_url()
         except ObjectDoesNotExist:
             pass
         return ""
