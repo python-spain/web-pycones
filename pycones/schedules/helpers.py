@@ -164,8 +164,9 @@ def export_to_xcal(days_queryset):
                 text_element.text = slot.content.get_title()
                 description = slot.content.get_description()
                 description_element = ElementTree.SubElement(properties_element, "description")
-                text_element = ElementTree.SubElement(description_element, "text")
-                text_element.text = (description.raw if hasattr(description, "raw") else description).replace("\r\n", "")
+                if description:
+                    text_element = ElementTree.SubElement(description_element, "text")
+                    text_element.text = (description.raw if hasattr(description, "raw") else description).replace("\r\n", "")
                 location_element = ElementTree.SubElement(properties_element, "location")
                 location_element.text = slot.room.name
                 dtstart_element = ElementTree.SubElement(properties_element, "dtstart")
@@ -221,9 +222,10 @@ def export_to_icalendar(days_queryset):
                     event.add('location', slot.room.name)
                 event.add('summary', slot.content.get_title())
                 description = slot.content.get_description()
-                event.add('description', (description.raw
-                                          if hasattr(description, "raw")
-                                          else description).replace("\r\n", ""))
+                if description:
+                    event.add('description', (description.raw
+                                              if hasattr(description, "raw")
+                                              else description).replace("\r\n", ""))
                 cal.add_component(event)
     return cal.to_ical()
 
