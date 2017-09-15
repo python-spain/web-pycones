@@ -107,12 +107,14 @@ def export_to_pentabarf(days_queryset, rooms_queryset):
                 room_name_element.text = slot.room.name
                 title_element = ElementTree.SubElement(event_element, "title")
                 title_element.text = slot.content.get_title()
-                description_element = ElementTree.SubElement(event_element, "description")
                 description = slot.content.get_description()
-                description_element.text = (description.raw if hasattr(description, "raw") else description).replace("\r\n", "")
-                abstract_element = ElementTree.SubElement(event_element, "abstract")
+                if description:
+                    description_element = ElementTree.SubElement(event_element, "description")
+                    description_element.text = (description.raw if hasattr(description, "raw") else description).replace("\r\n", "")
                 abstract = slot.content.get_abstract()
-                abstract_element.text = (abstract.raw if hasattr(abstract, "raw") else abstract).replace("\r\n", "")
+                if abstract:
+                    abstract_element = ElementTree.SubElement(event_element, "abstract")
+                    abstract_element.text = (abstract.raw if hasattr(abstract, "raw") else abstract).replace("\r\n", "")
                 person = slot.content.speakers.first()
                 if person:
                     persons_element = ElementTree.SubElement(event_element, "persons")
