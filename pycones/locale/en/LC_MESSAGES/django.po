@@ -544,7 +544,7 @@ msgstr "About the event"
 
 #: pycones/templates/headers.html:26 pycones/templates/pages/home.html:29
 msgid "Oradores Plenarios"
-msgstr "Keynoters Speakers"
+msgstr "Keynoter Speakers"
 
 #: pycones/templates/headers.html:30
 msgid "Agenda"
