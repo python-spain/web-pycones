@@ -6,11 +6,15 @@ from django.conf.urls import url, include
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.urls import reverse
+from django.urls.base import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
 # URLs with with i18n
+from django.views.generic.base import RedirectView
+
 from pycones.schedules.views import pentabarf_view, xcal_view, icalendar_view
 
 urlpatterns = i18n_patterns(
@@ -18,7 +22,10 @@ urlpatterns = i18n_patterns(
     url(r'^code-of-conduct/$', TemplateView.as_view(template_name='pages/code_of_conduct.html'), name="code-of-conduct"),
     url(r'^tickets/$', TemplateView.as_view(template_name='pages/tickets.html'), name="tickets"),
     url(r'^info/$', TemplateView.as_view(template_name='pages/info.html'), name="info"),
-    url(r'^keynoters-speakers/$', TemplateView.as_view(template_name='pages/keynoters.html'), name="keynoters"),
+    url(r'^keynoter-speakers/$', TemplateView.as_view(template_name='pages/keynoters.html'), name="keynoter-speakers"),
+    url(r'^keynoters-speakers/$', RedirectView.as_view(
+        url=reverse_lazy("keynoter-speakers"), permanent=True
+    ), name="keynoters-speakers"),
     url(r'^blog/', include('pycones.blog.urls', namespace="blog")),
     url(r'^users/', include('pycones.users.urls', namespace="users")),
     url(r'^proposals/', include('pycones.proposals.urls', namespace="proposals")),
