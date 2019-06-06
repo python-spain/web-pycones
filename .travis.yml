@@ -5,13 +5,13 @@ services:
   - postgresql
 
 addons:
-  postgresql: "9.5"
+  postgresql: '9.5'
 
 env:
-  - DATABASE_URL=postgres://postgres@localhost:5432/pycones2017
+  - DATABASE_URL=postgres://postgres@localhost:5432/pycones2019
 
 before_script:
-  - psql -c 'create database pycones2017;' -U postgres
+  - psql -c 'create database pycones2019;' -U postgres
 
 before_install:
   - pip install --quiet coveralls
@@ -20,7 +20,7 @@ before_install:
 language: python
 
 python:
-  - "3.5"
+  - '3.5'
 
 install:
   - pip install -r requirements/test.txt
