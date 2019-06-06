@@ -16,15 +16,28 @@ class Review(TimeStampedModel):
     """A review assignation. A review user have assigned a proposal to
     review."""
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="reviews")
-    proposal = models.ForeignKey("proposals.Proposal", related_name="reviews")
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, related_name="reviews", on_delete=models.CASCADE
+    )
+    proposal = models.ForeignKey(
+        "proposals.Proposal", related_name="reviews", on_delete=models.CASCADE
+    )
 
-    score = models.FloatField(verbose_name=_("Puntuación"), null=True, blank=True, help_text=_("Puntuación del 1.0 al 4.0"))
+    score = models.FloatField(
+        verbose_name=_("Puntuación"),
+        null=True,
+        blank=True,
+        help_text=_("Puntuación del 1.0 al 4.0"),
+    )
 
     notes = models.TextField(verbose_name=_("Notas del revisor"), blank=True, null=True)
 
-    conflict = models.BooleanField(verbose_name=_("¿Existe un conflicto de intereses?"), default=False)
-    finished = models.BooleanField(verbose_name=_("¿Revisión finalizada?"), default=False)
+    conflict = models.BooleanField(
+        verbose_name=_("¿Existe un conflicto de intereses?"), default=False
+    )
+    finished = models.BooleanField(
+        verbose_name=_("¿Revisión finalizada?"), default=False
+    )
 
     class Meta:
         unique_together = ["user", "proposal"]
@@ -38,14 +51,17 @@ class Review(TimeStampedModel):
         send_email(
             context=context,
             template="emails/reviewers/new.html",
-            subject=_("[%s] Tienes una nueva propuesta para revisar") % settings.CONFERENCE_TITLE,
+            subject=_("[%s] Tienes una nueva propuesta para revisar")
+            % settings.CONFERENCE_TITLE,
             to=self.user.email,
-            from_email="%s <%s>" % (settings.CONFERENCE_TITLE, settings.CONTACT_EMAIL)
+            from_email="%s <%s>" % (settings.CONFERENCE_TITLE, settings.CONTACT_EMAIL),
         )
 
 
 class Reviewer(TimeStampedModel):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="reviewer")
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, related_name="reviewer", on_delete=models.CASCADE
+    )
 
     def reviews_count(self):
         return self.user.reviews.count()

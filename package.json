@@ -1,7 +1,7 @@
 {
   "name": "pycones",
   "version": "1.0.0",
-  "description": "Web page for PyConES 2017.",
+  "description": "Web page for PyConES 2019.",
   "main": "gulpfile.js",
   "directories": {
     "doc": "docs"

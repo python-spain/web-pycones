@@ -13,33 +13,34 @@ from model_utils.models import TimeStampedModel
 @python_2_unicode_compatible
 class Speaker(TimeStampedModel):
 
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="speaker")
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, related_name="speaker", on_delete=models.CASCADE
+    )
     name = models.CharField(
         verbose_name=_("Nombre"),
         max_length=100,
-        help_text=_("Tal como quieres que apareza en el programa de la conferencia.")
+        help_text=_("Tal como quieres que apareza en el programa de la conferencia."),
     )
     biography = MarkupField(
         verbose_name=_("Biografía"),
         blank=True,
         default="",
-        default_markup_type='markdown',
-        help_text=_("Unas palabras sobre ti. Edita usando "
-                    "<a href='http://warpedvisions.org/projects/"
-                    "markdown-cheat-sheet/target='_blank'>"
-                    "Markdown</a>.")
+        default_markup_type="markdown",
+        help_text=_(
+            "Unas palabras sobre ti. Edita usando "
+            "<a href='http://warpedvisions.org/projects/"
+            "markdown-cheat-sheet/target='_blank'>"
+            "Markdown</a>."
+        ),
     )
     photo = models.ImageField(
-        verbose_name=_("Foto"),
-        upload_to="speakers",
-        blank=True,
-        null=True
+        verbose_name=_("Foto"), upload_to="speakers", blank=True, null=True
     )
     annotation = models.TextField(default="", blank=True)
     is_keynoter = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['name']
+        ordering = ["name"]
 
     @property
     def photo_url(self):
@@ -69,7 +70,10 @@ class Speaker(TimeStampedModel):
 
     def is_approved(self):
         """Checks if the speaker has a presentation."""
-        return self.proposals.filter(presentation__isnull=False).exists() or self.presentations.exists()
+        return (
+            self.proposals.filter(presentation__isnull=False).exists()
+            or self.presentations.exists()
+        )
 
     def save(self, **kwargs):
         """Save user full name by default for speaker."""

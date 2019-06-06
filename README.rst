@@ -1,8 +1,8 @@
 ================
-PyConES 2017 Web
+PyConES 2019 Web
 ================
 
-Web page made for PyConES 2017, made with Django with :heart:.
+Web page made for PyConES 2019, made with Django with :heart:.
 
 .. image:: https://travis-ci.org/python-spain/PyConES-2017.svg?branch=master
     :target: https://travis-ci.org/python-spain/PyConES-2017

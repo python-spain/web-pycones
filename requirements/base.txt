@@ -2,50 +2,50 @@
 # like Pillow and psycopg2
 # See http://bitly.com/wheel-building-fails-CPython-35
 # Verified bug on Python 3.5.1
-wheel==0.29.0
+wheel==0.33.4
 
 # Django
-django==1.10.5
+django==2.2.2
 
 # Configuration
-django-environ==0.4.1
-django-simple-options==1.0a2
+django-environ==0.4.5
+django-simple-options==1.0
 
 # Models
 django-model-utils==2.6.1
 django-reversion==2.0.8
 
 # Views
-django-braces==1.10.0
+django-braces==1.13.0
 
 # Images
-Pillow==4.0.0
+Pillow==6.0.0
 
 # Database connector
-psycopg2==2.6.2
+psycopg2==2.8.2
 
 # Requests
-requests==2.12.4
+requests==2.22.0
 
 # Markup
-django-markupfield==1.4.1
-markdown==2.6.7
+django-markupfield==1.5.1
+markdown==3.1.1
 
 # Translations
-django-modeltranslation==0.12
+django-modeltranslation==0.13.1
 
 # Tags
-django-taggit==0.21.3
-django-taggit-autosuggest==0.3.0
+django-taggit==0.3.0
+django-taggit-autosuggest==0.3.7
 
 # Numpy
-numpy==1.11.1
+numpy==1.16.4
 
 # Clean user input
-bleach==1.5.0
+bleach==3.1.0
 
 # API
-restless==2.0.3
+restless==2.1.1
 
 # Calendar Export
-icalendar==3.11.2
+icalendar==4.0.3

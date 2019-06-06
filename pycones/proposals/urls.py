@@ -6,8 +6,14 @@ from django.views.generic import TemplateView
 
 from pycones.proposals.views import SubmitProposalView, EditProposalView
 
+app_name = "proposals"
+
 urlpatterns = [
-    url(r'^submit/success/$', TemplateView.as_view(template_name='proposals/success.html'), name="success"),
-    url(r'^submit/$', SubmitProposalView.as_view(), name="submit"),
-    url(r'^edit/(?P<code>.+)/$', EditProposalView.as_view(), name="edit"),
+    url(
+        r"^submit/success/$",
+        TemplateView.as_view(template_name="proposals/success.html"),
+        name="success",
+    ),
+    url(r"^submit/$", SubmitProposalView.as_view(), name="submit"),
+    url(r"^edit/(?P<code>.+)/$", EditProposalView.as_view(), name="edit"),
 ]

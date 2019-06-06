@@ -11,7 +11,12 @@ from markupfield.fields import MarkupField
 from model_utils.models import TimeStampedModel
 from taggit_autosuggest.managers import TaggableManager
 
-from pycones.proposals import PROPOSAL_LEVELS, BASIC_LEVEL, PROPOSAL_LANGUAGES, PROPOSAL_DURATIONS
+from pycones.proposals import (
+    PROPOSAL_LEVELS,
+    BASIC_LEVEL,
+    PROPOSAL_LANGUAGES,
+    PROPOSAL_DURATIONS,
+)
 from pycones.reviewers.models import Reviewer
 from pycones.utils.emails import send_email
 from pycones.utils.generators import random_string
@@ -36,67 +41,77 @@ class Proposal(TimeStampedModel):
         choices=PROPOSAL_LEVELS,
         null=True,
         default=BASIC_LEVEL,
-        max_length=32
+        max_length=32,
     )
     language = models.CharField(
-        verbose_name=_("Idioma"),
-        max_length=2,
-        choices=PROPOSAL_LANGUAGES,
-        default="es"
+        verbose_name=_("Idioma"), max_length=2, choices=PROPOSAL_LANGUAGES, default="es"
     )
     duration = models.PositiveIntegerField(
         verbose_name=_("Duración"),
         choices=PROPOSAL_DURATIONS,
         default=30,
         null=True,
-        blank=True
+        blank=True,
     )
     tags = TaggableManager(
         verbose_name=_("Etiquetas"),
         help_text=_("Lista de etiquetas separadas por comas."),
-        blank=True
+        blank=True,
     )
 
     is_beginners_friendly = models.BooleanField(
-        verbose_name=_("¿Es apta para principiantes?"),
-        default=False
+        verbose_name=_("¿Es apta para principiantes?"), default=False
     )
 
-    kind = models.ForeignKey("proposals.ProposalKind", verbose_name=_("Tipo de propuesta"))
+    kind = models.ForeignKey(
+        "proposals.ProposalKind",
+        verbose_name=_("Tipo de propuesta"),
+        on_delete=models.CASCADE,
+    )
 
     title = models.CharField(max_length=100, verbose_name=_("Título"))
     description = models.TextField(
         _("Breve descripción"),
         max_length=500,
-        help_text=_("Si tu propuesta se acepta esto se hará público, y se incluirá en el programa. "
-                    "Debería ser un párrafo, con un máximo de 500 caracteres.")
+        help_text=_(
+            "Si tu propuesta se acepta esto se hará público, y se incluirá en el programa. "
+            "Debería ser un párrafo, con un máximo de 500 caracteres."
+        ),
     )
     abstract = MarkupField(
         _("Resumen detallado"),
         blank=True,
         default="",
-        default_markup_type='markdown',
-        help_text=_("Resumen detallado. Se hará pública si la propuesta se acepta. Edita "
-                    "usando <a href='http://daringfireball.net/projects/markdown/basics' "
-                    "target='_blank'>Markdown</a>.")
+        default_markup_type="markdown",
+        help_text=_(
+            "Resumen detallado. Se hará pública si la propuesta se acepta. Edita "
+            "usando <a href='http://daringfireball.net/projects/markdown/basics' "
+            "target='_blank'>Markdown</a>."
+        ),
     )
     additional_notes = MarkupField(
         _("Notas adicionales"),
         blank=True,
         default="",
-        default_markup_type='markdown',
-        help_text=_("Cualquier cosa que te gustaría hacer saber a los revisores para que la tengan en "
-                    "cuenta al ahora de hacer la selección. Esto no se hará público. Edita usando "
-                    "<a href='http://daringfireball.net/projects/markdown/basics' "
-                    "target='_blank'>Markdown</a>.")
+        default_markup_type="markdown",
+        help_text=_(
+            "Cualquier cosa que te gustaría hacer saber a los revisores para que la tengan en "
+            "cuenta al ahora de hacer la selección. Esto no se hará público. Edita usando "
+            "<a href='http://daringfireball.net/projects/markdown/basics' "
+            "target='_blank'>Markdown</a>."
+        ),
     )
 
-    speakers = models.ManyToManyField("speakers.Speaker", related_name="proposals", blank=False)
+    speakers = models.ManyToManyField(
+        "speakers.Speaker", related_name="proposals", blank=False
+    )
 
     cancelled = models.BooleanField(default=False)
     notified = models.BooleanField(default=False)
-    accepted = models.NullBooleanField(verbose_name=_('Aceptada'), default=None)
-    accepted_notified = models.BooleanField(verbose_name=_('Notificación de aceptación enviada'), default=False)
+    accepted = models.NullBooleanField(verbose_name=_("Aceptada"), default=None)
+    accepted_notified = models.BooleanField(
+        verbose_name=_("Notificación de aceptación enviada"), default=False
+    )
     code = models.CharField(max_length=64, null=True, blank=True)
 
     def __str__(self):
@@ -112,7 +127,11 @@ class Proposal(TimeStampedModel):
 
     @property
     def avg(self):
-        data = [review.score for review in self.reviews.filter(finished=True) if review.score is not None]
+        data = [
+            review.score
+            for review in self.reviews.filter(finished=True)
+            if review.score is not None
+        ]
         if data:
             return sum(data) / len(data)
         return None
@@ -131,7 +150,12 @@ class Proposal(TimeStampedModel):
 
     @property
     def speakers_list(self):
-        return ", ".join(["%s <%s>" % (speaker.name, speaker.email) for speaker in self.speakers.all()])
+        return ", ".join(
+            [
+                "%s <%s>" % (speaker.name, speaker.email)
+                for speaker in self.speakers.all()
+            ]
+        )
 
     @property
     def renormalization_o0(self):
@@ -182,9 +206,10 @@ class Proposal(TimeStampedModel):
             send_email(
                 context=context,
                 template="emails/proposals/confirmation.html",
-                subject=_("[%s] Confirmación de propuesta de charla") % settings.CONFERENCE_TITLE,
+                subject=_("[%s] Confirmación de propuesta de charla")
+                % settings.CONFERENCE_TITLE,
                 to=speaker.email,
-                from_email=settings.CONTACT_EMAIL
+                from_email=settings.CONTACT_EMAIL,
             )
         self.notified = True
         self.save()
@@ -197,13 +222,18 @@ class Proposal(TimeStampedModel):
             context = self.notification_email_context(speaker=speaker)
             if self.accepted is None:
                 return
-            template = "emails/proposals/accepted.html" if self.accepted else "emails/proposals/rejected.html"
+            template = (
+                "emails/proposals/accepted.html"
+                if self.accepted
+                else "emails/proposals/rejected.html"
+            )
             send_email(
                 context=context,
                 template=template,
-                subject=_("[%s] Notificación de propuesta de charla") % settings.CONFERENCE_TITLE,
+                subject=_("[%s] Notificación de propuesta de charla")
+                % settings.CONFERENCE_TITLE,
                 to=self.speaker.email,
-                from_email=settings.CONTACT_EMAIL
+                from_email=settings.CONTACT_EMAIL,
             )
         self.accepted_notified = True
         self.save()

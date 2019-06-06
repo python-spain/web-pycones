@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipython = "*"
+ipdb = "*"
+black = "==19.3b0"
+
+[packages]
+django-model-utils = "*"
+django-reversion = "*"
+debug-toolbar = "*"
+django-debug-toolbar = "*"
+
+[requires]
+python_version = "3.7"
