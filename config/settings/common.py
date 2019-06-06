@@ -169,6 +169,7 @@ DJANGO_APPS = (
     # Useful template tags:
     "django.contrib.humanize",
     # Admin
+    "modeltranslation",
     "django.contrib.admin",
 )
 THIRD_PARTY_APPS = tuple()
@@ -272,7 +273,6 @@ TAGGIT_CASE_INSENSITIVE = True
 # DJANGO MODELTRANSLATION
 # ------------------------------------------------------------------------------
 # See: http://django-modeltranslation.readthedocs.io/en/latest/index.html
-INSTALLED_APPS += ("modeltranslation",)
 MODELTRANSLATION_FALLBACK_LANGUAGES = ("es", "en", "ca", "gl", "eu")
 
 # PROJECT CUSTOM SETTINGS
