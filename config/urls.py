@@ -6,7 +6,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.admin import AdminSite
-from django.urls import reverse
+from django.urls import include, path
 from django.urls.base import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views import defaults as default_views
@@ -107,7 +107,10 @@ if settings.DEBUG:
     if "debug_toolbar" in settings.INSTALLED_APPS:
         import debug_toolbar
 
-        urlpatterns += [url(r"^__debug__/", include(debug_toolbar.urls))]
-
+        urlpatterns = [
+            path("__debug__/", include(debug_toolbar.urls)),
+            # For django versions before 2.0:
+            # url(r'^__debug__/', include(debug_toolbar.urls)),
+        ] + urlpatterns
     # Only access directly to MEDIA when DEBUG is True
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
