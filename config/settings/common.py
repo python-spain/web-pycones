@@ -49,7 +49,7 @@ API_DEBUG = DEBUG
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (("Marcos Gabarda", "hey@marcosgabarda.com"),)
+ADMINS = (("APSL", "devops@apsl.net"),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
@@ -64,9 +64,9 @@ LANGUAGE_CODE = "es"
 ugettext = lambda s: s
 LANGUAGES = (
     ("es", ugettext("Español")),
-    ("ca", ugettext("Catalán")),
-    ("gl", ugettext("Gallego")),
-    ("eu", ugettext("Euskera")),
+    #    ("ca", ugettext("Catalán")),
+    #    ("gl", ugettext("Gallego")),
+    #    ("eu", ugettext("Euskera")),
     ("en", ugettext("English")),
 )
 LOCALE_PATHS = (str(APPS_DIR.path("locale")),)
@@ -273,7 +273,7 @@ TAGGIT_CASE_INSENSITIVE = True
 # DJANGO MODELTRANSLATION
 # ------------------------------------------------------------------------------
 # See: http://django-modeltranslation.readthedocs.io/en/latest/index.html
-MODELTRANSLATION_FALLBACK_LANGUAGES = ("es", "en", "ca", "gl", "eu")
+MODELTRANSLATION_FALLBACK_LANGUAGES = ("es", "en")
 
 # PROJECT CUSTOM SETTINGS
 # ------------------------------------------------------------------------------
@@ -332,3 +332,4 @@ CONFIGURATION_DEFAULT_OPTIONS = {
     },
     "activate_reviews": {"value": 0, "type": 1, "public_name": "Activate reviews"},
 }
+

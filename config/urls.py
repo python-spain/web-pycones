@@ -32,11 +32,11 @@ urlpatterns = i18n_patterns(
         TemplateView.as_view(template_name="pages/code_of_conduct.html"),
         name="code-of-conduct",
     ),
-    url(
-        r"^tickets/$",
-        TemplateView.as_view(template_name="pages/tickets.html"),
-        name="tickets",
-    ),
+    # url(
+    #     r"^tickets/$",
+    #     TemplateView.as_view(template_name="pages/tickets.html"),
+    #     name="tickets",
+    # ),
     url(r"^info/$", TemplateView.as_view(template_name="pages/info.html"), name="info"),
     url(
         r"^keynoter-speakers/$",
@@ -50,8 +50,8 @@ urlpatterns = i18n_patterns(
     ),
     url(r"^blog/", include("pycones.blog.urls", namespace="blog")),
     url(r"^users/", include("pycones.users.urls", namespace="users")),
-    url(r"^proposals/", include("pycones.proposals.urls", namespace="proposals")),
-    url(r"^reviewers/", include("pycones.reviewers.urls", namespace="reviewers")),
+    # url(r"^proposals/", include("pycones.proposals.urls", namespace="proposals")),
+    # url(r"^reviewers/", include("pycones.reviewers.urls", namespace="reviewers")),
     url(r"^schedule/", include("pycones.schedules.urls", namespace="schedule")),
     url(r"^speakers/", include("pycones.speakers.urls", namespace="speakers")),
     url(r"^jobboard/", include("pycones.jobboard.urls", namespace="jobboard")),
