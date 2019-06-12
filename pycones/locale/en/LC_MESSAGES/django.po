@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-03 19:15+0200\n"
+"POT-Creation-Date: 2019-09-03 20:37+0200\n"
 "PO-Revision-Date: 2019-07-24 19:46+0200\n"
 "Last-Translator: Antoni Aloy <antoni.aloy@gmail.com>\n"
 "Language-Team: \n"
@@ -467,7 +467,7 @@ msgstr "For everything else the answer is 42"
 msgid "Sobre Alicante"
 msgstr "About Alicante"
 
-#: templates/base.html:42
+#: templates/base.html:42 templates/schedule/schedule_static.html:6
 msgid "Horario"
 msgstr "Schedule"
 
@@ -808,11 +808,11 @@ msgstr ""
 "successful editions in Madrid, Zaragoza, Valencia, Almería, Cáceres and "
 "Málaga, following the format of the worldwide PyCon event."
 
-#: templates/pages/home.html:35 templates/pages/patrocinadores.html:5
+#: templates/pages/home.html:36 templates/pages/patrocinadores.html:5
 msgid "Patrocinadores"
 msgstr "Sponsors"
 
-#: templates/pages/home.html:36
+#: templates/pages/home.html:37
 msgid ""
 "¿Quieres patrocinar esta edición de la PyConES? Aquí encontrarás toda la "
 "información necesaria"
@@ -820,7 +820,7 @@ msgstr ""
 "Do you want to sponsor this PyConES edition? You can find all the required "
 "information here"
 
-#: templates/pages/home.html:38 templates/pages/home.html:40
+#: templates/pages/home.html:39 templates/pages/home.html:41
 msgid "Folleto"
 msgstr "Leaflet"
 
@@ -1210,6 +1210,169 @@ msgstr "Edit data"
 #: templates/schedule/presentations/edit.html:8
 msgid "Sube desde este formulario el fichero de la charla o taller."
 msgstr ""
+
+#: templates/schedule/schedule_static.html:10
+msgid "Viernes"
+msgstr "Friday"
+
+#: templates/schedule/schedule_static.html:13
+msgid "Sábado"
+msgstr "Saturday"
+
+#: templates/schedule/schedule_static.html:16
+msgid "Domingo"
+msgstr "Sunday"
+
+#: templates/schedule/schedule_static.html:22
+msgid "Viernes 4 de Octubre"
+msgstr "Friday, October 4"
+
+#: templates/schedule/schedule_static.html:46
+#: templates/schedule/schedule_static.html:62
+#: templates/schedule/schedule_static.html:68
+#: templates/schedule/schedule_static.html:75
+#: templates/schedule/schedule_static.html:93
+#: templates/schedule/schedule_static.html:100
+#: templates/schedule/schedule_static.html:107
+#: templates/schedule/schedule_static.html:130
+#: templates/schedule/schedule_static.html:148
+#: templates/schedule/schedule_static.html:155
+#: templates/schedule/schedule_static.html:162
+#: templates/schedule/schedule_static.html:212
+#: templates/schedule/schedule_static.html:219
+#: templates/schedule/schedule_static.html:226
+#: templates/schedule/schedule_static.html:233
+#: templates/schedule/schedule_static.html:240
+#: templates/schedule/schedule_static.html:272
+#: templates/schedule/schedule_static.html:279
+#: templates/schedule/schedule_static.html:286
+#: templates/schedule/schedule_static.html:293
+#: templates/schedule/schedule_static.html:300
+#: templates/schedule/schedule_static.html:332
+#: templates/schedule/schedule_static.html:339
+#: templates/schedule/schedule_static.html:346
+#: templates/schedule/schedule_static.html:353
+#: templates/schedule/schedule_static.html:360
+#: templates/schedule/schedule_static.html:392
+#: templates/schedule/schedule_static.html:399
+#: templates/schedule/schedule_static.html:406
+#: templates/schedule/schedule_static.html:413
+#: templates/schedule/schedule_static.html:420
+#: templates/schedule/schedule_static.html:452
+#: templates/schedule/schedule_static.html:459
+#: templates/schedule/schedule_static.html:466
+#: templates/schedule/schedule_static.html:473
+#: templates/schedule/schedule_static.html:480
+#: templates/schedule/schedule_static.html:512
+#: templates/schedule/schedule_static.html:519
+#: templates/schedule/schedule_static.html:526
+#: templates/schedule/schedule_static.html:533
+#: templates/schedule/schedule_static.html:540
+#: templates/schedule/schedule_static.html:586
+#: templates/schedule/schedule_static.html:593
+#: templates/schedule/schedule_static.html:600
+#: templates/schedule/schedule_static.html:607
+#: templates/schedule/schedule_static.html:614
+#: templates/schedule/schedule_static.html:646
+#: templates/schedule/schedule_static.html:653
+#: templates/schedule/schedule_static.html:660
+#: templates/schedule/schedule_static.html:667
+#: templates/schedule/schedule_static.html:674
+#: templates/schedule/schedule_static.html:706
+#: templates/schedule/schedule_static.html:713
+#: templates/schedule/schedule_static.html:720
+#: templates/schedule/schedule_static.html:727
+#: templates/schedule/schedule_static.html:734
+#: templates/schedule/schedule_static.html:766
+#: templates/schedule/schedule_static.html:773
+#: templates/schedule/schedule_static.html:780
+#: templates/schedule/schedule_static.html:787
+#: templates/schedule/schedule_static.html:794
+#: templates/schedule/schedule_static.html:857
+#: templates/schedule/schedule_static.html:864
+#: templates/schedule/schedule_static.html:871
+#: templates/schedule/schedule_static.html:878
+#: templates/schedule/schedule_static.html:885
+#: templates/schedule/schedule_static.html:910
+#: templates/schedule/schedule_static.html:917
+#: templates/schedule/schedule_static.html:924
+#: templates/schedule/schedule_static.html:931
+#: templates/schedule/schedule_static.html:938
+#: templates/schedule/schedule_static.html:963
+#: templates/schedule/schedule_static.html:970
+#: templates/schedule/schedule_static.html:977
+#: templates/schedule/schedule_static.html:984
+#: templates/schedule/schedule_static.html:991
+#: templates/schedule/schedule_static.html:1016
+#: templates/schedule/schedule_static.html:1023
+#: templates/schedule/schedule_static.html:1030
+#: templates/schedule/schedule_static.html:1037
+#: templates/schedule/schedule_static.html:1044
+#: templates/schedule/schedule_static.html:1069
+#: templates/schedule/schedule_static.html:1076
+#: templates/schedule/schedule_static.html:1083
+#: templates/schedule/schedule_static.html:1090
+#: templates/schedule/schedule_static.html:1097
+msgid "Sala"
+msgstr "Room"
+
+#: templates/schedule/schedule_static.html:177
+msgid "Cierre Viernes"
+msgstr "Friday close"
+
+#: templates/schedule/schedule_static.html:187
+msgid "Puedes descargarte el horario detallado del viernes en pdf."
+msgstr "You can download friday's schedule in PDF."
+
+#: templates/schedule/schedule_static.html:189
+#: templates/schedule/schedule_static.html:835
+#: templates/schedule/schedule_static.html:1131
+msgid "Descargar pdf"
+msgstr "Download PDF"
+
+#: templates/schedule/schedule_static.html:196
+msgid "Sábado 5 de Octubre"
+msgstr "Saturday, October 5"
+
+#: templates/schedule/schedule_static.html:247
+#: templates/schedule/schedule_static.html:254
+#: templates/schedule/schedule_static.html:307
+#: templates/schedule/schedule_static.html:314
+#: templates/schedule/schedule_static.html:367
+#: templates/schedule/schedule_static.html:374
+#: templates/schedule/schedule_static.html:427
+#: templates/schedule/schedule_static.html:434
+#: templates/schedule/schedule_static.html:487
+#: templates/schedule/schedule_static.html:494
+#: templates/schedule/schedule_static.html:547
+#: templates/schedule/schedule_static.html:554
+#: templates/schedule/schedule_static.html:621
+#: templates/schedule/schedule_static.html:628
+#: templates/schedule/schedule_static.html:681
+#: templates/schedule/schedule_static.html:688
+#: templates/schedule/schedule_static.html:741
+#: templates/schedule/schedule_static.html:748
+#: templates/schedule/schedule_static.html:801
+#: templates/schedule/schedule_static.html:808
+#: templates/schedule/schedule_static.html:892
+#: templates/schedule/schedule_static.html:945
+#: templates/schedule/schedule_static.html:998
+#: templates/schedule/schedule_static.html:1051
+#: templates/schedule/schedule_static.html:1104
+msgid "Taller"
+msgstr "Workshop"
+
+#: templates/schedule/schedule_static.html:833
+msgid "Puedes descargarte el horario detallado del sábado en pdf."
+msgstr "You can download saturday's schedule in PDF."
+
+#: templates/schedule/schedule_static.html:841
+msgid "Domingo 6 de Octubre"
+msgstr "Sunday, October 6"
+
+#: templates/schedule/schedule_static.html:1129
+msgid "Puedes descargarte el horario detallado del domingo en pdf."
+msgstr "You can download sunday's schedule in PDF."
 
 #: templates/speakers/edit.html:10
 msgid "Perfil de ponente"
@@ -1885,9 +2048,6 @@ msgstr ""
 
 #~ msgid "Track BigML (científico)"
 #~ msgstr "BigML track (scientific)"
-
-#~ msgid "Descargar en PDF"
-#~ msgstr "Download in PDF"
 
 #~ msgid ""
 #~ "¿Qué tienen que ver las 'Vidas paralelas' de Plutarco y Python? ¿Qué "
