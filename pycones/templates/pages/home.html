@@ -20,11 +20,12 @@
           <div class="card-body">
             <h3 class="card-title"><a href="{% url "info"%}">{% trans "El evento" %}</a></h3>
             <p class="card-text">{% trans "PyConES es la conferencia de la comunidad Python española. PyConES se celebrará por séptima vez del 04 al 06 de octubre de 2019 en Alicante, tras seis exitosas ediciones en Madrid, Zaragoza, Valencia, Almería, Cáceres y Málaga, siguiendo el formato del evento mundial de PyCon." %}</p>
- {% chunk name="schedule_pdf" as schedule_pdf %}
- {% if schedule_pdf %}
- <section id="schedule_pdf" class="container-fluid">
-  {{ schedule_pdf }}
- </section>
+            {% chunk name="schedule_pdf" as schedule_pdf %}
+            {% if schedule_pdf %}
+              <section id="schedule_pdf" class="container-fluid">
+                {{ schedule_pdf }}
+              </section>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -52,7 +53,6 @@
     </div>
   </section>
 
- {% endif %}
   <section id="people" class="container-fluid">
     <div class="text-center">
       <h2>{% trans "Ponentes principales" %}</h2>
@@ -105,6 +105,11 @@
 
     </div>
   </section>
+
+{% chunk name="organizers" as organizers %}
+{% if organizers %}
+  {{ organizers }}
+{% endif %}
 
  {% include "pages/patrocinadores.html" %}
  {% chunk name="home_content" as home_content %}
