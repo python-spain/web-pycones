@@ -1,0 +1,10 @@
+// Import bootstrap functions
+@import "bootstrap/scss/functions.scss";
+// Import custom variables (overrides Bootstrap default variables)
+// @import "variables-original.scss";
+@import "variables-azul.scss";
+
+// Import bootstrap
+@import "bootstrap/scss/bootstrap.scss";
+// Import custom functions (overrides Bootstrap default )
+@import "functions.scss";
