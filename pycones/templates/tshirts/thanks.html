@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block content %}
+  <main>
+    <section class="container text-center" id="alertMessage">
+      <div class="well"></div>
+      <h1>{% trans 'Muchas gracias' %}</h1>
+
+      <img src="{% static "img/check.png"%}" alt="ok">
+
+      <div class="row">
+        <div class="col-12 col-lg-12">
+            <p>{% trans 'Tu pedido se ha realizado correctamente.' %}</p>
+
+            <h3>{% trans '¡Nos vemos pronto!' %}</h3>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+{% endblock %}
