@@ -38,22 +38,22 @@ urlpatterns = i18n_patterns(
     #     name="tickets",
     # ),
     url(r"^info/$", TemplateView.as_view(template_name="pages/info.html"), name="info"),
-    url(
-        r"^keynoter-speakers/$",
-        TemplateView.as_view(template_name="pages/keynoters.html"),
-        name="keynoter-speakers",
-    ),
-    url(
-        r"^keynoters-speakers/$",
-        RedirectView.as_view(url=reverse_lazy("keynoter-speakers"), permanent=True),
-        name="keynoters-speakers",
-    ),
+    # url(
+    #     r"^keynoter-speakers/$",
+    #     TemplateView.as_view(template_name="pages/keynoters.html"),
+    #     name="keynoter-speakers",
+    # ),
+    # url(
+    #     r"^keynoters-speakers/$",
+    #     RedirectView.as_view(url=reverse_lazy("keynoter-speakers"), permanent=True),
+    #     name="keynoters-speakers",
+    # ),
     url(r"^blog/", include("pycones.blog.urls", namespace="blog")),
     url(r"^users/", include("pycones.users.urls", namespace="users")),
     # url(r"^proposals/", include("pycones.proposals.urls", namespace="proposals")),
     # url(r"^reviewers/", include("pycones.reviewers.urls", namespace="reviewers")),
     url(r"^schedule/", include("pycones.schedules.urls", namespace="schedule")),
-    url(r"^speakers/", include("pycones.speakers.urls", namespace="speakers")),
+    # url(r"^speakers/", include("pycones.speakers.urls", namespace="speakers")),
     url(r"^jobboard/", include("pycones.jobboard.urls", namespace="jobboard")),
 )
 
@@ -114,3 +114,6 @@ if settings.DEBUG:
         ] + urlpatterns
     # Only access directly to MEDIA when DEBUG is True
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+    urlpatterns += staticfiles_urlpatterns()

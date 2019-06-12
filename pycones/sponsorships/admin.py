@@ -10,12 +10,12 @@ from modeltranslation.admin import TabbedTranslationAdmin
 
 class BenefitLevelInline(admin.TabularInline):
     model = BenefitLevel
-    extra = 0
+    extra = 1
 
 
 class SponsorBenefitInline(admin.StackedInline):
     model = SponsorBenefit
-    extra = 0
+    extra = 1
     fieldsets = [
         (
             None,

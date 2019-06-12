@@ -10,9 +10,9 @@ from options.models import Option
 
 
 def check_schedule_view(request):
-    is_schedule_opened = bool(Option.objects.get_value("schedule_opened", 0))
+    is_schedule_opened = Option.objects.get_value("schedule_opened", 0) != 0
     if not is_schedule_opened and not (
-        request.user.is_authenticated() and request.user.is_superuser
+        request.user.is_authenticated and request.user.is_superuser
     ):
         raise Http404()
 

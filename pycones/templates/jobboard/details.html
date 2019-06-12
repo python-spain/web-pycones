@@ -1,6 +1,6 @@
-{% extends "container.html" %}
+{% extends "base.html" %}
 {% load i18n %}
-{% load reviewers_extra %}
+{% block title %}Job Board offer from {{ job_offer.employer.name }} {% endblock %}
 
 {% block content %}
     <h2>{{ job_offer.title }}</h2>
