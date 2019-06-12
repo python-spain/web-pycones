@@ -1,0 +1,16 @@
+
+//
+// Alternate buttons
+//
+
+// @each $color, $value in $theme-colors {
+//   .btn-#{$color} {
+//     @include button-variant($value, $value, lighten($value, 5), lighten($value, 7.5));
+//   }
+// }
+
+// @each $color, $value in $theme-colors {
+//   .btn-outline-#{$color} {
+//     @include button-outline-variant($value);
+//   }
+// }
