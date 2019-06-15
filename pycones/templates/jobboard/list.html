@@ -2,14 +2,20 @@
 {% load i18n %}
 {% block title %}Job Board list {% endblock title %}
 {% block content %}
-<h2>{% trans "Job board" %}</h2>
-<table class="table table-striped">
-    <thead>
+  <main>
+    <section class="container" id="jobBoard">
+      <h1>Job board</h1>
+
+      <div class="row">
+        <div class="col-12 col-lg-12">
+          <table class="table table-striped">
+      <thead>
         <tr>
             <th>{% trans "Oferta" %}</th>
             <th>{% trans "Empresa" %}</th>
         </tr>
     </thead>
+      <tbody>
     {% for job_offer in job_offers %}
         <tr>
             <th><a href="{% url "jobboard:details" job_offer.pk %}">{{ job_offer.title }}</a></th>
@@ -20,5 +26,8 @@
             <td colspan="2">{% trans "No hay ninguna posición disponible" %}</td>
         </tr>
     {% endfor %}
+  </tbody>
 </table>
+</section>
+</main>
 {% endblock content %}
