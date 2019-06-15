@@ -3,7 +3,7 @@ addons:
     ssh_known_hosts: pycones.prod.aws.apsl.io
 
 before_deploy:
-    - openssl aes-256-cbc -K $encrypted_52ffc47aa7ea_key -iv $encrypted_52ffc47aa7ea_iv -in deploy_rsa.enc -out deploy_rsa -d
+    - openssl aes-256-cbc -K $encrypted_52ffc47aa7ea_key -iv $encrypted_52ffc47aa7ea_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
     - eval "$(ssh-agent -s)"
     - chmod 600 /tmp/deploy_rsa
     - ssh-add /tmp/deploy_rsa
