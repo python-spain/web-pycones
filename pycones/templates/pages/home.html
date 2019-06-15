@@ -100,46 +100,7 @@
     </div>
   </section>
 
+ {% include "pages/patrocinadores.html" %}
 
- <section id="patrocinadores" class="container-fluid">
-        <h2 id="sponsors"> {% trans "Patrocinadores" %}</h2>
-        {% sponsor_levels as levels %}
-        {% for level in levels %}
-            {% sponsors level.pk as sponsors %}
-            {% if sponsors %}
-                <h3>{{ level.name }}</h3>
-                <div class="row">
-                    {% for sponsor in sponsors %}
-                        <div class="
-                            {% if level.order == 0 %}
-                                col-8 offset-2
-                            {% else %}
-                                col-6
-                                {% if level.order < 2 %}col-md-6{% else %}col-md-4{% endif %}
-                            {% endif %}
-                            text-center">
-                            <a href="{{ sponsor.external_url }}" target="_blank">
-                                <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-fluid sponsors-img">
-                            </a>
-                        </div>
-                        {% if forloop.counter|divisibleby:"2" %}
-                            <div class="clearfix visible-xs"></div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:"3" %}
-                            <div class="clearfix visible-sm"></div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            {% else %}
-                <h3>{{ level.name }}</h3>
-                <p class="loud">
-                    {% blocktrans with level_name=level.name|lower %}
-                        ¿Quieres ser el primer patrocinador {{ level_name }}? <a href="mailto:{{ SPONSORS_EMAIL }}" target="_blank">¡Contacta con nosotros!</a>
-                    {% endblocktrans %}
-                </p>
-            {% endif %}
-        {% endfor %}
-    </div>
-</div>
-</section>
+
 {% endblock content %}
