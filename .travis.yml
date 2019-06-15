@@ -1,6 +1,6 @@
 language: python
 addons:
-    ssh_known_hosts: pycones.prod.aws.apsl.io
+    ssh_known_hosts: pycones.prod.aws.apsl.io:2232
 
 before_deploy:
     - openssl aes-256-cbc -K $encrypted_52ffc47aa7ea_key -iv $encrypted_52ffc47aa7ea_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
