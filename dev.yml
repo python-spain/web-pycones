@@ -16,7 +16,7 @@ services:
       - db-data:/var/lib/postgresql
       - db-backups:/backups
     ports:
-      - "5432:5432"
+      - "5435:5432"
     environment:
       POSTGRES_PASSWORD: potato
       POSTGRES_DB: pycones2017
