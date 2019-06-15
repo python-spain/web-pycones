@@ -12,6 +12,6 @@ script:
 deploy:
     provider: script
     skip_cleanup: true
-    script: ssh -p 2232 pycones@pycones.prod.aws.apsl.io cd PyConEs-2019; ls -ltr;
+    script: ssh -p 2232 pycones@pycones.prod.aws.apsl.io cd PyConES-2019; ./deploy.sh;
     on:
         branch: master
