@@ -66,3 +66,6 @@ public/
 
 # Media files
 pycones/media/
+
+# Docker
+docker-compose.yml
