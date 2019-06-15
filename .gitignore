@@ -59,8 +59,8 @@ node_modules/
 .env
 
 # Build files
-pycones/static/css/*.css
-pycones/static/js/bin/*.js
+#pycones/static/css/*.css
+#pycones/static/js/bin/*.js
 public/
 
 
