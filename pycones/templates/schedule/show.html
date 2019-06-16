@@ -5,10 +5,11 @@
 
 
 {% block content %}
+{% if not schedule_opened %}
   <section class="container" id="schedule">
   <div class="col-md-12 data">
    <h3 class="text-center">{% trans "¡Estamos afinándolo todavía!" %}</h3>
     </div>
   </section>
-
+{% endif %}
 {% endblock content %}

@@ -31,12 +31,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          {% if info_available %}
           <li class="nav-item">
             <a class="nav-link" href="{% url "info" %}">{% trans "Sobre Alicante" %}</a>
           </li>
+          {% endif %}
+          {% if schedule_opened %}
           <li class="nav-item">
             <a class="nav-link" href="{% url "schedule:show" %}">{% trans "Horario" %}</a>
           </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url "jobboard:list" %}">{% trans "Job Board" %}</a>
           </li>
@@ -102,6 +106,7 @@
   {% block footer %}
   <footer>
     <div class="container-fluid">
+         <a class="linkFooter" href="{% url "code-of-conduct" %}">{% trans "Código de conducta"%}</a>
       <div class="row">
         <aside class="col-sm-10 offset-sm-1 col-md-3 icons">
           <h4>Síguenos</h4>
@@ -123,7 +128,7 @@
             </li>
           </ul>
 
-          <h4>Contacto</h4>
+          <h4>{% trans "Contacto" %}</h4>
           <ul class="list-inline">
             <li class="list-inline-item">
               <a href="mailto:contact@2019.es.pycon.org">
@@ -149,7 +154,7 @@
           </div>
         </div>
     </div>
-     <a class="linkFooter" href="{% url "code-of-conduct" %}">{% trans "Código de conducta"%}</a>
+
   </footer>
   {% endblock footer %}
 

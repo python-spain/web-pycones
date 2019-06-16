@@ -38,3 +38,12 @@ configuration**. Then, we've have to use Docker Compose to bring it up.
 
     $ ./deploy.sh
 
+
+Configuration parameters
+------------------------
+
+Some configuration can be enabled/dissabled on the options admin page:
+
+* `activated_tickets_sale_page`: 1/0 Tickets option
+* `info_available`: 1/0 availability of the information page
+* `schedule_opened`: 1/0 Determines if the schedule is open or not
