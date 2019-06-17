@@ -5,5 +5,21 @@
 {% block page_title %}Page Not found{% endblock page_title %}
 
 {% block content %}
-<p>This is not the page you were looking for.</p>
+ <main>
+    <section class="container" id="errorPage">
+      <h1>Oops!</h1>
+
+      <div class="row">
+        <div class="col-12 col-lg-12 text-center">
+          <h2>{% trans "No podemos mostrarte la página que estás buscando." %}</h2>
+          <img src="{% static "img/errorface.png" %}" alt="Error 404">
+          <p>{% trans "Parece que ha habido un error con la página que estás buscando." %}</p>
+          <p>{% trans "¡Seguro que la culpa es del informático !" %}</p>
+          <p>{% trans "O es posible que la entrada haya sido eliminada o que la dirección no exista." %}</p>
+          <p>{% trans "Para todo lo demás la respuesta es 42"%}</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
 {% endblock content %}

@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, division, absolute_import
-
 import csv
 
 from django.http import HttpResponse
@@ -18,5 +16,6 @@ def download_speakers(modeladmin, request, queryset):
     for speaker in speakers:
         writer.writerow([speaker.name, speaker.user.email])
     return response
+
 
 download_speakers.short_description = "Download speakers"

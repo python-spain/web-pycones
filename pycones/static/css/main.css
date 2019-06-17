@@ -10635,6 +10635,68 @@ section#schedule .track-title-row .track-title2 {background:#a9c7f3;}
   max-width:350px;
   max-height:100px;
 }
+.agenda {margin-top:5px;}
+.agenda .text-right strong {float:left;}
+.agenda h3 a {
+  display:block;
+  padding-top:5px;
+  font-size:0.75em;
+  text-align:left;
+  color:#000;
+  min-height:80px;
+}
+.agenda h3 a small {
+  font-size:0.6em;
+  text-transform:uppercase;
+}
+.agenda .js-slot-expand {
+  display:block;
+  font-size:1.4em;
+  cursor:pointer;
+  padding:0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.agenda .js-slot-expand.active {transform:rotate(180deg);}
+.agenda.nextEvent h3 a {min-height:auto;}
+#legendBox {margin-top:15px;}
+#legendBox .col-4 {padding:0;}
+.legend {padding:10px 0;}
+.slot-basic,
+.legend.basic {background:#a9c7f3;}
+.slot-intermediate,
+.legend.intermediate {background:rgba(255, 196, 34, 0.2);}
+.slot-advanced,
+.legend.advanced {background:rgba(187, 75, 44, 0.2);}
+.slot-basic,
+.slot-intermediate,
+.slot-advanced {
+  padding-top:15px;
+  padding-bottom:15px;
+  position:relative;
+}
+.slot-basic:before,
+.slot-intermediate:before,
+.slot-advanced:before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:1px;
+  height:100%;
+  background:#fff;
+}
+.slot-basic:after,
+.slot-intermediate:after,
+.slot-advanced:after {
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  width:1px;
+  height:100%;
+  background:#fff;
+}
 section#patrocinadores {padding-bottom:50px;}
 section#patrocinadores h3 {margin:40px 0;}
 section#patrocinadores .text-center {
@@ -10642,7 +10704,22 @@ section#patrocinadores .text-center {
   padding-bottom:0;
 }
 .sponsors-img {max-height:150px;}
+section#blogList article {
+  border-top:1px solid #000;
+  padding-top:25px;
+  margin-top:25px;
+}
+section#blogList h2 span {
+  display:block;
+  font-size:0.5em;
+}
 
+/* eror page */
+#errorPage h2 {color:#c54755;}
+#errorPage p {
+  font-size:1.1em;
+  margin:15px 0;
+}
 
 footer {
   font-size:150%;
@@ -10651,10 +10728,8 @@ footer {
   color:#fff;
   width:100%;
   text-align:center;
-  padding:40px 0 60px 0;
+  padding:20px;
   margin-top:auto;
-  /*position:fixed;
-  bottom:0;*/
 }
 footer h4 {
   margin:10px 0 20px 0;
@@ -10683,6 +10758,7 @@ footer svg {
   section#blocks,
   section#people {padding:50px 20px;}
   .carousel-caption {font-size:100%;}
+  .default-room.d-none {display:block !important;}
 }
 
 @media (max-width: 576px) {

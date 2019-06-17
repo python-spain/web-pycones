@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 import datetime
 from collections import OrderedDict
@@ -18,7 +18,6 @@ from markupfield.fields import MarkupField
 from pycones.proposals import BASIC_LEVEL, PROPOSAL_LANGUAGES
 
 
-@python_2_unicode_compatible
 class Day(models.Model):
 
     date = models.DateField(unique=True)
@@ -45,7 +44,6 @@ class Day(models.Model):
         return ordered_values
 
 
-@python_2_unicode_compatible
 class Room(models.Model):
 
     name = models.CharField(max_length=65)
@@ -55,7 +53,6 @@ class Room(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class Track(models.Model):
     """Tracks used in the conference."""
 
@@ -67,7 +64,6 @@ class Track(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class SlotKind(models.Model):
     """A slot kind represents what kind a slot is. For example, a slot can be a
     break, lunch, or X-minute talk.
@@ -86,7 +82,6 @@ class SlotKind(models.Model):
         return "slot-{}".format(self.class_attr.lower())
 
 
-@python_2_unicode_compatible
 class Slot(models.Model):
 
     day = models.ForeignKey(Day, on_delete=models.CASCADE)
@@ -144,6 +139,10 @@ class Slot(models.Model):
             )
         )
 
+    @property
+    def duration(self):
+        return (self.end_datetime - self.start_datetime) // 60
+
     def __str__(self):
         return "%s %s (%s - %s, %s)" % (
             self.day,
@@ -194,7 +193,6 @@ class Slot(models.Model):
         return reverse("schedule:slot", kwargs={"slot": self.pk})
 
 
-@python_2_unicode_compatible
 class Presentation(models.Model):
 
     slot = models.OneToOneField(
