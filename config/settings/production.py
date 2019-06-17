@@ -33,7 +33,7 @@ EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_HOST_PASSWORD", default="")
 EMAIL_PORT = env.int("DJANGO_EMAIL_PORT", default=587)
 EMAIL_SUBJECT_PREFIX = "[%s] " % CONFERENCE_TITLE
 
-INSTALLED_APPS += ("raven.contrib.django.raven_compat")
+INSTALLED_APPS += ("raven","raven.contrib.django.raven_compat")
 RAVEN_CONFIG = {
     'dsn': env("SENTRY_URL", default="")
 }
