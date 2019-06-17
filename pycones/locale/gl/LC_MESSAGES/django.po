@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-17 20:18+0200\n"
+"POT-Creation-Date: 2019-06-17 20:54+0200\n"
 "PO-Revision-Date: 2015-07-12 17:01+0000\n"
 "Last-Translator: Miguel González <migonzalvar@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/python-espana/web-"
@@ -492,6 +492,10 @@ msgstr "Blog"
 #: templates/base.html:109
 msgid "Código de conducta"
 msgstr "Código de comportamento"
+
+#: templates/base.html:113
+msgid "Dónde encontrarnos"
+msgstr ""
 
 #: templates/base.html:139
 msgid "Suscríbete a nuestra newsletter"

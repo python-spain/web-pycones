@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-17 20:18+0200\n"
-"PO-Revision-Date: 2019-06-17 20:41+0200\n"
+"POT-Creation-Date: 2019-06-17 20:54+0200\n"
+"PO-Revision-Date: 2019-06-17 20:54+0200\n"
 "Last-Translator: Antoni Aloy <antoni.aloy@gmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -469,6 +469,10 @@ msgstr "Blog"
 #: templates/base.html:109
 msgid "Código de conducta"
 msgstr "Code of Conduct"
+
+#: templates/base.html:113
+msgid "Dónde encontrarnos"
+msgstr "Find us on"
 
 #: templates/base.html:139
 msgid "Suscríbete a nuestra newsletter"
