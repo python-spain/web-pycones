@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
-{% load i18n %}
+{% load i18n chunk_extras%}
 
 {% block content %}
 <main>
   <section class="container" id="contentPage">
 
-  <h1>{% trans "¿Dónde nos vemos?"%}
+<h1>{% trans "¿Dónde nos vemos?"%}
 
 {% blocktrans %}
 <h3>Universidad de Alicante</h3>
@@ -78,6 +78,13 @@ Carretera de San Vicente del Raspeig, s/n<br/>
   <p>Se puede dejar en la uni. Fin de semana igual se cierra el domingo alguna de las puertas pero la de la autovía está abierta 100% seguro.
   El coche lo puedes sacar cuando quieras y puedes dejarlo allí.</p>
 {% endblocktrans %}
+
+  {% chunk name="info_content" as info_content %}
+  {{info_content}}
+
   </section>
 </main>
+
+
+
 {% endblock content %}

@@ -1,8 +1,10 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n chunk_extras %}
 {% block title %}Job Board list {% endblock title %}
 {% block content %}
+  {% chunk name="job_board" as intro %}
   <main>
+    {{ intro }}
     <section class="container" id="jobBoard">
       <h1>Job board</h1>
 

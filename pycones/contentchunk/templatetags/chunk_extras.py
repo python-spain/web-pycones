@@ -28,6 +28,6 @@ def chunk(context, name):
     try:
         o = Chunk.objects.get(name=name)
     except Chunk.DoesNotExist:
-        return "uep"
+        return ""
     return o.text
 

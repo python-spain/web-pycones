@@ -55,6 +55,7 @@ urlpatterns = i18n_patterns(
     url(r"^schedule/", include("pycones.schedules.urls", namespace="schedule")),
     # url(r"^speakers/", include("pycones.speakers.urls", namespace="speakers")),
     url(r"^jobboard/", include("pycones.jobboard.urls", namespace="jobboard")),
+    prefix_default_language=False,
 )
 
 # URLs without i18n

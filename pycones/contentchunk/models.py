@@ -13,5 +13,5 @@ class Chunk(TimeStampedModel):
         blank=True,
         default="",
         default_markup_type="markdown",
-        help_text=_("Describe de job offer"),
+        help_text=_("Text in Markdown format"),
     )
