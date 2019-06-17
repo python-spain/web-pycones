@@ -101,6 +101,11 @@
   </section>
 
  {% include "pages/patrocinadores.html" %}
-
+ {% chunk name="home_content" as home_content %}
+ {% if home_content %}
+ <section id="home_content" class="container-fluid">
+  {{ home_content }}
+ </section>
+ {% endif %}
 
 {% endblock content %}
