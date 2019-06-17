@@ -10643,6 +10643,12 @@ section#patrocinadores .text-center {
 }
 .sponsors-img {max-height:150px;}
 
+/* eror page */
+#errorPage h2 {color:#c54755;}
+#errorPage p {
+  font-size:1.1em;
+  margin:15px 0;
+}
 
 footer {
   font-size:150%;
@@ -10653,8 +10659,6 @@ footer {
   text-align:center;
   padding:40px 0 60px 0;
   margin-top:auto;
-  /*position:fixed;
-  bottom:0;*/
 }
 footer h4 {
   margin:10px 0 20px 0;
