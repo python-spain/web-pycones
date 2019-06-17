@@ -185,6 +185,7 @@ LOCAL_APPS = (
     "pycones.speakers",
     "pycones.schedules",
     "pycones.jobboard",
+    "pycones.contentchunk",
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -273,7 +274,9 @@ TAGGIT_CASE_INSENSITIVE = True
 # DJANGO MODELTRANSLATION
 # ------------------------------------------------------------------------------
 # See: http://django-modeltranslation.readthedocs.io/en/latest/index.html
+MODELTRANSLATION_DEFAULT_LANGUAGE = "es"
 MODELTRANSLATION_FALLBACK_LANGUAGES = ("es", "en")
+MODELTRANSLATION_LANGUAGES = ("es", "en")
 
 # PROJECT CUSTOM SETTINGS
 # ------------------------------------------------------------------------------
