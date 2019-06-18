@@ -9,3 +9,13 @@ pycones.prod.aws.apsl.io {
   }
 }
 
+2019.es.pycon.org {
+  log stdout
+  errors stdout
+  
+  tls off
+  
+  proxy / nginx:5002 {
+    transparent
+  }
+}
