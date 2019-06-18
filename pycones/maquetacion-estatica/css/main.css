@@ -10602,11 +10602,16 @@ section#people {
   padding:50px 100px;
   text-align:center;
 }
+section#blocks .card-img-top {
+  max-width:300px;
+  margin:0 auto;
+}
 section#people h3 {
   font-size:1.5rem;
   margin-bottom:.75rem;
   font-weight:400;
 }
+section#people .card-body {min-height:280px;}
 .card {margin-bottom:15px;}
 .card-body {min-height:225px;}
 section .text-center {padding:25px 0 40px 0;}
@@ -10703,7 +10708,7 @@ section#patrocinadores .text-center {
   padding-top:0;
   padding-bottom:0;
 }
-.sponsors-img {max-height:150px;}
+.sponsors-img {max-height:120px;}
 section#blogList article {
   border-top:1px solid #000;
   padding-top:25px;
@@ -10746,9 +10751,14 @@ footer svg {
 .linkFooter {
   font-size:0.8em;
   display:block;
-  margin-top:40px;
+  margin-top:10px;
 }
 
+@media only screen and (max-width: 1200px) and (min-width: 992px)  {
+  section#people .card-body {
+    min-height:615px;
+  }
+}
 
 @media (max-width: 991px) {
   .carousel-caption {bottom:0;}
