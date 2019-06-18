@@ -20,3 +20,4 @@ echo "### Migrate database"
 docker-compose run webapp python3 /app/manage.py migrate
 echo "### Start new docker image"
 docker-compose up -d
+docker-compose restart caddy
