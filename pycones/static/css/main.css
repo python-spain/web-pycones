@@ -11902,6 +11902,7 @@ section#patrocinadores .text-center {
 
 .sponsors-img {
   max-height: 150px;
+  vertical-align: middle;
 }
 
 section#blogList article {
