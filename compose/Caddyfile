@@ -19,3 +19,12 @@ http://2019.es.pycon.org {
     transparent
   }
 }
+
+http://www.2019.es.pycon.org {
+  log stdout
+  errors stdout
+  
+  tls off
+  
+  redir http://2019.es.pycon.org{uri}
+}
