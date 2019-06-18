@@ -1,4 +1,4 @@
-pycones.prod.aws.apsl.io {
+https://pycones.prod.aws.apsl.io {
   log stdout
   errors stdout
   
@@ -9,7 +9,7 @@ pycones.prod.aws.apsl.io {
   }
 }
 
-2019.es.pycon.org {
+http://2019.es.pycon.org {
   log stdout
   errors stdout
   
