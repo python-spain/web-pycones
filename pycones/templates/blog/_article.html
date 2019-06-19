@@ -1,10 +1,7 @@
 {% load i18n %}
-<main>
-    <section class="container">
-      <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-
-      <div class="row">
         <article class="col-12 col-lg-12">
+      <h2>{{ post.title }} <span class="dataCreation" >{{post.created}}</span></h2>
+
          {% if post.outstanding_image %}
           <img src="{{ post.outstanding_image.url }}" alt="image {{post.title}}">
           {% endif %}
@@ -16,8 +13,4 @@
             </p>
             {% endcomment %}
           </div>
-        </div>
       </article>
-
-    </section>
-  </main>
