@@ -15,20 +15,20 @@
             <div class="row">
             {% for sponsor in sponsors %}
               {% if level.order == 0  or level.order == 10%}
-              <div class="col-8 offset-2 text-center">
+              <div class="col-8 offset-2 text-center" style="padding:1px;">
               {% else %}
                 {% if level.order == 1 %}
-                <div class="col-6 col-md-6 text-center">
+                <div class="col-6 col-md-6 text-center" style="padding:2px;">
                 {% else %}
                   {% if level.order == 2 %}
-                  <div class="col-4 col-md-4 text-center">
+                  <div class="col-6 col-md-6 text-center" style="padding:4px";>
                   {% else %}
-                    <div class="col-3 col-md-3 text-center">
+                    <div class="col-4 col-md-4 text-center" style="padding:8px;">
                   {% endif %}
                 {% endif %}
               {% endif %}
                     <a href="{{sponsor.external_url}}" target="_blank">
-                        <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{{ sponsor.website_logo.url }}&w=600&h=200&t=letterbox&bg=white&errorredirect=//via.placeholder.com/400x120" class="img-fluid sponsors-img" alt="{{ sponsor.name }}">
+                        <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{{ sponsor.website_logo.url }}&w=600&h=200&t=letterbox&bg=white&errorredirect=//via.placeholder.com/600x200" class="img-fluid sponsors-img" alt="{{ sponsor.name }}">
                          {% comment %}
                         <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-fluid sponsors-img">
                         {% endcomment %}
