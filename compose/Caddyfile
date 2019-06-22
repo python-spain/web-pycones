@@ -1,14 +1,3 @@
-https://pycones.prod.aws.apsl.io {
-  log stdout
-  errors stdout
-  
-  tls hostmaster@apsl.net 
-  
-  proxy / nginx:5002 {
-    transparent
-  }
-}
-
 2019.es.pycon.org {
   log stdout
   errors stdout
@@ -26,5 +15,14 @@ www.2019.es.pycon.org {
   
   tls hostmaster@apsl.net 
   
+  redir https://2019.es.pycon.org{uri}
+}
+
+http://www.2019.es.pycon.org {
+  log stdout
+  errors stdout
+
+  tls off
+
   redir https://2019.es.pycon.org{uri}
 }

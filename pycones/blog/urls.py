@@ -13,5 +13,5 @@ urlpatterns = [
     url(r"^feed/", PostsFeed(), name="blog_feed"),
     url(r"^atom/", PostsAtomFeed(), name="blog_atom"),
     url(r"^rss/", RedirectView.as_view(url=reverse_lazy("blog_feed"))),
-    url(r"^(?P<slug>.+)/$", PostDetailsView.as_view(), name="post"),
+    # url(r"^(?P<slug>.+)/$", PostDetailsView.as_view(), name="post"),
 ]
