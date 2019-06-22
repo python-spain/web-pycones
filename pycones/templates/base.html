@@ -8,7 +8,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="static_url" content="{{STATIC_URL}}">
+  <meta name="static_url" content="{{ request.scheme }}://{{ request.get_host }}{{STATIC_URL}}">
+  <meta name="media_url" content="{{ request.scheme }}://{{ request.get_host }}{{MEDIA_URL}}">
   <meta name="description" content="Web de la PyconES 2019">
   <meta name="author" content="PyconES 2019">
   {% block syndication %}
