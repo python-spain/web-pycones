@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 from django.conf import settings
 from django.contrib.syndication.views import Feed
@@ -55,8 +55,9 @@ class PostsFeed(Feed):
         return item.content
 
     def item_link(self, item):
-        # item_link is only needed if NewsItem has no get_absolute_url method.
-        return reverse("blog:post", kwargs={"slug": item.slug})
+        """links to the whole blog list as we do not
+        have by post view"""
+        return reverse("blog:list")
 
 
 class PostsAtomFeed(PostsFeed):
