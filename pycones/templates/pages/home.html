@@ -15,16 +15,16 @@
   {% endif %}
     <div class="row">
       <div class="col-md-12 col-lg-4">
-        <div class="card">
+        <div class="card h-100">
           <img src="{% static "img/logo.png" %}" class="card-img-top" alt="PyConEs">
           <div class="card-body">
-            <h3 class="card-title">{% trans "El evento" %}</h3>
+            <h3 class="card-title"><a href="{% url "info"%}">{% trans "El evento" %}</a></h3>
             <p class="card-text">{% trans "PyConES es la conferencia de la comunidad Python española. PyConES se celebrará por séptima vez del 04 al 06 de octubre de 2019 en Alicante, tras seis exitosas ediciones en Madrid, Zaragoza, Valencia, Almería, Cáceres y Málaga, siguiendo el formato del evento mundial de PyCon." %}</p>
           </div>
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
-        <div class="card">
+        <div class="card h-100">
           <img src="{% static "img/icon-sponsors2.png" %}" class="card-img-top" alt="PyConEs">
           <div class="card-body">
             <h3 class="card-title">{% trans "Patrocinadores" %}</h3>
@@ -38,12 +38,9 @@
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
-        <div class="card">
-          <img src="{% static "img/cfp.png" %}" class="card-img-top" alt="PyConEs">
+        <div class="card h-100">
           <div class="card-body">
-            <h3 class="card-title">{% trans "Call for papers!" %}</h3>
-            <p class="card-text">{% trans "¿Quieres participar con tu charla/taller/poster en la PyConES? Aquí encontrarás toda la información necesaria." %}</p>
-            <a target="_self" href="https://easychair.org/cfp/pycones2019" class="btn btn-primary">{% trans "Call for papers" %}</a>
+            <a class="twitter-timeline" data-height="800" href="https://twitter.com/PyConES?ref_src=twsrc%5Etfw">Tweets by PyConES</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
       </div>
