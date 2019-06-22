@@ -15,15 +15,15 @@
             <div class="row">
             {% for sponsor in sponsors %}
               {% if level.order == 0  or level.order == 10%}
-              <div class="col-8 offset-2 text-center" style="padding:1px;">
+              <div class="col-8 offset-2 text-center">
               {% else %}
                 {% if level.order == 1 %}
-                <div class="col-6 col-md-6 text-center" style="padding:2px;">
+                <div class="col-6 col-md-6 text-center" style="padding:10px;">
                 {% else %}
                   {% if level.order == 2 %}
-                  <div class="col-6 col-md-6 text-center" style="padding:4px";>
+                  <div class="col-6 col-md-6 text-center" style="padding:20px";>
                   {% else %}
-                    <div class="col-4 col-md-4 text-center" style="padding:8px;">
+                    <div class="col-4 col-md-4 text-center" style="padding:30px;">
                   {% endif %}
                 {% endif %}
               {% endif %}
