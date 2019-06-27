@@ -68,6 +68,9 @@ class Sponsor(TimeStampedModel):
         editable=False,
         on_delete=models.CASCADE,
     )  # Denormalization (this assumes only one logo)
+    sponsor_order = models.IntegerField(
+        help_text=_("Relative order of the sponsor"), default=0
+    )
 
     objects = SponsorManager()
 
