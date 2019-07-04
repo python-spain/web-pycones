@@ -14,6 +14,7 @@ class BenefitLevelInline(admin.TabularInline):
 class SponsorBenefitInline(admin.StackedInline):
     model = SponsorBenefit
     extra = 1
+    max_num = 1
     fieldsets = [
         (
             None,

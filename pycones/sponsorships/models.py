@@ -85,9 +85,11 @@ class Sponsor(TimeStampedModel):
                 benefit__type=BENEFIT_WEB_LOGO, upload__isnull=False
             )[:1]
             if benefits.count():
-                if benefits[0].upload:
+                if benefits[0].upload and benefits[0].upload.name:
                     self.sponsor_logo = benefits[0]
                     self.save()
+                else:
+                    return None
         return self.sponsor_logo.upload
 
     @property
