@@ -28,6 +28,11 @@ admin_site = PyconESAdminSite(name="PyconES 2019")
 urlpatterns = i18n_patterns(
     url(r"^$", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     url(
+        r"hotels/$",
+        TemplateView.as_view(template_name="pages/hotels.html"),
+        name="hotels",
+    ),
+    url(
         r"^code-of-conduct/$",
         TemplateView.as_view(template_name="pages/code_of_conduct.html"),
         name="code-of-conduct",

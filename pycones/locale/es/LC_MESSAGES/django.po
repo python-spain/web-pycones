@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-17 20:54+0200\n"
+"POT-Creation-Date: 2019-07-24 17:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,171 +17,194 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: blog/__init__.py:8
+#: config/settings/common.py:66 pycones/proposals/__init__.py:16
+msgid "Español"
+msgstr ""
+
+#: config/settings/common.py:70
+msgid "English"
+msgstr ""
+
+#: config/urls.py:86
+#, python-format
+msgid "%s Admin"
+msgstr ""
+
+#: pycones/blog/__init__.py:8
 msgid "Draft"
 msgstr ""
 
-#: blog/__init__.py:9
+#: pycones/blog/__init__.py:9
 msgid "Scheduled"
 msgstr ""
 
-#: blog/__init__.py:10
+#: pycones/blog/__init__.py:10
 msgid "Published"
 msgstr ""
 
-#: blog/models.py:43 proposals/models.py:57
+#: pycones/blog/models.py:43 pycones/proposals/models.py:57
 msgid "Etiquetas"
 msgstr ""
 
-#: blog/models.py:44 proposals/models.py:58
+#: pycones/blog/models.py:44 pycones/proposals/models.py:58
 msgid "Lista de etiquetas separadas por comas."
 msgstr ""
 
-#: blog/models.py:57
+#: pycones/blog/models.py:57
 msgid "Seguir leyendo..."
 msgstr ""
 
-#: blog/views.py:40
+#: pycones/blog/views.py:40
 #, python-format
 msgid "Web de la %s"
 msgstr ""
 
-#: jobboard/models.py:16 proposals/models.py:72
-#: templates/reviewers/list.html:21
+#: pycones/contentchunk/models.py:10 pycones/sponsorships/models.py:22
+#: pycones/sponsorships/models.py:156
+msgid "name"
+msgstr ""
+
+#: pycones/contentchunk/models.py:12 pycones/sponsorships/__init__.py:10
+msgid "Text"
+msgstr ""
+
+#: pycones/contentchunk/models.py:16
+msgid "Text in Markdown format"
+msgstr ""
+
+#: pycones/jobboard/models.py:14 pycones/proposals/models.py:72
+#: pycones/templates/reviewers/list.html:21
 msgid "Título"
 msgstr ""
 
-#: jobboard/models.py:18
+#: pycones/jobboard/models.py:16
 msgid "Descripción"
 msgstr ""
 
-#: jobboard/models.py:22
+#: pycones/jobboard/models.py:20
 msgid "Describe de job offer"
 msgstr ""
 
-#: jobboard/models.py:24
+#: pycones/jobboard/models.py:22
 msgid "Application URL"
 msgstr ""
 
-#: proposals/__init__.py:10
+#: pycones/proposals/__init__.py:10
 msgid "Básico"
 msgstr ""
 
-#: proposals/__init__.py:11
+#: pycones/proposals/__init__.py:11
 msgid "Intermedio"
 msgstr ""
 
-#: proposals/__init__.py:12
+#: pycones/proposals/__init__.py:12
 msgid "Avanzado"
 msgstr ""
 
-#: proposals/__init__.py:16
-msgid "Español"
-msgstr ""
-
-#: proposals/__init__.py:17
+#: pycones/proposals/__init__.py:17
 msgid "Inglés"
 msgstr ""
 
-#: proposals/__init__.py:21
+#: pycones/proposals/__init__.py:21
 msgid "15 minutos"
 msgstr ""
 
-#: proposals/__init__.py:22
+#: pycones/proposals/__init__.py:22
 msgid "30 minutos"
 msgstr ""
 
-#: proposals/admin.py:52
+#: pycones/proposals/admin.py:52
 msgid "Media"
 msgstr ""
 
-#: proposals/admin.py:56
+#: pycones/proposals/admin.py:56
 msgid "Revisiones completadas"
 msgstr ""
 
-#: proposals/admin.py:60
+#: pycones/proposals/admin.py:60
 msgid "Revisiones asignadas"
 msgstr ""
 
-#: proposals/admin.py:64
+#: pycones/proposals/admin.py:64
 msgid "Lista de etiquetas"
 msgstr ""
 
-#: proposals/admin.py:68
+#: pycones/proposals/admin.py:68
 msgid "O0"
 msgstr ""
 
-#: proposals/admin.py:72
+#: pycones/proposals/admin.py:72
 msgid "O1"
 msgstr ""
 
-#: proposals/forms.py:20
+#: pycones/proposals/forms.py:20
 msgid "Ponente/s"
 msgstr ""
 
-#: proposals/forms.py:50
+#: pycones/proposals/forms.py:50
 msgid "Es obligatorio indicar un ponente al menos."
 msgstr ""
 
-#: proposals/forms.py:56
+#: pycones/proposals/forms.py:56
 msgid "Es falta un correo electrónico."
 msgstr ""
 
-#: proposals/forms.py:58
+#: pycones/proposals/forms.py:58
 msgid "Es falta un nombre."
 msgstr ""
 
-#: proposals/forms.py:88
+#: pycones/proposals/forms.py:88
 msgid "Este campo no puede estar vacío."
 msgstr ""
 
-#: proposals/forms.py:91
+#: pycones/proposals/forms.py:91
 msgid ""
 "¡El resumen es demasiado corto! Tiene que tener al menos 80 palabras. Ayuda "
 "al equipo organizador a seleccionar tu charla indicando un breve esquema, si "
 "habrá demos en directo o qué conocimientos previos debería tener la audiencia"
 msgstr ""
 
-#: proposals/models.py:29
+#: pycones/proposals/models.py:29
 msgid "Name"
 msgstr ""
 
-#: proposals/models.py:40 templates/reviewers/details.html:14
+#: pycones/proposals/models.py:40 pycones/templates/reviewers/details.html:14
 msgid "Nivel de la audiencia"
 msgstr ""
 
-#: proposals/models.py:47 schedules/models.py:207
-#: templates/reviewers/details.html:18 templates/schedule/details.html:27
+#: pycones/proposals/models.py:47 pycones/schedules/models.py:207
+#: pycones/templates/reviewers/details.html:18
+#: pycones/templates/schedule/details.html:27
 msgid "Idioma"
 msgstr ""
 
-#: proposals/models.py:50
+#: pycones/proposals/models.py:50
 msgid "Duración"
 msgstr ""
 
-#: proposals/models.py:63 templates/reviewers/details.html:22
+#: pycones/proposals/models.py:63 pycones/templates/reviewers/details.html:22
 msgid "¿Es apta para principiantes?"
 msgstr ""
 
-#: proposals/models.py:68 templates/reviewers/details.html:10
+#: pycones/proposals/models.py:68 pycones/templates/reviewers/details.html:10
 msgid "Tipo de propuesta"
 msgstr ""
 
-#: proposals/models.py:74 templates/reviewers/details.html:27
+#: pycones/proposals/models.py:74 pycones/templates/reviewers/details.html:27
 msgid "Breve descripción"
 msgstr ""
 
-#: proposals/models.py:77
+#: pycones/proposals/models.py:77
 msgid ""
 "Si tu propuesta se acepta esto se hará público, y se incluirá en el "
 "programa. Debería ser un párrafo, con un máximo de 500 caracteres."
 msgstr ""
 
-#: proposals/models.py:82 templates/reviewers/details.html:29
+#: pycones/proposals/models.py:82 pycones/templates/reviewers/details.html:29
 msgid "Resumen detallado"
 msgstr ""
 
-#: proposals/models.py:87
+#: pycones/proposals/models.py:87
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -196,11 +219,11 @@ msgstr ""
 "usando <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 
-#: proposals/models.py:93 templates/reviewers/details.html:31
+#: pycones/proposals/models.py:93 pycones/templates/reviewers/details.html:31
 msgid "Notas adicionales"
 msgstr ""
 
-#: proposals/models.py:98
+#: pycones/proposals/models.py:98
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -216,106 +239,106 @@ msgstr ""
 "usando <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 
-#: proposals/models.py:111
+#: pycones/proposals/models.py:111
 msgid "Aceptada"
 msgstr ""
 
-#: proposals/models.py:113
+#: pycones/proposals/models.py:113
 msgid "Notificación de aceptación enviada"
 msgstr ""
 
-#: proposals/models.py:209
+#: pycones/proposals/models.py:209
 #, python-format
 msgid "[%s] Confirmación de propuesta de charla"
 msgstr ""
 
-#: proposals/models.py:233
+#: pycones/proposals/models.py:233
 #, python-format
 msgid "[%s] Notificación de propuesta de charla"
 msgstr ""
 
-#: reviewers/admin.py:39
+#: pycones/reviewers/admin.py:39
 msgid "Revisiones"
 msgstr ""
 
-#: reviewers/forms.py:37
+#: pycones/reviewers/forms.py:37
 msgid "Debes puntuar entre 1.0 y 4.0"
 msgstr ""
 
-#: reviewers/forms.py:72
+#: pycones/reviewers/forms.py:72
 msgid "Un posible ponente no puede registrarse como revisor."
 msgstr ""
 
-#: reviewers/forms.py:74
+#: pycones/reviewers/forms.py:74
 msgid "Ya estás registrado como revisor."
 msgstr ""
 
-#: reviewers/forms.py:100
+#: pycones/reviewers/forms.py:100
 msgid "Mostrar sólo revisiones no terminadas"
 msgstr ""
 
-#: reviewers/models.py:27 templates/reviewers/list.html:22
+#: pycones/reviewers/models.py:27 pycones/templates/reviewers/list.html:22
 msgid "Puntuación"
 msgstr ""
 
-#: reviewers/models.py:30
+#: pycones/reviewers/models.py:30
 msgid "Puntuación del 1.0 al 4.0"
 msgstr ""
 
-#: reviewers/models.py:33
+#: pycones/reviewers/models.py:33
 msgid "Notas del revisor"
 msgstr ""
 
-#: reviewers/models.py:36
+#: pycones/reviewers/models.py:36
 msgid "¿Existe un conflicto de intereses?"
 msgstr ""
 
-#: reviewers/models.py:39
+#: pycones/reviewers/models.py:39
 msgid "¿Revisión finalizada?"
 msgstr ""
 
-#: reviewers/models.py:54
+#: pycones/reviewers/models.py:54
 #, python-format
 msgid "[%s] Tienes una nueva propuesta para revisar"
 msgstr ""
 
-#: schedules/admin.py:28
+#: pycones/schedules/admin.py:28
 msgid "Title"
 msgstr ""
 
-#: schedules/models.py:101 schedules/models.py:227
+#: pycones/schedules/models.py:101 pycones/schedules/models.py:227
 msgid "video URL"
 msgstr ""
 
-#: schedules/models.py:102
+#: pycones/schedules/models.py:102
 msgid "keynote URL"
 msgstr ""
 
-#: schedules/models.py:104
+#: pycones/schedules/models.py:104
 msgid "keynote file"
 msgstr ""
 
-#: schedules/models.py:229
+#: pycones/schedules/models.py:229
 msgid "URL de la presentación o del código"
 msgstr ""
 
-#: schedules/models.py:232
+#: pycones/schedules/models.py:232
 msgid "Fichero de presentación"
 msgstr ""
 
-#: speakers/models.py:20 templates/proposals/create.html:28
+#: pycones/speakers/models.py:20 pycones/templates/proposals/create.html:28
 msgid "Nombre"
 msgstr ""
 
-#: speakers/models.py:22
+#: pycones/speakers/models.py:22
 msgid "Tal como quieres que apareza en el programa de la conferencia."
 msgstr ""
 
-#: speakers/models.py:25
+#: pycones/speakers/models.py:25
 msgid "Biografía"
 msgstr ""
 
-#: speakers/models.py:30
+#: pycones/speakers/models.py:30
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -329,180 +352,180 @@ msgstr ""
 "usando <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 
-#: speakers/models.py:37
+#: pycones/speakers/models.py:37
 msgid "Foto"
 msgstr ""
 
-#: speakers/views.py:49
+#: pycones/speakers/views.py:49
 msgid "Datos actualizados correctamente"
 msgstr ""
 
-#: sponsorships/__init__.py:10
-msgid "Text"
-msgstr ""
-
-#: sponsorships/__init__.py:11
+#: pycones/sponsorships/__init__.py:11
 msgid "File"
 msgstr ""
 
-#: sponsorships/__init__.py:12
+#: pycones/sponsorships/__init__.py:12
 msgid "Web Logo"
 msgstr ""
 
-#: sponsorships/__init__.py:13
+#: pycones/sponsorships/__init__.py:13
 msgid "Simple"
 msgstr ""
 
-#: sponsorships/models.py:22 sponsorships/models.py:151
-msgid "name"
-msgstr ""
-
-#: sponsorships/models.py:23
+#: pycones/sponsorships/models.py:23
 msgid "order"
 msgstr ""
 
-#: sponsorships/models.py:24
+#: pycones/sponsorships/models.py:24
 msgid "cost"
 msgstr ""
 
-#: sponsorships/models.py:26 sponsorships/models.py:152
+#: pycones/sponsorships/models.py:26 pycones/sponsorships/models.py:157
 msgid "description"
 msgstr ""
 
-#: sponsorships/models.py:26
+#: pycones/sponsorships/models.py:26
 msgid "This is private."
 msgstr ""
 
-#: sponsorships/models.py:31
+#: pycones/sponsorships/models.py:31
 msgid "sponsor level"
 msgstr ""
 
-#: sponsorships/models.py:32
+#: pycones/sponsorships/models.py:32
 msgid "sponsor levels"
 msgstr ""
 
-#: sponsorships/models.py:46
+#: pycones/sponsorships/models.py:46
 msgid "applicant"
 msgstr ""
 
-#: sponsorships/models.py:51
+#: pycones/sponsorships/models.py:51
 msgid "Sponsor Name"
 msgstr ""
 
-#: sponsorships/models.py:52
+#: pycones/sponsorships/models.py:52
 msgid "external URL"
 msgstr ""
 
-#: sponsorships/models.py:53
+#: pycones/sponsorships/models.py:53
 msgid "annotation"
 msgstr ""
 
-#: sponsorships/models.py:55
+#: pycones/sponsorships/models.py:55
 msgid "Contact Name"
 msgstr ""
 
-#: sponsorships/models.py:57
+#: pycones/sponsorships/models.py:57
 msgid "Contact Email"
 msgstr ""
 
-#: sponsorships/models.py:59 sponsorships/models.py:172
+#: pycones/sponsorships/models.py:59 pycones/sponsorships/models.py:177
 msgid "level"
 msgstr ""
 
-#: sponsorships/models.py:62 users/models.py:34
+#: pycones/sponsorships/models.py:62 pycones/users/models.py:34
 msgid "active"
 msgstr ""
 
-#: sponsorships/models.py:75 sponsorships/models.py:192
+#: pycones/sponsorships/models.py:72
+msgid "Relative order of the sponsor"
+msgstr ""
+
+#: pycones/sponsorships/models.py:78 pycones/sponsorships/models.py:197
 msgid "sponsor"
 msgstr ""
 
-#: sponsorships/models.py:76
+#: pycones/sponsorships/models.py:79
 msgid "sponsors"
 msgstr ""
 
-#: sponsorships/models.py:154
+#: pycones/sponsorships/models.py:159
 msgid "type"
 msgstr ""
 
-#: sponsorships/models.py:166 sponsorships/models.py:198
+#: pycones/sponsorships/models.py:171 pycones/sponsorships/models.py:203
 msgid "benefit"
 msgstr ""
 
-#: sponsorships/models.py:177 sponsorships/models.py:204
+#: pycones/sponsorships/models.py:182 pycones/sponsorships/models.py:209
 msgid "max words"
 msgstr ""
 
-#: sponsorships/models.py:178 sponsorships/models.py:205
+#: pycones/sponsorships/models.py:183 pycones/sponsorships/models.py:210
 msgid "other limits"
 msgstr ""
 
-#: sponsorships/models.py:209
+#: pycones/sponsorships/models.py:214
 msgid "text"
 msgstr ""
 
-#: sponsorships/models.py:210
+#: pycones/sponsorships/models.py:215
 msgid "file"
 msgstr ""
 
-#: templates/404.html:14
+#: pycones/templates/404.html:14
 msgid "No podemos mostrarte la página que estás buscando."
 msgstr ""
 
-#: templates/404.html:16
+#: pycones/templates/404.html:16
 msgid "Parece que ha habido un error con la página que estás buscando."
 msgstr ""
 
-#: templates/404.html:17
+#: pycones/templates/404.html:17
 msgid "¡Seguro que la culpa es del informático !"
 msgstr ""
 
-#: templates/404.html:18
+#: pycones/templates/404.html:18
 msgid ""
 "O es posible que la entrada haya sido eliminada o que la dirección no exista."
 msgstr ""
 
-#: templates/404.html:19
+#: pycones/templates/404.html:19
 msgid "Para todo lo demás la respuesta es 42"
 msgstr ""
 
-#: templates/base.html:36
+#: pycones/templates/base.html:37
 msgid "Sobre Alicante"
 msgstr ""
 
-#: templates/base.html:41
+#: pycones/templates/base.html:42
 msgid "Horario"
 msgstr ""
 
-#: templates/base.html:45
+#: pycones/templates/base.html:46
 msgid "Job Board"
 msgstr ""
 
-#: templates/base.html:48
+#: pycones/templates/base.html:49
+msgid "Hoteles"
+msgstr ""
+
+#: pycones/templates/base.html:52
 msgid "Blog"
 msgstr ""
 
-#: templates/base.html:109
+#: pycones/templates/base.html:113
 msgid "Código de conducta"
 msgstr ""
 
-#: templates/base.html:113
+#: pycones/templates/base.html:117
 msgid "Dónde encontrarnos"
 msgstr ""
 
-#: templates/base.html:139
+#: pycones/templates/base.html:143
 msgid "Suscríbete a nuestra newsletter"
 msgstr ""
 
-#: templates/base.html:147 templates/users/request_code.html:22
+#: pycones/templates/base.html:151 pycones/templates/users/request_code.html:22
 msgid "Enviar"
 msgstr ""
 
-#: templates/blog/list.html:11
+#: pycones/templates/blog/list.html:16
 msgid "¡Aún no hay ninguna entrada en el blog!"
 msgstr ""
 
-#: templates/emails/proposals/accepted.html:5
+#: pycones/templates/emails/proposals/accepted.html:5
 #, python-format
 msgid ""
 "\n"
@@ -521,11 +544,11 @@ msgid ""
 "    "
 msgstr ""
 
-#: templates/emails/proposals/accepted.html:12
+#: pycones/templates/emails/proposals/accepted.html:12
 msgid "¡Enhorabuena y un saludo!"
 msgstr ""
 
-#: templates/emails/proposals/confirmation.html:5
+#: pycones/templates/emails/proposals/confirmation.html:5
 #, python-format
 msgid ""
 "\n"
@@ -539,18 +562,18 @@ msgid ""
 "    "
 msgstr ""
 
-#: templates/emails/proposals/confirmation.html:12
-#: templates/proposals/edit.html:10
+#: pycones/templates/emails/proposals/confirmation.html:12
+#: pycones/templates/proposals/edit.html:10
 msgid "Editar propuesta"
 msgstr ""
 
-#: templates/emails/proposals/confirmation.html:13
-#: templates/emails/proposals/rejected.html:12
-#: templates/emails/reviewers/new.html:14
+#: pycones/templates/emails/proposals/confirmation.html:13
+#: pycones/templates/emails/proposals/rejected.html:12
+#: pycones/templates/emails/reviewers/new.html:14
 msgid "¡Un saludo!"
 msgstr ""
 
-#: templates/emails/proposals/rejected.html:5
+#: pycones/templates/emails/proposals/rejected.html:5
 #, python-format
 msgid ""
 "\n"
@@ -567,7 +590,7 @@ msgid ""
 "    "
 msgstr ""
 
-#: templates/emails/reviewers/new.html:5
+#: pycones/templates/emails/reviewers/new.html:5
 #, python-format
 msgid ""
 "\n"
@@ -580,45 +603,45 @@ msgid ""
 "    "
 msgstr ""
 
-#: templates/emails/reviewers/new.html:12
+#: pycones/templates/emails/reviewers/new.html:12
 msgid "Revisar propuestas"
 msgstr ""
 
-#: templates/emails/users/restore_email.html:3
+#: pycones/templates/emails/users/restore_email.html:3
 msgid "Entra en este enlace para establecer tu contraseña:"
 msgstr ""
 
-#: templates/jobboard/details.html:16
+#: pycones/templates/jobboard/details.html:18
 msgid "Enviar solicitud"
 msgstr ""
 
-#: templates/jobboard/list.html:14
+#: pycones/templates/jobboard/list.html:16
 msgid "Oferta"
 msgstr ""
 
-#: templates/jobboard/list.html:15
+#: pycones/templates/jobboard/list.html:17
 msgid "Empresa"
 msgstr ""
 
-#: templates/jobboard/list.html:26
+#: pycones/templates/jobboard/list.html:28
 msgid "No hay ninguna posición disponible"
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:3
+#: pycones/templates/pages/code_of_conduct.html:3
 msgid "Código de conducta PyconES"
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:8
+#: pycones/templates/pages/code_of_conduct.html:8
 msgid "Codigo de conducta"
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:9
+#: pycones/templates/pages/code_of_conduct.html:9
 msgid ""
 "PyConES es una conferencia hecha por la comunidad pensada para la "
 "divulgación y colaboración dentro de la comunidad de desarrolladores."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:10
+#: pycones/templates/pages/code_of_conduct.html:10
 msgid ""
 "Valoramos la participación de cada miembro de la comunidad Python y queremos "
 "que todos los asistentes tengan una experiencia entretenida y satisfactoria. "
@@ -627,7 +650,7 @@ msgid ""
 "ella, estén oficialmente auspiciados por PyConES o no."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:11
+#: pycones/templates/pages/code_of_conduct.html:11
 msgid ""
 "En concreto, todos los delegados, disertantes, expositores y voluntarios que "
 "tomen parte en actividades relacionadas con PyConES deberán acatar el "
@@ -635,7 +658,7 @@ msgid ""
 "este código durante el evento."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:12
+#: pycones/templates/pages/code_of_conduct.html:12
 msgid ""
 "Se entiende por acoso todo comentario ofensivo alusivo al sexo, preferencias "
 "sexuales, discapacidades, aspecto físico, etnias y religiones; toda "
@@ -645,13 +668,13 @@ msgid ""
 "inapropiado y toda propuesta sexual no deseada."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:13
+#: pycones/templates/pages/code_of_conduct.html:13
 msgid ""
 "Los participantes que sean apercibidos deberán desistir inmediatamente de su "
 "actitud."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:14
+#: pycones/templates/pages/code_of_conduct.html:14
 msgid ""
 "Los expositores, las casetas o pabellones de patrocinadores o empresas y "
 "actividades similares también están sujetas a la política antiacoso. En "
@@ -661,25 +684,25 @@ msgid ""
 "ambiente sexualizado."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:15
+#: pycones/templates/pages/code_of_conduct.html:15
 msgid ""
 "Cuida tu lenguaje. Recuerda que las bromas sexistas, racistas y excluyentes "
 "en general podrían ofender a otras personas. El lenguaje excesivamente soez "
 "y las bromas ofensivas son inapropiadas en PyConES."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:16
+#: pycones/templates/pages/code_of_conduct.html:16
 msgid ""
 "Si algún participante infringiera este código de conducta, la organización "
 "podrá tomar las medidas que considere adecuadas, como la amonestación o la "
 "expulsión sin derecho a reembolso."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:17
+#: pycones/templates/pages/code_of_conduct.html:17
 msgid "Información de contacto"
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:18
+#: pycones/templates/pages/code_of_conduct.html:18
 msgid ""
 "Si estás siendo objeto de acoso, notas que alguien está siendo acosado, o "
 "tienes cualquier otra preocupación, por favor ponte en contacto con un "
@@ -689,13 +712,13 @@ msgid ""
 "responsable de la conferencia - Juan Luis Cano."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:19
+#: pycones/templates/pages/code_of_conduct.html:19
 msgid ""
 "Si se trata de una cuestión especialmente urgente, dirígete a cualquiera de "
 "estas personas:"
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:23
+#: pycones/templates/pages/code_of_conduct.html:23
 msgid ""
 "El personal de la conferencia ayudará gustosamente a los participantes a que "
 "se pongan en contacto con el personal de seguridad del lugar o la policía "
@@ -704,15 +727,15 @@ msgid ""
 "la conferencia. Tu bienestar es una de nuestras prioridades."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:24
+#: pycones/templates/pages/code_of_conduct.html:24
 msgid "Gracias por hacer de este un evento abierto a la comunidad y amistoso."
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:25
+#: pycones/templates/pages/code_of_conduct.html:25
 msgid "Licencia"
 msgstr ""
 
-#: templates/pages/code_of_conduct.html:27
+#: pycones/templates/pages/code_of_conduct.html:27
 msgid ""
 "\n"
 "        Este Código de Conducta se basa en los códigos de conducta de PyCon "
@@ -726,23 +749,23 @@ msgid ""
 "    "
 msgstr ""
 
-#: templates/pages/home.html:10
+#: pycones/templates/pages/home.html:10
 msgid "¡Entradas ya disponibles!"
 msgstr ""
 
-#: templates/pages/home.html:11
+#: pycones/templates/pages/home.html:11
 msgid "Consigue tu entrada"
 msgstr ""
 
-#: templates/pages/home.html:14
+#: pycones/templates/pages/home.html:14
 msgid "Entradas no disponibles."
 msgstr ""
 
-#: templates/pages/home.html:21
+#: pycones/templates/pages/home.html:21
 msgid "El evento"
 msgstr ""
 
-#: templates/pages/home.html:22
+#: pycones/templates/pages/home.html:22
 msgid ""
 "PyConES es la conferencia de la comunidad Python española. PyConES se "
 "celebrará por séptima vez del 04 al 06 de octubre de 2019 en Alicante, tras "
@@ -750,60 +773,47 @@ msgid ""
 "Málaga, siguiendo el formato del evento mundial de PyCon."
 msgstr ""
 
-#: templates/pages/home.html:30 templates/pages/patrocinadores.html:5
+#: pycones/templates/pages/home.html:30
+#: pycones/templates/pages/patrocinadores.html:5
 msgid "Patrocinadores"
 msgstr ""
 
-#: templates/pages/home.html:31
+#: pycones/templates/pages/home.html:31
 msgid ""
 "¿Quieres patrocinar esta edición de la PyConES? Aquí encontrarás toda la "
 "información necesaria"
 msgstr ""
 
-#: templates/pages/home.html:33 templates/pages/home.html:35
+#: pycones/templates/pages/home.html:33 pycones/templates/pages/home.html:35
 msgid "Folleto"
 msgstr ""
 
-#: templates/pages/home.html:44
-msgid "Call for papers!"
-msgstr ""
-
-#: templates/pages/home.html:45
-msgid ""
-"¿Quieres participar con tu charla/taller/poster en la PyConES? Aquí "
-"encontrarás toda la información necesaria."
-msgstr ""
-
-#: templates/pages/home.html:46
-msgid "Call for papers"
-msgstr ""
-
-#: templates/pages/home.html:55
+#: pycones/templates/pages/home.html:52
 msgid "Ponentes principales"
 msgstr ""
 
-#: templates/pages/home.html:65
+#: pycones/templates/pages/home.html:62
 msgid ""
 "Safia es una desarrolladora de código abierto, escritora e ingeniera "
 "software en Microsoft. Le apasiona unir a las personas para construir cosas "
 "formidables."
 msgstr ""
 
-#: templates/pages/home.html:75
+#: pycones/templates/pages/home.html:72
 msgid ""
 "Lead Data Scientist en StyleSage. Es un profesional multidisciplinar con más "
 "de 11 años de experiencia en el área de inteligencia artificial, habiendo "
 "trabajado de investigador, ingeniero, profesor y consultor."
 msgstr ""
 
-#: templates/pages/home.html:85
+#: pycones/templates/pages/home.html:82
 msgid ""
 "Mabel es ingeniera aeronáutica que trabaja desarrollando métodos y "
 "herramientas para análisis de ensayos en vuelo de aviones. Co-organiza el "
 "grupo PyLadies Madrid y otros eventos de Python como Django Girls."
 msgstr ""
 
-#: templates/pages/home.html:95
+#: pycones/templates/pages/home.html:96
 msgid ""
 "Trabaja en el equipo de Python infrastructura en Bloomberg L.P. Es un core "
 "developer de Python centrado en el desarrollo del interprete y el parser. "
@@ -812,11 +822,11 @@ msgid ""
 "general. También tiene un gato pero no programa."
 msgstr ""
 
-#: templates/pages/info.html:9
+#: pycones/templates/pages/info.html:12
 msgid "¿Dónde nos vemos?"
 msgstr ""
 
-#: templates/pages/info.html:11
+#: pycones/templates/pages/info.html:14
 msgid ""
 "\n"
 "<h3>Universidad de Alicante</h3>\n"
@@ -852,7 +862,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: templates/pages/info.html:42
+#: pycones/templates/pages/info.html:45
 #, python-format
 msgid ""
 "\n"
@@ -905,13 +915,13 @@ msgid ""
 "  El coche lo puedes sacar cuando quieras y puedes dejarlo allí.</p>\n"
 msgstr ""
 
-#: templates/pages/landing.html:20
+#: pycones/templates/pages/landing.html:20
 msgid ""
 "Estamos preparando la nueva edición de la PyConES, dentro de poco habrá más "
 "novedades."
 msgstr ""
 
-#: templates/pages/patrocinadores.html:72
+#: pycones/templates/pages/patrocinadores.html:76
 #, python-format
 msgid ""
 "\n"
@@ -921,114 +931,117 @@ msgid ""
 "                "
 msgstr ""
 
-#: templates/pages/tickets.html:8
+#: pycones/templates/pages/tickets.html:8
 msgid "Compra aquí tus tickets"
 msgstr ""
 
-#: templates/pages/tickets.html:12
+#: pycones/templates/pages/tickets.html:12
 msgid "¡Entradas agotadas!"
 msgstr ""
 
-#: templates/proposals/close.html:7
+#: pycones/templates/proposals/close.html:7
 msgid "¡La llamada a propuestas ha terminado!"
 msgstr ""
 
-#: templates/proposals/create.html:7
+#: pycones/templates/proposals/create.html:7
 msgid "Envia tu propuesta para dar una charla o taller en la PyConES 2019"
 msgstr ""
 
-#: templates/proposals/create.html:11
+#: pycones/templates/proposals/create.html:11
 msgid ""
 "\n"
 "            ¡Está abierta la llamada a propuestas para la PyConES 2019!\n"
 "        "
 msgstr ""
 
-#: templates/proposals/create.html:17
+#: pycones/templates/proposals/create.html:17
 msgid "Más información en el blog"
 msgstr ""
 
-#: templates/proposals/create.html:27
+#: pycones/templates/proposals/create.html:27
 msgid "Añadir un ponente más"
 msgstr ""
 
-#: templates/proposals/create.html:29 users/forms.py:14 users/forms.py:17
-#: users/forms.py:52 users/forms.py:93 users/forms.py:95
+#: pycones/templates/proposals/create.html:29 pycones/users/forms.py:14
+#: pycones/users/forms.py:17 pycones/users/forms.py:52
+#: pycones/users/forms.py:93 pycones/users/forms.py:95
 msgid "Email"
 msgstr ""
 
-#: templates/proposals/create.html:116
+#: pycones/templates/proposals/create.html:116
 msgid "Enviar propuesta"
 msgstr ""
 
-#: templates/proposals/edit.html:5
+#: pycones/templates/proposals/edit.html:5
 msgid "Edita tu propuesta"
 msgstr ""
 
-#: templates/proposals/success.html:6
+#: pycones/templates/proposals/success.html:6
 msgid "¡Gracias por tu propuesta!"
 msgstr ""
 
-#: templates/reviewers/details.html:6
+#: pycones/templates/reviewers/details.html:6
 msgid "Propuesta"
 msgstr ""
 
-#: templates/reviewers/details.html:36
+#: pycones/templates/reviewers/details.html:36
 msgid "Revisión"
 msgstr ""
 
-#: templates/reviewers/details.html:64
-#: templates/schedule/presentations/edit.html:22
-#: templates/speakers/edit.html:44 templates/users/restore.html:32
+#: pycones/templates/reviewers/details.html:64
+#: pycones/templates/schedule/presentations/edit.html:22
+#: pycones/templates/speakers/edit.html:44
+#: pycones/templates/users/restore.html:32
 msgid "Guardar"
 msgstr ""
 
-#: templates/reviewers/details.html:65 templates/schedule/details.html:51
-#: templates/schedule/presentations/edit.html:23
+#: pycones/templates/reviewers/details.html:65
+#: pycones/templates/schedule/details.html:51
+#: pycones/templates/schedule/presentations/edit.html:23
 msgid "Volver"
 msgstr ""
 
-#: templates/reviewers/list.html:7
+#: pycones/templates/reviewers/list.html:7
 msgid "Listado de revisiones"
 msgstr ""
 
-#: templates/reviewers/list.html:15
+#: pycones/templates/reviewers/list.html:15
 msgid "Filtrar"
 msgstr ""
 
-#: templates/reviewers/list.html:23
+#: pycones/templates/reviewers/list.html:23
 msgid "¿Conflicto de intereses?"
 msgstr ""
 
-#: templates/reviewers/list.html:24
+#: pycones/templates/reviewers/list.html:24
 msgid "¿Finalizada?"
 msgstr ""
 
-#: templates/reviewers/list.html:25
+#: pycones/templates/reviewers/list.html:25
 msgid "Acciones"
 msgstr ""
 
-#: templates/reviewers/list.html:35
+#: pycones/templates/reviewers/list.html:35
 msgid "Acceder"
 msgstr ""
 
-#: templates/reviewers/list.html:40
+#: pycones/templates/reviewers/list.html:40
 msgid "No hay ninguna revisión disponible aún"
 msgstr ""
 
-#: templates/reviewers/sign_up.html:6
+#: pycones/templates/reviewers/sign_up.html:6
 msgid "Registro de revisores"
 msgstr ""
 
-#: templates/reviewers/sign_up.html:22
+#: pycones/templates/reviewers/sign_up.html:22
 msgid "Registrarse"
 msgstr ""
 
-#: templates/reviewers/sign_up_success.html:6
+#: pycones/templates/reviewers/sign_up_success.html:6
 msgid "¡Gracias por registrarte!"
 msgstr ""
 
-#: templates/reviewers/sign_up_success.html:8
+#: pycones/templates/reviewers/sign_up_success.html:8
 msgid ""
 "\n"
 "                Te hemos enviado un correo electrónico para que establezcas "
@@ -1037,193 +1050,197 @@ msgid ""
 "            "
 msgstr ""
 
-#: templates/schedule/_slot.html:38 templates/schedule/details.html:33
+#: pycones/templates/schedule/_slot.html:38
+#: pycones/templates/schedule/details.html:33
 msgid "Descargar presentación"
 msgstr ""
 
-#: templates/schedule/_slot.html:41 templates/schedule/details.html:36
+#: pycones/templates/schedule/_slot.html:41
+#: pycones/templates/schedule/details.html:36
 msgid "Ver vídeo"
 msgstr ""
 
-#: templates/schedule/details.html:42
+#: pycones/templates/schedule/details.html:42
 msgid "Acerca de"
 msgstr ""
 
-#: templates/schedule/presentations/edit.html:7
+#: pycones/templates/schedule/presentations/edit.html:7
 msgid "Editar datos"
 msgstr ""
 
-#: templates/schedule/presentations/edit.html:8
+#: pycones/templates/schedule/presentations/edit.html:8
 msgid "Sube desde este formulario el fichero de la charla o taller."
 msgstr ""
 
-#: templates/schedule/schedule.html:41
+#: pycones/templates/schedule/schedule.html:41
 msgid "Ya queda poco!"
 msgstr ""
 
-#: templates/schedule/schedule.html:49
+#: pycones/templates/schedule/schedule.html:49
 msgid "Nivel básico"
 msgstr ""
 
-#: templates/schedule/schedule.html:54
+#: pycones/templates/schedule/schedule.html:54
 msgid "Nivel intermedio"
 msgstr ""
 
-#: templates/schedule/schedule.html:59
+#: pycones/templates/schedule/schedule.html:59
 msgid "Nivel avanzado"
 msgstr ""
 
-#: templates/schedule/schedule.html:68
+#: pycones/templates/schedule/schedule.html:68
 msgid "Descargar en iCalendar"
 msgstr ""
 
-#: templates/schedule/schedule.html:71
+#: pycones/templates/schedule/schedule.html:71
 msgid "Descargar en xCal"
 msgstr ""
 
-#: templates/schedule/schedule.html:74
+#: pycones/templates/schedule/schedule.html:74
 msgid "Descargar en Pentabarf XML"
 msgstr ""
 
-#: templates/schedule/show.html:11
+#: pycones/templates/schedule/show.html:11
 msgid "¡Estamos afinándolo todavía!"
 msgstr ""
 
-#: templates/speakers/edit.html:10
+#: pycones/templates/speakers/edit.html:10
 msgid "Perfil de ponente"
 msgstr ""
 
-#: templates/speakers/edit.html:17
+#: pycones/templates/speakers/edit.html:17
 msgid "Datos personales"
 msgstr ""
 
-#: templates/speakers/edit.html:51
+#: pycones/templates/speakers/edit.html:51
 msgid "Charlas/Talleres"
 msgstr ""
 
-#: templates/speakers/edit.html:52
+#: pycones/templates/speakers/edit.html:52
 msgid ""
 "Lista de las propuestas que tienes acepatadas. Puedes pinchar en ellas para "
 "acceder a un formario que te permitirá <strong>subir el fichero de la "
 "presentación</strong>."
 msgstr ""
 
-#: templates/users/request_code.html:5 templates/users/restore.html:5
+#: pycones/templates/users/request_code.html:5
+#: pycones/templates/users/restore.html:5
 msgid "Establece o restaura tu contraseña"
 msgstr ""
 
-#: templates/users/restore.html:10
+#: pycones/templates/users/restore.html:10
 msgid "Email de usuario"
 msgstr ""
 
-#: templates/users/sign_in.html:6
+#: pycones/templates/users/sign_in.html:6
 msgid "Acceso de usuarios"
 msgstr ""
 
-#: templates/users/sign_in.html:22
+#: pycones/templates/users/sign_in.html:22
 msgid "Entrar"
 msgstr ""
 
-#: templates/users/sign_in.html:25
+#: pycones/templates/users/sign_in.html:25
 msgid "¿No tienes contraseña o la has olvidado?"
 msgstr ""
 
-#: users/admin.py:20
+#: pycones/users/admin.py:20
 msgid "Personal info"
 msgstr ""
 
-#: users/admin.py:21
+#: pycones/users/admin.py:21
 msgid "Permissions"
 msgstr ""
 
-#: users/admin.py:23
+#: pycones/users/admin.py:23
 msgid "Important dates"
 msgstr ""
 
-#: users/forms.py:22
+#: pycones/users/forms.py:22
 msgid "El email es obligatorio"
 msgstr ""
 
-#: users/forms.py:27 users/forms.py:54 users/forms.py:57
+#: pycones/users/forms.py:27 pycones/users/forms.py:54
+#: pycones/users/forms.py:57
 msgid "Contraseña"
 msgstr ""
 
-#: users/forms.py:29
+#: pycones/users/forms.py:29
 msgid "La contraseña es obligatoria"
 msgstr ""
 
-#: users/forms.py:35 users/forms.py:70
+#: pycones/users/forms.py:35 pycones/users/forms.py:70
 msgid "El email no existe"
 msgstr ""
 
-#: users/forms.py:44
+#: pycones/users/forms.py:44
 msgid "La contraseña no es correcta"
 msgstr ""
 
-#: users/forms.py:60 users/forms.py:63
+#: pycones/users/forms.py:60 pycones/users/forms.py:63
 msgid "Repita la contraseña"
 msgstr ""
 
-#: users/forms.py:77
+#: pycones/users/forms.py:77
 msgid "Las contraseñas no son iguales"
 msgstr ""
 
-#: users/forms.py:84 users/forms.py:87
+#: pycones/users/forms.py:84 pycones/users/forms.py:87
 msgid "Código de restauración no válido"
 msgstr ""
 
-#: users/models.py:23
+#: pycones/users/models.py:23
 msgid "email address"
 msgstr ""
 
-#: users/models.py:25
+#: pycones/users/models.py:25
 msgid "first name"
 msgstr ""
 
-#: users/models.py:26
+#: pycones/users/models.py:26
 msgid "last name"
 msgstr ""
 
-#: users/models.py:29
+#: pycones/users/models.py:29
 msgid "staff status"
 msgstr ""
 
-#: users/models.py:31
+#: pycones/users/models.py:31
 msgid "Designates whether the user can log into this admin site."
 msgstr ""
 
-#: users/models.py:37
+#: pycones/users/models.py:37
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
 
-#: users/models.py:41
+#: pycones/users/models.py:41
 msgid "date joined"
 msgstr ""
 
-#: users/models.py:50
+#: pycones/users/models.py:50
 msgid "user"
 msgstr ""
 
-#: users/models.py:51
+#: pycones/users/models.py:51
 msgid "users"
 msgstr ""
 
-#: users/models.py:76
+#: pycones/users/models.py:76
 #, python-format
 msgid "[%s] Establece tu contraseña"
 msgstr ""
 
-#: users/views.py:90
+#: pycones/users/views.py:90
 msgid "Se ha establecido la nueva contraseña"
 msgstr ""
 
-#: users/views.py:117
+#: pycones/users/views.py:117
 msgid "No se ha encontrado el correo electrónico."
 msgstr ""
 
-#: users/views.py:120
+#: pycones/users/views.py:120
 msgid ""
 "Se ha enviado un correo a tu dirección con un enlace para establecer tu "
 "contraseña."
