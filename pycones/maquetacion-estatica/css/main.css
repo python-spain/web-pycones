@@ -10746,6 +10746,25 @@ section#patrocinadores .text-center {
   padding-bottom:0;
 }
 .sponsors-img {max-height:120px;}
+section#patrocinadores .flex-container {
+  display:flex;
+  flex-wrap: wrap;
+}
+section#patrocinadores .content-2img .box img {
+  max-width:175px;
+  max-height:80px;
+}
+section#patrocinadores .box {
+  flex-grow:1;
+  padding-bottom:30px;
+  text-align:center;
+  align-self: center !important;
+}
+section#patrocinadores .box img {
+  max-width:300px;
+  height:auto;
+  max-height:100px;
+}
 section#blogList article {
   border-top:1px solid #000;
   padding-top:25px;
