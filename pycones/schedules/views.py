@@ -28,12 +28,12 @@ class ShowSchedule(View):
         check_schedule_view(request)
         data = {"days": []}
         for day in Day.objects.all():
+
             data["days"].append(
                 {
-                    "tracks": day.track_set.order_by("order"),
                     "date": day.date,
-                    "slots": day.slot_set.all().select_related(),
                     "slot_groups": day.slot_groups(),
+                    "tracks": day.tracks(),
                 }
             )
         return render(request, self.template_name, data)

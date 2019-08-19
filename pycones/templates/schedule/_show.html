@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load schedule_tags %}
+{% load chunk_extras %}
+
+{% block content %}
+{% if not schedule_opened %}
+  <section class="container" id="schedule">
+  <div class="col-md-12 data">
+   <h3 class="text-center">{% trans "¡Estamos afinándolo todavía!" %}</h3>
+    </div>
+  </section>
+{% endif %}
+{% else  %}
+ {% chunk name="schedule" as schedule_content %}
+ {% if schedule_content %}
+ <section id="schedule_content" class="container-fluid">
+  {{ schedule_content }}
+ </section>
+ {% chunk name="schedule_pdf" as schedule_pdf %}
+ {% if schedule_content %}
+ <section id="schedule_pdf" class="container-fluid">
+  {{ schedule_pdf }}
+ </section>
+ {% endif %}
+{% endif %}
+{% endblock content %}

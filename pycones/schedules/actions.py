@@ -19,3 +19,13 @@ def download_speakers(modeladmin, request, queryset):
 
 
 download_speakers.short_description = "Download speakers"
+
+
+def create_slots(modeladmin, request, queryset):
+    origin = queryset.first()
+    for t in origin.day.tracks():
+        if origin.track == t:
+            continue
+        origin.id = None
+        origin.track = t
+        origin.save()

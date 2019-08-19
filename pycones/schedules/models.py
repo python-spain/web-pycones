@@ -28,6 +28,12 @@ class Day(models.Model):
     class Meta:
         ordering = ["date"]
 
+    def slots(self):
+        return self.slot_set.all().order_by("order")
+
+    def tracks(self):
+        return self.track_set.all().order_by("name")
+
     def slot_groups(self):
         """Returns all the groups of slots, grouped by start and end hours."""
         groups = OrderedDict()
@@ -78,7 +84,7 @@ class SlotKind(models.Model):
 
     def css_class(self):
         if not self.class_attr:
-            return "slot-{}".format(self.label_en.lower())
+            return "slot-{}".format(self.label.lower())
         return "slot-{}".format(self.class_attr.lower())
 
 
@@ -113,7 +119,23 @@ class Slot(models.Model):
         try:
             return self.presentation
         except ObjectDoesNotExist:
-            return None
+            return self.content_override
+
+    @property
+    def title(self):
+        try:
+            c = self.presentation
+            return c.get_title()
+        except ObjectDoesNotExist:
+            return ""
+
+    @property
+    def description(self):
+        try:
+            c = self.presentation
+            return c.get_description()
+        except ObjectDoesNotExist:
+            return self.content_override
 
     @property
     def start_datetime(self):
