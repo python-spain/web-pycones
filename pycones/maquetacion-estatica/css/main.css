@@ -10713,6 +10713,12 @@ tr > td.media-left {
   opacity:0.4;
 }
 
+#alertMessage {padding-top:50px;}
+#alertMessage img {
+  max-width:150px;
+  margin:20px auto;
+}
+
 /* end product form */
 
 .overflow {overflow:hidden;}
