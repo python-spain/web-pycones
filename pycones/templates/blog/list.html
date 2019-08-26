@@ -2,6 +2,11 @@
 {% load i18n %}
 
 {% block content %}
+<main>
+    <section class="container" id="blogList">
+    <h1>PyconES2019 Blog</h1>
+    <div class="row">
+
     {% for post in posts %}
         {% include "blog/_article.html" %}
         <hr />
@@ -12,4 +17,6 @@
             </div>
         </div>
     {% endfor %}
+    </section>
+</main>
 {% endblock content %}

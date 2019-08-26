@@ -1,186 +1,90 @@
-{% extends "container.html" %}
+{% extends "base.html" %}
 {% load static %}
-{% load i18n %}
+{% load i18n chunk_extras%}
 
 {% block content %}
+{% chunk name="info_content" as info_content %}
+<main>
+  <section class="container" id="contentPage">
+{% if info_content %}
+  {{info_content}}
+{% else %}
+<h1>{% trans "¿Dónde nos vemos?"%}
 
-    <h2>{% trans "Localización" %}</h2>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1f-oUbpVJmYy0dqo_WB4cF9BDEFY" class="location-map"></iframe>
-    <p>
-        {% blocktrans %}
-            El evento se realizará en el <strong>Complejo Cultural San Francisco</strong> que está situado a 10 minutos
-            a pie del centro
-            Cáceres. Al estar dentro de la ciudad, hay multitud de <a href="https://goo.gl/F5ZBV5">hoteles, pensiones</a>,
-            <a href="https://www.facebook.com/groups/comerencaceres/">restaurantes</a> y bares en los
-            alrededores.
-        {% endblocktrans %}
-    </p>
-
-    <p>
-        {% blocktrans %}
-            <strong>Los talleres y Django girls se realizarán en el viernes en el campus universitario</strong>,
-            concretamente en la
-            escuela
-            politécnica a la que se puede llegar con las líneas de autobuses LC, RC y L3.
-        {% endblocktrans %}
-    </p>
-
-    <div class="row">
-        <div class="col-md-8 offset-md-2"><img src="{% static "images/san_francisco.jpg" %}" class="img-fluid" alt=""></div>
-    </div>
-    <br>
-
-    <p>
-        {% blocktrans %}
-            Tanto el auditorio como las tres salas adicionales en las que tendrán lugar las charlas están equipadas con
-            butacas y son accesibles para personas con movilidad reducida.
-        {% endblocktrans %}
-    </p>
-
-    {% blocktrans %}
-        El horario previsto será el siguiente (aproximadamente):
-    {% endblocktrans %}
-
-    <ul>
-        <li>
-            {% blocktrans %}
-                Viernes 22/09/17 de 15:00 a 20:30.
-            {% endblocktrans %}
-        </li>
-        <li>
-            {% blocktrans %}
-                Sábado 23/09/17 de 9:00 a 20:30.
-            {% endblocktrans %}
-        </li>
-        <li>
-            {% blocktrans %}
-                Domingo 24/09/17 de 9:00 a 18:30.
-            {% endblocktrans %}
-        </li>
-    </ul>
-
-    <p>
-        {% blocktrans %}
-            *Para mas informacion sobre horarios de las Django Girls visita la <a href="https://djangogirls.org/caceres/">web oficial</a>.
-        {% endblocktrans %}
-    </p>
-
-
-    <h2>{% trans "Como llegar a Cáceres" %}</h2>
-    <p>
-        {% blocktrans %}
-            Los tres aeropuertos mejor conectados con Cáceres son Badajoz (1h en coche), Sevilla(2´5h en coche) y Madrid
-            (3h en coche).
-        {% endblocktrans %}
-    </p>
-
-    <h4>
-        {% blocktrans %}
-            Desde Badajoz
-        {% endblocktrans %}
-    </h4>
-    <p>
-        {% blocktrans %}
-            6 autobuses al día, compra tus billetes en <a href="http://www.avanzabus.com/" target="blank">www.avanzabus.com</a> o <a href="https://www.alsa.es/" target="blank">www.alsa.es</a><br>
-            5 trenes al día, compra tus billetes en <a href="http://www.renfe.com" target="blank">www.renfe.com</a>
-        {% endblocktrans %}
-    </p>
-
-    <h4>
-        {% blocktrans %}
-            Desde Madrid
-        {% endblocktrans %}
-    </h4>
-    <p>
-        {% blocktrans %}
-            8 autobuses al día, compra tus billetes en <a href="http://www.avanzabus.com/" target="blank">www.avanzabus.com</a><br>
-            5 trenes al día, compra tus billetes en <a href="http://www.renfe.com" target="blank">www.renfe.com</a>
-        {% endblocktrans %}
-    </p>
-    <h4>
-        {% blocktrans %}
-            Desde Sevilla
-        {% endblocktrans %}
-    </h4>
-    <p>
-        {% blocktrans %}
-            8 autobuses al día, compra tus billetes en <a href="https://www.alsa.es/" target="blank">www.alsa.es</a><br>
-            5 trenes al día, compra tus billetes en <a href="http://http://www.renfe.com" target="blank">www.renfe.com</a>
-        {% endblocktrans %}
-    </p>
-    <h4>
-        {% blocktrans %}
-            Desde cualquier otra parte
-        {% endblocktrans %}
-    </h4>
-    <p>
-        {% blocktrans %}
-            Autobuses: <a href="http://estacionautobuses.es/" target="blank">estacionautobuses.es</a><br>
-            Trenes: <a href="http://www.renfe.com" target="blank">www.renfe.com</a><br>
-            Compartir coche: <a href="https://amovens.com/" target="blank">amovens.com</a> o <a href="https://www.blablacar.es/" target="blank">blablacar.com</a><br>
-            O siempre puedes alquilar un coche para moverte con libertad durante el fin de semana! :D
-        {% endblocktrans %}
-    </p>
-
-<h2>{% trans 'Turismo' %}</h2>
-     <p>
-    {% blocktrans %}
-        Tierra de contrastes, Extremadura constituye un destino idóneo para quienes quieren entrar en contacto con una realidad nueva, sorprendente y estimulante. Tu viaje se convierte en un verdadero paseo por la historia. <a href="http://www.turismoextremadura.com/viajar/turismo/es/ven-a-extremadura/">VIVE EXTREMADURA!</a>
-    {% endblocktrans %}
-    </p>
-<iframe width="80%" height="315" src="https://www.youtube.com/embed/Kyg5rRVrsFQ" frameborder="0" allowfullscreen></iframe>
-
-    <h4>
-        {%trans 'Explora Extremadura' %}
-    </h4>
+{% blocktrans %}
+<h3>Universidad de Alicante</h3>
 <ul>
-        {% blocktrans %}
-<li><a href="http://www.turismoextremadura.com/viajar/turismo/es/explora/extremadura-imprescindible/">Qué ver en Extremadura?</a></li>
-<li><a href="http://www.ayto-caceres.es/turismo/conoce-caceres/">Conoce Cáceres</a></li>
-<li><a href="http://www.ayto-caceres.es/turismo/plano-turistico-de-caceres/">Plano de Cáceres</a></li>
-<li><a href="http://extremadurabtt.gobex.es/es/servicios/publicaciones-turisticas/">Guías para explorar Extremadura</a></li>
-<li><a href="http://www.ayto-caceres.es/turismo/rutas/">Rutas por Cáceres</a></li>
-<li><a href="http://www.ayto-caceres.es/turismo/">Información turistica de Cáceres</a></li>
-<li><a href="http://www.turismoextremadura.com/">Información turistica de Extremadura</a></li>
-        {% endblocktrans %}
+  <li><strong>Viernes</strong>: Escuela Politécnica 1</li>
+  <li><strong>Sábado y domingo</strong>: Aulario 2 y Paraninfo.
 </ul>
 
+<h3>Localización</h3>
 
-    <h2>{% trans "Código de conducta" %}</h2>
-    <p class="loud">
-        {% blocktrans %}
-            PyConES aspira a crear un ambiente libre de acosos o discriminaciones por razón de género, orientación
-            sexual,
-            discapacidad, aspecto físico, etnia o religión. No se tolerará discriminación alguna bajo ninguna
-            circunstancia.
-        {% endblocktrans %}
-    </p>
-    <p class="loud">
-        {% blocktrans %}
-            Todo el contenido de la conferencia deberá ajustarse a una audiencia profesional integrada por personas
-            procedentes de sectores diferentes. Tanto el lenguaje como las imágenes sexualmente explícitos son
-            inapropiados
-            en la conferencia y en las charlas.
-        {% endblocktrans %}
-    </p>
-    <p class="loud">
-        {% blocktrans %}
-            Sé amable con los demás. No insultes o humilles a otros asistentes. Compórtate de manera profesional.
-            Recuerda
-            que las bromas sexistas, racistas o discriminatorias están prohibidas en la PyConES.
-        {% endblocktrans %}
-    </p>
-    <p class="loud">
-        {% blocktrans %}
-            Los asistentes que incumplan estas reglas podrán -a discreción de los organizadores- ser sancionados o
-            expulsados de la conferencia sin derecho a reembolso.
-        {% endblocktrans %}
-    </p>
-    <p class="loud">
-        {% blocktrans %}
-            Gracias por ayudarnos a hacer este evento amistoso y abierto para todos.
-        {% endblocktrans %}
-    </p>
-    <a href="{% url "code-of-conduct" %}">{% trans "Código de Conducta Completo" %}</a>
+<p>Universidad de Alicante<br/>
+Carretera de San Vicente del Raspeig, s/n<br/>
+03690, Alicante</p>
+
+<p>En un mapa</p>
+<ul>
+  <li><a href="https://goo.gl/maps/LhgZKnQrAUrdsFYt9">Geoposición</a></li>
+  <li>Coordenadas: 38.385135, -0.514486</li>
+</ul>
+
+<ul>
+<li>Geoposición de cada una de ellas:
+  <ul>
+    <li><a href="https://goo.gl/maps/2Shox2SDGSbLpBRJ7">EPS1 : Coordenadas: 38.386873, -0.511207</a></li>
+    <li><a href="https://goo.gl/maps/S4w1eoLDxfKTmTyY9">Aulario 2 : Coordenadas: 38.384729, -0.510174</a></li>
+    <li><a href="https://goo.gl/maps/sUn2pRmxCKLuWfhg9">Paraninfo : Coordenadas: 38.385226, -0.516909</a></li>
+  </ul>
+</li>
+</ul>
+{% endblocktrans %}
+
+
+{% blocktrans %}
+  <h2>Medios de Transporte en Alicante</h2>
+
+  <h3>TRAM</h3>
+
+  <ul>
+  <li><a href="https://tramalicante.info/#l1">Líneas</a></li>
+  <li>Paradas interesantes:
+    <ul>
+      <li>Línea L2 - Universitat (lugar de la conferencia)</li>
+      <li>Línea L1, L2, L3 y L4 - MARQ Castillo (Donde está el museo del MARQ y el Castillo Santa Barbara)</li>
+      <li>Línea L1, L2, L3, L4 - Mercado (Centro de Alicante)</li>
+      <li>Línea L1, L2, L3 y L4 - Luceros (Centro de Alicante, parada más cercana a Renfe)</li>
+    </ul>
+  </li>
+  </ul>
+
+  <h3>BUS</h3>
+
+  <ul>
+  <li><a href="https://alicante.vectalia.es/wp-content/uploads/sites/2/2018/05/af-FOLLETO-A2-otra-doblez.pdf">Horario normal</li>
+  <li><a href="https://alicante.vectalia.es/wp-content/uploads/sites/2/2018/11/FOLLETO-LINEAS-NOCTURNAS-ALICANTE.pdf">Horario Nocturno</a></li>
+  </ul>
+
+  <p>Líneas Interesantes: <br>
+  24 y 24N son los buses que llevan desde Alicante hasta la Universidad de Alicante y San Vicente en general.</p>
+
+
+  <p>
+  En <a href="https://drive.google.com/file/d/12bF5eC0cCL27ZATgUNf9P9J3TagoMz_8/view?usp=sharing">este archivo</a>
+  también están los parkings dentro de la Uni señalizados, se puede ver cuales están más y menos cerca del la conferencia.
+  Durante el viernes por la tarde aún habrá coches ya que hay clase (hay sitio SIEMPRE),
+  pero sábado y domingo no va a costar encontrar parking en ningún sitio.
+  </p>
+
+  <h3>¿Se puede dejar el coche?</h3>
+  <p>Se puede dejar en la uni. Fin de semana igual se cierra el domingo alguna de las puertas pero la de la autovía está abierta 100% seguro.
+  El coche lo puedes sacar cuando quieras y puedes dejarlo allí.</p>
+{% endblocktrans %}
+{% endif %}
+  </section>
+</main>
+
+
 
 {% endblock content %}

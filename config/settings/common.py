@@ -185,6 +185,7 @@ LOCAL_APPS = (
     "pycones.speakers",
     "pycones.schedules",
     "pycones.jobboard",
+    "pycones.contentchunk",
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -273,17 +274,20 @@ TAGGIT_CASE_INSENSITIVE = True
 # DJANGO MODELTRANSLATION
 # ------------------------------------------------------------------------------
 # See: http://django-modeltranslation.readthedocs.io/en/latest/index.html
+MODELTRANSLATION_DEFAULT_LANGUAGE = "es"
 MODELTRANSLATION_FALLBACK_LANGUAGES = ("es", "en")
+MODELTRANSLATION_LANGUAGES = ("es", "en")
 
 # PROJECT CUSTOM SETTINGS
 # ------------------------------------------------------------------------------
 # This values may vary during the life of the conference.
 LANDING_GLOBAL_REDIRECT = env.bool("PYCONES_LANDING_GLOBAL_REDIRECT", default=False)
 CONFERENCE_TITLE = "PyConES 2019"
-CONTACT_EMAIL = "contact2019@es.pycon.org"
-SPONSORS_EMAIL = "sponsors2019@es.pycon.org"
-CFP_EMAIL = "cfp2019@es.pycon.org"
-PRESS_EMAIL = "press2019@es.pycon.org"
+CONTACT_EMAIL = "contact@2019.es.pycon.org"
+SPONSORS_EMAIL = "contact@2019.es.pycon.org"
+CFP_EMAIL = "contact@2019.es.pycon.org"
+PRESS_EMAIL = "contact@2019.es.pycon.org"
+FINANCIAL_AID_EMAIL = "contact+finaid@2019.es.pycon.org"
 
 # DJANGO SIMPLE OPTIONS
 # ------------------------------------------------------------------------------

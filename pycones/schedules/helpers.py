@@ -10,9 +10,9 @@ from options.models import Option
 
 
 def check_schedule_view(request):
-    is_schedule_opened = bool(Option.objects.get_value("schedule_opened", 0))
+    is_schedule_opened = Option.objects.get_value("schedule_opened", 0) != 0
     if not is_schedule_opened and not (
-        request.user.is_authenticated() and request.user.is_superuser
+        request.user.is_authenticated and request.user.is_superuser
     ):
         raise Http404()
 
@@ -30,7 +30,7 @@ def export_to_pentabarf(days_queryset, rooms_queryset):
     title.text = "PyConES 2019"
     ElementTree.SubElement(conference_element, "subtitle")
     venue = ElementTree.SubElement(conference_element, "venue")
-    venue.text = "Complejo Cultural San Francisco, Cáceres"
+    venue.text = "Alicante"
     start = ElementTree.SubElement(conference_element, "start")
     start.text = "2019-10-4"
     end = ElementTree.SubElement(conference_element, "end")
@@ -38,7 +38,7 @@ def export_to_pentabarf(days_queryset, rooms_queryset):
     days = ElementTree.SubElement(conference_element, "days")
     days.text = str(days_queryset.count())
     timeslot_duration = ElementTree.SubElement(conference_element, "timeslot_duration")
-    timeslot_duration.text = "00:30"
+    timeslot_duration.text = "00:20"
 
     # Days
     for index, day in enumerate(days_queryset.all()):
@@ -114,8 +114,8 @@ def export_to_pentabarf(days_queryset, rooms_queryset):
                 room_name_element = ElementTree.SubElement(event_element, "room")
                 room_name_element.text = slot.room.name
                 title_element = ElementTree.SubElement(event_element, "title")
-                title_element.text = slot.content.get_title()
-                description = slot.content.get_description()
+                title_element.text = slot.title
+                description = slot.description
                 if description:
                     description_element = ElementTree.SubElement(
                         event_element, "description"
@@ -185,8 +185,8 @@ def export_to_xcal(days_queryset):
                 )
                 summary_element = ElementTree.SubElement(properties_element, "summary")
                 text_element = ElementTree.SubElement(summary_element, "text")
-                text_element.text = slot.content.get_title()
-                description = slot.content.get_description()
+                text_element.text = slot.title
+                description = slot.description
                 description_element = ElementTree.SubElement(
                     properties_element, "description"
                 )
@@ -244,8 +244,8 @@ def export_to_icalendar(days_queryset):
                 )
                 if slot.room:
                     event.add("location", slot.room.name)
-                event.add("summary", slot.content.get_title())
-                description = slot.content.get_description()
+                event.add("summary", slot.title)
+                description = slot.description
                 if description:
                     event.add(
                         "description",

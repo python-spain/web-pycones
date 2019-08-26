@@ -18,7 +18,10 @@ RUN apt-get update && apt-get install -y \
     jpegoptim \
     optipng \
     gettext \
-    curl
+    curl \
+    libproj-dev \
+    binutils \
+    gdal-bin
 
 # Install nodejs, bower and less
 RUN set -ex \

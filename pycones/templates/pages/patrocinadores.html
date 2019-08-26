@@ -1,0 +1,80 @@
+{% load i18n %}
+{% load sponsorship_tags %}
+<section id="patrocinadores" class="container">
+    <div class="text-center">
+      <h2>{% trans "Patrocinadores" %}</h2>
+    </div>
+
+    {% sponsor_levels as levels %}
+    {% for level in levels %}
+        {% sponsors level.pk as sponsors %}
+        {% if sponsors %}
+          <h3>{{ level.name }}</h3>
+          <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
+            <div class="row">
+            {% for sponsor in sponsors %}
+              {% if level.order == 0  or level.order == 10%}
+              <div class="col-8 offset-2 text-center">
+              {% else %}
+                {% if level.order == 1 %}
+                <div class="col-6 col-md-6 text-center" style="padding:10px;">
+                {% else %}
+                  {% if level.order == 2 %}
+                  <div class="col-6 col-md-6 text-center" style="padding:20px";>
+                  {% else %}
+                    <div class="col-4 col-md-4 text-center" style="padding:30px;">
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+                    <a href="{{sponsor.external_url}}" target="_blank">
+                        <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{{ sponsor.website_logo.url }}&w=600&h=200&t=letterbox&bg=white&errorredirect=//via.placeholder.com/600x200" class="img-fluid sponsors-img" alt="{{ sponsor.name }}">
+                         {% comment %}
+                        <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-fluid sponsors-img">
+                        {% endcomment %}
+                    </a>
+              </div>
+              {% if forloop.counter|divisibleby:"2" %}
+              <div class="clearfix visible-xs"></div>
+              {% endif %}
+              {% if forloop.counter|divisibleby:"3" %}
+              <div class="clearfix visible-sm"></div>
+              {% endif %}
+              {% comment %}
+                        <div class="
+                            {% if level.order == 0 %}
+                                col-8 offset-2
+                            {% else %}
+                                col-6
+                                {% if level.order < 2 %}col-md-6{% else %}col-md-4{% endif %}
+                            {% endif %}
+                            text-center">
+                        </div>
+                        {% if forloop.counter|divisibleby:"2" %}
+                            <div class="clearfix visible-xs"></div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:"3" %}
+                            <div class="clearfix visible-sm"></div>
+                        {% endif %}
+                    {% endcomment %}
+          {% endfor %}
+          {% if forloop.counter|divisibleby:"2" %}
+          <!--- -->
+          {% else %}
+            <div class="clearfix visible-xs"></div>
+          {% endif%}
+            <div class="clearfix visible-sm"></div>
+</div>
+            </div>
+          </div>
+        <div><!-- row -->
+        {% else %}
+            <h3>{{ level.name }}</h3>
+            <p class="loud">
+                {% blocktrans with level_name=level.name|lower %}
+                    ¿Quieres ser el primer patrocinador {{ level_name }}? <a href="mailto:{{ SPONSORS_EMAIL }}" target="_blank">¡Contacta con nosotros!</a>
+                {% endblocktrans %}
+            </p>
+        {% endif %}
+        {% endfor %}{% comment %} nivel de patrocionio {% endcomment %}
+</section>

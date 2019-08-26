@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 import datetime
 from collections import OrderedDict
@@ -18,7 +18,6 @@ from markupfield.fields import MarkupField
 from pycones.proposals import BASIC_LEVEL, PROPOSAL_LANGUAGES
 
 
-@python_2_unicode_compatible
 class Day(models.Model):
 
     date = models.DateField(unique=True)
@@ -28,6 +27,12 @@ class Day(models.Model):
 
     class Meta:
         ordering = ["date"]
+
+    def slots(self):
+        return self.slot_set.all().order_by("order")
+
+    def tracks(self):
+        return self.track_set.all().order_by("name")
 
     def slot_groups(self):
         """Returns all the groups of slots, grouped by start and end hours."""
@@ -45,7 +50,6 @@ class Day(models.Model):
         return ordered_values
 
 
-@python_2_unicode_compatible
 class Room(models.Model):
 
     name = models.CharField(max_length=65)
@@ -55,7 +59,6 @@ class Room(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class Track(models.Model):
     """Tracks used in the conference."""
 
@@ -67,7 +70,6 @@ class Track(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class SlotKind(models.Model):
     """A slot kind represents what kind a slot is. For example, a slot can be a
     break, lunch, or X-minute talk.
@@ -82,11 +84,10 @@ class SlotKind(models.Model):
 
     def css_class(self):
         if not self.class_attr:
-            return "slot-{}".format(self.label_en.lower())
+            return "slot-{}".format(self.label.lower())
         return "slot-{}".format(self.class_attr.lower())
 
 
-@python_2_unicode_compatible
 class Slot(models.Model):
 
     day = models.ForeignKey(Day, on_delete=models.CASCADE)
@@ -118,7 +119,23 @@ class Slot(models.Model):
         try:
             return self.presentation
         except ObjectDoesNotExist:
-            return None
+            return self.content_override
+
+    @property
+    def title(self):
+        try:
+            c = self.presentation
+            return c.get_title()
+        except ObjectDoesNotExist:
+            return ""
+
+    @property
+    def description(self):
+        try:
+            c = self.presentation
+            return c.get_description()
+        except ObjectDoesNotExist:
+            return self.content_override
 
     @property
     def start_datetime(self):
@@ -143,6 +160,10 @@ class Slot(models.Model):
                 self.end.minute,
             )
         )
+
+    @property
+    def duration(self):
+        return (self.end_datetime - self.start_datetime) // 60
 
     def __str__(self):
         return "%s %s (%s - %s, %s)" % (
@@ -194,7 +215,6 @@ class Slot(models.Model):
         return reverse("schedule:slot", kwargs={"slot": self.pk})
 
 
-@python_2_unicode_compatible
 class Presentation(models.Model):
 
     slot = models.OneToOneField(

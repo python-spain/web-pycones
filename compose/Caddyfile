@@ -1,0 +1,28 @@
+2019.es.pycon.org {
+  log stdout
+  errors stdout
+  
+  tls hostmaster@apsl.net 
+  
+  proxy / nginx:5002 {
+    transparent
+  }
+}
+
+www.2019.es.pycon.org {
+  log stdout
+  errors stdout
+  
+  tls hostmaster@apsl.net 
+  
+  redir https://2019.es.pycon.org{uri}
+}
+
+http://www.2019.es.pycon.org {
+  log stdout
+  errors stdout
+
+  tls off
+
+  redir https://2019.es.pycon.org{uri}
+}

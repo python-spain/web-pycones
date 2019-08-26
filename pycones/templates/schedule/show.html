@@ -1,65 +1,62 @@
-{% extends "container.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 {% load static %}
 {% load schedule_tags %}
 
 
-{% block container-content %}
-    <div class="container schedule">
+{% block content %}
+  <section class="container" id="schedule">
         {% for day in days %}
             <div class="row">
                 <div class="col-12 day">
                     <h2>{{ day.date|date:"d F Y" }}</h2>
                 </div>
             </div>
+            {% comment %}
             <div class="row track-title-row hidden-xs">
-                {% for track in day.tracks %}
+                {% for track in day.slots %}
                 <div class="col-12 {% slot_col_size day.tracks|length %} track-title track-title-{{ forloop.counter }}">
                     <h3>{{ track.name }}</h3>
                 </div>
                 {% endfor %}
             </div>
-            {% for group in day.slot_groups %}
-                {% for slot in group %}
+
+            {% for track in day.tracks %}
                     {% if slot.kind.plenary %}
                         <div class="row slot-row">
                             <div class="col-12 slot slot-plenary">
-                                {% include "schedule/_slot.html" %}
+                                {{slot}}
                             </div>
                         </div>
                     {# If not plenay, 3 columns #}
                     {% else %}
-                        {% if forloop.first %}<div class="row slot-row">{% endif %}
+
                         <div class="col-12 {% slot_col_size group|length %} slot {{ slot.kind.css_class }} {% if slot.content %}slot-{{ slot.content.get_audience_level }}{% endif %}">
                             {% include "schedule/_slot.html" %}
                         </div>
                         {% if forloop.last %}</div>{% endif %}
                     {% endif %}
-                {% endfor %}
             {% endfor %}
+            {% endcomment %}
+            <table>
+
+            <tr>
+            {% for g in day.slot_groups %}
+              <td class="track">
+                {% for s in g %}
+                  <tr>
+                    <td>{{s}}</td>
+                  </tr>
+                {% endfor %}
+              </td>
+            {% endfor %}
+            </tr>
+            </table>
         {% endfor %}
     </div>
+  </section>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <div class="legend legend-basic">
-                    <strong>{% trans "Nivel básico" %}</strong>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="legend legend-intermediate">
-                    <strong>{% trans "Nivel intermedio" %}</strong>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="legend legend-advanced">
-                    <strong>{% trans "Nivel avanzado" %}</strong>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {% comment %}
     <div class="container">
         <div class="row text-center" style="margin: 15px 0">
             <div class="col-sm-4">
@@ -73,5 +70,5 @@
             </div>
         </div>
     </div>
-
-{% endblock container-content %}
+    {% end comment %}
+{% endblock content %}

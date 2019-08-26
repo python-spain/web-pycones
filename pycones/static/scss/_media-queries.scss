@@ -1,0 +1,25 @@
+// Global styling for this template
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 991px) {
+  section .card {
+    .card-text {min-height:auto;}
+  }  
+  footer {position:relative;}
+}
+
+@media (max-width: 768px) {
+  header #searcher {
+    text-align:center;
+    .btn {margin-bottom:15px;}
+  }
+  section {padding-bottom:100px;}
+  #home #blocks img {width:100%;}
+}
+
+@media (max-width: 576px) {
+    header .btn {padding:10px 20px;}
+    footer {text-align:center;}
+}

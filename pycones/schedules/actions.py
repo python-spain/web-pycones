@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, division, absolute_import
-
 import csv
 
 from django.http import HttpResponse
@@ -19,4 +17,15 @@ def download_speakers(modeladmin, request, queryset):
         writer.writerow([speaker.name, speaker.user.email])
     return response
 
+
 download_speakers.short_description = "Download speakers"
+
+
+def create_slots(modeladmin, request, queryset):
+    origin = queryset.first()
+    for t in origin.day.tracks():
+        if origin.track == t:
+            continue
+        origin.id = None
+        origin.track = t
+        origin.save()

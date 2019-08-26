@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-
-
 from django.contrib import admin
 
 from pycones.sponsorships.models import BenefitLevel, SponsorLevel, Sponsor, Benefit
@@ -10,12 +8,13 @@ from modeltranslation.admin import TabbedTranslationAdmin
 
 class BenefitLevelInline(admin.TabularInline):
     model = BenefitLevel
-    extra = 0
+    extra = 1
 
 
 class SponsorBenefitInline(admin.StackedInline):
     model = SponsorBenefit
-    extra = 0
+    extra = 1
+    max_num = 1
     fieldsets = [
         (
             None,
@@ -44,13 +43,17 @@ class SponsorAdmin(admin.ModelAdmin):
                     "external_url",
                     "annotation",
                     ("contact_name", "contact_email"),
+                    "sponsor_order",
                 ]
             },
         ),
         ("Metadata", {"fields": [], "classes": ["collapse"]}),
     ]
     inlines = [SponsorBenefitInline]
-    list_display = ["name", "external_url", "level", "active"]
+    list_display = ["name", "external_url", "level", "active", "sponsor_order"]
+    list_editable = ("level", "active", "sponsor_order")
+    list_filter = ("level", "active")
+    search_fields = ["name"]
 
     def get_form(self, *args, **kwargs):
         # @@@ kinda ugly but using choices= on NullBooleanField is broken

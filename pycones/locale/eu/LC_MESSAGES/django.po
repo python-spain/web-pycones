@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-17 20:47+0000\n"
+"POT-Creation-Date: 2019-07-24 17:44+0000\n"
 "PO-Revision-Date: 2016-07-21 16:45+0200\n"
 "Last-Translator: Aitzol Naberan <anaberan@codesyntax.com>\n"
 "Language-Team: Basque (http://www.transifex.com/python-espana/web-"
@@ -19,52 +19,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: config/settings/common.py:69 pycones/proposals/__init__.py:16
+#: config/settings/common.py:66 pycones/proposals/__init__.py:16
 msgid "Español"
 msgstr "Español"
 
 #: config/settings/common.py:70
-msgid "Catalán"
-msgstr "Catalán"
-
-#: config/settings/common.py:71
-msgid "Gallego"
-msgstr "Gallego"
-
-#: config/settings/common.py:72
-msgid "Euskera"
-msgstr "Euskara"
-
-#: config/settings/common.py:73
 msgid "English"
 msgstr "English"
 
-#: config/urls.py:46
+#: config/urls.py:86
 #, python-format
 msgid "%s Admin"
 msgstr ""
 
-#: pycones/blog/__init__.py:9
+#: pycones/blog/__init__.py:8
 msgid "Draft"
 msgstr "Zirriborroa"
 
-#: pycones/blog/__init__.py:10
+#: pycones/blog/__init__.py:9
 msgid "Scheduled"
 msgstr "Programatuta"
 
-#: pycones/blog/__init__.py:11
+#: pycones/blog/__init__.py:10
 msgid "Published"
 msgstr "Argitaratuta"
 
-#: pycones/blog/models.py:44 pycones/proposals/models.py:55
+#: pycones/blog/models.py:43 pycones/proposals/models.py:57
 msgid "Etiquetas"
 msgstr ""
 
-#: pycones/blog/models.py:45 pycones/proposals/models.py:56
+#: pycones/blog/models.py:44 pycones/proposals/models.py:58
 msgid "Lista de etiquetas separadas por comas."
 msgstr ""
 
-#: pycones/blog/models.py:59
+#: pycones/blog/models.py:57
 msgid "Seguir leyendo..."
 msgstr "Jarraitu irakurtzen..."
 
@@ -73,7 +61,20 @@ msgstr "Jarraitu irakurtzen..."
 msgid "Web de la %s"
 msgstr ""
 
-#: pycones/jobboard/models.py:14 pycones/proposals/models.py:67
+#: pycones/contentchunk/models.py:10 pycones/sponsorships/models.py:22
+#: pycones/sponsorships/models.py:156
+msgid "name"
+msgstr "izena"
+
+#: pycones/contentchunk/models.py:12 pycones/sponsorships/__init__.py:10
+msgid "Text"
+msgstr "Testua"
+
+#: pycones/contentchunk/models.py:16
+msgid "Text in Markdown format"
+msgstr ""
+
+#: pycones/jobboard/models.py:14 pycones/proposals/models.py:72
 #: pycones/templates/reviewers/list.html:21
 msgid "Título"
 msgstr "Izenburua"
@@ -170,47 +171,47 @@ msgstr ""
 "zure hitzaldia aukeratzen lagundu eskema bat bidaliz, demoak edo hitzaldira "
 "joateko baldintza minimoak azalduz"
 
-#: pycones/proposals/models.py:24
+#: pycones/proposals/models.py:29
 msgid "Name"
 msgstr "Izena"
 
-#: pycones/proposals/models.py:35 pycones/templates/reviewers/details.html:14
+#: pycones/proposals/models.py:40 pycones/templates/reviewers/details.html:14
 msgid "Nivel de la audiencia"
 msgstr "Entzule "
 
-#: pycones/proposals/models.py:42 pycones/schedules/models.py:194
+#: pycones/proposals/models.py:47 pycones/schedules/models.py:207
 #: pycones/templates/reviewers/details.html:18
 #: pycones/templates/schedule/details.html:27
 msgid "Idioma"
 msgstr "Hizkuntza"
 
-#: pycones/proposals/models.py:48
+#: pycones/proposals/models.py:50
 msgid "Duración"
 msgstr "Iraupena"
 
-#: pycones/proposals/models.py:61 pycones/templates/reviewers/details.html:22
+#: pycones/proposals/models.py:63 pycones/templates/reviewers/details.html:22
 msgid "¿Es apta para principiantes?"
 msgstr ""
 
-#: pycones/proposals/models.py:65 pycones/templates/reviewers/details.html:10
+#: pycones/proposals/models.py:68 pycones/templates/reviewers/details.html:10
 msgid "Tipo de propuesta"
 msgstr "Erantzun mota"
 
-#: pycones/proposals/models.py:69 pycones/templates/reviewers/details.html:27
+#: pycones/proposals/models.py:74 pycones/templates/reviewers/details.html:27
 msgid "Breve descripción"
 msgstr "Azalpen laburra"
 
-#: pycones/proposals/models.py:71
+#: pycones/proposals/models.py:77
 msgid ""
 "Si tu propuesta se acepta esto se hará público, y se incluirá en el "
 "programa. Debería ser un párrafo, con un máximo de 500 caracteres."
 msgstr ""
 
-#: pycones/proposals/models.py:75 pycones/templates/reviewers/details.html:29
+#: pycones/proposals/models.py:82 pycones/templates/reviewers/details.html:29
 msgid "Resumen detallado"
 msgstr "Lapurpen "
 
-#: pycones/proposals/models.py:79
+#: pycones/proposals/models.py:87
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -225,11 +226,11 @@ msgstr ""
 "Editatu <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a> erabiliz."
 
-#: pycones/proposals/models.py:84 pycones/templates/reviewers/details.html:31
+#: pycones/proposals/models.py:93 pycones/templates/reviewers/details.html:31
 msgid "Notas adicionales"
 msgstr "Ohar gehigarriak"
 
-#: pycones/proposals/models.py:88
+#: pycones/proposals/models.py:98
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -245,27 +246,27 @@ msgstr ""
 "Editatu <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a> erabiliz."
 
-#: pycones/proposals/models.py:98
+#: pycones/proposals/models.py:111
 #, fuzzy
 #| msgid "Accepted"
 msgid "Aceptada"
 msgstr "Onartuta"
 
-#: pycones/proposals/models.py:99
+#: pycones/proposals/models.py:113
 msgid "Notificación de aceptación enviada"
 msgstr ""
 
-#: pycones/proposals/models.py:185
+#: pycones/proposals/models.py:209
 #, python-format
 msgid "[%s] Confirmación de propuesta de charla"
 msgstr "[%s] Hitzaldi proposamena berretsi"
 
-#: pycones/proposals/models.py:204
+#: pycones/proposals/models.py:233
 #, python-format
 msgid "[%s] Notificación de propuesta de charla"
 msgstr "[%s] Hitzaldi proposamena berretsi"
 
-#: pycones/reviewers/admin.py:39 pycones/templates/headers.html:48
+#: pycones/reviewers/admin.py:39
 msgid "Revisiones"
 msgstr ""
 
@@ -285,38 +286,38 @@ msgstr ""
 msgid "Mostrar sólo revisiones no terminadas"
 msgstr ""
 
-#: pycones/reviewers/models.py:22 pycones/templates/reviewers/list.html:22
+#: pycones/reviewers/models.py:27 pycones/templates/reviewers/list.html:22
 #, fuzzy
 #| msgid "Duración"
 msgid "Puntuación"
 msgstr "Iraupena"
 
-#: pycones/reviewers/models.py:22
+#: pycones/reviewers/models.py:30
 msgid "Puntuación del 1.0 al 4.0"
 msgstr ""
 
-#: pycones/reviewers/models.py:24
+#: pycones/reviewers/models.py:33
 msgid "Notas del revisor"
 msgstr ""
 
-#: pycones/reviewers/models.py:26
+#: pycones/reviewers/models.py:36
 msgid "¿Existe un conflicto de intereses?"
 msgstr ""
 
-#: pycones/reviewers/models.py:27
+#: pycones/reviewers/models.py:39
 msgid "¿Revisión finalizada?"
 msgstr ""
 
-#: pycones/reviewers/models.py:41
+#: pycones/reviewers/models.py:54
 #, python-format
 msgid "[%s] Tienes una nueva propuesta para revisar"
 msgstr ""
 
-#: pycones/schedules/admin.py:19
+#: pycones/schedules/admin.py:28
 msgid "Title"
 msgstr ""
 
-#: pycones/schedules/models.py:101 pycones/schedules/models.py:206
+#: pycones/schedules/models.py:101 pycones/schedules/models.py:227
 msgid "video URL"
 msgstr "Bideo URLa"
 
@@ -324,37 +325,33 @@ msgstr "Bideo URLa"
 msgid "keynote URL"
 msgstr "hitzaldi nagusiaren URLa"
 
-#: pycones/schedules/models.py:103
+#: pycones/schedules/models.py:104
 msgid "keynote file"
 msgstr "Hitzaldi nagusiaren fitxategia"
 
-#: pycones/schedules/models.py:207
+#: pycones/schedules/models.py:229
 msgid "URL de la presentación o del código"
 msgstr ""
 
-#: pycones/schedules/models.py:208
+#: pycones/schedules/models.py:232
 #, fuzzy
 #| msgid "Descargar presentación"
 msgid "Fichero de presentación"
 msgstr "Aurkezpena deskargatu"
 
-#: pycones/schedules/views.py:81 pycones/speakers/views.py:47
-msgid "Datos actualizados correctamente"
-msgstr ""
-
-#: pycones/speakers/models.py:18 pycones/templates/proposals/create.html:29
+#: pycones/speakers/models.py:20 pycones/templates/proposals/create.html:28
 msgid "Nombre"
 msgstr ""
 
-#: pycones/speakers/models.py:20
+#: pycones/speakers/models.py:22
 msgid "Tal como quieres que apareza en el programa de la conferencia."
 msgstr ""
 
-#: pycones/speakers/models.py:23
+#: pycones/speakers/models.py:25
 msgid "Biografía"
 msgstr ""
 
-#: pycones/speakers/models.py:27
+#: pycones/speakers/models.py:30
 #, fuzzy
 #| msgid ""
 #| "Detailed outline. Will be made public if your proposal is accepted. Edit "
@@ -368,13 +365,13 @@ msgstr ""
 "Editatu <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a> erabiliz."
 
-#: pycones/speakers/models.py:33
+#: pycones/speakers/models.py:37
 msgid "Foto"
 msgstr ""
 
-#: pycones/sponsorships/__init__.py:10
-msgid "Text"
-msgstr "Testua"
+#: pycones/speakers/views.py:49
+msgid "Datos actualizados correctamente"
+msgstr ""
 
 #: pycones/sponsorships/__init__.py:11
 msgid "File"
@@ -388,99 +385,158 @@ msgstr "Web Logoa"
 msgid "Simple"
 msgstr "Simplea"
 
-#: pycones/sponsorships/models.py:18 pycones/sponsorships/models.py:134
-msgid "name"
-msgstr "izena"
-
-#: pycones/sponsorships/models.py:19
+#: pycones/sponsorships/models.py:23
 msgid "order"
 msgstr "Eskatu"
 
-#: pycones/sponsorships/models.py:20
+#: pycones/sponsorships/models.py:24
 msgid "cost"
 msgstr "prezioa"
 
-#: pycones/sponsorships/models.py:21 pycones/sponsorships/models.py:135
+#: pycones/sponsorships/models.py:26 pycones/sponsorships/models.py:157
 msgid "description"
 msgstr "azalpena"
 
-#: pycones/sponsorships/models.py:21
+#: pycones/sponsorships/models.py:26
 msgid "This is private."
 msgstr "Pribatua da."
 
-#: pycones/sponsorships/models.py:25
+#: pycones/sponsorships/models.py:31
 msgid "sponsor level"
 msgstr "laguntzaile mota"
 
-#: pycones/sponsorships/models.py:26
+#: pycones/sponsorships/models.py:32
 msgid "sponsor levels"
 msgstr "laguntzaile motak"
 
-#: pycones/sponsorships/models.py:39
+#: pycones/sponsorships/models.py:46
 msgid "applicant"
 msgstr "eskatzailea"
 
-#: pycones/sponsorships/models.py:41
+#: pycones/sponsorships/models.py:51
 msgid "Sponsor Name"
 msgstr "Laguntzailearen Izena"
 
-#: pycones/sponsorships/models.py:42
+#: pycones/sponsorships/models.py:52
 msgid "external URL"
 msgstr "kanpo URLa"
 
-#: pycones/sponsorships/models.py:43
+#: pycones/sponsorships/models.py:53
 msgid "annotation"
 msgstr "Oharra"
 
-#: pycones/sponsorships/models.py:44
+#: pycones/sponsorships/models.py:55
 msgid "Contact Name"
 msgstr "Izena"
 
-#: pycones/sponsorships/models.py:45
+#: pycones/sponsorships/models.py:57
 msgid "Contact Email"
 msgstr "Helbide elektronikoa"
 
-#: pycones/sponsorships/models.py:46 pycones/sponsorships/models.py:146
+#: pycones/sponsorships/models.py:59 pycones/sponsorships/models.py:177
 msgid "level"
 msgstr "maila"
 
-#: pycones/sponsorships/models.py:48 pycones/users/models.py:33
+#: pycones/sponsorships/models.py:62 pycones/users/models.py:34
 msgid "active"
 msgstr "aktibo"
 
-#: pycones/sponsorships/models.py:60 pycones/sponsorships/models.py:162
+#: pycones/sponsorships/models.py:72
+msgid "Relative order of the sponsor"
+msgstr ""
+
+#: pycones/sponsorships/models.py:78 pycones/sponsorships/models.py:197
 msgid "sponsor"
 msgstr "laguntzailea"
 
-#: pycones/sponsorships/models.py:61
+#: pycones/sponsorships/models.py:79
 msgid "sponsors"
 msgstr "laguntzaileak"
 
-#: pycones/sponsorships/models.py:136
+#: pycones/sponsorships/models.py:159
 msgid "type"
 msgstr "mota"
 
-#: pycones/sponsorships/models.py:145 pycones/sponsorships/models.py:163
+#: pycones/sponsorships/models.py:171 pycones/sponsorships/models.py:203
 msgid "benefit"
 msgstr "onura"
 
-#: pycones/sponsorships/models.py:149 pycones/sponsorships/models.py:167
+#: pycones/sponsorships/models.py:182 pycones/sponsorships/models.py:209
 msgid "max words"
 msgstr "hitz kopuru maximoa"
 
-#: pycones/sponsorships/models.py:150 pycones/sponsorships/models.py:168
+#: pycones/sponsorships/models.py:183 pycones/sponsorships/models.py:210
 msgid "other limits"
 msgstr "beste muga batzuk"
 
-#: pycones/sponsorships/models.py:172
+#: pycones/sponsorships/models.py:214
 msgid "text"
 msgstr "testua"
 
-#: pycones/sponsorships/models.py:173
+#: pycones/sponsorships/models.py:215
 msgid "file"
 msgstr "fitxategia"
 
-#: pycones/templates/blog/list.html:11
+#: pycones/templates/404.html:14
+msgid "No podemos mostrarte la página que estás buscando."
+msgstr ""
+
+#: pycones/templates/404.html:16
+msgid "Parece que ha habido un error con la página que estás buscando."
+msgstr ""
+
+#: pycones/templates/404.html:17
+msgid "¡Seguro que la culpa es del informático !"
+msgstr ""
+
+#: pycones/templates/404.html:18
+msgid ""
+"O es posible que la entrada haya sido eliminada o que la dirección no exista."
+msgstr ""
+
+#: pycones/templates/404.html:19
+msgid "Para todo lo demás la respuesta es 42"
+msgstr ""
+
+#: pycones/templates/base.html:37
+#, fuzzy
+#| msgid "Sobre Almería"
+msgid "Sobre Alicante"
+msgstr "Almeriari buruz"
+
+#: pycones/templates/base.html:42
+msgid "Horario"
+msgstr ""
+
+#: pycones/templates/base.html:46
+msgid "Job Board"
+msgstr ""
+
+#: pycones/templates/base.html:49
+msgid "Hoteles"
+msgstr ""
+
+#: pycones/templates/base.html:52
+msgid "Blog"
+msgstr "Bloga"
+
+#: pycones/templates/base.html:113
+msgid "Código de conducta"
+msgstr "Jarrera kodea"
+
+#: pycones/templates/base.html:117
+msgid "Dónde encontrarnos"
+msgstr ""
+
+#: pycones/templates/base.html:143
+msgid "Suscríbete a nuestra newsletter"
+msgstr ""
+
+#: pycones/templates/base.html:151 pycones/templates/users/request_code.html:22
+msgid "Enviar"
+msgstr "Bidali"
+
+#: pycones/templates/blog/list.html:16
 msgid "¡Aún no hay ninguna entrada en el blog!"
 msgstr ""
 
@@ -580,75 +636,33 @@ msgstr "Proposamena bidali"
 msgid "Entra en este enlace para establecer tu contraseña:"
 msgstr "Esteka onetan sartu zure pasahitza aldatzeko"
 
-#: pycones/templates/headers.html:23
-msgid "Información del evento"
-msgstr "Ekitaldiaren informazioa"
-
-#: pycones/templates/headers.html:26 pycones/templates/pages/home.html:29
-msgid "Oradores Plenarios"
-msgstr "Hizlari nagusiak"
-
-#: pycones/templates/headers.html:30
-msgid "Agenda"
-msgstr ""
-
-#: pycones/templates/headers.html:35
-msgid "Compra tus entradas"
-msgstr "Erosi zure sarrerak"
-
-#: pycones/templates/headers.html:40
-msgid "Envía tu propuesta"
-msgstr "Zure proposamena bidali"
-
-#: pycones/templates/headers.html:44
-msgid "Blog"
-msgstr "Bloga"
-
-#: pycones/templates/headers.html:52
-msgid "Job Board"
-msgstr ""
-
-#: pycones/templates/headers.html:56
-msgid "Salir"
-msgstr ""
-
-#: pycones/templates/headers.html:58 pycones/templates/reviewers/list.html:35
-msgid "Acceder"
-msgstr ""
-
-#: pycones/templates/headers.html:75 pycones/templates/pages/info.html:149
-msgid "Código de conducta"
-msgstr "Jarrera kodea"
-
-#: pycones/templates/headers.html:76
-msgid "Contacta con nosotros"
-msgstr "Jarri harremanetan gurekin"
-
-#: pycones/templates/jobboard/details.html:11
+#: pycones/templates/jobboard/details.html:18
 msgid "Enviar solicitud"
 msgstr ""
 
-#: pycones/templates/jobboard/list.html:5
-msgid "Job board"
-msgstr ""
-
-#: pycones/templates/jobboard/list.html:9
+#: pycones/templates/jobboard/list.html:16
 msgid "Oferta"
 msgstr ""
 
-#: pycones/templates/jobboard/list.html:10
+#: pycones/templates/jobboard/list.html:17
 msgid "Empresa"
 msgstr ""
 
-#: pycones/templates/jobboard/list.html:20
+#: pycones/templates/jobboard/list.html:28
 msgid "No hay ninguna posición disponible"
 msgstr ""
 
-#: pycones/templates/pages/code_of_conduct.html:6
+#: pycones/templates/pages/code_of_conduct.html:3
+#, fuzzy
+#| msgid "Código de conducta"
+msgid "Código de conducta PyconES"
+msgstr "Jarrera kodea"
+
+#: pycones/templates/pages/code_of_conduct.html:8
 msgid "Codigo de conducta"
 msgstr "Jarrera kodea"
 
-#: pycones/templates/pages/code_of_conduct.html:7
+#: pycones/templates/pages/code_of_conduct.html:9
 msgid ""
 "PyConES es una conferencia hecha por la comunidad pensada para la "
 "divulgación y colaboración dentro de la comunidad de desarrolladores."
@@ -656,7 +670,7 @@ msgstr ""
 "PyConES konferentzia komunitateak sortu du, eta bere helburu nagusia da "
 "garatzaile komunitate barruan kolaborazioak eta dibulgazioa sustatzea. "
 
-#: pycones/templates/pages/code_of_conduct.html:8
+#: pycones/templates/pages/code_of_conduct.html:10
 msgid ""
 "Valoramos la participación de cada miembro de la comunidad Python y queremos "
 "que todos los asistentes tengan una experiencia entretenida y satisfactoria. "
@@ -669,7 +683,7 @@ msgstr ""
 "errespetua eta adeitasuna eskatzen dizuegu konferentzia dirauen bitartean "
 "eta jarduera guztietan, izan PyConESek ofizialki antolatutakoak zein ez."
 
-#: pycones/templates/pages/code_of_conduct.html:9
+#: pycones/templates/pages/code_of_conduct.html:11
 msgid ""
 "En concreto, todos los delegados, disertantes, expositores y voluntarios que "
 "tomen parte en actividades relacionadas con PyConES deberán acatar el "
@@ -680,7 +694,7 @@ msgstr ""
 "bolondres guztiek bete beharko dute jarrera-kodea. Antolatzaileen esku "
 "izango da ekitaldian zehar kode hori betetzen dela ziurtatzea."
 
-#: pycones/templates/pages/code_of_conduct.html:10
+#: pycones/templates/pages/code_of_conduct.html:12
 msgid ""
 "Se entiende por acoso todo comentario ofensivo alusivo al sexo, preferencias "
 "sexuales, discapacidades, aspecto físico, etnias y religiones; toda "
@@ -696,7 +710,7 @@ msgstr ""
 "grabazioekin egindako jazarpena; hitzaldiak edo ekintzak behin eta berriz "
 "etetea; onartu gabeko kontaktu fisikoa edo onartu gabeko proposamen sexualak."
 
-#: pycones/templates/pages/code_of_conduct.html:11
+#: pycones/templates/pages/code_of_conduct.html:13
 msgid ""
 "Los participantes que sean apercibidos deberán desistir inmediatamente de su "
 "actitud."
@@ -704,7 +718,7 @@ msgstr ""
 "Ohartarazten diren parte-hartzaileek euren jarrera aldatu beharko dute, "
 "oharra jaso eta berehala."
 
-#: pycones/templates/pages/code_of_conduct.html:12
+#: pycones/templates/pages/code_of_conduct.html:14
 msgid ""
 "Los expositores, las casetas o pabellones de patrocinadores o empresas y "
 "actividades similares también están sujetas a la política antiacoso. En "
@@ -718,7 +732,7 @@ msgstr ""
 "da onartuko inongo jarrera sexistarik. Pertsonalak eta bolondresek ezingo "
 "dute erabili uniforme edo janzkera sexistarik."
 
-#: pycones/templates/pages/code_of_conduct.html:13
+#: pycones/templates/pages/code_of_conduct.html:15
 msgid ""
 "Cuida tu lenguaje. Recuerda que las bromas sexistas, racistas y excluyentes "
 "en general podrían ofender a otras personas. El lenguaje excesivamente soez "
@@ -728,7 +742,7 @@ msgstr ""
 "sexistarik, arrazistarik edo baztertzailerik. Gustu txarreko txantxak ere ez "
 "dira egokiak PyConES-en."
 
-#: pycones/templates/pages/code_of_conduct.html:14
+#: pycones/templates/pages/code_of_conduct.html:16
 msgid ""
 "Si algún participante infringiera este código de conducta, la organización "
 "podrá tomar las medidas que considere adecuadas, como la amonestación o la "
@@ -737,11 +751,11 @@ msgstr ""
 "Arau hauek betetzen ez dituzten lagunak zigortzeko eta kanporatzeko aukera "
 "izango dute antolatzaileek, sarreraren kostua itzultzeko eskubiderik gabe."
 
-#: pycones/templates/pages/code_of_conduct.html:15
+#: pycones/templates/pages/code_of_conduct.html:17
 msgid "Información de contacto"
 msgstr "Kontakturako informazioa"
 
-#: pycones/templates/pages/code_of_conduct.html:16
+#: pycones/templates/pages/code_of_conduct.html:18
 msgid ""
 "Si estás siendo objeto de acoso, notas que alguien está siendo acosado, o "
 "tienes cualquier otra preocupación, por favor ponte en contacto con un "
@@ -756,14 +770,14 @@ msgstr ""
 "PyConES\" leloarekin. Gainera, pertsonalari eska diezaiokezu arduradun "
 "nagusiarekin (Juan Luis Cano) harremanetan jartzeko."
 
-#: pycones/templates/pages/code_of_conduct.html:17
+#: pycones/templates/pages/code_of_conduct.html:19
 msgid ""
 "Si se trata de una cuestión especialmente urgente, dirígete a cualquiera de "
 "estas personas:"
 msgstr ""
 "Zerbait bereziki larria baduzu, jo ezazu ondorengo lagunetako batengana:"
 
-#: pycones/templates/pages/code_of_conduct.html:21
+#: pycones/templates/pages/code_of_conduct.html:23
 msgid ""
 "El personal de la conferencia ayudará gustosamente a los participantes a que "
 "se pongan en contacto con el personal de seguridad del lugar o la policía "
@@ -776,16 +790,16 @@ msgstr ""
 "izango duzu konferentziak irauten duen bitartean ziur senti zaitezen. Zure "
 "ongizatea da gure lehentasuna."
 
-#: pycones/templates/pages/code_of_conduct.html:22
+#: pycones/templates/pages/code_of_conduct.html:24
 msgid "Gracias por hacer de este un evento abierto a la comunidad y amistoso."
 msgstr ""
 " Eskerrik asko jardunaldi ireki eta adiskidetsua sortzen laguntzearren."
 
-#: pycones/templates/pages/code_of_conduct.html:23
+#: pycones/templates/pages/code_of_conduct.html:25
 msgid "Licencia"
 msgstr "Lizentzia"
 
-#: pycones/templates/pages/code_of_conduct.html:25
+#: pycones/templates/pages/code_of_conduct.html:27
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -823,97 +837,187 @@ msgstr ""
 "banatzen dira.\n"
 "                    "
 
-#: pycones/templates/pages/home.html:9
+#: pycones/templates/pages/home.html:10
 #, fuzzy
-#| msgid "¿Que es PyConES 2016?"
-msgid "¿Que es PyConES 2017?"
-msgstr "Zer da PyConES 2016?"
+#| msgid "¡Entradas agotadas!"
+msgid "¡Entradas ya disponibles!"
+msgstr "Sarrerak agortuta !"
 
 #: pycones/templates/pages/home.html:11
 #, fuzzy
-#| msgid ""
-#| "\n"
-#| "                    <strong>PyConES</strong> es la conferencia nacional "
-#| "sobre Python más importante de España.\n"
-#| "                    La PyConES celebrará su cuarta edición los días "
-#| "<strong>7 a 9 de octubre de 2016</strong> en <strong>Almería</strong>, "
-#| "después de\n"
-#| "                    tres exitosas ediciones en Madrid, Zaragoza y "
-#| "Valencia respectivamente y siguiendo el formato del evento mundial\n"
-#| "                    <a href=\"http://pycon.org\" target=\"_blank\">PyCon</"
-#| "a>.\n"
-#| "                "
+#| msgid "Compra tus entradas"
+msgid "Consigue tu entrada"
+msgstr "Erosi zure sarrerak"
+
+#: pycones/templates/pages/home.html:14
+#, fuzzy
+#| msgid "Las contraseñas no son iguales"
+msgid "Entradas no disponibles."
+msgstr "Pasahitzak desberdinak dira"
+
+#: pycones/templates/pages/home.html:21
+msgid "El evento"
+msgstr ""
+
+#: pycones/templates/pages/home.html:22
 msgid ""
-"\n"
-"                    <strong>PyConES</strong> es la conferencia nacional "
-"sobre Python más importante de España.\n"
-"                    La PyConES celebrará su quinta edición los días "
-"<strong>22 a 24 de septiembre de 2017</strong> en <strong>Cáceres</strong>, "
-"después de\n"
-"                    cuatro exitosas ediciones en Madrid, Zaragoza, Valencia "
-"y Almería respectivamente y siguiendo el formato del evento mundial\n"
-"                    <a href=\"http://pycon.org\" target=\"_blank\">PyCon</"
-"a>.\n"
-"                "
-msgstr ""
-"\n"
-"                    <strong>PyConES</strong> da Espainian egiten den Python "
-"konferentzia garrantzitsuena.\n"
-"                    Aurtengoa izango da bere laugarren edizioa, "
-"<strong>2016ko urriaren 7 eta 9an Almerian</strong>,\n"
-"                    aurreko 3 urteetan Madrilen, Zaragozan eta Valencian "
-"izandako ekitaldi arrakastatsuen jarraipena, eta mundu mailan egiten diren\n"
-"                    <a href=\"http://pycon.org\" target=\"_blank\">PyCon</a> "
-"konferentzien formatu berarekin.\n"
-"                "
-
-#: pycones/templates/pages/home.html:18
-msgid "Ediciones anteriores"
-msgstr "Aurreko edizioak"
-
-#: pycones/templates/pages/home.html:33
-#: pycones/templates/pages/keynoters.html:12
-msgid "Naomi Ceder"
+"PyConES es la conferencia de la comunidad Python española. PyConES se "
+"celebrará por séptima vez del 04 al 06 de octubre de 2019 en Alicante, tras "
+"seis exitosas ediciones en Madrid, Zaragoza, Valencia, Almería, Cáceres y "
+"Málaga, siguiendo el formato del evento mundial de PyCon."
 msgstr ""
 
-#: pycones/templates/pages/home.html:37
-#: pycones/templates/pages/keynoters.html:23
-msgid "Juan Luis Cano"
-msgstr ""
-
-#: pycones/templates/pages/home.html:41
-msgid "¡Conoce más de nuestros keynoters!"
-msgstr "Gure hizlari nagusiei buruz gehiago ezagutu !"
-
-#: pycones/templates/pages/home.html:49
-msgid "Compra de entradas"
-msgstr "Sarrerak erostea"
-
-#: pycones/templates/pages/home.html:52 pycones/templates/pages/home.html:53
-#: pycones/templates/pages/tickets.html:8
-msgid "Compra aquí tus tickets"
-msgstr "Erosi hemen zure sarrerak"
-
-#: pycones/templates/pages/home.html:56 pycones/templates/pages/tickets.html:12
-msgid "¡Entradas agotadas!"
-msgstr "Sarrerak agortuta !"
-
-#: pycones/templates/pages/home.html:60
-msgid ""
-"Con tu entrada podrás acceder los tres días de la conferencia completos. En "
-"la entrada del edificio te cambiaremos tu entrada de ticketea (no olvides "
-"traerla) por tu acreditación y te entregaremos el WelcomePack."
-msgstr ""
-"Zure sarrerarekin 2 egunetako ekitaldi guztietara sartu ahal izango zara. "
-"Egoitzaren sarreran ticketea sarrera aurkeztu beharko duzu (ez ahaztu "
-"ekartzea) eta akreditazioa emango dizugu, Ongietorri pack-arekin batera.\n"
-"                "
-
-#: pycones/templates/pages/home.html:68
+#: pycones/templates/pages/home.html:30
+#: pycones/templates/pages/patrocinadores.html:5
 msgid "Patrocinadores"
 msgstr "Babesleak"
 
-#: pycones/templates/pages/home.html:99
+#: pycones/templates/pages/home.html:31
+msgid ""
+"¿Quieres patrocinar esta edición de la PyConES? Aquí encontrarás toda la "
+"información necesaria"
+msgstr ""
+
+#: pycones/templates/pages/home.html:33 pycones/templates/pages/home.html:35
+#, fuzzy
+#| msgid "Folleto (ES)"
+msgid "Folleto"
+msgstr "Eskuorria (ES)"
+
+#: pycones/templates/pages/home.html:52
+msgid "Ponentes principales"
+msgstr ""
+
+#: pycones/templates/pages/home.html:62
+msgid ""
+"Safia es una desarrolladora de código abierto, escritora e ingeniera "
+"software en Microsoft. Le apasiona unir a las personas para construir cosas "
+"formidables."
+msgstr ""
+
+#: pycones/templates/pages/home.html:72
+msgid ""
+"Lead Data Scientist en StyleSage. Es un profesional multidisciplinar con más "
+"de 11 años de experiencia en el área de inteligencia artificial, habiendo "
+"trabajado de investigador, ingeniero, profesor y consultor."
+msgstr ""
+
+#: pycones/templates/pages/home.html:82
+msgid ""
+"Mabel es ingeniera aeronáutica que trabaja desarrollando métodos y "
+"herramientas para análisis de ensayos en vuelo de aviones. Co-organiza el "
+"grupo PyLadies Madrid y otros eventos de Python como Django Girls."
+msgstr ""
+
+#: pycones/templates/pages/home.html:96
+msgid ""
+"Trabaja en el equipo de Python infrastructura en Bloomberg L.P. Es un core "
+"developer de Python centrado en el desarrollo del interprete y el parser. "
+"Puedes culparle por el PEP 570 si te encuentras todo tu código lleno de '/'. "
+"Pasa su tiempo libre haciendo simulaciones de agujeros negros y relatividad "
+"general. También tiene un gato pero no programa."
+msgstr ""
+
+#: pycones/templates/pages/info.html:12
+msgid "¿Dónde nos vemos?"
+msgstr ""
+
+#: pycones/templates/pages/info.html:14
+msgid ""
+"\n"
+"<h3>Universidad de Alicante</h3>\n"
+"<ul>\n"
+"  <li><strong>Viernes</strong>: Escuela Politécnica 1</li>\n"
+"  <li><strong>Sábado y domingo</strong>: Aulario 2 y Paraninfo.\n"
+"</ul>\n"
+"\n"
+"<h3>Localización</h3>\n"
+"\n"
+"<p>Universidad de Alicante<br/>\n"
+"Carretera de San Vicente del Raspeig, s/n<br/>\n"
+"03690, Alicante</p>\n"
+"\n"
+"<p>En un mapa</p>\n"
+"<ul>\n"
+"  <li><a href=\"https://goo.gl/maps/LhgZKnQrAUrdsFYt9\">Geoposición</a></"
+"li>\n"
+"  <li>Coordenadas: 38.385135, -0.514486</li>\n"
+"</ul>\n"
+"\n"
+"<ul>\n"
+"<li>Geoposición de cada una de ellas:\n"
+"  <ul>\n"
+"    <li><a href=\"https://goo.gl/maps/2Shox2SDGSbLpBRJ7\">EPS1 : "
+"Coordenadas: 38.386873, -0.511207</a></li>\n"
+"    <li><a href=\"https://goo.gl/maps/S4w1eoLDxfKTmTyY9\">Aulario 2 : "
+"Coordenadas: 38.384729, -0.510174</a></li>\n"
+"    <li><a href=\"https://goo.gl/maps/sUn2pRmxCKLuWfhg9\">Paraninfo : "
+"Coordenadas: 38.385226, -0.516909</a></li>\n"
+"  </ul>\n"
+"</li>\n"
+"</ul>\n"
+msgstr ""
+
+#: pycones/templates/pages/info.html:45
+#, python-format
+msgid ""
+"\n"
+"  <h2>Medios de Transporte en Alicante</h2>\n"
+"\n"
+"  <h3>TRAM</h3>\n"
+"\n"
+"  <ul>\n"
+"  <li><a href=\"https://tramalicante.info/#l1\">Líneas</a></li>\n"
+"  <li>Paradas interesantes:\n"
+"    <ul>\n"
+"      <li>Línea L2 - Universitat (lugar de la conferencia)</li>\n"
+"      <li>Línea L1, L2, L3 y L4 - MARQ Castillo (Donde está el museo del "
+"MARQ y el Castillo Santa Barbara)</li>\n"
+"      <li>Línea L1, L2, L3, L4 - Mercado (Centro de Alicante)</li>\n"
+"      <li>Línea L1, L2, L3 y L4 - Luceros (Centro de Alicante, parada más "
+"cercana a Renfe)</li>\n"
+"    </ul>\n"
+"  </li>\n"
+"  </ul>\n"
+"\n"
+"  <h3>BUS</h3>\n"
+"\n"
+"  <ul>\n"
+"  <li><a href=\"https://alicante.vectalia.es/wp-content/uploads/"
+"sites/2/2018/05/af-FOLLETO-A2-otra-doblez.pdf\">Horario normal</li>\n"
+"  <li><a href=\"https://alicante.vectalia.es/wp-content/uploads/"
+"sites/2/2018/11/FOLLETO-LINEAS-NOCTURNAS-ALICANTE.pdf\">Horario Nocturno</"
+"a></li>\n"
+"  </ul>\n"
+"\n"
+"  <p>Líneas Interesantes: <br>\n"
+"  24 y 24N son los buses que llevan desde Alicante hasta la Universidad de "
+"Alicante y San Vicente en general.</p>\n"
+"\n"
+"\n"
+"  <p>\n"
+"  En <a href=\"https://drive.google.com/file/"
+"d/12bF5eC0cCL27ZATgUNf9P9J3TagoMz_8/view?usp=sharing\">este archivo</a>\n"
+"  también están los parkings dentro de la Uni señalizados, se puede ver "
+"cuales están más y menos cerca del la conferencia.\n"
+"  Durante el viernes por la tarde aún habrá coches ya que hay clase (hay "
+"sitio SIEMPRE),\n"
+"  pero sábado y domingo no va a costar encontrar parking en ningún sitio.\n"
+"  </p>\n"
+"\n"
+"  <h3>¿Se puede dejar el coche?</h3>\n"
+"  <p>Se puede dejar en la uni. Fin de semana igual se cierra el domingo "
+"alguna de las puertas pero la de la autovía está abierta 100%% seguro.\n"
+"  El coche lo puedes sacar cuando quieras y puedes dejarlo allí.</p>\n"
+msgstr ""
+
+#: pycones/templates/pages/landing.html:20
+msgid ""
+"Estamos preparando la nueva edición de la PyConES, dentro de poco habrá más "
+"novedades."
+msgstr "Hurrengo PyConES ari gara antolatzen. Laster izango duzu gure berri."
+
+#: pycones/templates/pages/patrocinadores.html:76
 #, fuzzy, python-format
 #| msgid ""
 #| "\n"
@@ -923,10 +1027,10 @@ msgstr "Babesleak"
 #| "                        "
 msgid ""
 "\n"
-"                            ¿Quieres ser el primer patrocinador "
-"%(level_name)s? <a href=\"mailto:%(SPONSORS_EMAIL)s\" target=\"_blank"
-"\">¡Contacta con nosotros!</a>\n"
-"                        "
+"                    ¿Quieres ser el primer patrocinador %(level_name)s? <a "
+"href=\"mailto:%(SPONSORS_EMAIL)s\" target=\"_blank\">¡Contacta con nosotros!"
+"</a>\n"
+"                "
 msgstr ""
 "\n"
 "                        %(level_name)s mailako lehenengo babeslea izan nahi? "
@@ -934,366 +1038,13 @@ msgstr ""
 "harremanetan gurekin!</a>\n"
 "                        "
 
-#: pycones/templates/pages/home.html:108
-msgid "Folleto (ES)"
-msgstr "Eskuorria (ES)"
+#: pycones/templates/pages/tickets.html:8
+msgid "Compra aquí tus tickets"
+msgstr "Erosi hemen zure sarrerak"
 
-#: pycones/templates/pages/home.html:111
-msgid "Folleto (EN)"
-msgstr "Eskuorria (EN)"
-
-#: pycones/templates/pages/info.html:7
-msgid "Localización"
-msgstr "Kokalekua"
-
-#: pycones/templates/pages/info.html:10
-msgid ""
-"\n"
-"            El evento se realizará en el <strong>Complejo Cultural San "
-"Francisco</strong> que está situado a 10 minutos\n"
-"            a pie del centro\n"
-"            Cáceres. Al estar dentro de la ciudad, hay multitud de <a href="
-"\"https://goo.gl/F5ZBV5\">hoteles, pensiones</a>,\n"
-"            <a href=\"https://www.facebook.com/groups/comerencaceres/"
-"\">restaurantes</a> y bares en los\n"
-"            alrededores.\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:20
-msgid ""
-"\n"
-"            <strong>Los talleres y Django girls se realizarán en el viernes "
-"en el campus universitario</strong>,\n"
-"            concretamente en la\n"
-"            escuela\n"
-"            politécnica a la que se puede llegar con las líneas de autobuses "
-"LC, RC y L3.\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:34
-msgid ""
-"\n"
-"            Tanto el auditorio como las tres salas adicionales en las que "
-"tendrán lugar las charlas están equipadas con\n"
-"            butacas y son accesibles para personas con movilidad reducida.\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:40
-msgid ""
-"\n"
-"        El horario previsto será el siguiente (aproximadamente):\n"
-"    "
-msgstr ""
-
-#: pycones/templates/pages/info.html:46
-msgid ""
-"\n"
-"                Viernes 22/09/17 de 15:00 a 20:30.\n"
-"            "
-msgstr ""
-
-#: pycones/templates/pages/info.html:51
-msgid ""
-"\n"
-"                Sábado 23/09/17 de 9:00 a 20:30.\n"
-"            "
-msgstr ""
-
-#: pycones/templates/pages/info.html:56
-msgid ""
-"\n"
-"                Domingo 24/09/17 de 9:00 a 18:30.\n"
-"            "
-msgstr ""
-
-#: pycones/templates/pages/info.html:63
-msgid ""
-"\n"
-"            *Para mas informacion sobre horarios de las Django Girls visita "
-"la <a href=\"https://djangogirls.org/caceres/\">web oficial</a>.\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:69
-#, fuzzy
-#| msgid "Cómo llegar a Almería"
-msgid "Como llegar a Cáceres"
-msgstr "Nola heldu Almeriari"
-
-#: pycones/templates/pages/info.html:71
-msgid ""
-"\n"
-"            Los tres aeropuertos mejor conectados con Cáceres son Badajoz "
-"(1h en coche), Sevilla(2´5h en coche) y Madrid\n"
-"            (3h en coche).\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:78
-msgid ""
-"\n"
-"            Desde Badajoz\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:83
-msgid ""
-"\n"
-"            6 autobuses al día, compra tus billetes en <a href=\"http://www."
-"avanzabus.com/\" target=\"blank\">www.avanzabus.com</a> o <a href=\"https://"
-"www.alsa.es/\" target=\"blank\">www.alsa.es</a><br>\n"
-"            5 trenes al día, compra tus billetes en <a href=\"http://www."
-"renfe.com\" target=\"blank\">www.renfe.com</a>\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:90
-msgid ""
-"\n"
-"            Desde Madrid\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:95
-msgid ""
-"\n"
-"            8 autobuses al día, compra tus billetes en <a href=\"http://www."
-"avanzabus.com/\" target=\"blank\">www.avanzabus.com</a><br>\n"
-"            5 trenes al día, compra tus billetes en <a href=\"http://www."
-"renfe.com\" target=\"blank\">www.renfe.com</a>\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:101
-msgid ""
-"\n"
-"            Desde Sevilla\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:106
-msgid ""
-"\n"
-"            8 autobuses al día, compra tus billetes en <a href=\"https://www."
-"alsa.es/\" target=\"blank\">www.alsa.es</a><br>\n"
-"            5 trenes al día, compra tus billetes en <a href=\"http://http://"
-"www.renfe.com\" target=\"blank\">www.renfe.com</a>\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:112
-msgid ""
-"\n"
-"            Desde cualquier otra parte\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:117
-msgid ""
-"\n"
-"            Autobuses: <a href=\"http://estacionautobuses.es/\" target="
-"\"blank\">estacionautobuses.es</a><br>\n"
-"            Trenes: <a href=\"http://www.renfe.com\" target=\"blank\">www."
-"renfe.com</a><br>\n"
-"            Compartir coche: <a href=\"https://amovens.com/\" target=\"blank"
-"\">amovens.com</a> o <a href=\"https://www.blablacar.es/\" target=\"blank"
-"\">blablacar.com</a><br>\n"
-"            O siempre puedes alquilar un coche para moverte con libertad "
-"durante el fin de semana! :D\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:125
-msgid "Turismo"
-msgstr ""
-
-#: pycones/templates/pages/info.html:127
-msgid ""
-"\n"
-"        Tierra de contrastes, Extremadura constituye un destino idóneo para "
-"quienes quieren entrar en contacto con una realidad nueva, sorprendente y "
-"estimulante. Tu viaje se convierte en un verdadero paseo por la historia. <a "
-"href=\"http://www.turismoextremadura.com/viajar/turismo/es/ven-a-extremadura/"
-"\">VIVE EXTREMADURA!</a>\n"
-"    "
-msgstr ""
-
-#: pycones/templates/pages/info.html:134
-msgid "Explora Extremadura"
-msgstr ""
-
-#: pycones/templates/pages/info.html:137
-msgid ""
-"\n"
-"<li><a href=\"http://www.turismoextremadura.com/viajar/turismo/es/explora/"
-"extremadura-imprescindible/\">Qué ver en Extremadura?</a></li>\n"
-"<li><a href=\"http://www.ayto-caceres.es/turismo/conoce-caceres/\">Conoce "
-"Cáceres</a></li>\n"
-"<li><a href=\"http://www.ayto-caceres.es/turismo/plano-turistico-de-caceres/"
-"\">Plano de Cáceres</a></li>\n"
-"<li><a href=\"http://extremadurabtt.gobex.es/es/servicios/publicaciones-"
-"turisticas/\">Guías para explorar Extremadura</a></li>\n"
-"<li><a href=\"http://www.ayto-caceres.es/turismo/rutas/\">Rutas por Cáceres</"
-"a></li>\n"
-"<li><a href=\"http://www.ayto-caceres.es/turismo/\">Información turistica de "
-"Cáceres</a></li>\n"
-"<li><a href=\"http://www.turismoextremadura.com/\">Información turistica de "
-"Extremadura</a></li>\n"
-"        "
-msgstr ""
-
-#: pycones/templates/pages/info.html:151
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                        PyConES aspira a crear un ambiente libre de "
-#| "acosos o discriminaciones por razón de género, orientación sexual, "
-#| "discapacidad, aspecto físico, etnia o religión. No se tolerará "
-#| "discriminación alguna bajo ninguna circunstancia.\n"
-#| "                    "
-msgid ""
-"\n"
-"            PyConES aspira a crear un ambiente libre de acosos o "
-"discriminaciones por razón de género, orientación\n"
-"            sexual,\n"
-"            discapacidad, aspecto físico, etnia o religión. No se tolerará "
-"discriminación alguna bajo ninguna\n"
-"            circunstancia.\n"
-"        "
-msgstr ""
-"\n"
-"                            PyConESen ez dugu bazterketarik edo jazarpenik "
-"onartuko, inolakoa dela ere (generoa, erlijioa, jatorria, itxura "
-"fisikoa,...). Ez da inolako diskriminaziorik inola ere onartuko.\n"
-"                            "
-
-#: pycones/templates/pages/info.html:159
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                        Todo el contenido de la conferencia deberá "
-#| "ajustarse a una audiencia profesional integrada por personas procedentes "
-#| "de sectores diferentes. Tanto el lenguaje como las imágenes sexualmente "
-#| "explícitos son inapropiados en la conferencia y en las charlas.\n"
-#| "                    "
-msgid ""
-"\n"
-"            Todo el contenido de la conferencia deberá ajustarse a una "
-"audiencia profesional integrada por personas\n"
-"            procedentes de sectores diferentes. Tanto el lenguaje como las "
-"imágenes sexualmente explícitos son\n"
-"            inapropiados\n"
-"            en la conferencia y en las charlas.\n"
-"        "
-msgstr ""
-"\n"
-"                            Konferentzietako eduki guztia sektore "
-"ezberdinetako entzulego profesional bati bideratuta egongo da. Hizkera eta "
-"irudi explizituki sexualak ez dira onartuko ez konferentzietan, ez "
-"hitzaldietan.\n"
-"                            "
-
-#: pycones/templates/pages/info.html:167
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                        Sé amable con los demás. No insultes o humilles a "
-#| "otros asistentes. Compórtate de manera profesional. Recuerda que las "
-#| "bromas sexistas, racistas o discriminatorias están prohibidas en la "
-#| "PyConES.\n"
-#| "                    "
-msgid ""
-"\n"
-"            Sé amable con los demás. No insultes o humilles a otros "
-"asistentes. Compórtate de manera profesional.\n"
-"            Recuerda\n"
-"            que las bromas sexistas, racistas o discriminatorias están "
-"prohibidas en la PyConES.\n"
-"        "
-msgstr ""
-"\n"
-"                            Izan adeitsua besteekin. Ez iraindu edo jazarri "
-"jardunaldira etorritako beste inor. Izan ezazu jarrera profesionala. Gogoan "
-"izan ez dugula onartzen jarrera eta txantxa sexistarik, arrazistarik edo "
-"baztertzailerik.\n"
-"                            "
-
-#: pycones/templates/pages/info.html:174
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                        Los asistentes que incumplan estas reglas podrán -"
-#| "a discreción de los organizadores- ser sancionados o expulsados de la "
-#| "conferencia sin derecho a reembolso.\n"
-#| "                    "
-msgid ""
-"\n"
-"            Los asistentes que incumplan estas reglas podrán -a discreción "
-"de los organizadores- ser sancionados o\n"
-"            expulsados de la conferencia sin derecho a reembolso.\n"
-"        "
-msgstr ""
-"\n"
-"                            Arau hauek betetzen ez dituzten lagunak "
-"zigortzeko eta kanporatzeko aukera izango dute antolatzaileek, sarreraren "
-"kostua itzultzeko eskubiderik gabe.\n"
-"                            "
-
-#: pycones/templates/pages/info.html:180
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                        Gracias por ayudarnos a hacer este evento "
-#| "amistoso y abierto para todos.\n"
-#| "                    "
-msgid ""
-"\n"
-"            Gracias por ayudarnos a hacer este evento amistoso y abierto "
-"para todos.\n"
-"        "
-msgstr ""
-"\n"
-"                            Eskerrik asko jardunaldi ireki eta adiskidetsua "
-"sortzen laguntzearren.\n"
-"                            "
-
-#: pycones/templates/pages/info.html:184
-msgid "Código de Conducta Completo"
-msgstr "Jarrera kodea (osorik)"
-
-#: pycones/templates/pages/keynoters.html:14
-msgid ""
-"Naomi Ceder es parte de la Junta de Directores de la Python Software "
-"Foundation y cofundadora de Trans*Code, un hackday centrado en la comunidad "
-"transgénero. Actualmente dirige un equipo de inteligencia competitiva para "
-"Dick Blick Art Supplies, uno de los principales proveedores de suministros "
-"para artistas en los Estados Unidos."
-msgstr ""
-
-#: pycones/templates/pages/keynoters.html:17
-msgid ""
-"Naomi también es autora de Quick Python Book, 3rd Ed, y ha enseñado Python a "
-"diversas audiencias durante muchos años. Ella ha ayudado a organizar PyCon "
-"US y PyCon UK, dando origen a las sesiones de carteles, cumbre de Educación, "
-"y el Taller de Intro to Sprinting. "
-msgstr ""
-
-#: pycones/templates/pages/keynoters.html:25
-msgid ""
-"Presidente de la asociación Python España, ingeniero aeroespacial, defensor "
-"del software de código abierto, ciudadano europeo, ciclista urbano, amante "
-"del rock de los '70, músico frustrado, ser humano. Obsesionado en perseguir "
-"sueños imposibles y democratizar el acceso al conocimiento."
-msgstr ""
-
-#: pycones/templates/pages/landing.html:20
-msgid ""
-"Estamos preparando la nueva edición de la PyConES, dentro de poco habrá más "
-"novedades."
-msgstr "Hurrengo PyConES ari gara antolatzen. Laster izango duzu gure berri."
+#: pycones/templates/pages/tickets.html:12
+msgid "¡Entradas agotadas!"
+msgstr "Sarrerak agortuta !"
 
 #: pycones/templates/proposals/close.html:7
 msgid "¡La llamada a propuestas ha terminado!"
@@ -1302,7 +1053,7 @@ msgstr "Proposamenak aurkezteko epea bukatu da!"
 #: pycones/templates/proposals/create.html:7
 #, fuzzy
 #| msgid "Envia tu propuesta para dar una charla o taller en la PyConES 2016"
-msgid "Envia tu propuesta para dar una charla o taller en la PyConES 2017"
+msgid "Envia tu propuesta para dar una charla o taller en la PyConES 2019"
 msgstr "Bidali PyConES 2016n hitzaldia edo tailerra emateko proposamena"
 
 #: pycones/templates/proposals/create.html:11
@@ -1315,30 +1066,28 @@ msgstr "Bidali PyConES 2016n hitzaldia edo tailerra emateko proposamena"
 #| "        "
 msgid ""
 "\n"
-"            ¡Está abierta la llamada a propuestas para la PyConES 2017! El "
-"plazo termina el <del>8</del> <ins>15</ins> de junio a\n"
-"            las 23:59:59 CEST.\n"
+"            ¡Está abierta la llamada a propuestas para la PyConES 2019!\n"
 "        "
 msgstr ""
 "\n"
 "Irekita dago PyConES 2016rako proposamenak bidaltzeko epea! Azken eguna "
 "uztailaren <del>15a</del> <ins>27a</ins> izango da 00:00tan."
 
-#: pycones/templates/proposals/create.html:18
+#: pycones/templates/proposals/create.html:17
 msgid "Más información en el blog"
 msgstr "Informazio gehiago blogean"
 
-#: pycones/templates/proposals/create.html:28
+#: pycones/templates/proposals/create.html:27
 msgid "Añadir un ponente más"
 msgstr ""
 
-#: pycones/templates/proposals/create.html:30 pycones/users/forms.py:14
+#: pycones/templates/proposals/create.html:29 pycones/users/forms.py:14
 #: pycones/users/forms.py:17 pycones/users/forms.py:52
 #: pycones/users/forms.py:93 pycones/users/forms.py:95
 msgid "Email"
 msgstr "Helbide elektronikoa"
 
-#: pycones/templates/proposals/create.html:117
+#: pycones/templates/proposals/create.html:116
 msgid "Enviar propuesta"
 msgstr "Proposamena bidali"
 
@@ -1361,14 +1110,15 @@ msgid "Revisión"
 msgstr ""
 
 #: pycones/templates/reviewers/details.html:64
-#: pycones/templates/schedule/presentations/edit.html:21
+#: pycones/templates/schedule/presentations/edit.html:22
+#: pycones/templates/speakers/edit.html:44
 #: pycones/templates/users/restore.html:32
 msgid "Guardar"
 msgstr "Jaso"
 
 #: pycones/templates/reviewers/details.html:65
 #: pycones/templates/schedule/details.html:51
-#: pycones/templates/schedule/presentations/edit.html:22
+#: pycones/templates/schedule/presentations/edit.html:23
 msgid "Volver"
 msgstr ""
 
@@ -1392,6 +1142,10 @@ msgstr ""
 
 #: pycones/templates/reviewers/list.html:25
 msgid "Acciones"
+msgstr ""
+
+#: pycones/templates/reviewers/list.html:35
+msgid "Acceder"
 msgstr ""
 
 #: pycones/templates/reviewers/list.html:40
@@ -1421,14 +1175,14 @@ msgid ""
 "            "
 msgstr ""
 
-#: pycones/templates/schedule/_slot.html:35
+#: pycones/templates/schedule/_slot.html:38
 #: pycones/templates/schedule/details.html:33
 #, fuzzy
 #| msgid "Descargar presentación"
 msgid "Descargar presentación"
 msgstr "Aurkezpena deskargatu"
 
-#: pycones/templates/schedule/_slot.html:38
+#: pycones/templates/schedule/_slot.html:41
 #: pycones/templates/schedule/details.html:36
 msgid "Ver vídeo"
 msgstr "Bideoa ikusi"
@@ -1447,44 +1201,71 @@ msgstr "Zure proposamena aldatu"
 msgid "Sube desde este formulario el fichero de la charla o taller."
 msgstr ""
 
-#: pycones/templates/schedule/show.html:47
+#: pycones/templates/schedule/schedule.html:41
+msgid "Ya queda poco!"
+msgstr ""
+
+#: pycones/templates/schedule/schedule.html:49
 #, fuzzy
 #| msgid "Básico"
 msgid "Nivel básico"
 msgstr "Básico"
 
-#: pycones/templates/schedule/show.html:52
+#: pycones/templates/schedule/schedule.html:54
 #, fuzzy
 #| msgid "Intermedio"
 msgid "Nivel intermedio"
 msgstr "Intermedio"
 
-#: pycones/templates/schedule/show.html:57
+#: pycones/templates/schedule/schedule.html:59
 #, fuzzy
 #| msgid "Avanzado"
 msgid "Nivel avanzado"
 msgstr "Avanzado"
 
-#: pycones/templates/schedule/show.html:66
+#: pycones/templates/schedule/schedule.html:68
 msgid "Descargar en iCalendar"
 msgstr "iCalendar formatuan deskargatu"
 
-#: pycones/templates/schedule/show.html:69
+#: pycones/templates/schedule/schedule.html:71
 msgid "Descargar en xCal"
 msgstr "xCal formatuan deskargatu"
 
-#: pycones/templates/schedule/show.html:72
+#: pycones/templates/schedule/schedule.html:74
 msgid "Descargar en Pentabarf XML"
 msgstr "Pentabarf XML formatuan deskargatu"
+
+#: pycones/templates/schedule/show.html:11
+msgid "¡Estamos afinándolo todavía!"
+msgstr ""
+
+#: pycones/templates/speakers/edit.html:10
+#, fuzzy
+#| msgid "Email del ponente"
+msgid "Perfil de ponente"
+msgstr "Aurkezlearen Helbide elektronikoa"
+
+#: pycones/templates/speakers/edit.html:17
+msgid "Datos personales"
+msgstr ""
+
+#: pycones/templates/speakers/edit.html:51
+#, fuzzy
+#| msgid "Talleres"
+msgid "Charlas/Talleres"
+msgstr "Tailerrak"
+
+#: pycones/templates/speakers/edit.html:52
+msgid ""
+"Lista de las propuestas que tienes acepatadas. Puedes pinchar en ellas para "
+"acceder a un formario que te permitirá <strong>subir el fichero de la "
+"presentación</strong>."
+msgstr ""
 
 #: pycones/templates/users/request_code.html:5
 #: pycones/templates/users/restore.html:5
 msgid "Establece o restaura tu contraseña"
 msgstr "Ezarri edo berrezarri zure pasahitza."
-
-#: pycones/templates/users/request_code.html:22
-msgid "Enviar"
-msgstr "Bidali"
 
 #: pycones/templates/users/restore.html:10
 #, fuzzy
@@ -1555,47 +1336,47 @@ msgstr "Pasahitzak desberdinak dira"
 msgid "Código de restauración no válido"
 msgstr "Kode aldaketa ez da egokia"
 
-#: pycones/users/models.py:22
+#: pycones/users/models.py:23
 msgid "email address"
 msgstr ""
 
-#: pycones/users/models.py:24
+#: pycones/users/models.py:25
 msgid "first name"
 msgstr ""
 
-#: pycones/users/models.py:25
+#: pycones/users/models.py:26
 #, fuzzy
 #| msgid "name"
 msgid "last name"
 msgstr "izena"
 
-#: pycones/users/models.py:28
+#: pycones/users/models.py:29
 msgid "staff status"
 msgstr ""
 
-#: pycones/users/models.py:30
+#: pycones/users/models.py:31
 msgid "Designates whether the user can log into this admin site."
 msgstr ""
 
-#: pycones/users/models.py:36
+#: pycones/users/models.py:37
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
 
-#: pycones/users/models.py:40
+#: pycones/users/models.py:41
 msgid "date joined"
 msgstr ""
 
-#: pycones/users/models.py:49
+#: pycones/users/models.py:50
 msgid "user"
 msgstr ""
 
-#: pycones/users/models.py:50
+#: pycones/users/models.py:51
 msgid "users"
 msgstr ""
 
-#: pycones/users/models.py:75
+#: pycones/users/models.py:76
 #, fuzzy, python-format
 #| msgid "Establece tu contraseña"
 msgid "[%s] Establece tu contraseña"
@@ -1618,6 +1399,214 @@ msgid ""
 "Se ha enviado un correo a tu dirección con un enlace para establecer tu "
 "contraseña."
 msgstr "Pasahitza aldatzeko esteka bat bidali da sarrera erosi zenuen kontura"
+
+#~ msgid "Catalán"
+#~ msgstr "Catalán"
+
+#~ msgid "Gallego"
+#~ msgstr "Gallego"
+
+#~ msgid "Euskera"
+#~ msgstr "Euskara"
+
+#~ msgid "Información del evento"
+#~ msgstr "Ekitaldiaren informazioa"
+
+#~ msgid "Oradores Plenarios"
+#~ msgstr "Hizlari nagusiak"
+
+#~ msgid "Envía tu propuesta"
+#~ msgstr "Zure proposamena bidali"
+
+#~ msgid "Contacta con nosotros"
+#~ msgstr "Jarri harremanetan gurekin"
+
+#, fuzzy
+#~| msgid "¿Que es PyConES 2016?"
+#~ msgid "¿Que es PyConES 2017?"
+#~ msgstr "Zer da PyConES 2016?"
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "                    <strong>PyConES</strong> es la conferencia nacional "
+#~| "sobre Python más importante de España.\n"
+#~| "                    La PyConES celebrará su cuarta edición los días "
+#~| "<strong>7 a 9 de octubre de 2016</strong> en <strong>Almería</strong>, "
+#~| "después de\n"
+#~| "                    tres exitosas ediciones en Madrid, Zaragoza y "
+#~| "Valencia respectivamente y siguiendo el formato del evento mundial\n"
+#~| "                    <a href=\"http://pycon.org\" target=\"_blank"
+#~| "\">PyCon</a>.\n"
+#~| "                "
+#~ msgid ""
+#~ "\n"
+#~ "                    <strong>PyConES</strong> es la conferencia nacional "
+#~ "sobre Python más importante de España.\n"
+#~ "                    La PyConES celebrará su quinta edición los días "
+#~ "<strong>22 a 24 de septiembre de 2017</strong> en <strong>Cáceres</"
+#~ "strong>, después de\n"
+#~ "                    cuatro exitosas ediciones en Madrid, Zaragoza, "
+#~ "Valencia y Almería respectivamente y siguiendo el formato del evento "
+#~ "mundial\n"
+#~ "                    <a href=\"http://pycon.org\" target=\"_blank\">PyCon</"
+#~ "a>.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "                    <strong>PyConES</strong> da Espainian egiten den "
+#~ "Python konferentzia garrantzitsuena.\n"
+#~ "                    Aurtengoa izango da bere laugarren edizioa, "
+#~ "<strong>2016ko urriaren 7 eta 9an Almerian</strong>,\n"
+#~ "                    aurreko 3 urteetan Madrilen, Zaragozan eta Valencian "
+#~ "izandako ekitaldi arrakastatsuen jarraipena, eta mundu mailan egiten "
+#~ "diren\n"
+#~ "                    <a href=\"http://pycon.org\" target=\"_blank\">PyCon</"
+#~ "a> konferentzien formatu berarekin.\n"
+#~ "                "
+
+#~ msgid "Ediciones anteriores"
+#~ msgstr "Aurreko edizioak"
+
+#~ msgid "¡Conoce más de nuestros keynoters!"
+#~ msgstr "Gure hizlari nagusiei buruz gehiago ezagutu !"
+
+#~ msgid "Compra de entradas"
+#~ msgstr "Sarrerak erostea"
+
+#~ msgid ""
+#~ "Con tu entrada podrás acceder los tres días de la conferencia completos. "
+#~ "En la entrada del edificio te cambiaremos tu entrada de ticketea (no "
+#~ "olvides traerla) por tu acreditación y te entregaremos el WelcomePack."
+#~ msgstr ""
+#~ "Zure sarrerarekin 2 egunetako ekitaldi guztietara sartu ahal izango zara. "
+#~ "Egoitzaren sarreran ticketea sarrera aurkeztu beharko duzu (ez ahaztu "
+#~ "ekartzea) eta akreditazioa emango dizugu, Ongietorri pack-arekin batera.\n"
+#~ "                "
+
+#~ msgid "Folleto (EN)"
+#~ msgstr "Eskuorria (EN)"
+
+#~ msgid "Localización"
+#~ msgstr "Kokalekua"
+
+#, fuzzy
+#~| msgid "Cómo llegar a Almería"
+#~ msgid "Como llegar a Cáceres"
+#~ msgstr "Nola heldu Almeriari"
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "                        PyConES aspira a crear un ambiente libre de "
+#~| "acosos o discriminaciones por razón de género, orientación sexual, "
+#~| "discapacidad, aspecto físico, etnia o religión. No se tolerará "
+#~| "discriminación alguna bajo ninguna circunstancia.\n"
+#~| "                    "
+#~ msgid ""
+#~ "\n"
+#~ "            PyConES aspira a crear un ambiente libre de acosos o "
+#~ "discriminaciones por razón de género, orientación\n"
+#~ "            sexual,\n"
+#~ "            discapacidad, aspecto físico, etnia o religión. No se "
+#~ "tolerará discriminación alguna bajo ninguna\n"
+#~ "            circunstancia.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "                            PyConESen ez dugu bazterketarik edo "
+#~ "jazarpenik onartuko, inolakoa dela ere (generoa, erlijioa, jatorria, "
+#~ "itxura fisikoa,...). Ez da inolako diskriminaziorik inola ere onartuko.\n"
+#~ "                            "
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "                        Todo el contenido de la conferencia deberá "
+#~| "ajustarse a una audiencia profesional integrada por personas procedentes "
+#~| "de sectores diferentes. Tanto el lenguaje como las imágenes sexualmente "
+#~| "explícitos son inapropiados en la conferencia y en las charlas.\n"
+#~| "                    "
+#~ msgid ""
+#~ "\n"
+#~ "            Todo el contenido de la conferencia deberá ajustarse a una "
+#~ "audiencia profesional integrada por personas\n"
+#~ "            procedentes de sectores diferentes. Tanto el lenguaje como "
+#~ "las imágenes sexualmente explícitos son\n"
+#~ "            inapropiados\n"
+#~ "            en la conferencia y en las charlas.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "                            Konferentzietako eduki guztia sektore "
+#~ "ezberdinetako entzulego profesional bati bideratuta egongo da. Hizkera "
+#~ "eta irudi explizituki sexualak ez dira onartuko ez konferentzietan, ez "
+#~ "hitzaldietan.\n"
+#~ "                            "
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "                        Sé amable con los demás. No insultes o humilles "
+#~| "a otros asistentes. Compórtate de manera profesional. Recuerda que las "
+#~| "bromas sexistas, racistas o discriminatorias están prohibidas en la "
+#~| "PyConES.\n"
+#~| "                    "
+#~ msgid ""
+#~ "\n"
+#~ "            Sé amable con los demás. No insultes o humilles a otros "
+#~ "asistentes. Compórtate de manera profesional.\n"
+#~ "            Recuerda\n"
+#~ "            que las bromas sexistas, racistas o discriminatorias están "
+#~ "prohibidas en la PyConES.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "                            Izan adeitsua besteekin. Ez iraindu edo "
+#~ "jazarri jardunaldira etorritako beste inor. Izan ezazu jarrera "
+#~ "profesionala. Gogoan izan ez dugula onartzen jarrera eta txantxa "
+#~ "sexistarik, arrazistarik edo baztertzailerik.\n"
+#~ "                            "
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "                        Los asistentes que incumplan estas reglas podrán "
+#~| "-a discreción de los organizadores- ser sancionados o expulsados de la "
+#~| "conferencia sin derecho a reembolso.\n"
+#~| "                    "
+#~ msgid ""
+#~ "\n"
+#~ "            Los asistentes que incumplan estas reglas podrán -a "
+#~ "discreción de los organizadores- ser sancionados o\n"
+#~ "            expulsados de la conferencia sin derecho a reembolso.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "                            Arau hauek betetzen ez dituzten lagunak "
+#~ "zigortzeko eta kanporatzeko aukera izango dute antolatzaileek, sarreraren "
+#~ "kostua itzultzeko eskubiderik gabe.\n"
+#~ "                            "
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "                        Gracias por ayudarnos a hacer este evento "
+#~| "amistoso y abierto para todos.\n"
+#~| "                    "
+#~ msgid ""
+#~ "\n"
+#~ "            Gracias por ayudarnos a hacer este evento amistoso y abierto "
+#~ "para todos.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "                            Eskerrik asko jardunaldi ireki eta "
+#~ "adiskidetsua sortzen laguntzearren.\n"
+#~ "                            "
+
+#~ msgid "Código de Conducta Completo"
+#~ msgstr "Jarrera kodea (osorik)"
 
 #~ msgid "Web de la PyConES 2017"
 #~ msgstr "PyConES 2017 webgunea"
@@ -1698,9 +1687,6 @@ msgstr "Pasahitza aldatzeko esteka bat bidali da sarrera erosi zenuen kontura"
 
 #~ msgid "Nombre del ponente"
 #~ msgstr "Aurkezlearen izena"
-
-#~ msgid "Email del ponente"
-#~ msgstr "Aurkezlearen Helbide elektronikoa"
 
 #~ msgid ""
 #~ "If your proposal is accepted this will be made public and printed in the "
@@ -1899,9 +1885,6 @@ msgstr "Pasahitza aldatzeko esteka bat bidali da sarrera erosi zenuen kontura"
 #~ "mid=1Qm5_h5uTqriVSYBHS_SP3NVgjHc\">prestatu dugun mapan</a> dituzuea 18 "
 #~ "autobus linearen inguruko alojamenduak\n"
 #~ "                        "
-
-#~ msgid "Sobre Almería"
-#~ msgstr "Almeriari buruz"
 
 #~ msgid ""
 #~ "\n"
@@ -2198,9 +2181,6 @@ msgstr "Pasahitza aldatzeko esteka bat bidali da sarrera erosi zenuen kontura"
 
 #~ msgid "Track BigML (científico)"
 #~ msgstr "BigML tracka (zientifikoa)"
-
-#~ msgid "Talleres"
-#~ msgstr "Tailerrak"
 
 #~ msgid "Descargar en PDF"
 #~ msgstr "PDF formatuan deskargatu"

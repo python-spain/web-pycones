@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from model_utils.models import TimeStampedModel
 
@@ -18,7 +17,6 @@ from pycones.sponsorships import (
 from pycones.sponsorships.managers import SponsorManager
 
 
-@python_2_unicode_compatible
 class SponsorLevel(models.Model):
 
     name = models.CharField(_("name"), max_length=100)
@@ -40,7 +38,6 @@ class SponsorLevel(models.Model):
         return self.sponsor_set.filter(active=True).order_by("added")
 
 
-@python_2_unicode_compatible
 class Sponsor(TimeStampedModel):
 
     applicant = models.ForeignKey(
@@ -71,6 +68,9 @@ class Sponsor(TimeStampedModel):
         editable=False,
         on_delete=models.CASCADE,
     )  # Denormalization (this assumes only one logo)
+    sponsor_order = models.IntegerField(
+        help_text=_("Relative order of the sponsor"), default=0
+    )
 
     objects = SponsorManager()
 
@@ -85,9 +85,11 @@ class Sponsor(TimeStampedModel):
                 benefit__type=BENEFIT_WEB_LOGO, upload__isnull=False
             )[:1]
             if benefits.count():
-                if benefits[0].upload:
+                if benefits[0].upload and benefits[0].upload.name:
                     self.sponsor_logo = benefits[0]
                     self.save()
+                else:
+                    return None
         return self.sponsor_logo.upload
 
     @property
@@ -149,7 +151,6 @@ class Sponsor(TimeStampedModel):
         pass  # @@@ should this just be done centrally?
 
 
-@python_2_unicode_compatible
 class Benefit(models.Model):
 
     name = models.CharField(_("name"), max_length=100)
@@ -162,7 +163,6 @@ class Benefit(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class BenefitLevel(models.Model):
 
     benefit = models.ForeignKey(
@@ -189,7 +189,6 @@ class BenefitLevel(models.Model):
         return "%s - %s" % (self.level, self.benefit)
 
 
-@python_2_unicode_compatible
 class SponsorBenefit(models.Model):
 
     sponsor = models.ForeignKey(

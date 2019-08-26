@@ -1,121 +1,117 @@
-{% extends "container.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 {% load static %}
 {% load sponsorship_tags %}
-
+{% load chunk_extras %}
 {% block content %}
-    <div class="row">
-        <div class="col-12">
-            <h2>{% trans "¿Que es PyConES 2019?" %}</h2>
-            <p class="loud indented">
-                {% blocktrans %}
-                    <strong>PyConES</strong> es la conferencia nacional sobre Python más importante de España.
-                    La PyConES celebrará su quinta edición los días <strong>22 a 24 de septiembre de 2017</strong> en <strong>Cáceres</strong>, después de
-                    cuatro exitosas ediciones en Madrid, Zaragoza, Valencia y Almería respectivamente y siguiendo el formato del evento mundial
-                    <a href="http://pycon.org" target="_blank">PyCon</a>.
-                {% endblocktrans %}
-            </p>
-            <h3 class="indented">{% trans "Ediciones anteriores" %}:</h3>
-            <p class="text-center loud indented">
-                <a href="http://2013.es.pycon.org/" target="_blank">PyConES 2013</a> |
-                <a href="http://2014.es.pycon.org/" target="_blank">PyConES 2014</a> |
-                <a href="http://2015.es.pycon.org/" target="_blank">PyConES 2015</a> |
-                <a href="http://2016.es.pycon.org/" target="_blank">PyConES 2016</a>
-            </p>
-        </div>
+  <section id="blocks" class="container-fluid">
+  {% if activated_tickets_sale_page %}
+    <div class="text-center">
+      <h2>{% trans "¡Entradas ya disponibles!" %}</h2>
+      <a href="https://www.eventbrite.es/e/entradas-pycones-2019-61864318843" class="btn btn-primary">{% trans "Consigue tu entrada" %}</a>
     </div>
+  {% else %}
+    <h2>{% trans "Entradas no disponibles." %}</h2>
+  {% endif %}
     <div class="row">
-        <div class="col-12">
-            <h2>{% trans "Oradores Plenarios" %}</h2>
+      <div class="col-md-12 col-lg-4">
+        <div class="card h-100">
+          <img src="{% static "img/logo.png" %}" class="card-img-top" alt="PyConEs">
+          <div class="card-body">
+            <h3 class="card-title"><a href="{% url "info"%}">{% trans "El evento" %}</a></h3>
+            <p class="card-text">{% trans "PyConES es la conferencia de la comunidad Python española. PyConES se celebrará por séptima vez del 04 al 06 de octubre de 2019 en Alicante, tras seis exitosas ediciones en Madrid, Zaragoza, Valencia, Almería, Cáceres y Málaga, siguiendo el formato del evento mundial de PyCon." %}</p>
+ {% chunk name="schedule_pdf" as schedule_pdf %}
+ {% if schedule_pdf %}
+ <section id="schedule_pdf" class="container-fluid">
+  {{ schedule_pdf }}
+ </section>
+          </div>
         </div>
-        <div class="offset-2 col-4 text-center">
-            <img src="{% static "images/naomi.jpg" %}" class="img-flex rounded-circle img-thumbnail">
-            <h3>{% trans "Naomi Ceder" %}</h3>
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <div class="card h-100">
+          <img src="{% static "img/icon-sponsors2.png" %}" class="card-img-top" alt="PyConEs">
+          <div class="card-body">
+            <h3 class="card-title">{% trans "Patrocinadores" %}</h3>
+            <p class="card-text">{% trans "¿Quieres patrocinar esta edición de la PyConES? Aquí encontrarás toda la información necesaria" %}</p>
+            {% if LANGUAGE_CODE == 'es'%}
+            <a target="_self" href="{% static "pdf/sponsorship_ES.pdf" %}" class="btn btn-primary">{% trans "Folleto" %}</a>
+            {% else %}
+            <a target="_self" href="{% static "pdf/sponsorship_EN.pdf" %}" class="btn btn-primary">{% trans "Folleto" %}</a>
+            {% endif %}
+          </div>
         </div>
-        <div class="offset-2 col-4 text-center">
-            <img src="{% static "images/juanlu.jpg" %}" class="img-flex rounded-circle img-thumbnail">
-            <h3>{% trans "Juan Luis Cano" %}</h3>
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <a class="twitter-timeline" data-height="600" href="https://twitter.com/PyConES?ref_src=twsrc%5Etfw">Tweets by PyConES</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
         </div>
-        <div class="col-12">
-            <p class="text-center" style="margin: 35px 0 35px 0">
-                <a href="{% url "keynoter-speakers" %}" class="btn btn-primary btn-lg" >{% trans "¡Conoce más de nuestros keynoters!" %}</a>
-            </p>
-        </div>
+      </div>
+    </div>
+  </section>
+
+ {% endif %}
+  <section id="people" class="container-fluid">
+    <div class="text-center">
+      <h2>{% trans "Ponentes principales" %}</h2>
     </div>
 
-    {% if activated_tickets_sale_page %}
-        <div class="row">
-            <div class="col-12">
-                <h2>{% trans "Compra de entradas" %}</h2>
-                <p class="text-center" style="margin: 35px 0 35px 0">
-                    {% if not sold_out %}
-                        <a href="https://www.ticketea.com/entradas-conferencia-pycones-2017/" title="{% trans "Compra aquí tus tickets" %}">
-                            <img src="https://d18t9gwja9h9h.cloudfront.net/assets/images/buttons/es/buyhere.png" alt="{% trans "Compra aquí tus tickets" %}" />
-                        </a>
-                    {% else %}
-                        <a href="javascript:void(0)" class="btn btn-danger btn-lg">{% trans "¡Entradas agotadas!" %}</a>
-                    {% endif %}
-                </p>
-                <p>
-                    {% blocktrans %}Con tu entrada podrás acceder los tres días de la conferencia completos. En la entrada del edificio te cambiaremos tu entrada de ticketea (no olvides traerla) por tu acreditación y te entregaremos el WelcomePack.{% endblocktrans %}
-                </p>
-            </div>
-        </div>
-    {% endif %}
+    <div class="row">
 
-     <div class="row">
-        <div class="col-12">
-            <h2 id="sponsors"> {% trans "Patrocinadores" %}</h2>
-            {% sponsor_levels as levels %}
-            {% for level in levels %}
-                {% sponsors level.pk as sponsors %}
-                {% if sponsors %}
-                    <h3>{{ level.name }}</h3>
-                    <div class="row">
-                        {% for sponsor in sponsors %}
-                            <div class="
-                                {% if level.order == 0 %}
-                                    col-8 offset-2
-                                {% else %}
-                                    col-6
-                                    {% if level.order < 2 %}col-md-6{% else %}col-md-4{% endif %}
-                                {% endif %}
-                                text-center">
-                                <a href="{{ sponsor.external_url }}" target="_blank">
-                                    <img src="{{ sponsor.website_logo.url }}" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" class="img-fluid sponsors-img">
-                                </a>
-                            </div>
-                            {% if forloop.counter|divisibleby:"2" %}
-                                <div class="clearfix visible-xs"></div>
-                            {% endif %}
-                            {% if forloop.counter|divisibleby:"3" %}
-                                <div class="clearfix visible-sm"></div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                {% else %}
-                    <h3>{{ level.name }}</h3>
-                    <p class="loud">
-                        {% blocktrans with level_name=level.name|lower %}
-                            ¿Quieres ser el primer patrocinador {{ level_name }}? <a href="mailto:{{ SPONSORS_EMAIL }}" target="_blank">¡Contacta con nosotros!</a>
-                        {% endblocktrans %}
-                    </p>
-                {% endif %}
-            {% endfor %}
-            <hr />
-            <p class="text-center loud">
-                <a href="{% static "files/es_brochure.pdf" %}" class="btn btn-primary" target="_blank">
-                    <i class="icon-download"></i> {% trans "Folleto (ES)" %}
-                </a>
-                <a href="{% static "files/en_brochure.pdf" %}" class="btn btn-primary" target="_blank">
-                    <i class="icon-download"></i> {% trans "Folleto (EN)" %}
-                </a>
-            </p>
-            <p class="text-center loud">
-                <a href="mailto:{{ SPONSORS_EMAIL }}" target="_blank">
-                    {{ SPONSORS_EMAIL }}
-                </a>
-            </p>
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+            <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{% static "img/safia.jpg" %}&w=389&h=389&t=letterbox&bg=white&errorredirect=//via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
+          <div class="card-body">
+            <h3 class="card-title">Safia Abdalla</h3>
+            <p class="card-text">{% trans "Safia es una desarrolladora de código abierto, escritora e ingeniera software en Microsoft. Le apasiona unir a las personas para construir cosas formidables." %}</p>
+          </div>
         </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{% static "img/fj.jpg" %}&w=389&h=389&t=letterbox&bg=white&errorredirect=//via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
+          <div class="card-body">
+            <h3 class="card-title">Francisco Javier Ordoñez</h3>
+            <p class="card-text">{% trans "Lead Data Scientist en StyleSage. Es un profesional multidisciplinar con más de 11 años de experiencia en el área de inteligencia artificial, habiendo trabajado de investigador, ingeniero, profesor y consultor." %}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{% static "img/mabel.jpg" %}&w=389&h=389&t=letterbox&bg=white&errorredirect=//via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
+          <div class="card-body">
+            <h3 class="card-title">Mabel Delgado</h3>
+            <p class="card-text">{% trans "Mabel es ingeniera aeronáutica que trabaja desarrollando métodos y herramientas para análisis de ensayos en vuelo de aviones. Co-organiza el grupo PyLadies Madrid y otros eventos de Python como Django Girls." %}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{% static "img/galindo.jpg" %}&w=389&h=389&t=letterbox&bg=white&errorredirect=//via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
+          {% comment %}
+          <img src="{% static "img/galindo.jpg" %}" class="card-img-top" alt="PyConEs">
+          {% endcomment %}
+          <div class="card-body">
+            <h3 class="card-title">Pablo Galindo</h3>
+            <p class="card-text">{% trans "Trabaja en el equipo de Python infrastructura en Bloomberg L.P. Es un core developer de Python centrado en el desarrollo del interprete y el parser. Puedes culparle por el PEP 570 si te encuentras todo tu código lleno de '/'. Pasa su tiempo libre haciendo simulaciones de agujeros negros y relatividad general. También tiene un gato pero no programa." %}</p>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
+
+ {% include "pages/patrocinadores.html" %}
+ {% chunk name="home_content" as home_content %}
+ {% if home_content %}
+ <section id="home_content" class="container-fluid">
+  {{ home_content }}
+ </section>
+ {% endif %}
+
 {% endblock content %}
