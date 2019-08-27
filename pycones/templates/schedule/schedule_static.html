@@ -3,27 +3,27 @@
 {% block content %}
 <main>
     <section class="container" id="schedule">
-      <h1>Horario</h1>
+      <h1>{% trans 'Horario'%}</h1>
 
       <ul class="nav nav-pills nav-justified" id="tabDays" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" id="viernes-tab" data-toggle="tab" href="#viernes" role="tab" aria-controls="viernes" aria-selected="true">Viernes</a>
+          <a class="nav-link active" id="viernes-tab" data-toggle="tab" href="#viernes" role="tab" aria-controls="viernes" aria-selected="true">{% trans 'Viernes' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="sabado-tab" data-toggle="tab" href="#sabado" role="tab" aria-controls="sabado" aria-selected="false">Sábado</a>
+          <a class="nav-link" id="sabado-tab" data-toggle="tab" href="#sabado" role="tab" aria-controls="sabado" aria-selected="false">{% trans 'Sábado' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="domingo-tab" data-toggle="tab" href="#domingo" role="tab" aria-controls="domingo" aria-selected="false">Domingo</a>
+          <a class="nav-link" id="domingo-tab" data-toggle="tab" href="#domingo" role="tab" aria-controls="domingo" aria-selected="false">{% trans 'Domingo' %}</a>
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
         <article class="tab-pane fade show active" id="viernes" role="tabpanel" aria-labelledby="viernes-tab">
           <div class="col-md-12 data">
-            <h2>Viernes 4 de Octubre</h2>
+            <h2>{% trans 'Viernes 4 de Octubre' %}</h2>
           </div>
 
           <table id="tableReport" class="table table-striped">
-            
+
             <tbody>
               <tr class="media">
                 <td class="media-left">
@@ -43,11 +43,11 @@
                       <h4>Django girls</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">09:00h-21:00h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media">
                 <td class="media-left">
@@ -59,25 +59,25 @@
                       <div class="box slot-advanced">
                         <h4>Acreditación</h4>
                         <p class="text-right">
-                          <span>Sala 1</span>
+                          <span>{% trans 'Sala' %} 1</span>
                         </p>
                       </div>
                     <div class="box slot-advanced">
                       <h4>Acreditación</h4>
                       <p class="text-right">
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Django girls</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">09:00h-21:00h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -90,26 +90,26 @@
                       <h4>Taller de introducción a python</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-18:00h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Cooking recipes API using Django Rest Framework</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-18:00h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Django girls</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">09:00h-21:00h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -127,12 +127,12 @@
                       <h4>Django girls</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">09:00h-21:00h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -145,26 +145,26 @@
                       <h4>¿Cómo enriquecer y dar más valor a mis datos? Análisis espacial y Open Data con Python.</h4>
                       <p class="text-right">
                         <strong class="float-left">18:30h-21:00h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Ya sé Python ¿Ahora qué?</h4>
                       <p class="text-right">
                         <strong class="float-left">18:30h-21:00h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Django girls</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">09:00h-21:00h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -178,22 +178,22 @@
                       </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
             </tbody>
           </table>
 
           <p class="center">
-            Puedes descargarte el horario detallado del viernes en pdf.
+            {% trans 'Puedes descargarte el horario detallado del viernes en pdf.' %}
           </p>
           <a href="{% static 'files/agenda_viernes.pdf'%}" class="btn btn-primary">{% trans 'Descargar pdf' %}</a>
-          
+
 
         </article>
 
         <article class="tab-pane fade" id="sabado" role="tabpanel" aria-labelledby="sabado-tab">
           <div class="col-md-12 data">
-            <h2>Sábado 5 de Octubre</h2>
+            <h2>{% trans 'Sábado 5 de Octubre' %}</h2>
           </div>
 
           <table id="tableReport" class="table table-striped">
@@ -209,54 +209,54 @@
                       <h4>Python para calentar tu casa</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Sistemas de recomendación con Surprise</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Fragmentar y desarticular redes de crimen: Topología y debilidad de las redes</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Minds, machines and Python</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Microservice and serverless aplications with Pyhton. Challenges and opportunities</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando aplicaciones con Micropython</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Aprendiendo cómo aprenden las máquinas</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -269,54 +269,54 @@
                       <h4>Tamarco. Un framework de microservicios</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:30h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Drivers en Python o cómo encender luces de colores en un teclado cuando recibo un email</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:30h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Exceptional exceptions</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:30h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Nariz electrónica para la detección del café con Python</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:30h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Using Pypi and docopt to create and share command lines</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">12:10h-12:50h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando aplicaciones con Micropython</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Aprendiendo cómo aprenden las máquinas</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -329,54 +329,54 @@
                       <h4>Usando Flask en el mundo real: Extensiones y buenas prácticas</h4>
                       <p class="text-right">
                         <strong class="float-left">12:30h-12:50h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>When life gives you Orange, make data with speak volumes!</h4>
                       <p class="text-right">
                         <strong class="float-left">12:30h-12:50h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Chatops 101 con opsdroid</h4>
                       <p class="text-right">
                         <strong class="float-left">12:30h-12:50h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Optimización de una red de evaporadores industriales</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">12:30h-13:10h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Using Pypi and docopt to create and share command lines</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">12:10h-12:50h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando aplicaciones con Micropython</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Aprendiendo cómo aprenden las máquinas</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -389,54 +389,54 @@
                       <h4>ASGI: Llegó la hora del servidor async</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Desarrollo industrial de sistemas embebidos con Python/Django y Raspberry Pi</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>qVista: Sistema de información territorial del Ayto. de BCN desarrollado en PyQGis</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Optimización de una red de evaporadores industriales</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">12:30h-13:10h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Securizando nuestro código Python</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando aplicaciones con Micropython</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Aprendiendo cómo aprenden las máquinas</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -449,54 +449,54 @@
                       <h4>ASGI: Llegó la hora del servidor async</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Desarrollo industrial de sistemas embebidos con Python/Django y Raspberry Pi</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>qVista: Sistema de información territorial del Ayto. de BCN desarrollado en PyQGis</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Dynamic Optimization and Process Control in Python</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">13:10h-13:50h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Securizando nuestro código Python</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando aplicaciones con Micropython</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Aprendiendo cómo aprenden las máquinas</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -509,54 +509,54 @@
                       <h4>Service Oriented Arquitecture with PySOA</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>When code is not enough</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>F-strings: A format system to rule them all</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Dynamic Optimization and Process Control in Python</h4>
                       <p class="text-right overflow">
                         <strong class="float-left">13:10h-13:50h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Using python to manipulate Data in experimental mechanics: a test case in Atomic Force Microscopy Force Curve Analysis</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando aplicaciones con Micropython</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Aprendiendo cómo aprenden las máquinas</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -570,7 +570,7 @@
                       </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -583,54 +583,54 @@
                       <h4>Odisea en el lodo: La divertida historia sobre heredar un proyecto legacy con gran tech debt y estar alone.</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-16:10h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Objetos hashables</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-16:10h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Mom, i want to be a data artist</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-16:10h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Haciendo una galaxia con Python: Méritos y obstáculos en modelos de programación probabilística</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-16:10h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-16:10h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando un Deep-bot from scratch análisis espacial y Open Data con Python</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-17:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Organizando chistes con NLP</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-17:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -643,54 +643,54 @@
                       <h4>Flask asíncrono</h4>
                       <p class="text-right">
                         <strong class="float-left">16:10h-16:30h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Domando elefantes con Python</h4>
                       <p class="text-right">
                         <strong class="float-left">16:10h-16:30h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>asserTrue ('Testing en Machine Learning')</h4>
                       <p class="text-right">
                         <strong class="float-left">16:10h-16:30h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Porque una imagen vale más que mil datos. El poder de los gráficos en Python</h4>
                       <p class="text-right">
                         <strong class="float-left">16:10h-16:30h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada Platino I</h4>
                       <p class="text-right">
                         <strong class="float-left">16:10h-16:30h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando un Deep-bot from scratch análisis espacial y Open Data con Python</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-17:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Organizando chistes con NLP</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-17:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -703,54 +703,54 @@
                       <h4>Django Admin inside Out</h4>
                       <p class="text-right">
                         <strong class="float-left">16:30h-17:10h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Analiza la salud de tu proyecto con GrimoireLab y Python</h4>
                       <p class="text-right">
                         <strong class="float-left">16:30h-17:10h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Que la generación Z no rompa tus modelos</h4>
                       <p class="text-right">
                         <strong class="float-left">16:30h-17:10h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>MI CASA: Venturas y desventuras de una radioastrónoma en Python</h4>
                       <p class="text-right">
                         <strong class="float-left">16:30h-17:10h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada</h4>
                       <p class="text-right">
                         <strong class="float-left">16:30h-17:10h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando un Deep-bot from scratch análisis espacial y Open Data con Python</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-17:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Organizando chistes con NLP</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-17:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -763,54 +763,54 @@
                       <h4>A practical domain-driven design approach to Nameko microservices</h4>
                       <p class="text-right">
                         <strong class="float-left">17:10h-17:50h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Economía del software</h4>
                       <p class="text-right">
                         <strong class="float-left">17:10h-17:50h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Desarrollo de Chatbots en Python: RasaNLU</h4>
                       <p class="text-right">
                         <strong class="float-left">17:10h-17:50h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Reconocimiento del habla en Python</h4>
                       <p class="text-right">
                         <strong class="float-left">17:10h-17:50h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada Platino II y patrocinada</h4>
                       <p class="text-right">
                         <strong class="float-left">17:10h-17:50h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Creando un Deep-bot from scratch análisis espacial y Open Data con Python</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-17:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Organizando chistes con NLP</h4>
                       <p class="text-right">
                         <strong class="float-left">15:30h-17:50h</strong>
-                        <span>taller 2</span>
+                        <span>{% trans 'Taller' %} 2</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -824,13 +824,13 @@
                       </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
             </tbody>
           </table>
 
           <p class="center">
-            Puedes descargarte el horario detallado del sábado en pdf.
+            {% trans 'Puedes descargarte el horario detallado del sábado en pdf.' %}
           </p>
           <a href="{% static "files/agenda_sabado.pdf" %}" class="btn btn-primary">{% trans 'Descargar pdf' %}</a>
 
@@ -838,7 +838,7 @@
 
         <article class="tab-pane fade" id="domingo" role="tabpanel" aria-labelledby="domingo-tab">
           <div class="col-md-12 data">
-            <h2>Domingo 6 de Octubre</h2>
+            <h2>{% trans 'Domingo 6 de Octubre' %}</h2>
           </div>
 
           <table id="tableReport" class="table table-striped">
@@ -854,47 +854,47 @@
                       <h4>Machine learning para proyectos de seguridad</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Procesamiento distribuido con Dask para posicionamiento indoor</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>End to end machine learning platform for real-time underwriting. A silicon Valley fintech perspective</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Cómo aprovechar todos los recursos hardware para tus modelos de Reinforcement Learning</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada Keystone I</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-12:10h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Flow is in the air</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media">
                 <td class="media-left">
@@ -907,47 +907,47 @@
                       <h4>Autopsias informáticas: Software libre forense</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:30h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Extendiendo Django para que se conecte a otras Bases de datos: Escribe tu propio backend</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:50h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>De Daniel San a Sr. Miyagi en Python: Aprendiendo mediante katas</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:30h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>PyRescue... How we used A/B testing to make advertising precise in Nigeria</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:30h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada Platino III</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:30h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Flow is in the air</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media">
                 <td class="media-left">
@@ -960,47 +960,47 @@
                       <h4>Ofuscación de ficheros con esteganografía</h4>
                       <p class="text-right">
                         <strong class="float-left">12:30h-12:50h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Extendiendo Django para que se conecte a otras Bases de datos: Escribe tu propio backend</h4>
                       <p class="text-right">
                         <strong class="float-left">12:10h-12:50h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>MicroPython como lenguaje de desarrollo para dispositivos loT</h4>
                       <p class="text-right">
                         <strong class="float-left">12:30h-12:50h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Introducción al testeo con Mocks</h4>
                       <p class="text-right">
                         <strong class="float-left">12:30h-12:50h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada Platino IV</h4>
                       <p class="text-right">
                         <strong class="float-left">12:30h-12:50h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Flow is in the air</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media">
                 <td class="media-left">
@@ -1013,47 +1013,47 @@
                       <h4>Be a good colleague and help your Security Engineer!</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>El show de Truman</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Game of patterns</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Data Science meets Economy: How to meassure social impact from consumption data</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada Diamante I</h4>
                       <p class="text-right">
                         <strong class="float-left">12:50h-13:30h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Flow is in the air</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media">
                 <td class="media-left">
@@ -1066,47 +1066,47 @@
                       <h4>PyExp: A queue multiproccessing manager for experiments</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 1</span>
+                        <span>{% trans 'Sala' %} 1</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>El lado oscuro del Scraping en Recruiting</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 2</span>
+                        <span>{% trans 'Sala' %} 2</span>
                       </p>
                     </div>
                     <div class="box slot-basic">
                       <h4>Imprementación de flujos de tareas mediante Airflow</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 3</span>
+                        <span>{% trans 'Sala' %} 3</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 4</span>
+                        <span>{% trans 'Sala' %} 4</span>
                       </p>
                     </div>
                     <div class="box slot-intermediate">
                       <h4>Patrocinada</h4>
                       <p class="text-right">
                         <strong class="float-left">13:30h-13:50h</strong>
-                        <span>Sala 5</span>
+                        <span>{% trans 'Sala' %} 5</span>
                       </p>
                     </div>
                     <div class="box slot-taller">
                       <h4>Flow is in the air</h4>
                       <p class="text-right">
                         <strong class="float-left">11:30h-13:50h</strong>
-                        <span>Taller 1</span>
+                        <span>{% trans 'Taller'%} 1</span>
                       </p>
                     </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
               <tr class="media" id="carga_10" data-id="10">
                 <td class="media-left">
@@ -1120,20 +1120,20 @@
                       </div>
 
                   </div>
-                </td>		
+                </td>
               </tr>
             </tbody>
           </table>
-          
+
           <p class="center">
-            Puedes descargarte el horario detallado del domingo en pdf.
+            {% trans 'Puedes descargarte el horario detallado del domingo en pdf.' %}
           </p>
           <a href="{% static "files/agenda_domingo.pdf" %}" class="btn btn-primary">{% trans 'Descargar pdf' %}</a>
 
         </article>
 
       </div>
-      
+
     </section>
-  </main> 
+  </main>
 {% endblock content %}
