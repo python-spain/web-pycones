@@ -172,7 +172,7 @@ DJANGO_APPS = (
     "modeltranslation",
     "django.contrib.admin",
 )
-THIRD_PARTY_APPS = 'import_export',
+THIRD_PARTY_APPS = tuple()
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
@@ -186,7 +186,6 @@ LOCAL_APPS = (
     "pycones.schedules",
     "pycones.jobboard",
     "pycones.contentchunk",
-    "pycones.tshirts",
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -289,9 +288,7 @@ SPONSORS_EMAIL = "contact@2019.es.pycon.org"
 CFP_EMAIL = "contact@2019.es.pycon.org"
 PRESS_EMAIL = "contact@2019.es.pycon.org"
 FINANCIAL_AID_EMAIL = "contact+finaid@2019.es.pycon.org"
-SESSION_ENGINE = env(
-    "SESSION_ENGINE", default='django.contrib.sessions.backends.db'
-)
+
 # DJANGO SIMPLE OPTIONS
 # ------------------------------------------------------------------------------
 # See: https://github.com/marcosgabarda/django-simple-options
@@ -337,10 +334,6 @@ CONFIGURATION_DEFAULT_OPTIONS = {
         "type": 1,
         "public_name": "Activates page for selling tickets",
     },
-    "tshirts_page_activated": {
-        "value": 0,
-        "type": 1,
-        "public_name": "Activates page for tshirts"
-    },
     "activate_reviews": {"value": 0, "type": 1, "public_name": "Activate reviews"},
 }
+
