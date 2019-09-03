@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-03 20:37+0200\n"
+"POT-Creation-Date: 2019-09-03 20:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1219,6 +1219,10 @@ msgstr ""
 #: templates/schedule/schedule_static.html:1051
 #: templates/schedule/schedule_static.html:1104
 msgid "Taller"
+msgstr ""
+
+#: templates/schedule/schedule_static.html:569
+msgid "Comida"
 msgstr ""
 
 #: templates/schedule/schedule_static.html:833

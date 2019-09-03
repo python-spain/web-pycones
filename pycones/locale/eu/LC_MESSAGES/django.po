@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-03 20:37+0200\n"
+"POT-Creation-Date: 2019-09-03 20:47+0200\n"
 "PO-Revision-Date: 2016-07-21 16:45+0200\n"
 "Last-Translator: Aitzol Naberan <anaberan@codesyntax.com>\n"
 "Language-Team: Basque (http://www.transifex.com/python-espana/web-"
@@ -1353,6 +1353,10 @@ msgstr ""
 #| msgid "Gallego"
 msgid "Taller"
 msgstr "Gallego"
+
+#: templates/schedule/schedule_static.html:569
+msgid "Comida"
+msgstr ""
 
 #: templates/schedule/schedule_static.html:833
 msgid "Puedes descargarte el horario detallado del sábado en pdf."

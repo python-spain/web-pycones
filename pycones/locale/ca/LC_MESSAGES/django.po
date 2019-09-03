@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web PyConES 2017\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-03 20:37+0200\n"
+"POT-Creation-Date: 2019-09-03 20:47+0200\n"
 "PO-Revision-Date: 2015-07-13 11:47+0000\n"
 "Last-Translator: Mai Giménez <mai@immutable.es>\n"
 "Language-Team: Catalan (http://www.transifex.com/python-espana/web-"
@@ -1296,6 +1296,10 @@ msgstr ""
 #: templates/schedule/schedule_static.html:1051
 #: templates/schedule/schedule_static.html:1104
 msgid "Taller"
+msgstr ""
+
+#: templates/schedule/schedule_static.html:569
+msgid "Comida"
 msgstr ""
 
 #: templates/schedule/schedule_static.html:833

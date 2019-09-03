@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-03 20:37+0200\n"
+"POT-Creation-Date: 2019-09-03 20:47+0200\n"
 "PO-Revision-Date: 2019-07-24 19:46+0200\n"
 "Last-Translator: Antoni Aloy <antoni.aloy@gmail.com>\n"
 "Language-Team: \n"
@@ -1361,6 +1361,10 @@ msgstr "Saturday, October 5"
 #: templates/schedule/schedule_static.html:1104
 msgid "Taller"
 msgstr "Workshop"
+
+#: templates/schedule/schedule_static.html:569
+msgid "Comida"
+msgstr "Lunch"
 
 #: templates/schedule/schedule_static.html:833
 msgid "Puedes descargarte el horario detallado del sábado en pdf."
