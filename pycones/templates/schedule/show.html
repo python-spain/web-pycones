@@ -1,14 +1,17 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% load static %}
-{% load schedule_tags %}
+{% load i18n static schedule_tags chunk_extras %}
 
 
 {% block content %}
 
-{% if user.is_authenticated or schedule_opened %}
-  {% include 'schedule/schedule_static.html' %}
-{% endif %}
+  {# Don't show the schedule to unauthenticated users unless it's open #}
+  {% if user.is_authenticated or schedule_opened %}
+
+    {# Obtain and display the schedule (if we have it) #}
+    {% chunk name="schedule" as schedule %}
+    {% if schedule %}<main>{{ schedule }}</main>{% endif %}
+
+  {% endif %}
 
   <section class="container" id="schedule">
         {% for day in days %}
