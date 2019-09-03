@@ -15,6 +15,7 @@ django-simple-options==1.0
 django-model-utils==2.6.1
 django-reversion==2.0.8
 django-extensions
+django-import-export==1.2.0
 
 # Views
 django-braces==1.13.0
