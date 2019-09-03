@@ -172,7 +172,7 @@ DJANGO_APPS = (
     "modeltranslation",
     "django.contrib.admin",
 )
-THIRD_PARTY_APPS = tuple()
+THIRD_PARTY_APPS = 'import_export',
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
@@ -186,6 +186,7 @@ LOCAL_APPS = (
     "pycones.schedules",
     "pycones.jobboard",
     "pycones.contentchunk",
+    "pycones.tshirts",
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -334,6 +335,10 @@ CONFIGURATION_DEFAULT_OPTIONS = {
         "type": 1,
         "public_name": "Activates page for selling tickets",
     },
+    "tshirts_page_activated": {
+        "value": 0,
+        "type": 1,
+        "public_name": "Activates page for tshirts"
+    },
     "activate_reviews": {"value": 0, "type": 1, "public_name": "Activate reviews"},
 }
-
