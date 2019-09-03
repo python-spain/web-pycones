@@ -5,6 +5,11 @@
 
 
 {% block content %}
+
+{% if user.is_authenticated or schedule_opened %}
+  {% include 'schedule/schedule_static.html' %}
+{% endif %}
+
   <section class="container" id="schedule">
         {% for day in days %}
             <div class="row">
@@ -70,5 +75,5 @@
             </div>
         </div>
     </div>
-    {% end comment %}
+{% endcomment %}
 {% endblock content %}
