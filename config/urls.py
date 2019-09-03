@@ -1,22 +1,21 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.admin import AdminSite
 from django.urls import include, path
-from django.urls.base import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
+from pycones.schedules.views import pentabarf_view, xcal_view, icalendar_view
+
 
 # URLs with with i18n
-from django.views.generic.base import RedirectView
-
-from pycones.schedules.views import pentabarf_view, xcal_view, icalendar_view
 
 
 class PyconESAdminSite(AdminSite):
