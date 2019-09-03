@@ -1,6 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% load static %}
+{% load i18n static chunk_extras %}
 
 {% block content %}
 <main>
@@ -12,27 +11,24 @@
                 <div class="product-gallery">
                   <div class="product-gallery-thumbnails">
                     <ol class="thumbnails-list list-unstyled">
-                      <li><img src="{% static "img/male.jpg"%}" alt=""></li>
-                      <li><img src="{% static "img/man.jpg"%}" alt=""></li>
-                      <li><img src="{% static "img/female.jpg"%}" alt=""></li>
-                      <li><img src="{% static "img/woman.jpg"%}" alt=""></li>
-                      <li><img src="{% static "img/tshirt_sizes.jpg"%}" alt=""</li>
+                      <li><img src="{% static "img/tshirt_sizes.jpg"%}" alt=""></li>
                     </ol>
                   </div>
                   <div class="product-gallery-featured">
-                    <img src="{% static "img/male.jpg"%}" alt="">
+                    <img src="{% static "img/tshirt_sizes.jpg"%}" alt="">
                   </div>
                 </div>
                 <div class="product-seller-recommended">
-                  <h2 class="mb-5">Descripción</h2>
-                  <div class="product-description mb-5">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit nemo reiciendis quisquam a quis delectus consectetur ipsa eligendi aliquam earum in vitae voluptate ratione fugiat similique nostrum debitis dolor, ipsam quo officiis quas
-                      necessitatibus? Magnam eveniet iure, eligendi est ullam consectetur repellat quis doloremque ad perspiciatis assumenda ducimus distinctio quaerat sit repudiandae illo praesentium modi dolor. Veritatis aperiam, minima natus assumenda
-                      ipsum voluptatem reprehenderit? Possimus nobis, voluptate, blanditiis, temporibus ad nostrum corrupti quos corporis voluptas tempora aliquid magnam quia voluptatem rerum odit fugiat facere necessitatibus adipisci sunt. Veritatis architecto,
-                      perferendis labore sit nobis eaque perspiciatis et iusto, in doloribus est!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vel reiciendis voluptatibus assumenda tempora vitae aut adipisci harum, corporis in id perferendis quia repellat reprehenderit temporibus aspernatur ab ullam magni error
-                      consectetur, facilis inventore ipsum, veniam voluptas. Error laboriosam atque quisquam facere esse repellat consectetur quos eum, quaerat blanditiis saepe?</p>
-                  </div>
+
+                  {# Description #}
+                  {% chunk name="tshirt_description" as tshirt_description %}
+                  {% if tshirt_description %}
+                    <h2 class="mb-5">{% trans 'Descripción' %}</h2>
+                    <div class="product-description mb-5">
+                      {{ tshirt_description }}
+                    </div>
+                  {% endif %}
+
                 </div>
               </div>
               <div class="col-lg-12">
