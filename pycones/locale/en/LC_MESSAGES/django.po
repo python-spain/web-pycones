@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-03 20:47+0200\n"
+"POT-Creation-Date: 2019-09-03 21:19+0200\n"
 "PO-Revision-Date: 2019-07-24 19:46+0200\n"
 "Last-Translator: Antoni Aloy <antoni.aloy@gmail.com>\n"
 "Language-Team: \n"
@@ -431,17 +431,52 @@ msgstr ""
 msgid "file"
 msgstr ""
 
+#: templates/400.html:4 templates/400.html:6 templates/400.html:15
+msgid "Solicitud incorrecta"
+msgstr "Bad request"
+
+#: templates/400.html:11 templates/403.html:11 templates/404.html:11
+msgid "Oops!"
+msgstr "Woops!"
+
+#: templates/400.html:16
+msgid "Error 400"
+msgstr "Error 400"
+
+#: templates/400.html:17
+msgid "La solicitud recibida parece ser que no es válida."
+msgstr "The received request seems to be invalid."
+
+#: templates/400.html:18 templates/403.html:18 templates/404.html:19
+#: templates/reviewers/details.html:65 templates/schedule/details.html:51
+#: templates/schedule/presentations/edit.html:23
+#: templates/tshirts/thanks.html:16
+msgid "Volver"
+msgstr "Back"
+
+#: templates/403.html:4 templates/403.html:6 templates/403.html:15
+msgid "Permiso denegado"
+msgstr "Permissions denied"
+
+#: templates/403.html:16
+msgid "Error 403"
+msgstr "Error 403"
+
+#: templates/403.html:17
+msgid "Parece que no tienes permisos para ver esta sección."
+msgstr ""
+
 #: templates/404.html:4 templates/404.html:6
 msgid "Página no encontrada"
 msgstr "Page not found"
 
-#: templates/404.html:11
-msgid "Oops!"
-msgstr "Woops!"
-
 #: templates/404.html:15
 msgid "No podemos mostrarte la página que estás buscando."
 msgstr "We can not show you the page you're looking for."
+
+#: templates/404.html:16
+msgid "Error 404"
+msgstr "Error 404"
 
 #: templates/404.html:17
 msgid "Parece que ha habido un error con la página que estás buscando."
@@ -449,19 +484,36 @@ msgstr ""
 "It seems that there has been an error with the page you are looking for."
 
 #: templates/404.html:18
-msgid "¡Seguro que la culpa es del informático !"
-msgstr "For sure is a programmer problem!"
-
-#: templates/404.html:19
 msgid ""
-"O es posible que la entrada haya sido eliminada o que la dirección no exista."
+"Es posible que la entrada haya sido eliminada o que la dirección no exista."
 msgstr ""
-"Or it is possible that the entry has been deleted or that the address does "
-"not exist."
+"The entry might've been deleted or the address doesn't exist."
 
-#: templates/404.html:20
-msgid "Para todo lo demás la respuesta es 42"
-msgstr "For everything else the answer is 42"
+#: templates/500.html:7
+msgid "PyConEs 2019 - Error 500"
+msgstr "PyConEs 2019 - Error 500"
+
+#: templates/500.html:20
+msgid "Error 500"
+msgstr "Error 500"
+
+#: templates/500.html:21
+msgid "Oops! Alguna cosa a ido mal"
+msgstr "Woops! Something went wrong"
+
+#: templates/500.html:23
+msgid ""
+"\n"
+"                PyConEs 2019 volvera pronto, de lo contrario contacte con\n"
+"                <a href=\"mailto:contact2019@es.pycon.org\">contact2019@es."
+"pycon.org</a>\n"
+"              "
+msgstr ""
+"\n"
+"                PyConEs 2019 will be back soon, if this problem persists please contact with\n"
+"                <a href=\"mailto:contact2019@es.pycon.org\">contact2019@es."
+"pycon.org</a>\n"
+"              "
 
 #: templates/base.html:37
 msgid "Sobre Alicante"
@@ -1132,12 +1184,6 @@ msgstr ""
 msgid "Guardar"
 msgstr "Save"
 
-#: templates/reviewers/details.html:65 templates/schedule/details.html:51
-#: templates/schedule/presentations/edit.html:23
-#: templates/tshirts/thanks.html:16
-msgid "Volver"
-msgstr "Back"
-
 #: templates/reviewers/list.html:7
 msgid "Listado de revisiones"
 msgstr ""
@@ -1623,6 +1669,12 @@ msgid ""
 msgstr ""
 "We've sent an email to the account that bought the entrance with a link to "
 "set your password."
+
+#~ msgid "¡Seguro que la culpa es del informático !"
+#~ msgstr "For sure is a programmer problem!"
+
+#~ msgid "Para todo lo demás la respuesta es 42"
+#~ msgstr "For everything else the answer is 42"
 
 #~ msgid "Nivel básico"
 #~ msgstr "Basic level"

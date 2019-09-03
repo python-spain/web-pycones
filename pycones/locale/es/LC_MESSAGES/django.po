@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-03 20:47+0200\n"
+"POT-Creation-Date: 2019-09-03 21:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -450,16 +450,51 @@ msgstr ""
 msgid "file"
 msgstr ""
 
+#: templates/400.html:4 templates/400.html:6 templates/400.html:15
+msgid "Solicitud incorrecta"
+msgstr ""
+
+#: templates/400.html:11 templates/403.html:11 templates/404.html:11
+msgid "Oops!"
+msgstr ""
+
+#: templates/400.html:16
+msgid "Error 400"
+msgstr ""
+
+#: templates/400.html:17
+msgid "La solicitud recibida parece ser que no es válida."
+msgstr ""
+
+#: templates/400.html:18 templates/403.html:18 templates/404.html:19
+#: templates/reviewers/details.html:65 templates/schedule/details.html:51
+#: templates/schedule/presentations/edit.html:23
+#: templates/tshirts/thanks.html:16
+msgid "Volver"
+msgstr ""
+
+#: templates/403.html:4 templates/403.html:6 templates/403.html:15
+msgid "Permiso denegado"
+msgstr ""
+
+#: templates/403.html:16
+msgid "Error 403"
+msgstr ""
+
+#: templates/403.html:17
+msgid "Parece que no tienes permisos para ver esta sección."
+msgstr ""
+
 #: templates/404.html:4 templates/404.html:6
 msgid "Página no encontrada"
 msgstr ""
 
-#: templates/404.html:11
-msgid "Oops!"
-msgstr ""
-
 #: templates/404.html:15
 msgid "No podemos mostrarte la página que estás buscando."
+msgstr ""
+
+#: templates/404.html:16
+msgid "Error 404"
 msgstr ""
 
 #: templates/404.html:17
@@ -467,16 +502,29 @@ msgid "Parece que ha habido un error con la página que estás buscando."
 msgstr ""
 
 #: templates/404.html:18
-msgid "¡Seguro que la culpa es del informático !"
-msgstr ""
-
-#: templates/404.html:19
 msgid ""
-"O es posible que la entrada haya sido eliminada o que la dirección no exista."
+"Es posible que la entrada haya sido eliminada o que la dirección no exista."
 msgstr ""
 
-#: templates/404.html:20
-msgid "Para todo lo demás la respuesta es 42"
+#: templates/500.html:7
+msgid "PyConEs 2019 - Error 500"
+msgstr ""
+
+#: templates/500.html:20
+msgid "Error 500"
+msgstr ""
+
+#: templates/500.html:21
+msgid "Oops! Alguna cosa a ido mal"
+msgstr ""
+
+#: templates/500.html:23
+msgid ""
+"\n"
+"                PyConEs 2019 volvera pronto, de lo contrario contacte con\n"
+"                <a href=\"mailto:contact2019@es.pycon.org\">contact2019@es."
+"pycon.org</a>\n"
+"              "
 msgstr ""
 
 #: templates/base.html:37
@@ -989,12 +1037,6 @@ msgstr ""
 #: templates/schedule/presentations/edit.html:22
 #: templates/speakers/edit.html:44 templates/users/restore.html:32
 msgid "Guardar"
-msgstr ""
-
-#: templates/reviewers/details.html:65 templates/schedule/details.html:51
-#: templates/schedule/presentations/edit.html:23
-#: templates/tshirts/thanks.html:16
-msgid "Volver"
 msgstr ""
 
 #: templates/reviewers/list.html:7
