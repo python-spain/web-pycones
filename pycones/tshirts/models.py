@@ -6,32 +6,40 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class TshirtBooking(models.Model):
-    # Tshirt choices
-    SMALL = 'S'
-    MEDIUM = 'M'
-    LARGE = 'L'
-    EXTRA_LARGE = 'XL'
-    DOUBLE_EXTRA_LARGE = 'XXL'
-    TSHIRT_CHOICES = [
-        (SMALL, _('Pequeña')),
-        (MEDIUM, _('Media')),
-        (LARGE, _('Grande')),
-        (EXTRA_LARGE, _('XL')),
-        (DOUBLE_EXTRA_LARGE, _('XXL'))
-    ]
+    """ Model where tshirt details for the different guests are saved """
+
+    # TShirt choices
+    TSHIRT_CHOICE_S = 'S'
+    TSHIRT_CHOICE_M = 'M'
+    TSHIRT_CHOICE_L = 'L'
+    TSHIRT_CHOICE_XL = 'XL'
+    TSHIRT_CHOICE_XXL = 'XXL'
+    TSHIRT_CHOICE_XXXL = 'XXXL'
+    TSHIRT_CHOICES = (
+        (TSHIRT_CHOICE_S, _('S')),
+        (TSHIRT_CHOICE_M, _('M')),
+        (TSHIRT_CHOICE_L, _('L')),
+        (TSHIRT_CHOICE_XL, _('XL')),
+        (TSHIRT_CHOICE_XXL, _('XXL')),
+        (TSHIRT_CHOICE_XXXL, _('XXXL')), )
 
     # Sex choices
-    MALE = 'M'
-    FEMALE = 'F'
-    SEX_CHOICES = [
-        (MALE, _('Hombre')),
-        (FEMALE, _('Mujer'))
-    ]
+    SEX_CHOICE_MALE = 'M'
+    SEX_CHOICE_FEMALE = 'F'
+    SEX_CHOICES = (
+        (SEX_CHOICE_MALE, _('Hombre')),
+        (SEX_CHOICE_FEMALE, _('Mujer')), )
+
+    # Guests
     email = models.EmailField(max_length=120, )
     booking_id = models.CharField(max_length=120, )
+    nif = models.CharField(_('NIF/NIE'), max_length=9, help_text=_('Ingresa tu NIF/NIE'), blank=True, )
+
+    # Shirt
     tshirt_size = models.CharField(_('Medida'), max_length=3, choices=TSHIRT_CHOICES, blank=True, )
     sex = models.CharField(_('Corte'), max_length=1, choices=SEX_CHOICES, blank=True, )
-    nif = models.CharField(_('NIF/NIE'), max_length=9, help_text=_('Ingresa tu ID'), blank=True, )
+
+    # Other
     date_sent = models.DateTimeField(auto_now_add=True, null=True, blank=True, )
 
     def __str__(self):

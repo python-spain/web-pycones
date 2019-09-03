@@ -11,8 +11,9 @@
 
       <div class="row">
         <div class="col-12 col-lg-12">
-            <p>{% trans 'Tu pedido se ha realizado correctamente.' %}</p>
+            <p>{% trans 'Hemos registrado tu reserva.' %}</p>
             <h3>{% trans '¡Nos vemos pronto!' %}</h3>
+            <a href="{% url 'tshirts:index' %}" class="btn mt-5 btn-primary btn-lg btn-block">{% trans 'Volver' %}</a>
         </div>
       </div>
 

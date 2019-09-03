@@ -5,8 +5,9 @@
     {% csrf_token %}
 
     <h4 class="product-title mb-2">{% trans 'Camiseta oficial Pycon Alicante 2019' %}</h4>
-    <h2 class="product-price display-4">25.00€</h2>
-    <p class="mb-0">{% trans 'Lugar de recogida en la propia Pycon' %}</p>
+    <p class="mb-0">
+      {% trans 'Introduzca su NIF/NIE y eliga el tamaño y corte de la camisa.' %}
+    </p>
 
     {# General errors #}
     {% for error in form.field_errors %}
@@ -19,26 +20,50 @@
     <div class="row mt-4">
 
       {# NIE #}
-      <div class="col col-12">
+      <div class="form-group{% if form.nif.errors %} has-error{% endif %} col col-12">
+
+        {# Field & label #}
         <label for="{{ form.nif.id_for_label }}">{% trans 'NIF/NIE' %}</label>
         {{ form.nif }}
+
+        {# Errors #}
+        {% if form.nif.errors %}
+          <p class="text-danger" role="alert">{{ form.nif.errors.0 }}</p>
+        {% endif %}
+
       </div>
 
       {# Size #}
-      <div class="col col-md-6">
+      <div class="form-group{% if form.nif.errors %} has-error{% endif %} col col-md-6">
+
+        {# Field & label #}
         <label for="{{ form.thirt_size.id_for_label }}">{{ form.tshirt_size.label }}</label>
         {{ form.tshirt_size }}
+
+        {# Errors #}
+        {% if form.tshirt_size.errors %}
+          <p class="text-danger" role="alert">{{ form.tshirt_size.errors.0 }}</p>
+        {% endif %}
+
       </div>
 
       {# Shirt cut #}
-      <div class="col col-md-6 mb-5">
+      <div class="form-group{% if form.nif.errors %} has-error{% endif %} col col-md-6 mb-5">
+
+        {# Field & label #}
         <label for="{{ form.sex.id_for_label }}">{{ form.sex.label }}</label>
         {{ form.sex }}
+
+        {# Errors #}
+        {% if form.sex.errors %}
+          <p class="text-danger" role="alert">{{ form.sex.errors.0 }}</p>
+        {% endif %}
+
       </div>
     </div>
 
     {# Buy button #}
-    <button class="btn btn-primary btn-lg btn-block">{% trans 'Comprar' %}</button>
+    <button class="btn btn-primary btn-lg btn-block">{% trans 'Reservar' %}</button>
 
   </form>
 {% endblock %}
