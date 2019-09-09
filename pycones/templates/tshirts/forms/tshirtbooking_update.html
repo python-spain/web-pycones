@@ -1,8 +1,18 @@
+{% extends 'tshirts/show.html' %}
 {% load i18n static %}
 
 {% block form %}
   <form id="orderProduct" class="product-payment-detail" method="POST">
     {% csrf_token %}
+
+    {# Messages #}
+    {% if messages %}
+    <ul class="messages" style="list-style-type:none">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
 
     <h4 class="product-title mb-2">{% trans 'Camiseta oficial Pycon Alicante 2019' %}</h4>
     <p class="mb-0">
@@ -23,7 +33,7 @@
       <div class="form-group{% if form.nif.errors %} has-error{% endif %} col col-12">
 
         {# Field & label #}
-        <label for="{{ form.nif.id_for_label }}">{% trans 'NIF/NIE' %}</label>
+        <label for="{{ form.nif.id_for_label }}">{{ form.nif.label }}</label>
         {{ form.nif }}
 
         {# Errors #}
@@ -37,7 +47,7 @@
       <div class="form-group{% if form.nif.errors %} has-error{% endif %} col col-md-6">
 
         {# Field & label #}
-        <label for="{{ form.thirt_size.id_for_label }}">{{ form.tshirt_size.label }}</label>
+        <label for="{{ form.tshirt_size.id_for_label }}">{{ form.tshirt_size.label }}</label>
         {{ form.tshirt_size }}
 
         {# Errors #}

@@ -34,11 +34,8 @@
               <div class="col-lg-12">
 
                <div class="card-body store-body col-lg-12">
-               {% if request.session.tshirt_authed %}
-                 {% include 'tshirts/forms/tshirt.html' %}
-               {% else %}
-                 {% include 'tshirts/forms/entry.html' %}
-               {% endif %}
+                {% block form %}
+                {% endblock %}
                </div>
             </div>
             </div>

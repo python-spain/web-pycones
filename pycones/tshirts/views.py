@@ -1,77 +1,67 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
+from django.contrib import messages
+from django.http import Http404
 from django.urls import reverse_lazy
 from django.views.generic import FormView, TemplateView
+from django.views.generic.edit import UpdateView
+from django.utils.translation import ugettext_lazy as _
 
 from pycones.tshirts.mixins import DisabledByOptionViewMixin
-from .forms import TShirtForm, EntryForm
-from .models import TshirtBooking
+from pycones.tshirts.forms import TShirtForm, EntryForm
+from pycones.tshirts.models import TshirtBooking
 
 
-class TshirtBookingView(DisabledByOptionViewMixin, FormView):
-    template_name = 'tshirts/show.html'
-
-    # Default form class
+class Tshirt(DisabledByOptionViewMixin, FormView):
     form_class = EntryForm
-
-    # Default success_url
-    success_url = reverse_lazy('tshirts:index')
-
-    def form_invalid(self, form):
-        return super().form_invalid(form)
+    template_name = 'tshirts/forms/validate.html'
+    success_url = reverse_lazy('tshirts:update')
 
     def form_valid(self, form):
         response = super().form_valid(form)
 
-        # check which form is loaded
-        if self.get_form_class() == EntryForm:
-            self.request.session['tshirt_authed'] = form.cleaned_data
-            return response
-
-        # Obtain the information of the entry we have to update
-        session = self.request.session['tshirt_authed']
-
-        # Don't continue unless the session is there
-        if 'tshirt_authed' not in self.request.session:
-            return response
-
-        # Obtain the object
-        obj = TshirtBooking.objects.get_or_create(
-            email=session.get('email', ''),
-            booking_id=session.get('booking_id', ''), )
-        obj = obj[0]
-
-        # Update it and save it
-        obj.tshirt_size = form.cleaned_data['tshirt_size']
-        obj.sex = form.cleaned_data['sex']
-        obj.nif = form.cleaned_data['nif']
-        obj.save()
-
-        # Delete the session, we no longer need it
-        del self.request.session['tshirt_authed']
-
-        # Return the response
+        # if form is valid pass data from it to session
+        session = self.request.session['tshirt_authed'] = form.cleaned_data
         return response
 
-    def get_success_url(self):
-        """ Change which success url is displayed depending if user is already authed by first form"""
-        success_url = super().get_success_url()
 
-        if self.get_form_class() == TShirtForm:
-            success_url = reverse_lazy('tshirts:thanks')
+class TshirtUpdate(DisabledByOptionViewMixin, UpdateView):
+    form_class = TShirtForm
+    template_name = 'tshirts/forms/tshirtbooking_update.html'
+    success_url = reverse_lazy('tshirts:thanks')
 
-        return success_url
+    def get_object(self, queryset=None):
 
-    def get_form_class(self):
-        """ Change which form is displayed depending if user is already authed by first form """
-        form_class = super().get_form_class()
+        # if session exists, set object to populate with data from session
+        if self.request.session.keys():
+            session = self.request.session['tshirt_authed']
+            obj = TshirtBooking.objects.get_or_create(
+                email=session['email'],
+                booking_id=session['booking_id'], )
+            obj = obj[0]
+        else:
+            raise Http404
+        return obj
 
-        # if session is there use TShirtForm
-        if 'tshirt_authed' in self.request.session:
-            form_class = TShirtForm
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-        return form_class
+        if self.request.session.keys():
+            session = self.request.session['tshirt_authed']
+            obj = TshirtBooking.objects.get_or_create(
+                email=session['email'],
+                booking_id=session['booking_id'], )
+            obj = obj[0]
+
+            # if NIF field is not empty show a message informing about editing entry
+            if obj.nif is not '':
+                messages.add_message(self.request, messages.INFO, _('Estás editando tu entrada'))
+
+        return context
+
+    def form_valid(self, form):
+        valid = super().form_valid(form)
+        self.request.session.flush()
+        return valid
 
 
 class Thanks(DisabledByOptionViewMixin, TemplateView):
