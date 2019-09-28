@@ -37,11 +37,9 @@
             <a class="nav-link" href="{% url "info" %}">{% trans "Sobre Alicante" %}</a>
           </li>
           {% endif %}
-          {% if schedule_opened %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url "schedule:show" %}">{% trans "Horario" %}</a>
+            <a class="nav-link" href="{% url "horario" %}">{% trans "Horario" %}</a>
           </li>
-          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url "jobboard:list" %}">{% trans "Job Board" %}</a>
           </li>

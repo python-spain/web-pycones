@@ -32,6 +32,11 @@ urlpatterns = i18n_patterns(
         name="hotels",
     ),
     url(
+        r"horario/$",
+        TemplateView.as_view(template_name="pages/schedule.html"),
+        name="horario",
+    ),
+    url(
         r"^code-of-conduct/$",
         TemplateView.as_view(template_name="pages/code_of_conduct.html"),
         name="code-of-conduct",
@@ -59,7 +64,7 @@ urlpatterns = i18n_patterns(
     url(r"^schedule/", include("pycones.schedules.urls", namespace="schedule")),
     # url(r"^speakers/", include("pycones.speakers.urls", namespace="speakers")),
     url(r"^jobboard/", include("pycones.jobboard.urls", namespace="jobboard")),
-    url(r"^tshirts/", include('pycones.tshirts.urls', namespace='tshirts')),
+    url(r"^tshirts/", include("pycones.tshirts.urls", namespace="tshirts")),
     prefix_default_language=False,
 )
 
