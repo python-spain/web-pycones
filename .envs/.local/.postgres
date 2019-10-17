@@ -1,0 +1,3 @@
+POSTGRES_PASSWORD=potato
+POSTGRES_DB=pycones2020
+DATABASE_URL=postgres://postgres:potato@db:5432/pycones2020

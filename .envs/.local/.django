@@ -1,0 +1,3 @@
+DJANGO_SECRET_KEY=4)i0p15fwh0c+@b+m4qbd4_%ix19)_!xj(o(c(tp+&1c5-wh8$
+DJANGO_SETTINGS_MODULE=config.settings.local
+DJANGO_ALLOWED_HOSTS=localhost
