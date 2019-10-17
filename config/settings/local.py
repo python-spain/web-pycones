@@ -49,4 +49,4 @@ DEBUG_TOOLBAR_CONFIG = {
 # django-extensions
 # ------------------------------------------------------------------------------
 # See: https://django-extensions.readthedocs.io/en/latest/
-INSTALLED_APPS += ("django_extensions",)
+INSTALLED_APPS += ("django_extensions", "django_gulp",)

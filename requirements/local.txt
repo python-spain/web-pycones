@@ -13,3 +13,4 @@ Werkzeug
 ipdb==0.12
 django-debug-toolbar==1.11
 
+django-gulp==4.1.0

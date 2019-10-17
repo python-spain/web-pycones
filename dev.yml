@@ -1,4 +1,3 @@
-# Docker-compose file to launch the database used during the development.
 version: '2'
 
 volumes:
@@ -6,9 +5,13 @@ volumes:
     driver: local
   db-backups:
     driver: local
+  node_modules:
+    driver: local
+
 
 services:
 
+  # Database service.
   db:
     build: ./compose/postgres
     container_name: pycones-db
@@ -16,7 +19,24 @@ services:
       - db-data:/var/lib/postgresql
       - db-backups:/backups
     ports:
-      - "5435:5432"
-    environment:
-      POSTGRES_PASSWORD: potato
-      POSTGRES_DB: pycones2017
+      - "5432:5432"
+    env_file:
+      - .envs/.local/.postgres
+
+  # Web application service.
+  backend:
+    build:
+      context: .
+      dockerfile: ./compose/webapp/Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - node_modules:/usr/src/app/node_modules
+    env_file:
+      - ./.envs/.local/.django
+      - .envs/.local/.postgres
+    ports:
+      - "8000:8000"
+    command: /local_server.sh
+
