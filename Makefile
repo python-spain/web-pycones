@@ -46,3 +46,9 @@ logs: ## Show and follow the django console messages
 
 resetdb: ## Clean database volume.
 	docker volume rm web-pycones_db-data
+
+gulp: ## Gulp, compile sass and js.
+	docker-compose -f dev.yml run --rm  backend gulp
+
+gulpbuild: ## Gulp build, compile sass and js.
+	docker-compose -f dev.yml run --rm  backend gulp build

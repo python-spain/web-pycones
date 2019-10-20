@@ -1,7 +1,12 @@
 @font-face {
+    font-family: reading;
+    src: url('../fonts/reading_regular.otf') format("opentype");
+}
+
+@font-face {
     font-family: 'roble_alt_blackblack';
     src: url('../fonts/roblealtblack-webfont.woff2') format('woff2'),
-         url('fonts/roblealtblack-webfont.woff') format('woff');
+         url('../fonts/roblealtblack-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 

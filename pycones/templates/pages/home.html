@@ -1,25 +1,30 @@
-{% extends "base.html" %}
+{% extends "container.html" %}
 {% load i18n %}
 {% load static %}
-{% load sponsorship_tags %}
 {% load chunk_extras %}
+{% load sponsorship_tags %}
 {% block content %}
+
   <section id="blocks" class="container-fluid">
-  {% if activated_tickets_sale_page %}
-    <div class="text-center">
-      <h2>{% trans "¡Entradas ya disponibles!" %}</h2>
-      <a href="https://www.eventbrite.es/e/entradas-pycones-2019-61864318843" class="btn btn-primary">{% trans "Consigue tu entrada" %}</a>
-    </div>
-  {% else %}
-    <h2>{% trans "Entradas no disponibles." %}</h2>
-  {% endif %}
+{#    {% if activated_tickets_sale_page %}#}
+{#      <div class="text-center">#}
+{#        <h2>{% trans "¡Entradas ya disponibles!" %}</h2>#}
+{#        <a href="https://www.eventbrite.es/e/entradas-pycones-2019-61864318843"#}
+{#           class="btn btn-primary">{% trans "Consigue tu entrada" %}</a>#}
+{#      </div>#}
+{#    {% else %}#}
+{#      <h2>{% trans "Entradas no disponibles." %}</h2>#}
+{#    {% endif %}#}
+
     <div class="row">
       <div class="col-md-12 col-lg-4">
         <div class="card h-100">
-          <img src="{% static "img/logo.png" %}" class="card-img-top" alt="PyConEs">
+          <img src="//images.weserv.nl/?url=http://via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
           <div class="card-body">
-            <h3 class="card-title"><a href="{% url "info"%}">{% trans "El evento" %}</a></h3>
-            <p class="card-text">{% trans "PyConES es la conferencia de la comunidad Python española. PyConES se celebrará por séptima vez del 04 al 06 de octubre de 2019 en Alicante, tras seis exitosas ediciones en Madrid, Zaragoza, Valencia, Almería, Cáceres y Málaga, siguiendo el formato del evento mundial de PyCon." %}</p>
+            <h3 class="card-title"><a href="{% url "info" %}">{% trans "El evento" %}</a></h3>
+            <p class="card-text">
+              {% trans "PyConES es la conferencia de la comunidad Python española. PyConES se celebrará por séptima vez del 02 al 04 de octubre de 2020 en Granada, tras siete exitosas ediciones en Madrid, Zaragoza, Valencia, Almería, Cáceres, Málaga y Alicante, siguiendo el formato del evento mundial de PyCon." %}
+            </p>
             {% chunk name="schedule_pdf" as schedule_pdf %}
             {% if schedule_pdf %}
               <section id="schedule_pdf" class="container-fluid">
@@ -34,11 +39,16 @@
           <img src="{% static "img/icon-sponsors2.png" %}" class="card-img-top" alt="PyConEs">
           <div class="card-body">
             <h3 class="card-title">{% trans "Patrocinadores" %}</h3>
-            <p class="card-text">{% trans "¿Quieres patrocinar esta edición de la PyConES? Aquí encontrarás toda la información necesaria" %}</p>
-            {% if LANGUAGE_CODE == 'es'%}
-            <a target="_self" href="{% static "pdf/sponsorship_ES.pdf" %}" class="btn btn-primary">{% trans "Folleto" %}</a>
+            <p
+              class="card-text">
+              {% trans "¿Quieres patrocinar esta edición de la PyConES? Aquí encontrarás toda la información necesaria" %}
+            </p>
+            {% if LANGUAGE_CODE == 'es' %}
+              <a target="_self" href="{% static "pdf/sponsorship_ES.pdf" %}"
+                 class="btn btn-primary">{% trans "Folleto" %}</a>
             {% else %}
-            <a target="_self" href="{% static "pdf/sponsorship_EN.pdf" %}" class="btn btn-primary">{% trans "Folleto" %}</a>
+              <a target="_self" href="{% static "pdf/sponsorship_EN.pdf" %}"
+                 class="btn btn-primary">{% trans "Folleto" %}</a>
             {% endif %}
           </div>
         </div>
@@ -46,13 +56,15 @@
       <div class="col-md-12 col-lg-4">
         <div class="card h-100">
           <div class="card-body">
-            <a class="twitter-timeline" data-height="600" href="https://twitter.com/PyConES?ref_src=twsrc%5Etfw">Tweets by PyConES</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-height="600" href="https://twitter.com/PyConES?ref_src=twsrc%5Etfw">Tweets
+              by PyConES</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
       </div>
     </div>
   </section>
-
+  <br>
   <section id="people" class="container-fluid">
     <div class="text-center">
       <h2>{% trans "Ponentes principales" %}</h2>
@@ -61,62 +73,75 @@
     <div class="row">
 
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100">
-            <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{% static "img/safia.jpg" %}&w=389&h=389&t=letterbox&bg=white&errorredirect=//via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
-          <div class="card-body">
-            <h3 class="card-title">Safia Abdalla</h3>
-            <p class="card-text">{% trans "Safia es una desarrolladora de código abierto, escritora e ingeniera software en Microsoft. Le apasiona unir a las personas para construir cosas formidables." %}</p>
-          </div>
+        <img src="http://via.placeholder.com/389x389"
+             class="card-img-top img-flex rounded-circle img-thumbnail" alt="PyConEs">
+        <div class="card-body"><br>
+          <h3 class="card-title">Darlene A. Krick</h3>
+          <p
+            class="card-text">
+            {% trans "Phasellus neque elit, sodales in egestas mollis, maximus sit amet est. Morbi rutrum, leo eget interdum consectetur, augue massa rhoncus odio, sit amet commodo ex lectus auctor enim. Suspendisse non convallis lectus. Pellentesque eleifend sed dui nec ullamcorper. Vestibulum lectus lacus, ultricies non aliquam a, mollis vel nibh."
+            %}
+          </p>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100">
-          <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{% static "img/fj.jpg" %}&w=389&h=389&t=letterbox&bg=white&errorredirect=//via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
-          <div class="card-body">
-            <h3 class="card-title">Francisco Javier Ordoñez</h3>
-            <p class="card-text">{% trans "Lead Data Scientist en StyleSage. Es un profesional multidisciplinar con más de 11 años de experiencia en el área de inteligencia artificial, habiendo trabajado de investigador, ingeniero, profesor y consultor." %}</p>
-          </div>
+        <img src="http://via.placeholder.com/389x389"
+             class="card-img-top img-flex rounded-circle img-thumbnail" alt="PyConEs">
+        <div class="card-body"><br>
+          <h3 class="card-title">Mary R. Ide</h3>
+          <p
+            class="card-text">
+            {% trans "Duis molestie dolor lacus, bibendum maximus odio auctor ac. Sed risus tellus, vestibulum sit amet ultrices eget, dignissim sit amet ex. Cras sed maximus diam, quis convallis sem. Etiam nibh quam, dignissim vel tincidunt quis, commodo in nibh. Vestibulum id pulvinar nisi. Phasellus id volutpat justo. Cras tincidunt justo nec magna viverra, a tincidunt urna sagittis." %}
+          </p>
         </div>
       </div>
-{% comment %}
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-          <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{% static "img/mabel.jpg" %}&w=389&h=389&t=letterbox&bg=white&errorredirect=//via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
-          <div class="card-body">
-            <h3 class="card-title">Mabel Delgado</h3>
-            <p class="card-text">{% trans "Mabel es ingeniera aeronáutica que trabaja desarrollando métodos y herramientas para análisis de ensayos en vuelo de aviones. Co-organiza el grupo PyLadies Madrid y otros eventos de Python como Django Girls." %}</p>
+      {% comment %}
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100">
+            <img src="http://via.placeholder.com/389x389"
+                 class="card-img-top img-flex rounded-circle img-thumbnail" alt="PyConEs">
+            <div class="card-body"><br>
+              <h3 class="card-title">Jacelyn S. Dyke</h3>
+              <p
+                class="card-text">
+                {% trans "Ut gravida, arcu id finibus sagittis, turpis mi luctus orci, non finibus elit arcu vitae mauris. Nulla et ante id mauris tincidunt convallis. Proin arcu tortor, convallis id mattis vitae, rhoncus in lorem. Aenean nec pretium neque." %}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-{% endcomment %}
+      {% endcomment %}
+
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100">
-          <img src="//images.weserv.nl/?url={{ request.scheme }}://{{ request.get_host }}{% static "img/galindo.jpg" %}&w=389&h=389&t=letterbox&bg=white&errorredirect=//via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
-          {% comment %}
-          <img src="{% static "img/galindo.jpg" %}" class="card-img-top" alt="PyConEs">
-          {% endcomment %}
-          <div class="card-body">
-            <h3 class="card-title">Pablo Galindo</h3>
-            <p class="card-text">{% trans "Trabaja en el equipo de Python infrastructura en Bloomberg L.P. Es un core developer de Python centrado en el desarrollo del interprete y el parser. Puedes culparle por el PEP 570 si te encuentras todo tu código lleno de '/'. Pasa su tiempo libre haciendo simulaciones de agujeros negros y relatividad general. También tiene un gato pero no programa." %}</p>
-          </div>
+        <img
+          src="//images.weserv.nl/?url=http://via.placeholder.com/389x389"
+          class="card-img-top img-flex rounded-circle img-thumbnail"
+          alt="PyConEs">
+        <div class="card-body"><br>
+          <h3 class="card-title">Shae R. Clark</h3>
+          <p class="card-text">
+            {% trans  "Curabitur eu ex lectus. Integer sodales justo elit, ac venenatis nulla scelerisque a. Pellentesque malesuada urna non auctor tincidunt. Nam iaculis pretium tortor tempor molestie. Ut elit metus, accumsan consectetur luctus vel, sodales in turpis. Fusce maximus dui elit, vel luctus nunc auctor ut. Nulla congue diam quis maximus mollis." %}
+          </p>
         </div>
       </div>
 
     </div>
   </section>
 
-{% chunk name="organizers" as organizers %}
-{% if organizers %}
-  {{ organizers }}
-{% endif %}
+  <br>
+  {% chunk name="organizers" as organizers %}
+  {% if organizers %}
+    {{ organizers }}
+  {% endif %}
 
- {% include "pages/patrocinadores.html" %}
- {% chunk name="home_content" as home_content %}
- {% if home_content %}
- <section id="home_content" class="container-fluid">
-  {{ home_content }}
- </section>
- {% endif %}
+  <br>
+  {% include "pages/patrocinadores.html" %}
+  {% chunk name="home_content" as home_content %}
+  {% if home_content %}
+    <section id="home_content" class="container-fluid">
+      {{ home_content }}
+    </section>
+  {% endif %}
+
 
 {% endblock content %}

@@ -283,12 +283,12 @@ MODELTRANSLATION_LANGUAGES = ("es", "en")
 # ------------------------------------------------------------------------------
 # This values may vary during the life of the conference.
 LANDING_GLOBAL_REDIRECT = env.bool("PYCONES_LANDING_GLOBAL_REDIRECT", default=False)
-CONFERENCE_TITLE = "PyConES 2019"
-CONTACT_EMAIL = "contact@2019.es.pycon.org"
-SPONSORS_EMAIL = "contact@2019.es.pycon.org"
-CFP_EMAIL = "contact@2019.es.pycon.org"
-PRESS_EMAIL = "contact@2019.es.pycon.org"
-FINANCIAL_AID_EMAIL = "contact+finaid@2019.es.pycon.org"
+CONFERENCE_TITLE = "PyConES 2020"
+CONTACT_EMAIL = "contact@2020.es.pycon.org"
+SPONSORS_EMAIL = "contact@2020.es.pycon.org"
+CFP_EMAIL = "contact@2020.es.pycon.org"
+PRESS_EMAIL = "contact@2020.es.pycon.org"
+FINANCIAL_AID_EMAIL = "contact+finaid@2020.es.pycon.org"
 
 # DJANGO SIMPLE OPTIONS
 # ------------------------------------------------------------------------------

@@ -7,6 +7,7 @@ Web page made for PyConES 2020, made with Django with :heart:.
 
 ``` bash
 make up
+make gulp  # In other shell to interactive compiling with gulp.
 ```
 
 For more help use `make`.

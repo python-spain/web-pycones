@@ -1,19 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Code|Source+Code+Pro&display=swap);
+
+// Font Variables
+$sourcecode: 'Source Code Pro', monospace;
+$firacode:  'Fira Code', monospace;
+
+
+
+
+.todo{
+  background-color: red;
+}
+
+
 .acorn-background {
-  background: url("../images/background.png");
-  background-size: 200px;
+  background: url("../images/header.jpg") no-repeat;
+  background-size: cover;
+  height: 250px;
+  .main-title{
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 40px;
+    h1{
+      font-family: $firacode;
+      font-size: 6em;
+      color: white;
+      font-weight: bold;
+      span{
+        margin-left: 10px;
+        font-weight: normal;
+        font-family: reading;
+        font-size: 2em;
+      }
+    }
+  }
 }
 
 $logo-width: 495px;
 $logo-height: 400px;
 .logo {
-  background: #fff url("../images/logo.png") no-repeat 15px 15px;
+  //background: #fff url("../images/logo.png") no-repeat 15px 15px;
   background-size: $logo-width $logo-height !important;
   width: $logo-width+30px;
   height: $logo-height+30px;
   @media
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi) {
-    background: #fff url("../images/logo.png") no-repeat 15px 15px;
+    //background: #fff url("../images/logo.png") no-repeat 15px 15px;
     background-size: $logo-width $logo-height;
   }
 }

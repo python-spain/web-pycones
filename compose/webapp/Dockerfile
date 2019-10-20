@@ -38,6 +38,8 @@ ENV NPM_CONFIG_LOGLEVEL info
 RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
 RUN apt-get -y install nodejs
 RUN npm install
+RUN npm install -g gulp
+
 
 # Requirements and webapp user and group
 COPY ./requirements /requirements
