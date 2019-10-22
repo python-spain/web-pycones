@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 from django.conf import settings
 from django.contrib.syndication.views import Feed
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.feedgenerator import Atom1Feed
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
@@ -40,7 +40,7 @@ class PostsFeed(Feed):
     description = _("Web de la %s") % settings.CONFERENCE_TITLE
 
     def items(self):
-        return Post.objects.filter(status=PUBLISHED).order_by('-created')
+        return Post.objects.filter(status=PUBLISHED).order_by("-created")
 
     def item_title(self, item):
         return item.title
@@ -48,18 +48,19 @@ class PostsFeed(Feed):
     def item_description(self, item):
         if item.outstanding_image:
             return mark_safe(
-                u'<p class="outstanding-image"><img src="{}" class="img-responsive center-block"></p>{}'.format(
-                    item.outstanding_image.url,
-                    item.content
+                '<p class="outstanding-image"><img src="{}" class="img-responsive center-block"></p>{}'.format(
+                    item.outstanding_image.url, item.content
                 )
             )
         return item.content
 
     def item_link(self, item):
-        # item_link is only needed if NewsItem has no get_absolute_url method.
-        return reverse('blog:post', kwargs={"slug": item.slug})
+        """links to the whole blog list as we do not
+        have by post view"""
+        return reverse("blog:list")
 
 
 class PostsAtomFeed(PostsFeed):
     """Feed Atom."""
+
     feed_type = Atom1Feed

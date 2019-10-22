@@ -1,29 +1,32 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.contrib import admin
 
 from pycones.sponsorships.models import BenefitLevel, SponsorLevel, Sponsor, Benefit
 from pycones.sponsorships.models import SponsorBenefit
+from modeltranslation.admin import TabbedTranslationAdmin
 
 
 class BenefitLevelInline(admin.TabularInline):
     model = BenefitLevel
-    extra = 0
+    extra = 1
 
 
 class SponsorBenefitInline(admin.StackedInline):
     model = SponsorBenefit
-    extra = 0
+    extra = 1
+    max_num = 1
     fieldsets = [
-        (None, {
-            "fields": [
-                ("benefit", "active"),
-                ("max_words", "other_limits"),
-                "text",
-                "upload",
-            ]
-        })
+        (
+            None,
+            {
+                "fields": [
+                    ("benefit", "active"),
+                    ("max_words", "other_limits"),
+                    "text",
+                    "upload",
+                ]
+            },
+        )
     ]
 
 
@@ -31,22 +34,26 @@ class SponsorBenefitInline(admin.StackedInline):
 class SponsorAdmin(admin.ModelAdmin):
     save_on_top = True
     fieldsets = [
-        (None, {
-            "fields": [
-                ("name", "applicant"),
-                ("level", "active"),
-                "external_url",
-                "annotation",
-                ("contact_name", "contact_email")
-            ]
-        }),
-        ("Metadata", {
-            "fields": [],
-            "classes": ["collapse"]
-        })
+        (
+            None,
+            {
+                "fields": [
+                    ("name", "applicant"),
+                    ("level", "active"),
+                    "external_url",
+                    "annotation",
+                    ("contact_name", "contact_email"),
+                    "sponsor_order",
+                ]
+            },
+        ),
+        ("Metadata", {"fields": [], "classes": ["collapse"]}),
     ]
     inlines = [SponsorBenefitInline]
-    list_display = ["name", "external_url", "level", "active"]
+    list_display = ["name", "external_url", "level", "active", "sponsor_order"]
+    list_editable = ("level", "active", "sponsor_order")
+    list_filter = ("level", "active")
+    search_fields = ["name"]
 
     def get_form(self, *args, **kwargs):
         # @@@ kinda ugly but using choices= on NullBooleanField is broken
@@ -54,7 +61,7 @@ class SponsorAdmin(admin.ModelAdmin):
         form.base_fields["active"].widget.choices = [
             ("1", "unreviewed"),
             ("2", "approved"),
-            ("3", "rejected")
+            ("3", "rejected"),
         ]
         return form
 
@@ -66,5 +73,5 @@ class BenefitAdmin(admin.ModelAdmin):
 
 
 @admin.register(SponsorLevel)
-class SponsorLevelAdmin(admin.ModelAdmin):
+class SponsorLevelAdmin(TabbedTranslationAdmin):
     inlines = [BenefitLevelInline]

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db import models
@@ -13,10 +12,10 @@ class ArticlesManager(models.Manager):
     def requested_objects(self, request, page=None, queryset=None):
         if not queryset:
             queryset = self.all()
-        posts_list = queryset.filter(status=PUBLISHED).order_by('-created')
+        posts_list = queryset.filter(status=PUBLISHED).order_by("-created")
         paginator = Paginator(posts_list, 5)
         if page is None:
-            page = request.GET.get('page')
+            page = request.GET.get("page")
         try:
             posts = paginator.page(page)
         except PageNotAnInteger:

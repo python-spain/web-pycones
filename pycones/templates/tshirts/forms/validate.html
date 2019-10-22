@@ -1,0 +1,34 @@
+{% extends 'tshirts/show.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block form %}
+
+<form id="identificator" class="product-payment-details" method="POST">
+{% csrf_token %}
+  <h4 class="product-title mb-2">{% trans 'Camiseta oficial Pycon Alicante 2019' %}</h4>
+    <p>{% trans 'Para poder reservar una camiseta deberás introducir tu e-mail y el número de entrada' %}</p>
+
+  {# General errors #}
+  <ul>
+    {% for error in form.field_errors %}
+      <div class="alert alert-danger" role="alert">
+        {{ error }}
+      </div>
+    {% endfor %}
+    </ul>
+
+    {# Fields #}
+
+    {# EMAIL #}
+    <label for="{{ form.email.id_for_label}}">{% trans 'Email' %}</label>
+      {{form.email}}
+
+    {# Booking_id #}
+    <label for="{{ form.booking_id.id_for_label}}">{% trans 'Nº de entrada' %}</label>
+      {{form.booking_id}}
+
+    <input type="submit" id="goToProduct" class="btn btn-primary btn-lg btn-block" value="{% trans "Entrar" %}">
+</form>
+
+{% endblock %}

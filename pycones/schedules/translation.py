@@ -1,32 +1,30 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 
-from modeltranslation.translator import TranslationOptions, translator
+from modeltranslation.translator import register, TranslationOptions
 
 from pycones.schedules.models import Room, SlotKind, Presentation, Slot, Track
 
 
+@register(Room)
 class RoomTranslationOptions(TranslationOptions):
-    fields = ('name', )
+    fields = ("name",)
 
 
+@register(SlotKind)
 class SlotKindTranslationOptions(TranslationOptions):
-    fields = ('label', )
+    fields = ("label",)
 
 
+@register(Presentation)
 class PresentationTranslationOptions(TranslationOptions):
-    fields = ('title', 'description', 'abstract')
+    fields = ("title", "description", "abstract")
 
 
+@register(Slot)
 class SlotTranslationOptions(TranslationOptions):
-    fields = ('content_override', )
+    fields = ("content_override",)
 
 
+@register(Track)
 class TrackTranslationOptions(TranslationOptions):
-    fields = ('name', )
-
-translator.register(Room, RoomTranslationOptions)
-translator.register(SlotKind, SlotKindTranslationOptions)
-translator.register(Presentation, PresentationTranslationOptions)
-translator.register(Slot, SlotTranslationOptions)
-translator.register(Track, TrackTranslationOptions)
+    fields = ("name",)

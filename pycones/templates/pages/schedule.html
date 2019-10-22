@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n chunk_extras%}
+
+{% block content %}
+{% chunk name="info_schedule" as info_schedule %}
+<main>
+  <section class="container" id="contentPage">
+{% if info_schedule %}
+  {{info_schedule}}
+  <div>
+  <a id="sched-embed" href="//pycones19.sched.com/">View the PyCon Spain 2019 schedule &amp; directory.</a>
+  </div>
+{% else %}
+  <p>Contenido vacío, crea el chunk <pre>info_schedule</pre></p>
+{% endif %}
+  </section>
+</main>
+
+
+
+{% endblock content %}
+{% block extra_js %}
+<script type="text/javascript" src="//pycones19.sched.com/js/embed.js"></script>
+{% endblock extra_js %}

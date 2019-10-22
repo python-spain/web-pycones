@@ -1,15 +1,11 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django import template
-
 from pycones.sponsorships.models import Sponsor, SponsorLevel
 
 register = template.Library()
 
 
 class SponsorsNode(template.Node):
-
     @classmethod
     def handle_token(cls, parser, token):
         bits = token.split_contents()
@@ -18,7 +14,9 @@ class SponsorsNode(template.Node):
         elif len(bits) == 4 and bits[2] == "as":
             return cls(bits[3], bits[1])
         else:
-            raise template.TemplateSyntaxError("%r takes 'as var' or 'level as var'" % bits[0])
+            raise template.TemplateSyntaxError(
+                "%r takes 'as var' or 'level as var'" % bits[0]
+            )
 
     def __init__(self, context_var, level=None):
         if level:
@@ -30,18 +28,18 @@ class SponsorsNode(template.Node):
     def render(self, context):
         if self.level:
             level = self.level.resolve(context)
-            queryset = Sponsor.objects.filter(
-                level__pk=level, active=True)\
-                .order_by("created")
+            queryset = Sponsor.objects.filter(level__pk=level, active=True).order_by(
+                "-sponsor_order", "created"
+            )
         else:
-            queryset = Sponsor.objects.filter(active=True)\
-                .order_by("level__order", "created")
+            queryset = Sponsor.objects.filter(active=True).order_by(
+                "level__order", "-sponsor_order", "created"
+            )
         context[self.context_var] = queryset
         return ""
 
 
 class SponsorLevelNode(template.Node):
-
     @classmethod
     def handle_token(cls, parser, token):
         bits = token.split_contents()

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, division, absolute_import
+
 
 from django.apps import AppConfig
 from django.db.models.signals import post_init, post_save
@@ -21,5 +21,6 @@ class SponsorshipConfig(AppConfig):
     def ready(self):
         """Connects signals with their managers."""
         from pycones.sponsorships.models import Sponsor
+
         post_init.connect(_store_initial_level, sender=Sponsor)
         post_save.connect(_check_level_change, sender=Sponsor)

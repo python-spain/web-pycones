@@ -1,5 +1,5 @@
 from braces.views import GroupRequiredMixin
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 from options.models import Option
@@ -27,10 +27,7 @@ class ReviewListView(BaseReviewerView):
         filter_form = ReviewsFilterForm(request.GET)
         if filter_form.is_valid() and filter_form.cleaned_data["only_unfinished"]:
             reviews = reviews.filter(finished=False)
-        data = {
-            "reviews": reviews,
-            "filter_form": filter_form
-        }
+        data = {"reviews": reviews, "filter_form": filter_form}
         return render(request, self.template_name, data)
 
 
@@ -43,11 +40,7 @@ class ReviewView(BaseReviewerView):
         else:
             review = get_object_or_404(Review, pk=pk, user=request.user)
         form = ReviewForm(instance=review)
-        data = {
-            "review": review,
-            "proposal": review.proposal,
-            "form": form
-        }
+        data = {"review": review, "proposal": review.proposal, "form": form}
         return render(request, self.template_name, data)
 
     def post(self, request, pk):
@@ -59,23 +52,18 @@ class ReviewView(BaseReviewerView):
         if form.is_valid():
             form.save()
             return redirect(reverse("reviewers:details", kwargs={"pk": review.pk}))
-        data = {
-            "review": review,
-            "proposal": review.proposal,
-            "form": form
-        }
+        data = {"review": review, "proposal": review.proposal, "form": form}
         return render(request, self.template_name, data)
 
 
 class ReviewerSignUpView(View):
     """View to register a reviewer."""
+
     template_name = "reviewers/sign_up.html"
 
     def get(self, request):
         form = ReviewerSignUpForm()
-        data = {
-            "form": form
-        }
+        data = {"form": form}
         return render(request, self.template_name, data)
 
     def post(self, request):
@@ -83,7 +71,5 @@ class ReviewerSignUpView(View):
         if form.is_valid():
             form.save()
             return redirect(reverse("reviewers:sign-up-success"))
-        data = {
-            "form": form
-        }
+        data = {"form": form}
         return render(request, self.template_name, data)

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 import datetime
 from collections import OrderedDict
 
 import six
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.db.models import SET_NULL
 from django.utils.encoding import python_2_unicode_compatible
@@ -18,7 +18,6 @@ from markupfield.fields import MarkupField
 from pycones.proposals import BASIC_LEVEL, PROPOSAL_LANGUAGES
 
 
-@python_2_unicode_compatible
 class Day(models.Model):
 
     date = models.DateField(unique=True)
@@ -28,6 +27,12 @@ class Day(models.Model):
 
     class Meta:
         ordering = ["date"]
+
+    def slots(self):
+        return self.slot_set.all().order_by("order")
+
+    def tracks(self):
+        return self.track_set.all().order_by("name")
 
     def slot_groups(self):
         """Returns all the groups of slots, grouped by start and end hours."""
@@ -45,7 +50,6 @@ class Day(models.Model):
         return ordered_values
 
 
-@python_2_unicode_compatible
 class Room(models.Model):
 
     name = models.CharField(max_length=65)
@@ -55,18 +59,17 @@ class Room(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class Track(models.Model):
     """Tracks used in the conference."""
+
     name = models.TextField(max_length=120)
     order = models.PositiveIntegerField(default=0)
-    day = models.ForeignKey(Day, null=True, blank=True)
+    day = models.ForeignKey(Day, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
 
 
-@python_2_unicode_compatible
 class SlotKind(models.Model):
     """A slot kind represents what kind a slot is. For example, a slot can be a
     break, lunch, or X-minute talk.
@@ -81,26 +84,31 @@ class SlotKind(models.Model):
 
     def css_class(self):
         if not self.class_attr:
-            return "slot-{}".format(self.label_en.lower())
+            return "slot-{}".format(self.label.lower())
         return "slot-{}".format(self.class_attr.lower())
 
 
-@python_2_unicode_compatible
 class Slot(models.Model):
 
-    day = models.ForeignKey(Day)
-    kind = models.ForeignKey(SlotKind)
+    day = models.ForeignKey(Day, on_delete=models.CASCADE)
+    kind = models.ForeignKey(SlotKind, on_delete=models.CASCADE)
     start = models.TimeField()
     end = models.TimeField()
     order = models.PositiveIntegerField(default=0)
-    content_override = MarkupField(blank=True, default_markup_type='markdown')
+    content_override = MarkupField(blank=True, default_markup_type="markdown")
 
-    room = models.ForeignKey(Room, related_name="slots", null=True, blank=True)
-    track = models.ForeignKey(Track, related_name="slots", null=True, blank=True)
+    room = models.ForeignKey(
+        Room, related_name="slots", null=True, blank=True, on_delete=models.CASCADE
+    )
+    track = models.ForeignKey(
+        Track, related_name="slots", null=True, blank=True, on_delete=models.CASCADE
+    )
 
     video_url = models.URLField(_("video URL"), blank=True, null=True)
     keynote_url = models.URLField(_("keynote URL"), blank=True, null=True)
-    keynote = models.FileField(_("keynote file"), blank=True, null=True, upload_to="keynotes")
+    keynote = models.FileField(
+        _("keynote file"), blank=True, null=True, upload_to="keynotes"
+    )
 
     class Meta:
         ordering = ["day", "start", "end", "track__order", "order"]
@@ -111,7 +119,23 @@ class Slot(models.Model):
         try:
             return self.presentation
         except ObjectDoesNotExist:
-            return None
+            return self.content_override
+
+    @property
+    def title(self):
+        try:
+            c = self.presentation
+            return c.get_title()
+        except ObjectDoesNotExist:
+            return ""
+
+    @property
+    def description(self):
+        try:
+            c = self.presentation
+            return c.get_description()
+        except ObjectDoesNotExist:
+            return self.content_override
 
     @property
     def start_datetime(self):
@@ -121,7 +145,7 @@ class Slot(models.Model):
                 self.day.date.month,
                 self.day.date.day,
                 self.start.hour,
-                self.start.minute
+                self.start.minute,
             )
         )
 
@@ -133,12 +157,22 @@ class Slot(models.Model):
                 self.day.date.month,
                 self.day.date.day,
                 self.end.hour,
-                self.end.minute
+                self.end.minute,
             )
         )
 
+    @property
+    def duration(self):
+        return (self.end_datetime - self.start_datetime) // 60
+
     def __str__(self):
-        return "%s %s (%s - %s, %s)" % (self.day, self.kind, self.start, self.end, self.room)
+        return "%s %s (%s - %s, %s)" % (
+            self.day,
+            self.kind,
+            self.start,
+            self.end,
+            self.room,
+        )
 
     def assign(self, content):
         """Assign the given content to this slot and if a previous slot content
@@ -181,37 +215,54 @@ class Slot(models.Model):
         return reverse("schedule:slot", kwargs={"slot": self.pk})
 
 
-@python_2_unicode_compatible
 class Presentation(models.Model):
 
-    slot = models.OneToOneField(Slot, null=True, blank=True, related_name="presentation", on_delete=SET_NULL)
+    slot = models.OneToOneField(
+        Slot, null=True, blank=True, related_name="presentation", on_delete=SET_NULL
+    )
 
     title = models.CharField(max_length=100, default="", blank=True)
     slug = models.SlugField(max_length=100, null=True, blank=True, allow_unicode=True)
-    description = MarkupField(default="", blank=True, default_markup_type='markdown')
-    abstract = MarkupField(default="", blank=True, default_markup_type='markdown')
+    description = MarkupField(default="", blank=True, default_markup_type="markdown")
+    abstract = MarkupField(default="", blank=True, default_markup_type="markdown")
     language = models.CharField(
         verbose_name=_("Idioma"),
         max_length=2,
         choices=PROPOSAL_LANGUAGES,
         null=True,
-        blank=True
+        blank=True,
     )
 
-    speakers = models.ManyToManyField("speakers.Speaker", related_name="presentations", blank=True)
-    proposal = models.OneToOneField("proposals.Proposal", related_name="presentation", null=True, blank=True)
+    speakers = models.ManyToManyField(
+        "speakers.Speaker", related_name="presentations", blank=True
+    )
+    proposal = models.OneToOneField(
+        "proposals.Proposal",
+        related_name="presentation",
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+    )
 
     cancelled = models.BooleanField(default=False)
 
     video_url = models.URLField(_("video URL"), blank=True, null=True)
-    keynote_url = models.URLField(_("URL de la presentación o del código"), blank=True, null=True)
-    keynote = models.FileField(_("Fichero de presentación"), blank=True, null=True, upload_to="keynotes")
+    keynote_url = models.URLField(
+        _("URL de la presentación o del código"), blank=True, null=True
+    )
+    keynote = models.FileField(
+        _("Fichero de presentación"), blank=True, null=True, upload_to="keynotes"
+    )
 
     class Meta:
         ordering = ["slot"]
 
     def __str__(self):
-        return "#%s %s (%s)" % (self.pk, self.get_title(), ",".join(map(lambda s: six.text_type(s), self.get_speakers())))
+        return "#%s %s (%s)" % (
+            self.pk,
+            self.get_title(),
+            ",".join(map(lambda s: six.text_type(s), self.get_speakers())),
+        )
 
     def get_title(self):
         if self.title:
@@ -283,5 +334,4 @@ class Presentation(models.Model):
         if title and not self.slug:
             self.slug = slugify(title)
         super(Presentation, self).save(*args, **kwargs)
-
 

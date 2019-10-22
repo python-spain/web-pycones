@@ -3,6 +3,6 @@ from django.conf.urls import url
 
 from pycones.speakers.views import EditSpeaker
 
-urlpatterns = [
-    url(r'^$', EditSpeaker.as_view(), name="edit"),
-]
+app_name = "speakers"
+
+urlpatterns = [url(r"^$", EditSpeaker.as_view(), name="edit")]

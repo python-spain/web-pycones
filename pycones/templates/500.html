@@ -1,2 +1,30 @@
-<h1>Whoops!</h1>
-<a href="mailto:contact2017@es.pycon.org">contact2017@es.pycon.org</a>
+{% load i18n static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="keywords" content="" />
+        <title>{% trans 'PyConEs 2019 - Error 500' %}</title>
+        <style type="text/css">
+            body {font:15px Arial, Verdana, sans-serif; margin:0; padding:0;}
+            #container {max-width:600px; margin:100px auto; padding:80px 0; position:relative; text-align:center; background:rgba(255,255,255,0.8);}
+            h1 {color:#7291be; font-size:4.2em; font-weight:normal; margin:25px 0;}
+            img {display:block; margin:-90px auto 0;}
+            strong {display:block; color:#333; font-size:35px; font-weight:normal; text-align:center; margin-bottom:15px;}
+            small {color:#c54755; display:block; text-align:center; font-size:16px;}
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <img src="{% static 'img/logo_pycones_horizontal.png' %}" alt="PyConEs 2019" />
+            <h1>{% trans 'Error 500' %}</h1>
+            <strong>{% trans 'Oops! Alguna cosa a ido mal' %}</strong>
+            <small>
+              {% blocktrans %}
+                PyConEs 2019 volvera pronto, de lo contrario contacte con
+                <a href="mailto:contact2019@es.pycon.org">contact2019@es.pycon.org</a>
+              {% endblocktrans %}
+            </small>
+        </div>
+    </body>
+</html>

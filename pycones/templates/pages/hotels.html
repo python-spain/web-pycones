@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n chunk_extras%}
+
+{% block content %}
+{% chunk name="info_hoteles" as info_content %}
+<main>
+  <section class="container" id="contentPage">
+{% if info_content %}
+  {{info_content}}
+{% else %}
+  <p>Contenido vacío, crea el chunk <pre>info_hoteles</pre></p>
+{% endif %}
+  </section>
+</main>
+
+
+
+{% endblock content %}

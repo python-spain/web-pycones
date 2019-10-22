@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n static chunk_extras %}
+
+{% block content %}
+<main>
+    <section class="container" id="product">
+      <div class="row">
+        <div class="col-lg-12">
+            <div class="card-body store-body">
+              <div class="product-info">
+                <div class="product-gallery">
+                  <div class="product-gallery-thumbnails">
+                    <ol class="thumbnails-list list-unstyled">
+                      <li><img src="{% static "img/tshirt_sizes.jpg"%}" alt=""></li>
+                    </ol>
+                  </div>
+                  <div class="product-gallery-featured">
+                    <img src="{% static "img/tshirt_sizes.jpg"%}" alt="">
+                  </div>
+                </div>
+                <div class="product-seller-recommended">
+
+                  {# Description #}
+                  {% chunk name="tshirt_description" as tshirt_description %}
+                  {% if tshirt_description %}
+                    <h2 class="mb-5">{% trans 'Descripción' %}</h2>
+                    <div class="product-description mb-5">
+                      {{ tshirt_description }}
+                    </div>
+                  {% endif %}
+
+                </div>
+              </div>
+              <div class="col-lg-12">
+
+               <div class="card-body store-body col-lg-12">
+                {% block form %}
+                {% endblock %}
+               </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </section>
+</main>
+  <script src="{% static "js/tshirts/tshirts.js"%}"></script>
+
+{% endblock %}

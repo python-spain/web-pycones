@@ -1,12 +1,24 @@
-{% extends "container.html" %}
+{% extends "base.html" %}
 {% load i18n %}
-{% load reviewers_extra %}
+{% block title %}Job Board offer from {{ job_offer.employer.name }} {% endblock %}
 
 {% block content %}
-    <h2>{{ job_offer.title }}</h2>
-    <img src="{{ job_offer.employer.website_logo.url }}" title="{{ job_offer.employer.name }}" alt="{{ job_offer.employer.name }}" class="img-fluid sponsors-img-small">
-    <div>
-        {{ job_offer.description }}
+<main>
+    <section class="container" id="jobBoardDetail">
+    <h1>{{ job_offer.title }}</h1>
+    <div class="row">
+        <div class="col-12 col-lg-12">
+          {% if job_offer.employer.website_logo %}
+          <img src="{{ job_offer.employer.website_logo.url }}" title="{{ job_offer.employer.name }}" alt="{{ job_offer.employer.name }}" class="img-fluid sponsors-img-small">
+          {% endif %}
+          <div>
+            {{ job_offer.description }}
+          </div>
+           <p class="text-right">
+              <a href="{{ job_offer.application_url}}" class="btn btn-success">{% trans "Enviar solicitud" %}</a>
+          </p>
+        </div>
     </div>
-    <a href="{{ job_offer.application_url}}" class="btn btn-success">{% trans "Enviar solicitud" %}</a>
+  </section>
+</main>
 {% endblock content %}

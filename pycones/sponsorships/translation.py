@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from modeltranslation.translator import TranslationOptions, translator
-
+from modeltranslation.translator import TranslationOptions, register
 from pycones.sponsorships.models import SponsorLevel
 
 
+@register(SponsorLevel)
 class SponsorLevelTranslationOptions(TranslationOptions):
-    fields = ('name', 'description')
-
-
-translator.register(SponsorLevel, SponsorLevelTranslationOptions)
+    fields = ("name", "description")

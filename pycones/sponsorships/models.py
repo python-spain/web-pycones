@@ -1,24 +1,30 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from model_utils.models import TimeStampedModel
 
-from pycones.sponsorships import BENEFIT_WEB_LOGO, BENEFIT_TYPE_CHOICES, BENEFIT_SIMPLE, BENEFIT_FILE, BENEFIT_TEXT
+from pycones.sponsorships import (
+    BENEFIT_WEB_LOGO,
+    BENEFIT_TYPE_CHOICES,
+    BENEFIT_SIMPLE,
+    BENEFIT_FILE,
+    BENEFIT_TEXT,
+)
 from pycones.sponsorships.managers import SponsorManager
 
 
-@python_2_unicode_compatible
 class SponsorLevel(models.Model):
 
     name = models.CharField(_("name"), max_length=100)
     order = models.IntegerField(_("order"), default=0)
     cost = models.PositiveIntegerField(_("cost"))
-    description = models.TextField(_("description"), blank=True, help_text=_("This is private."))
+    description = models.TextField(
+        _("description"), blank=True, help_text=_("This is private.")
+    )
 
     class Meta:
         ordering = ["order"]
@@ -32,18 +38,26 @@ class SponsorLevel(models.Model):
         return self.sponsor_set.filter(active=True).order_by("added")
 
 
-@python_2_unicode_compatible
 class Sponsor(TimeStampedModel):
 
     applicant = models.ForeignKey(
-        settings.AUTH_USER_MODEL, related_name="sponsorships", verbose_name=_("applicant"), null=True, blank=True
+        settings.AUTH_USER_MODEL,
+        related_name="sponsorships",
+        verbose_name=_("applicant"),
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
     )
     name = models.CharField(_("Sponsor Name"), max_length=100)
     external_url = models.URLField(_("external URL"))
     annotation = models.TextField(_("annotation"), blank=True)
-    contact_name = models.CharField(_("Contact Name"), max_length=100, null=True, blank=True)
+    contact_name = models.CharField(
+        _("Contact Name"), max_length=100, null=True, blank=True
+    )
     contact_email = models.EmailField(_("Contact Email"), null=True, blank=True)
-    level = models.ForeignKey(SponsorLevel, verbose_name=_("level"))
+    level = models.ForeignKey(
+        SponsorLevel, verbose_name=_("level"), on_delete=models.CASCADE
+    )
 
     active = models.BooleanField(_("active"), default=False)
     sponsor_logo = models.ForeignKey(
@@ -51,8 +65,12 @@ class Sponsor(TimeStampedModel):
         related_name="+",
         null=True,
         blank=True,
-        editable=False
+        editable=False,
+        on_delete=models.CASCADE,
     )  # Denormalization (this assumes only one logo)
+    sponsor_order = models.IntegerField(
+        help_text=_("Relative order of the sponsor"), default=0
+    )
 
     objects = SponsorManager()
 
@@ -64,11 +82,14 @@ class Sponsor(TimeStampedModel):
     def website_logo(self):
         if self.sponsor_logo is None:
             benefits = self.sponsor_benefits.filter(
-                benefit__type=BENEFIT_WEB_LOGO, upload__isnull=False)[:1]
+                benefit__type=BENEFIT_WEB_LOGO, upload__isnull=False
+            )[:1]
             if benefits.count():
-                if benefits[0].upload:
+                if benefits[0].upload and benefits[0].upload.name:
                     self.sponsor_logo = benefits[0]
                     self.save()
+                else:
+                    return None
         return self.sponsor_logo.upload
 
     @property
@@ -101,7 +122,8 @@ class Sponsor(TimeStampedModel):
             for benefit_level in level.benefit_levels.all():
                 # Create all needed benefits if they don't exist already
                 sponsor_benefit, created = SponsorBenefit.objects.get_or_create(
-                    sponsor=self, benefit=benefit_level.benefit)
+                    sponsor=self, benefit=benefit_level.benefit
+                )
 
                 # and set to default limits for this level.
                 sponsor_benefit.max_words = benefit_level.max_words
@@ -121,29 +143,40 @@ class Sponsor(TimeStampedModel):
 
         # Any remaining sponsor benefits that don't normally belong to
         # this level are set to inactive
-        self.sponsor_benefits.exclude(pk__in=allowed_benefits)\
-            .update(active=False, max_words=None, other_limits="")
+        self.sponsor_benefits.exclude(pk__in=allowed_benefits).update(
+            active=False, max_words=None, other_limits=""
+        )
 
     def send_coordinator_emails(self):
         pass  # @@@ should this just be done centrally?
 
 
-@python_2_unicode_compatible
 class Benefit(models.Model):
 
     name = models.CharField(_("name"), max_length=100)
     description = models.TextField(_("description"), blank=True)
-    type = models.CharField(_("type"), choices=BENEFIT_TYPE_CHOICES, max_length=10, default=BENEFIT_SIMPLE)
+    type = models.CharField(
+        _("type"), choices=BENEFIT_TYPE_CHOICES, max_length=10, default=BENEFIT_SIMPLE
+    )
 
     def __str__(self):
         return self.name
 
 
-@python_2_unicode_compatible
 class BenefitLevel(models.Model):
 
-    benefit = models.ForeignKey(Benefit, related_name="benefit_levels", verbose_name=_("benefit"))
-    level = models.ForeignKey(SponsorLevel, related_name="benefit_levels", verbose_name=_("level"))
+    benefit = models.ForeignKey(
+        Benefit,
+        related_name="benefit_levels",
+        verbose_name=_("benefit"),
+        on_delete=models.CASCADE,
+    )
+    level = models.ForeignKey(
+        SponsorLevel,
+        related_name="benefit_levels",
+        verbose_name=_("level"),
+        on_delete=models.CASCADE,
+    )
 
     # default limits for this benefit at given level
     max_words = models.PositiveIntegerField(_("max words"), blank=True, null=True)
@@ -156,11 +189,20 @@ class BenefitLevel(models.Model):
         return "%s - %s" % (self.level, self.benefit)
 
 
-@python_2_unicode_compatible
 class SponsorBenefit(models.Model):
 
-    sponsor = models.ForeignKey(Sponsor, related_name="sponsor_benefits", verbose_name=_("sponsor"))
-    benefit = models.ForeignKey(Benefit, related_name="sponsor_benefits", verbose_name=_("benefit"))
+    sponsor = models.ForeignKey(
+        Sponsor,
+        related_name="sponsor_benefits",
+        verbose_name=_("sponsor"),
+        on_delete=models.CASCADE,
+    )
+    benefit = models.ForeignKey(
+        Benefit,
+        related_name="sponsor_benefits",
+        verbose_name=_("benefit"),
+        on_delete=models.CASCADE,
+    )
     active = models.BooleanField(default=True)
 
     # Limits: will initially be set to defaults from corresponding BenefitLevel
@@ -182,8 +224,9 @@ class SponsorBenefit(models.Model):
         num_words = len(self.text.split())
         if self.max_words and num_words > self.max_words:
             raise ValidationError(
-                "Sponsorship level only allows for %s words, you provided %d." % (
-                    self.max_words, num_words))
+                "Sponsorship level only allows for %s words, you provided %d."
+                % (self.max_words, num_words)
+            )
 
     def data_fields(self):
         """

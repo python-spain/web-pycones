@@ -1,0 +1,36 @@
+# Docker-compose file to launch the web app.
+version: '2'
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: compose/webapp/Dockerfile
+    image: pycones/webapp
+    container_name: pycones-webapp
+    command: /gunicorn.sh
+    volumes:
+      - .:/app
+    env_file: .env
+
+  nginx:
+    build:
+      context: .
+      dockerfile: compose/nginx/Dockerfile
+    image: pycones/nginx
+    container_name: pycones-nginx
+    volumes:
+      - ./public:/public
+      - ./pycones/media:/media
+    depends_on:
+      - webapp
+
+  caddy:
+    image: abiosoft/caddy:latest
+    volumes:
+      - ./compose/Caddyfile:/etc/Caddyfile
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
+    environment:
+      - ACME_AGREE=true

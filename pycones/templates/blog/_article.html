@@ -1,12 +1,18 @@
-<article class="row post">
-    <div class="col-12">
-        <h2 class="post-title">
-            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-        </h2>
-        <p class="post-meta">{{ post.created }}</p>
-        {% if post.outstanding_image %}
-        <p><img src="{{ post.outstanding_image.url }}" class="img-responsive"></p>
-        {% endif %}
-        <p class="post-content">{{ post.get_content }}</p>
+{% load i18n %}
+<article class="col-12 col-lg-12">
+<div>
+  <h2><a href="#">{{ post.title }}<span class="dataCreation" >{{post.created}}</span></a></h2>
+
+  {% if post.outstanding_image %}
+  <img src="{{ post.outstanding_image.url }}" alt="image {{post.title}}">
+  {% endif %}
+  <div>
+    {{ post.get_content }}
+    {% comment %}
+    <p class="text-right">
+      <a href="{% url "blog:list" %}" class="btn btn-primary">{% trans "Seguir leyendo" %}</a>
+    </p>
+    {% endcomment %}
     </div>
+</div>
 </article>

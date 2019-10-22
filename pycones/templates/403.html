@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans 'Permiso denegado' %}{% endblock %}
+
+{% block page_title %}{% trans 'Permiso denegado' %}{% endblock page_title %}
+
+{% block content %}
+  <main>
+    <section class="container" id="errorPage">
+      <h1>{% trans 'Oops!' %}</h1>
+
+      <div class="row">
+        <div class="col-12 col-lg-12 text-center">
+          <h2>{% trans 'Permiso denegado' %}</h2>
+          <img src="{% static 'img/errorface.png' %}" alt="{% trans 'Error 403' %}">
+          <p>{% trans 'Parece que no tienes permisos para ver esta sección.' %}</p>
+          <a href="{% url 'home' %}" class="btn btn-primary">{% trans 'Volver' %}</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+{% endblock content %}
