@@ -45,6 +45,7 @@ RUN npm install -g gulp
 COPY ./requirements /requirements
 RUN pip3 install -U pip
 RUN pip3 install -r /requirements/local.txt \
+    && pip3 install -r /requirements/production.txt \
     && groupadd -r webapp \
     && useradd -r -g webapp webapp
 
