@@ -1,42 +1,38 @@
-version: '2'
+version: '3'
 
 volumes:
   db-data:
     driver: local
-  db-backups:
-    driver: local
   node_modules:
     driver: local
-
 
 services:
 
   # Database service.
   db:
-    build: ./compose/postgres
+    image: postgres:9.6
     container_name: pycones-db
     volumes:
       - db-data:/var/lib/postgresql
-      - db-backups:/backups
     ports:
       - "5432:5432"
-    env_file:
-      - .envs/.local/.postgres
+    environment:
+      POSTGRES_PASSWORD: potato
+      POSTGRES_DB: pycones2020
 
-  # Web application service.
-  backend:
-    build:
-      context: .
-      dockerfile: ./compose/webapp/Dockerfile
+  web:
+    build: .
+    image: pycones
     depends_on:
       - db
     volumes:
-      - .:/app
-      - node_modules:/usr/src/app/node_modules
-    env_file:
-      - ./.envs/.local/.django
-      - .envs/.local/.postgres
+     - ./src:/app
+    environment:
+      DJANGO_SECRET_KEY: 'oluyomahB3vaaw0iemahCh8Eighai7Ai'
+      DJANGO_SETTINGS_MODULE: 'config.settings.local'
+      DJANGO_ALLOWED_HOSTS: '*'
+      DATABASE_URL: 'postgres://postgres:potato@db:5432/pycones2020'
     ports:
       - "8000:8000"
-    command: /local_server.sh
+    command: run-devel
 

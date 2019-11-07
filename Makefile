@@ -14,10 +14,10 @@ help: ## This help.
 	@echo
 
 
-build: ## Build developer containers.
+build: 
 	docker-compose -f dev.yml build
 
-up: ## Run developer containers.
+up: 
 	docker-compose -f dev.yml up
 
 silenceup: ## Run developer containers without print messages.
