@@ -20,11 +20,23 @@ services:
       POSTGRES_PASSWORD: potato
       POSTGRES_DB: pycones2020
 
+  gulp:
+    build: 
+      context: .
+      dockerfile: gulp.Dockerfile
+    image: pycones-gulp
+    volumes:
+     - ./src:/app
+    command: /build_node.sh
+
   web:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     image: pycones
     depends_on:
       - db
+      - gulp
     volumes:
      - ./src:/app
     environment:

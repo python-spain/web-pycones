@@ -1,34 +1,20 @@
-# FROM node image install and build gulp for static 
-# Install nodejs.
-# ENV NPM_CONFIG_LOGLEVEL info
-# RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
-# RUN apt-get -y install nodejs
-# RUN npm install
-# RUN npm install -g gulp
+# https://hub.docker.com/_/node/
+FROM node:11 as nodebuilder
+ENV NPM_CONFIG_LOGLEVEL info
+
+WORKDIR /app
+COPY docker/build_node.sh /build_node.sh
+COPY src/ .
+RUN /build_node.sh build
 
 # https://hub.docker.com/_/python/
 FROM python:3.7
-
-ENV PYTHONUNBUFFERED 1
 
 # Install system-requirements
 COPY docker/system-requirements.txt /srv/system-requirements.txt
 RUN  \
     apt-get -qq update && \
     xargs apt-get -qq install < /srv/system-requirements.txt
-
-
-# Install nodejs, bower and less
-#RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable && apt-get update
-
-# ¿?
-#ENV PYTHONIOENCODING="UTF-8";
-#ENV CPLUS_INCLUDE_PATH /usr/include/gdal
-#ENV C_INCLUDE_PATH /usr/include/gdal
-
-# ¿?
-#RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
-
 
 # Requirements and webapp user and group
 COPY ./requirements /requirements
@@ -37,8 +23,8 @@ RUN pip3 install -r /requirements/production.txt
 RUN pip3 install -r /requirements/local.txt
 
 # Source code
+COPY --from=nodebuilder /app /app
 WORKDIR /app
-COPY src/ .
 
 COPY ./docker/entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

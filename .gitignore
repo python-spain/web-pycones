@@ -65,11 +65,12 @@ public/
 
 
 # Media files
-pycones/media/
+src/pycones/media/
 
 # Docker
 docker-compose.yml
 
-pycones/static/css/pycones.css
-pycones/static/css/pycones.min.css
-pycones/static/js/bin/bundle.js
+src/pycones/static/css/pycones.css
+src/pycones/static/css/pycones.min.css
+src/pycones/static/js/bin/bundle.js
+
