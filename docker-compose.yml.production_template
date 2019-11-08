@@ -1,17 +1,10 @@
 version: '3'
-
-volumes:
-  db-data:
-    driver: local
-
 services:
   web:
     build: 
       context: .
       dockerfile: Dockerfile
     image: pycones
-    depends_on:
-      - db
     environment:
       DJANGO_SECRET_KEY: 'oluyomahB3vaaw0iemahCh8Eighai7Ai'
       DJANGO_SETTINGS_MODULE: 'config.settings.production'
