@@ -1,3 +1,6 @@
 
 .git/
-node_modules/
+src/node_modules/
+src/pycones/static/css/pycones.css
+src/pycones/static/css/pycones.min.css
+src/pycones/static/js/bin/bundle.js
