@@ -7,25 +7,18 @@ Web page made for PyConES 2020, made with Django with :heart:.
 
 ``` bash
 make up
-make gulp  # In other shell to interactive compiling with gulp.
 ```
 
 For more help use `make`.
 
 ## Deploy with Docker
 
-To deploy using docker, first we've to create a `.env` file with the
-credentials of the database, secret key, etc.
-
 ``` bash
-$ cp env.example .env
-$ cp docker-compose.yml.example docker-compose.yml
+$ cp docker-compose.yml.production_template docker-compose.yml
 ```
 
 The available environment variables are:
 
-  - `POSTGRES_PASSWORD` Postgres database password
-  - `POSTGRES_DB` Postgres database name
   - `DJANGO_SECRET_KEY` Django secret key
   - `DJANGO_SETTINGS_MODULE` Django settings module (eg.
     `config.settings.production`)
