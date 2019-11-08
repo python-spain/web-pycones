@@ -27,6 +27,9 @@ COPY --from=nodebuilder /app /app
 WORKDIR /app
 
 COPY ./docker/entrypoint.sh /entrypoint.sh
+COPY ./docker/uwsgi.ini /etc/uwsgi/uwsgi.ini
+
+RUN DJANGO_SETTINGS_MODULE=config.settings.local python3 manage.py collectstatic --no-input
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["run-uwsgi"]
-

@@ -17,6 +17,7 @@ case $1 in
         ;;
 
     run-devel)
+        export PATH="/app/node_modules/.bin:$PATH"
         /entrypoint.sh launch-migrations
         echo "→ Running as runserver mode"
         exec python manage.py runserver 0.0.0.0:8000

@@ -18,7 +18,7 @@ build:
 up: 
 	docker-compose -f dev.yml up
 
-silenceup: ## Run developer containers without print messages.
+upd: ## Run developer containers without print messages.
 	docker-compose -f dev.yml up -d
 
 createsuperuser: ## Create superuser.
@@ -35,6 +35,10 @@ test: ##Run django unittest
 
 migrate: ## Run migrate command in django container.
 	docker-compose -f dev.yml run  --rm web python3 manage.py migrate
+
+python_requirements: ## Install requirements on dev running container. To avoid rebuild the container.
+	docker-compose -f dev.yml exec web pip3 install -r /requirements/production.txt
+	docker-compose -f dev.yml exec web pip3 install -r /requirements/local.txt
 
 makemigrations: ## Run makemigrations command in django container.
 	docker-compose -f dev.yml run   --rm web python3 manage.py makemigrations
