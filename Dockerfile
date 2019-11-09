@@ -16,12 +16,13 @@ RUN  \
     apt-get -qq update && \
     xargs apt-get -qq install < /srv/system-requirements.txt
 
+# Requirements
+COPY docker/requirements.txt /requirements.txt
+RUN pip3 install -r /requirements.txt
+
 # Source code
 COPY --from=nodebuilder /app /app
 WORKDIR /app
-
-# Requirements and webapp user and group
-RUN pip3 install -r /app/requirements.txt
 
 COPY ./docker/entrypoint.sh /entrypoint.sh
 COPY ./docker/uwsgi.ini /etc/uwsgi/uwsgi.ini

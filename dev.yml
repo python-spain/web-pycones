@@ -7,8 +7,6 @@ volumes:
     driver: local
 
 services:
-
-  # Database service.
   db:
     image: postgres:9.6
     container_name: pycones-db
@@ -39,7 +37,7 @@ services:
       - gulp
     volumes:
      - ./src:/app
-     - ./requirements:/requirements
+     - ./docker/requirements.txt:/requirements.txt
     environment:
       DJANGO_SECRET_KEY: 'oluyomahB3vaaw0iemahCh8Eighai7Ai'
       DJANGO_SETTINGS_MODULE: 'config.settings.local'
