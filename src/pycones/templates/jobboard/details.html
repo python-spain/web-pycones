@@ -1,5 +1,6 @@
 {% extends "container.html" %}
 {% load i18n %}
+{% load martortags %}
 {% block title %}Job Board offer from {{ job_offer.employer.name }} {% endblock %}
 
 {% block content %}
@@ -12,7 +13,7 @@
           <img src="{{ job_offer.employer.website_logo.url }}" title="{{ job_offer.employer.name }}" alt="{{ job_offer.employer.name }}" class="img-fluid sponsors-img-small">
           {% endif %}
           <div>
-            {{ job_offer.description }}
+            {{ job_offer.description |safe_markdown}}
           </div>
            <p class="text-right">
               <a href="{{ job_offer.application_url}}" class="btn btn-success">{% trans "Enviar solicitud" %}</a>

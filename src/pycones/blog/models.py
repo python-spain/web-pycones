@@ -6,7 +6,7 @@ from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _, get_language
 
-from markupfield.fields import MarkupField
+from martor.models import MartorField
 from model_utils.models import TimeStampedModel
 from taggit_autosuggest.managers import TaggableManager
 
@@ -22,7 +22,7 @@ class AbstractArticle(TimeStampedModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.TextField()
     slug = models.SlugField(blank=True, unique=True, max_length=128)
-    content = MarkupField(default="", default_markup_type="markdown", blank=True)
+    content = MartorField(default="", blank=True)
 
     scheduled_at = models.DateTimeField(null=True, blank=True)
 
@@ -48,15 +48,6 @@ class Post(AbstractArticle):
     def __str__(self):
         return self.title
 
-    def _read_more_tag(self):
-        """
-        <p><a href="{% url "post" slug=post.slug %}">{% trans "Seguir leyendo..." %}</a></p>
-        @return:
-        """
-        return '<p><a href="{}">{}</a></p>'.format(
-            reverse("blog:post", kwargs={"slug": self.slug}), _("Seguir leyendo...")
-        )
-
     def get_absolute_url(self):
         return reverse("blog:post", kwargs={"slug": self.slug})
 
@@ -65,21 +56,6 @@ class Post(AbstractArticle):
         split_content = self.content.raw.split("<!--more-->")
         read_more = self._read_more_tag() if len(split_content) > 1 else ""
         return "{}{}".format(split_content[0], read_more)
-
-    def get_content(self):
-        language = get_language()
-        attr = "content_%s" % language
-        if (
-            hasattr(self, attr)
-            and getattr(self, attr).raw is not None
-            and getattr(self, attr).raw != ""
-        ):
-            return getattr(self, attr)
-        elif hasattr(self, attr) and (
-            getattr(self, attr).raw is None or getattr(self, attr).raw == ""
-        ):
-            return self.content_es
-        return self.content
 
     def save(self, **kwargs):
         slug_base = self.slug if self.slug else self.title

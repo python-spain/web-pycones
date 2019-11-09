@@ -1,5 +1,13 @@
 {% extends "container.html" %}
-{% load i18n %}
+{% load i18n  static %}
+{% load martortags %}
+
+{% block extra_css %}
+  <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'plugins/css/semantic.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'plugins/css/resizable.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'martor/css/martor.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+{% endblock extra_css %}
 
 {% block body_attrs %}ng-app="pycones"{% endblock body_attrs %}
 {% block content %}
@@ -9,7 +17,7 @@
     {% block description %}
     <p>
         {% blocktrans %}
-            ¡Está abierta la llamada a propuestas para la PyConES 2019!
+            ¡Está abierta la llamada a propuestas para la PyConES 2020!
         {% endblocktrans %}
     </p>
     {% endblock description %}
@@ -18,20 +26,25 @@
     {% endif %}
     <form method="post" action="" style="margin-top: 25px">
         {% csrf_token %}
+        <h2>{% trans "Ponente "%}</h2>
 
-        <div class="form-group row{% if form.speakers.errors %} has-error{% endif %}">
-            <label class="col-sm-3 control-label">{{ form.speakers.label }}</label>
+        <div class="form-group row{% if form.speaker_name.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.speaker_name.label }}</label>
             <div class="col-sm-9">
-                <speakers field-id="{{ form.speakers.auto_id }}"
-                          field-name="{{ form.speakers.name }}"
-                          add-more-label="{% trans "Añadir un ponente más" %}"
-                          name-label="{% trans "Nombre" %}"
-                          email-label="{% trans "Email" %}"
-                          value="{{ form.speakers.value }}"
-                ></speakers>
+                {{ form.speaker_name }}
+                <span class="help-text text-danger">{{ form.speaker_name.errors }}</span>
             </div>
         </div>
 
+        <div class="form-group row{% if form.speaker_email.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.speaker_email.label }}</label>
+            <div class="col-sm-9">
+                {{ form.speaker_email }}
+                <span class="help-text text-danger">{{ form.speaker_email.errors }}</span>
+            </div>
+        </div>
+
+        <hr/>
         <div class="form-group row{% if form.kind.errors %} has-error{% endif %}">
             <label class="col-sm-3 control-label">{{ form.kind.label }}</label>
             <div class="col-sm-9">
@@ -60,6 +73,14 @@
             </div>
         </div>
 
+        <div class="form-group row{% if form.duration.errors %} has-error{% endif %}">
+            <label class="col-sm-3 control-label">{{ form.duration.label }}</label>
+            <div class="col-sm-9">
+                {{ form.duration }}
+                <span class="help-text text-danger">{{ form.duration.errors }}</span>
+            </div>
+        </div>
+
         <div class="form-group row{% if form.language.errors %} has-error{% endif %}">
             <label class="col-sm-3 control-label">{{ form.language.label }}</label>
             <div class="col-sm-9">
@@ -76,7 +97,7 @@
                 <span class="help-block text-danger">{{ form.title.errors }}</span>
             </div>
         </div>
-
+        <h2>{% trans "Descripción "%}</h2>
         <div class="form-group row{% if form.description.errors %} has-error{% endif %}">
             <label class="col-sm-3 control-label">{{ form.description.label }}</label>
             <div class="col-sm-9">
@@ -87,7 +108,7 @@
                 <span class="help-block text-danger">{{ form.description.errors }}</span>
             </div>
         </div>
-
+        <h2>{% trans "Abstract "%}</h2>
         <div class="form-group row{% if form.abstract.errors %} has-error{% endif %}">
             <label class="col-sm-3 control-label">{{ form.abstract.label }}</label>
             <div class="col-sm-9">
@@ -98,7 +119,7 @@
                 <span class="help-text text-danger">{{ form.abstract.errors }}</span>
             </div>
         </div>
-
+        <h2>{% trans "Notas para la organización "%}</h2>
         <div class="form-group row{% if form.additional_notes.errors %} has-error{% endif %}">
             <label class="col-sm-3 control-label">{{ form.additional_notes.label }}</label>
             <div class="col-sm-9">
@@ -120,3 +141,15 @@
 
     </form>
 {% endblock content %}
+
+{% block extra_js %}
+  <script type="text/javascript" src="{% static 'plugins/js/ace.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/semantic.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/mode-markdown.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/ext-language_tools.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/theme-github.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/resizable.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/emojis.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'martor/js/martor.min.js' %}"></script>
+{% endblock extra_js%}

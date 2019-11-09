@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load martortags %}
 <article class="col-12 col-lg-12">
 <div>
   <h2><a href="#">{{ post.title }}<span class="dataCreation" >{{post.created}}</span></a></h2>
@@ -7,12 +8,7 @@
   <img src="{{ post.outstanding_image.url }}" alt="image {{post.title}}">
   {% endif %}
   <div>
-    {{ post.get_content }}
-    {% comment %}
-    <p class="text-right">
-      <a href="{% url "blog:list" %}" class="btn btn-primary">{% trans "Seguir leyendo" %}</a>
-    </p>
-    {% endcomment %}
+    {{ post.content|safe_markdown }}
     </div>
 </div>
 </article>

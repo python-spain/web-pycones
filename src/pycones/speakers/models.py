@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 from django.conf import settings
 from django.db import models
 from django.templatetags.static import static
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
-from markupfield.fields import MarkupField
 from model_utils.models import TimeStampedModel
+from martor.models import MartorField
 
 
-@python_2_unicode_compatible
 class Speaker(TimeStampedModel):
 
     user = models.OneToOneField(
@@ -21,17 +19,11 @@ class Speaker(TimeStampedModel):
         max_length=100,
         help_text=_("Tal como quieres que apareza en el programa de la conferencia."),
     )
-    biography = MarkupField(
+    biography = MartorField(
         verbose_name=_("Biografía"),
         blank=True,
         default="",
-        default_markup_type="markdown",
-        help_text=_(
-            "Unas palabras sobre ti. Edita usando "
-            "<a href='http://warpedvisions.org/projects/"
-            "markdown-cheat-sheet/target='_blank'>"
-            "Markdown</a>."
-        ),
+        help_text=_("Unas palabras sobre ti. Edita usando " "Markdown."),
     )
     photo = models.ImageField(
         verbose_name=_("Foto"), upload_to="speakers", blank=True, null=True
