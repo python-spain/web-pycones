@@ -25,46 +25,30 @@ class PyconESAdminSite(AdminSite):
 admin_site = PyconESAdminSite(name="PyconES 2019")
 
 urlpatterns = i18n_patterns(
-    url(r"^$", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    url(
-        r"hotels/$",
+    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path(
+        "hotels/",
         TemplateView.as_view(template_name="pages/hotels.html"),
         name="hotels",
     ),
-    url(
-        r"horario/$",
+    path(
+        "horario/",
         TemplateView.as_view(template_name="pages/schedule.html"),
         name="horario",
     ),
-    url(
-        r"^code-of-conduct/$",
+    path(
+        "code-of-conduct/",
         TemplateView.as_view(template_name="pages/code_of_conduct.html"),
         name="code-of-conduct",
     ),
-    # url(
-    #     r"^tickets/$",
-    #     TemplateView.as_view(template_name="pages/tickets.html"),
-    #     name="tickets",
-    # ),
-    url(r"^info/$", TemplateView.as_view(template_name="pages/info.html"), name="info"),
-    # url(
-    #     r"^keynoter-speakers/$",
-    #     TemplateView.as_view(template_name="pages/keynoters.html"),
-    #     name="keynoter-speakers",
-    # ),
-    # url(
-    #     r"^keynoters-speakers/$",
-    #     RedirectView.as_view(url=reverse_lazy("keynoter-speakers"), permanent=True),
-    #     name="keynoters-speakers",
-    # ),
-    url(r"^blog/", include("pycones.blog.urls", namespace="blog")),
-    url(r"^users/", include("pycones.users.urls", namespace="users")),
-    # url(r"^proposals/", include("pycones.proposals.urls", namespace="proposals")),
-    # url(r"^reviewers/", include("pycones.reviewers.urls", namespace="reviewers")),
-    url(r"^schedule/", include("pycones.schedules.urls", namespace="schedule")),
-    # url(r"^speakers/", include("pycones.speakers.urls", namespace="speakers")),
-    url(r"^jobboard/", include("pycones.jobboard.urls", namespace="jobboard")),
-    url(r"^tshirts/", include("pycones.tshirts.urls", namespace="tshirts")),
+    path("info/", TemplateView.as_view(template_name="pages/info.html"), name="info"),
+    path("blog/", include("pycones.blog.urls", namespace="blog")),
+    path("users/", include("pycones.users.urls", namespace="users")),
+    path("proposals/", include("pycones.proposals.urls", namespace="proposals")),
+    path("reviewers/", include("pycones.reviewers.urls", namespace="reviewers")),
+    path("schedule/", include("pycones.schedules.urls", namespace="schedule")),
+    path("jobboard/", include("pycones.jobboard.urls", namespace="jobboard")),
+    path("tshirts/", include("pycones.tshirts.urls", namespace="tshirts")),
     # markdown editor
     path("martor/", include("martor.urls")),
     prefix_default_language=False,
@@ -72,20 +56,15 @@ urlpatterns = i18n_patterns(
 
 # URLs without i18n
 urlpatterns += [
-    url(r"schedule/pentabarf\.xml", pentabarf_view, name="schedule_pentabarf"),
-    url(r"schedule/xcal\.xml", xcal_view, name="schedule_xcal"),
-    url(r"schedule\.ics", icalendar_view, name="schedule_icalendar"),
-    url(r"^taggit_autosuggest/", include("taggit_autosuggest.urls")),
-    url(r"^i18n/", include("django.conf.urls.i18n")),
+    path("taggit_autosuggest/", include("taggit_autosuggest.urls")),
+    path("i18n/", include("django.conf.urls.i18n")),
 ]
 
 # Override all links if the landing page is set
 if settings.LANDING_GLOBAL_REDIRECT:
     urlpatterns = [
-        url(
-            r"^$",
-            TemplateView.as_view(template_name="pages/landing.html"),
-            name="landing",
+        path(
+            "", TemplateView.as_view(template_name="pages/landing.html"), name="landing"
         )
     ]
 
@@ -98,22 +77,22 @@ if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
     # these url in browser to see how these error pages look like.
     urlpatterns += [
-        url(
-            r"^400/$",
+        path(
+            "400/",
             default_views.bad_request,
             kwargs={"exception": Exception("Bad Request!")},
         ),
-        url(
-            r"^403/$",
+        path(
+            "403/",
             default_views.permission_denied,
             kwargs={"exception": Exception("Permission Denied")},
         ),
-        url(
-            r"^404/$",
+        path(
+            "404/",
             default_views.page_not_found,
             kwargs={"exception": Exception("Page not Found")},
         ),
-        url(r"^500/$", default_views.server_error),
+        path("500/", default_views.server_error),
     ]
 
     # If is installed debug_toolbar, add its urls

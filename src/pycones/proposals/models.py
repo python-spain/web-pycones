@@ -7,7 +7,7 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
-from markupfield.fields import MarkupField
+from martor.models import MartorField
 from model_utils.models import TimeStampedModel
 from taggit_autosuggest.managers import TaggableManager
 
@@ -20,10 +20,8 @@ from pycones.proposals import (
 from pycones.reviewers.models import Reviewer
 from pycones.utils.emails import send_email
 from pycones.utils.generators import random_string
-from pycones.utils.translations import get_translated_markdown_field
 
 
-@python_2_unicode_compatible
 class ProposalKind(models.Model):
 
     name = models.CharField(_("Name"), max_length=100)
@@ -33,7 +31,6 @@ class ProposalKind(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class Proposal(TimeStampedModel):
 
     audience_level = models.CharField(
@@ -78,22 +75,20 @@ class Proposal(TimeStampedModel):
             "Debería ser un párrafo, con un máximo de 500 caracteres."
         ),
     )
-    abstract = MarkupField(
+    abstract = MartorField(
         _("Resumen detallado"),
         blank=True,
         default="",
-        default_markup_type="markdown",
         help_text=_(
             "Resumen detallado. Se hará pública si la propuesta se acepta. Edita "
             "usando <a href='http://daringfireball.net/projects/markdown/basics' "
             "target='_blank'>Markdown</a>."
         ),
     )
-    additional_notes = MarkupField(
+    additional_notes = MartorField(
         _("Notas adicionales"),
         blank=True,
         default="",
-        default_markup_type="markdown",
         help_text=_(
             "Cualquier cosa que te gustaría hacer saber a los revisores para que la tengan en "
             "cuenta al ahora de hacer la selección. Esto no se hará público. Edita usando "
@@ -116,14 +111,6 @@ class Proposal(TimeStampedModel):
 
     def __str__(self):
         return self.title
-
-    @property
-    def translated_abstract(self):
-        return get_translated_markdown_field(self, "abstract")
-
-    @property
-    def translated_additional_notes(self):
-        return get_translated_markdown_field(self, "additional_notes")
 
     @property
     def avg(self):

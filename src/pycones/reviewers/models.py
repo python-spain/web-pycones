@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, absolute_import
 
 import numpy as np
 from django.conf import settings
@@ -7,7 +6,7 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from model_utils.models import TimeStampedModel
-from options.models import Option
+
 
 from pycones.utils.emails import send_email
 
