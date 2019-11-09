@@ -1,6 +1,0 @@
--r base.txt
-
-# WSGI Handler
-raven==6.10.0
-uwsgi==2.0.17.1
-uwsgi-tools==1.1.1

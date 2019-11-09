@@ -38,8 +38,7 @@ migrate: ## Run migrate command in django container.
 	docker-compose -f dev.yml run  --rm web python3 manage.py migrate $(app)
 
 python_requirements: ## Install requirements on dev running container. To avoid rebuild the container.
-	docker-compose -f dev.yml exec web pip3 install -r /requirements/production.txt
-	docker-compose -f dev.yml exec web pip3 install -r /requirements/local.txt
+	docker-compose -f dev.yml exec web pip3 install -r /app/requirements.txt
 
 makemigrations: ## Run makemigrations command in django container.
 	docker-compose -f dev.yml run   --rm web python3 manage.py makemigrations $(app)

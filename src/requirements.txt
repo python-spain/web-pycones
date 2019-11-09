@@ -52,3 +52,23 @@ restless==2.1.1
 
 # Calendar Export
 icalendar==4.0.3
+
+# Testing
+django-test-plus==1.0.16
+coverage==4.3.1
+django-coverage-plugin==1.3.1
+pytest-django==3.0.0
+pytest-sugar==0.7.1
+factory_boy==2.8.1
+
+# Developing local tools
+Werkzeug
+ipdb==0.12
+django-debug-toolbar==1.11
+
+django-gulp==4.1.0
+
+# WSGI Handler
+raven==6.10.0
+uwsgi==2.0.17.1
+uwsgi-tools==1.1.1
