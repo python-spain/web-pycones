@@ -172,7 +172,7 @@ DJANGO_APPS = (
     "modeltranslation",
     "django.contrib.admin",
 )
-THIRD_PARTY_APPS = 'import_export',
+THIRD_PARTY_APPS = ("import_export", "martor")
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
@@ -338,7 +338,7 @@ CONFIGURATION_DEFAULT_OPTIONS = {
     "tshirts_page_activated": {
         "value": 0,
         "type": 1,
-        "public_name": "Activates page for tshirts"
+        "public_name": "Activates page for tshirts",
     },
     "activate_reviews": {"value": 0, "type": 1, "public_name": "Activate reviews"},
 }

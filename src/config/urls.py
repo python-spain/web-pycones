@@ -65,6 +65,8 @@ urlpatterns = i18n_patterns(
     # url(r"^speakers/", include("pycones.speakers.urls", namespace="speakers")),
     url(r"^jobboard/", include("pycones.jobboard.urls", namespace="jobboard")),
     url(r"^tshirts/", include("pycones.tshirts.urls", namespace="tshirts")),
+    # markdown editor
+    path("martor/", include("martor.urls")),
     prefix_default_language=False,
 )
 
