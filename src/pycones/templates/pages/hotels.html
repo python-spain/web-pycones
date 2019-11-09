@@ -1,13 +1,13 @@
 {% extends "container.html" %}
 {% load static %}
 {% load i18n chunk_extras%}
-
+{% load martortags %}
 {% block content %}
 {% chunk name="info_hoteles" as info_content %}
 <main>
   <section class="container" id="contentPage">
 {% if info_content %}
-  {{info_content}}
+  {{info_content|safe_markdown}}
 {% else %}
   <p>Contenido vacío, crea el chunk <pre>info_hoteles</pre></p>
 {% endif %}

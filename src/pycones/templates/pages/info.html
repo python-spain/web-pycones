@@ -1,90 +1,15 @@
 {% extends "container.html" %}
 {% load static %}
 {% load i18n chunk_extras%}
-
+{% load martortags %}
 {% block content %}
 {% chunk name="info_content" as info_content %}
 <main>
   <section class="container" id="contentPage">
 {% if info_content %}
-  {{info_content}}
+  {{info_content|safe_markdown}}
 {% else %}
-<h1>{% trans "¿Dónde nos vemos?"%}
-
-{% blocktrans %}
-<h3>Universidad de Alicante</h3>
-<ul>
-  <li><strong>Viernes</strong>: Escuela Politécnica 1</li>
-  <li><strong>Sábado y domingo</strong>: Aulario 2 y Paraninfo.
-</ul>
-
-<h3>Localización</h3>
-
-<p>Universidad de Alicante<br/>
-Carretera de San Vicente del Raspeig, s/n<br/>
-03690, Alicante</p>
-
-<p>En un mapa</p>
-<ul>
-  <li><a href="https://goo.gl/maps/LhgZKnQrAUrdsFYt9">Geoposición</a></li>
-  <li>Coordenadas: 38.385135, -0.514486</li>
-</ul>
-
-<ul>
-<li>Geoposición de cada una de ellas:
-  <ul>
-    <li><a href="https://goo.gl/maps/2Shox2SDGSbLpBRJ7">EPS1 : Coordenadas: 38.386873, -0.511207</a></li>
-    <li><a href="https://goo.gl/maps/S4w1eoLDxfKTmTyY9">Aulario 2 : Coordenadas: 38.384729, -0.510174</a></li>
-    <li><a href="https://goo.gl/maps/sUn2pRmxCKLuWfhg9">Paraninfo : Coordenadas: 38.385226, -0.516909</a></li>
-  </ul>
-</li>
-</ul>
-{% endblocktrans %}
-
-
-{% blocktrans %}
-  <h2>Medios de Transporte en Alicante</h2>
-
-  <h3>TRAM</h3>
-
-  <ul>
-  <li><a href="https://tramalicante.info/#l1">Líneas</a></li>
-  <li>Paradas interesantes:
-    <ul>
-      <li>Línea L2 - Universitat (lugar de la conferencia)</li>
-      <li>Línea L1, L2, L3 y L4 - MARQ Castillo (Donde está el museo del MARQ y el Castillo Santa Barbara)</li>
-      <li>Línea L1, L2, L3, L4 - Mercado (Centro de Alicante)</li>
-      <li>Línea L1, L2, L3 y L4 - Luceros (Centro de Alicante, parada más cercana a Renfe)</li>
-    </ul>
-  </li>
-  </ul>
-
-  <h3>BUS</h3>
-
-  <ul>
-  <li><a href="https://alicante.vectalia.es/wp-content/uploads/sites/2/2018/05/af-FOLLETO-A2-otra-doblez.pdf">Horario normal</li>
-  <li><a href="https://alicante.vectalia.es/wp-content/uploads/sites/2/2018/11/FOLLETO-LINEAS-NOCTURNAS-ALICANTE.pdf">Horario Nocturno</a></li>
-  </ul>
-
-  <p>Líneas Interesantes: <br>
-  24 y 24N son los buses que llevan desde Alicante hasta la Universidad de Alicante y San Vicente en general.</p>
-
-
-  <p>
-  En <a href="https://drive.google.com/file/d/12bF5eC0cCL27ZATgUNf9P9J3TagoMz_8/view?usp=sharing">este archivo</a>
-  también están los parkings dentro de la Uni señalizados, se puede ver cuales están más y menos cerca del la conferencia.
-  Durante el viernes por la tarde aún habrá coches ya que hay clase (hay sitio SIEMPRE),
-  pero sábado y domingo no va a costar encontrar parking en ningún sitio.
-  </p>
-
-  <h3>¿Se puede dejar el coche?</h3>
-  <p>Se puede dejar en la uni. Fin de semana igual se cierra el domingo alguna de las puertas pero la de la autovía está abierta 100% seguro.
-  El coche lo puedes sacar cuando quieras y puedes dejarlo allí.</p>
-{% endblocktrans %}
+  <p>Crea el chunk <code>info_content</code> para dar contenido a esta página</p>
 {% endif %}
-  </section>
-</main>
-
-
 
 {% endblock content %}
