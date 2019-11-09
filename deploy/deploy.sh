@@ -4,6 +4,8 @@ echo "### Show my local dir"
 pwd
 echo "### And files"
 ls -ltr
+echo "### Las commit deployed"
+git log --stat -1
 echo "### Building new docker image"
 docker-compose build
 echo "### Migrate database"

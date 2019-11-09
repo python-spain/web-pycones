@@ -12,8 +12,7 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: ssh -p 2232 pycones20@pycones.prod.aws.apsl.io "cd web-pycones; git pull
-    origin 2020; ./deploy/deploy.sh;"
+  script: ssh -p 2232 pycones20@pycones.prod.aws.apsl.io "cd web-pycones; git pull origin 2020; ./deploy/deploy.sh;"
   on:
     branch: 2020
 
