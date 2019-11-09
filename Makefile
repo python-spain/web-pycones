@@ -34,6 +34,7 @@ test: ##Run django unittest
 	docker-compose -f dev.yml run --rm web python3 manage.py test
 
 migrate: ## Run migrate command in django container.
+		 ## use app=app_name to migrate just one application
 	docker-compose -f dev.yml run  --rm web python3 manage.py migrate $(app)
 
 python_requirements: ## Install requirements on dev running container. To avoid rebuild the container.
