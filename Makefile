@@ -2,6 +2,9 @@
 
 .DEFAULT_GOAL := help
 
+RUN_LIKE_USER = run --rm -u `id -u`:`id -g` web
+COMPOSE_COMMAND = docker-compose -f dev.yml
+
 
 help: ## This help.
 	@echo
@@ -13,38 +16,38 @@ help: ## This help.
 
 
 build:
-	docker-compose -f dev.yml build
+	$(COMPOSE_COMMAND) build
 
 up:
-	docker-compose -f dev.yml up
+	$(COMPOSE_COMMAND) up
 
 upd: ## Run developer containers without print messages.
-	docker-compose -f dev.yml up -d
+	$(COMPOSE_COMMAND) up -d
 
 createsuperuser: ## Create superuser.
-	docker-compose -f dev.yml run --rm web python3 manage.py createsuperuser
+	$(COMPOSE_COMMAND) $(RUN_LIKE_USER) python3 manage.py createsuperuser
 
 down: ## Force stop and delete all containers.
-	docker-compose  -f dev.yml down
+	$(COMPOSE_COMMAND) down
 
 shell: ## Run django shell.
-	docker-compose -f dev.yml run  --rm web python3 manage.py shell_plus
+	$(COMPOSE_COMMAND) $(RUN_LIKE_USER) python3 manage.py shell_plus
 
 test: ##Run django unittest
-	docker-compose -f dev.yml run --rm web python3 manage.py test
+	$(COMPOSE_COMMAND) $(RUN_LIKE_USER) python3 manage.py test
 
 migrate: ## Run migrate command in django container.
 		 ## use app=app_name to migrate just one application
-	docker-compose -f dev.yml run  --rm web python3 manage.py migrate $(app)
+	$(COMPOSE_COMMAND) $(RUN_LIKE_USER) python3 manage.py migrate $(app)
 
 python_requirements: ## Install requirements on dev running container. To avoid rebuild the container.
-	docker-compose -f dev.yml exec web pip3 install -r /app/requirements.txt
+	$(COMPOSE_COMMAND) exec web pip3 install -r /app/requirements.txt
 
 makemigrations: ## Run makemigrations command in django container.
-	docker-compose -f dev.yml run   --rm web python3 manage.py makemigrations $(app)
+	$(COMPOSE_COMMAND) $(RUN_LIKE_USER) python3 manage.py makemigrations $(app)
 
 logs: ## Show and follow all the logs
-	docker-compose -f dev.yml logs
+	$(COMPOSE_COMMAND) logs
 
 resetdb: ## Clean database volume.
 	docker volume rm web-pycones_db-data
