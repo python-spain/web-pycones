@@ -9,6 +9,6 @@ git log --stat -1
 echo "### Building new docker image"
 docker-compose build
 echo "### Migrate database"
-docker-compose run --run web python3 /app/manage.py migrate
+docker-compose run --rm web python3 /app/manage.py migrate
 echo "### Start new docker image"
 docker-compose up -d
