@@ -36,8 +36,12 @@ machine using **production configuration**. Then, we've have to use
 Docker Compose to bring it up.
 
 ``` bash
-$ ./deploy.sh
+$ ./docker/deploy.sh
 ```
+
+We use an external deployment to manage the production web.
+The deployment is automated with Travis: 
+https://travis-ci.org/python-spain/web-pycones
 
 ## Configuration parameters
 
