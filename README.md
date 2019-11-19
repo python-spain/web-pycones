@@ -39,8 +39,9 @@ Docker Compose to bring it up.
 $ ./docker/deploy.sh
 ```
 
-We use an external deployment to manage the production web.
-The deployment is automated with Travis: 
+We use an external server deployment to manage the production environment.
+The deployment is automated with Travis:
+ 
 https://travis-ci.org/python-spain/web-pycones
 
 ## Configuration parameters
