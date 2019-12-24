@@ -2,6 +2,7 @@
 from config.settings.common import *
 
 
+
 # DEBUG
 # ------------------------------------------------------------------------------
 DEBUG = env.bool("DJANGO_DEBUG", default=True)
@@ -50,3 +51,5 @@ DEBUG_TOOLBAR_CONFIG = {
 # ------------------------------------------------------------------------------
 # See: https://django-extensions.readthedocs.io/en/latest/
 INSTALLED_APPS += ("django_extensions", "django_gulp",)
+
+ALLOWED_HOSTS = ["*"]

@@ -3,23 +3,62 @@
 {% load static %}
 {% load chunk_extras %}
 {% load sponsorship_tags %}
+
+{% block claim %}
+  <div class="hero-image hidden-md-down">
+    <div class="m-hero-video-holder">
+      <div class="m-hero-video-container">
+        <div class="acorn-background-video">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 main-title">
+                <img src="{% static "images/logos/piconesGR_horizontal.svg" %}" width="400px">
+                <h1>PyConES <span>Granada</span></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <video
+          src="{% static "videos/alhambra-timelapse.mp4" %}"
+          class="m-hero-item m-hero-item--video x-hidden-focus"
+          autoplay=""
+          muted=""
+          playsinline="">
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <div class="claim acorn-background hidden-lg-up">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 main-title">
+            <h1>PyconES <span>Granada</span></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock claim %}
+
+
+
 {% block content %}
 
-  <section id="blocks" class="container-fluid">
-{#    {% if activated_tickets_sale_page %}#}
-{#      <div class="text-center">#}
-{#        <h2>{% trans "¡Entradas ya disponibles!" %}</h2>#}
-{#        <a href="https://www.eventbrite.es/e/entradas-pycones-2019-61864318843"#}
-{#           class="btn btn-primary">{% trans "Consigue tu entrada" %}</a>#}
-{#      </div>#}
-{#    {% else %}#}
-{#      <h2>{% trans "Entradas no disponibles." %}</h2>#}
-{#    {% endif %}#}
+  <section id="blocks" class="container-fluid tickets-box">
+    {% if activated_tickets_sale_page %}
+      <div class="text-center">
+        <h2>{% trans "¡Entradas ya disponibles!" %}</h2>
+        <a href="https://www.eventbrite.es/e/entradas-pycones-2019-61864318843"
+           class="btn btn-primary">{% trans "Consigue tu entrada" %}</a>
+      </div>
+    </section>
+    {% endif %}
 
     <div class="row">
       <div class="col-md-12 col-lg-4">
         <div class="card h-100">
-          <img src="//images.weserv.nl/?url=http://via.placeholder.com/389x389" class="card-img-top" alt="PyConEs">
+          <img src="{% static "images/logos/piconesGR_vertical.svg" %}" class="card-img-top" alt="PyConEs">
           <div class="card-body">
             <h3 class="card-title"><a href="{% url "info" %}">{% trans "El evento" %}</a></h3>
             <p class="card-text">
@@ -36,30 +75,30 @@
       </div>
       <div class="col-md-12 col-lg-4">
         <div class="card h-100">
-          <img src="{% static "img/icon-sponsors2.png" %}" class="card-img-top" alt="PyConEs">
+          <img src="{% static "img/icon-sponsors2.png" %}" height="60%" class="card-img-top" alt="PyConEs">
           <div class="card-body">
             <h3 class="card-title">{% trans "Patrocinadores" %}</h3>
             <p
               class="card-text">
               {% trans "¿Quieres patrocinar esta edición de la PyConES? Aquí encontrarás toda la información necesaria" %}
             </p>
-            {% if LANGUAGE_CODE == 'es' %}
-              <a target="_self" href="{% static "pdf/sponsorship_ES.pdf" %}"
-                 class="btn btn-primary">{% trans "Folleto" %}</a>
-            {% else %}
-              <a target="_self" href="{% static "pdf/sponsorship_EN.pdf" %}"
-                 class="btn btn-primary">{% trans "Folleto" %}</a>
-            {% endif %}
+            <div class="dossier-btn" style="text-align: center">
+              {% if LANGUAGE_CODE == 'es' %}
+                <a target="_self" href="{% static "pdf/sponsorship_ES.pdf" %}"
+                   class="btn btn-primary">{% trans "Folleto" %}</a>
+              {% else %}
+                <a target="_self" href="{% static "pdf/sponsorship_EN.pdf" %}"
+                   class="btn btn-primary">{% trans "Folleto" %}</a>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
         <div class="card h-100">
-          <div class="card-body">
-            <a class="twitter-timeline" data-height="600" href="https://twitter.com/PyConES?ref_src=twsrc%5Etfw">Tweets
-              by PyConES</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
+          <a class="twitter-timeline" data-height="600" href="https://twitter.com/PyConES?ref_src=twsrc%5Etfw">Tweets
+            by PyConES</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
     </div>
@@ -73,8 +112,9 @@
     <div class="row">
 
       <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
         <img src="http://via.placeholder.com/389x389"
-             class="card-img-top img-flex rounded-circle img-thumbnail" alt="PyConEs">
+             class="img-flex rounded-circle img-thumbnail" alt="PyConEs">
         <div class="card-body"><br>
           <h3 class="card-title">Darlene A. Krick</h3>
           <p
@@ -83,10 +123,12 @@
           </p>
         </div>
       </div>
+      </div>
 
       <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
         <img src="http://via.placeholder.com/389x389"
-             class="card-img-top img-flex rounded-circle img-thumbnail" alt="PyConEs">
+             class="img-flex rounded-circle img-thumbnail" alt="PyConEs">
         <div class="card-body"><br>
           <h3 class="card-title">Mary R. Ide</h3>
           <p
@@ -95,26 +137,13 @@
           </p>
         </div>
       </div>
-      {% comment %}
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100">
-            <img src="http://via.placeholder.com/389x389"
-                 class="card-img-top img-flex rounded-circle img-thumbnail" alt="PyConEs">
-            <div class="card-body"><br>
-              <h3 class="card-title">Jacelyn S. Dyke</h3>
-              <p
-                class="card-text">
-                {% trans "Ut gravida, arcu id finibus sagittis, turpis mi luctus orci, non finibus elit arcu vitae mauris. Nulla et ante id mauris tincidunt convallis. Proin arcu tortor, convallis id mattis vitae, rhoncus in lorem. Aenean nec pretium neque." %}
-              </p>
-            </div>
-          </div>
-        </div>
-      {% endcomment %}
+      </div>
 
       <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
         <img
           src="//images.weserv.nl/?url=http://via.placeholder.com/389x389"
-          class="card-img-top img-flex rounded-circle img-thumbnail"
+          class="img-flex rounded-circle img-thumbnail"
           alt="PyConEs">
         <div class="card-body"><br>
           <h3 class="card-title">Shae R. Clark</h3>
@@ -123,7 +152,7 @@
           </p>
         </div>
       </div>
-
+      </div>
     </div>
   </section>
 
