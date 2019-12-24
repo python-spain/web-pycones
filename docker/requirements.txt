@@ -72,3 +72,5 @@ django-gulp==4.1.0
 raven==6.10.0
 uwsgi==2.0.17.1
 uwsgi-tools==1.1.1
+
+martor==1.4.4
