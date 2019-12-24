@@ -10,6 +10,12 @@ services:
       DJANGO_SETTINGS_MODULE: 'config.settings.production'
       DJANGO_ALLOWED_HOSTS: '*'
       DATABASE_URL: 'postgres://postgres:potato@db:5432/pycones2020'
+      POSTGRES_DB: pycones2020
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+
     ports:
       - "8000:8080"
     command: run-uwsgi
