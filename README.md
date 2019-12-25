@@ -11,6 +11,11 @@ make up
 
 For more help use `make`.
 
+## Continous Integration
+
+Travis CI build and deploy 
+[![Build Status](https://travis-ci.org/python-spain/web-pycones.svg?branch=2020)](https://travis-ci.org/python-spain/web-pycones)
+
 ## Deploy with Docker
 
 ``` bash
