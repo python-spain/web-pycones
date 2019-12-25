@@ -75,7 +75,7 @@
       </div>
       <div class="col-md-12 col-lg-4">
         <div class="card h-100">
-          <img src="{% static "img/icon-sponsors2.png" %}" height="60%" class="card-img-top" alt="PyConEs">
+          <img src="{% static "img/stand-python.jpg" %}" height="60%" class="card-img-top" alt="PyConEs">
           <div class="card-body">
             <h3 class="card-title">{% trans "Patrocinadores" %}</h3>
             <p
@@ -104,7 +104,7 @@
     </div>
   </section>
   <br>
-  <section id="people" class="container-fluid">
+  <!-- <section id="people" class="container-fluid">
     <div class="text-center">
       <h2>{% trans "Ponentes principales" %}</h2>
     </div>
@@ -154,7 +154,7 @@
       </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <br>
   {% chunk name="organizers" as organizers %}
@@ -163,7 +163,8 @@
   {% endif %}
 
   <br>
-  {% include "pages/patrocinadores.html" %}
+  <!-- {% include "pages/patrocinadores.html" %} -->
+
   {% chunk name="home_content" as home_content %}
   {% if home_content %}
     <section id="home_content" class="container-fluid">

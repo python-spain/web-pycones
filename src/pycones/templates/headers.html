@@ -20,21 +20,31 @@
             <a class="navbar-brand" href="{% url "home" %}">{{ CONFERENCE_TITLE }}</a>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
+                  {% if activate_about_us %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url "info" %}">{% trans "Sobre Granada" %}</a>
                   </li>
+                  {% endif %}
+                  {% if activate_schedule %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url "horario" %}">{% trans "Horario" %}</a>
                   </li>
+                  {% endif %}
+                  {% if activate_job_board %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url "jobboard:list" %}">{% trans "Job Board" %}</a>
                   </li>
+                  {% endif %}
+                  {% if activate_hotels %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url "hotels" %}">{% trans "Hoteles" %}</a>
                   </li>
+                  {% endif %}
+                  {% if activate_blog %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url "blog:list" %}">{% trans "Blog" %}</a>
                   </li>
+                  {% endif %}
                   {% if tshirts_page_activated %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url "tshirts:index" %}">{% trans "Camisetas" %}</a>

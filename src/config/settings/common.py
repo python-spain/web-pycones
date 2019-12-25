@@ -341,4 +341,9 @@ CONFIGURATION_DEFAULT_OPTIONS = {
         "public_name": "Activates page for tshirts",
     },
     "activate_reviews": {"value": 0, "type": 1, "public_name": "Activate reviews"},
+    "activate_blog": {"value": 0, "type": 1, "public_name": "Activate Blog"},
+    "activate_about_us": {"value": 0, "type": 1, "public_name": "Activate About Us"},
+    "activate_schedule": {"value": 0, "type": 1, "public_name": "Activate Schecule"},
+    "activate_job_board": {"value": 0, "type": 1, "public_name": "Activate Job Board"},
+    "activate_hotels": {"value": 0, "type": 1, "public_name": "Activate Hotels"}
 }
