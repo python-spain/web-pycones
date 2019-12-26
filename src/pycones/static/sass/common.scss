@@ -13,7 +13,12 @@ $open_sans: 'Open Sans', sans-serif;
   margin-top: 30px;
 }
 
-
+p{
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 .acorn-background {
   background: url("../images/header.jpg") no-repeat;
