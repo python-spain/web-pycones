@@ -9017,6 +9017,10 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .dossier-btn {
   margin-top: 30px; }
 
+p img {
+  max-width: 100%;
+  height: auto; }
+
 .acorn-background, .landing {
   background: url("../images/header.jpg") no-repeat;
   background-size: cover;
