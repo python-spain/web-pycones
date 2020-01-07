@@ -53,6 +53,12 @@ https://travis-ci.org/python-spain/web-pycones
 
 Some configuration can be enabled/dissabled on the options admin page:
 
+  - \`activate\_about\_us\`: 1/0 About us page
+  - \`activate\_schedule\`: 1/0 Schedule page
+  - \`activate\_job\_board\`: 1/0 Job board
+  - \`activate\_hotels\`: 1/0 Hotels page
+  - \`activate\_blog\`: 1/0 Blog page
+  - \`tshirts\_page\_activated\`: 1/0 Tshirst page
   - \`activated\_tickets\_sale\_page\`: 1/0 Tickets option
   - \`info\_available\`: 1/0 availability of the information page
   - \`schedule\_opened\`: 1/0 Determines if the schedule is open or not
