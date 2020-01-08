@@ -41,7 +41,7 @@ machine using **production configuration**. Then, we've have to use
 Docker Compose to bring it up.
 
 ``` bash
-$ ./docker/deploy.sh
+$ ./deploy/deploy.sh
 ```
 
 We use an external server deployment to manage the production environment.
