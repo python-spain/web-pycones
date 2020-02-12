@@ -1,36 +1,26 @@
-# Docker-compose file to launch the web app.
-version: '2'
+version: '3'
 
 services:
-  webapp:
-    build:
+  web:
+    build: 
       context: .
-      dockerfile: compose/webapp/Dockerfile
-    image: pycones/webapp
-    container_name: pycones-webapp
-    command: /gunicorn.sh
-    volumes:
-      - .:/app
-    env_file: .env
-
-  nginx:
-    build:
-      context: .
-      dockerfile: compose/nginx/Dockerfile
-    image: pycones/nginx
-    container_name: pycones-nginx
-    volumes:
-      - ./public:/public
-      - ./pycones/media:/media
-    depends_on:
-      - webapp
-
-  caddy:
-    image: abiosoft/caddy:latest
-    volumes:
-      - ./compose/Caddyfile:/etc/Caddyfile
-    ports:
-      - "0.0.0.0:80:80"
-      - "0.0.0.0:443:443"
+      dockerfile: Dockerfile
+    image: pycones
+    restart: always
     environment:
-      - ACME_AGREE=true
+      DJANGO_SECRET_KEY: 
+      DJANGO_SETTINGS_MODULE: config.settings.production
+      DATABASE_URL: postgres://upycones20:pass@host:5432/pycones20db
+      DJANGO_ALLOWED_HOSTS: 
+      SENTRY_URL: 
+      POSTGRES_DB: pycones20db
+      POSTGRES_USER: upycones20
+      POSTGRES_PASSWORD: pass
+      POSTGRES_HOST: host
+      POSTGRES_PORT: 5432
+
+    volumes:
+      /data/media:/app/pycones/media 
+    ports:
+        - "8020:8080"
+    command: run-uwsgi
