@@ -345,5 +345,6 @@ CONFIGURATION_DEFAULT_OPTIONS = {
     "activate_about_us": {"value": 0, "type": 1, "public_name": "Activate About Us"},
     "activate_schedule": {"value": 0, "type": 1, "public_name": "Activate Schecule"},
     "activate_job_board": {"value": 0, "type": 1, "public_name": "Activate Job Board"},
-    "activate_hotels": {"value": 0, "type": 1, "public_name": "Activate Hotels"}
+    "activate_hotels": {"value": 0, "type": 1, "public_name": "Activate Hotels"},
+    "activate_call_for_papers": {"value": 0, "type": 1, "public_name": "Activate Call for papers"}
 }

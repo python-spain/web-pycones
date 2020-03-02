@@ -1,0 +1,15 @@
+{% extends "container.html" %}
+{% load static %}
+{% load i18n chunk_extras%}
+{% load martortags %}
+{% block content %}
+{% chunk name="call_for_papers" as info_content %}
+<main>
+  <section class="container" id="contentPage">
+{% if info_content %}
+  {{info_content|safe_markdown}}
+{% else %}
+  <p>Crea el chunk <code>call_for_papers</code> para dar contenido a esta página</p>
+{% endif %}
+
+{% endblock content %}

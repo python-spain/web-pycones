@@ -32,6 +32,11 @@ urlpatterns = i18n_patterns(
         name="hotels",
     ),
     path(
+        "call-for-papers/",
+        TemplateView.as_view(template_name="pages/call_for_papers.html"),
+        name="cfp",
+    ),
+    path(
         "horario/",
         TemplateView.as_view(template_name="pages/schedule.html"),
         name="horario",

@@ -33,6 +33,9 @@ down: ## Force stop and delete all containers.
 shell: ## Run django shell.
 	$(COMPOSE_COMMAND) $(RUN_LIKE_USER) python3 manage.py shell_plus
 
+bash: ## Run bash shell.
+	$(COMPOSE_COMMAND) $(RUN_LIKE_USER) bash
+
 test: ##Run django unittest
 	$(COMPOSE_COMMAND) $(RUN_LIKE_USER) python3 manage.py test
 
