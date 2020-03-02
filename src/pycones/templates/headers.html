@@ -59,8 +59,27 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url "code-of-conduct" %}">{% trans "Código de conducta" %}</a>
                   </li>
+
               </ul>
             </div>
+            <div class="col-sm-12 col-md-2">
+                <form action="{% url 'set_language' %}" method="post" class="form-inline">{% csrf_token %}
+                    <div class="form-group">
+                        <input name="next" type="hidden" value="/" />
+                        <select name="language" class="form-control" onchange="this.form.submit()" style="text-transform: capitalize">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                                    {{ language.name_local }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </nav>
     {% endblock header %}
@@ -75,23 +94,6 @@
                         <ul class="list-unstyled">
                             <li><a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a></li>
                         </ul>
-                    </div>
-                    <div class="col-sm-12 col-md-2">
-                        <form action="{% url 'set_language' %}" method="post" class="form-inline">{% csrf_token %}
-                            <div class="form-group">
-                                <input name="next" type="hidden" value="/" />
-                                <select name="language" class="form-control" onchange="this.form.submit()" style="text-transform: capitalize">
-                                    {% get_current_language as LANGUAGE_CODE %}
-                                    {% get_available_languages as LANGUAGES %}
-                                    {% get_language_info_list for LANGUAGES as languages %}
-                                    {% for language in languages %}
-                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                                            {{ language.name_local }}
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </form>
                     </div>
                 </div>
                 <div class="row">
