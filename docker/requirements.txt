@@ -21,7 +21,7 @@ django-import-export==1.2.0
 django-braces==1.13.0
 
 # Images
-Pillow==6.2.0
+Pillow==8.1.1
 
 # Database connector
 psycopg2==2.8.2
